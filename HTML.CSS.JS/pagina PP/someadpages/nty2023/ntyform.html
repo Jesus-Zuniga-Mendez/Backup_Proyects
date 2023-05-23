@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Mandilla Producciones</title>
+
+      <link href="https://fonts.googleapis.com/css?family=Oswald:700|PT+Sans&display=swap" rel="stylesheet">
+
+      <link href="css/normalize.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+<!-- font awesome -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css" />
+
+<!-- animate.css -->
+<link rel="stylesheet" href="../../assets/animate/animate.css" />
+<link rel="stylesheet" href="../../assets/animate/set.css" />
+
+<!-- gallery -->
+<link rel="stylesheet" href="../../assets/gallery/blueimp-gallery.min.css">
+
+<!-- favicon -->
+<link rel="shortcut icon" href="../../images/favicon1.ico" type="image/x-icon">
+<link rel="icon" href="../../images/favicon1.ico" type="image/x-icon">
+
+
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+
+
+      <div id="hero">
+
+
+                  <div class="texture"></div>
+
+                  <video
+                  loop
+                  muted
+                  autoplay
+                  preload="auto"
+                  >
+                        <source src="compressed.mp4" type="video/mp4">
+                        Your browser does not support the video tag.  
+                  </video>
+
+
+
+                  <div class="caption">
+										<!-- mi prueba -->
+										<form>
+                                                                  <h1><label for="ElTexto">Escribe tu palabra<mark>clave</mark></label> </h1>
+                                                                  <br>
+                                                                  <input type="text" id="clave" name="clave"
+                                                                        required size="20" placeholder="palabra" minlength="1" maxlength="20" value=""" style="text-transform:lowercase" onkeyup="javascript:this.value=this.value.toLowerCase();">
+                                                                  <button id="ir" disabled="true" type="submit" class="btn btn-dark">Vamos!!</button> 
+                                                                  <script>
+                                                                        let palabra = document.getElementById('clave'); 
+                                                                        const elBoton = document.getElementById("ir");
+                                                                        document.getElementById("clave").oninput = function activarBoton()
+                                                                        {
+                                                                              let choice = palabra.value; 
+                                                                              switch (choice) {
+                                                                              case 'responsable':
+                                                                                    {
+                                                                                       elBoton.disabled = false;
+                                                                                    }
+                                                                              break;
+                                                                              case 'cordero':
+                                                                                    {
+                                                                                          elBoton.disabled = false;
+                                                                                    }
+                                                                              break;
+                                                                              case 'rosa':
+                                                                                    {
+                                                                                          elBoton.disabled = false;
+                                                                                    }
+                                                                              break;
+                                                                              case 'caminando':
+                                                                                    {
+                                                                                          elBoton.disabled = false;
+                                                                                    }
+                                                                              break; 
+                                                                              case 'felicidad':
+                                                                                    {
+                                                                                          elBoton.disabled = false;
+                                                                                    }
+                                                                              break;                                                                                                                           
+                                                                              default:
+                                                                                    {
+                                                                                          elBoton.disabled = true;
+                                                                                    }                                            
+                                                                              }
+                                                                        }
+                                                                        document.getElementById("ir").onclick = function ir()
+                                                                        {
+                                                                              let choice = palabra.value;
+            
+                                                                              switch (choice) {
+                                                                              case 'responsable':
+                                                                                    {
+                                                                                          Object.assign(document.createElement("a"), {
+                                                                                          target: "_blank",
+                                                                                          href: "https://goo.gl/maps/Gzw4Xv45cgkPK8R1A"
+                                                                                          }).click();
+                                                                                          palabra.value = "";
+                                                                                    }
+                                                                              break;
+                                                                              case 'cordero':
+                                                                                    {
+                                                                                          Object.assign(document.createElement("a"), {
+                                                                                          target: "_blank",
+                                                                                          href: "https://goo.gl/maps/XMKUWpfLnNZyV5z58"
+                                                                                          }).click();
+                                                                                          palabra.value = "";
+                                                                                    }
+                                                                              break;
+                                                                              case 'rosa':
+                                                                                    {
+                                                                                          Object.assign(document.createElement("a"), {
+                                                                                          target: "_blank",
+                                                                                          href: "https://goo.gl/maps/xcdRdkeb784DmVPA9"
+                                                                                          }).click();
+                                                                                          palabra.value = "";
+                                                                                    }
+                                                                              break;
+                                                                              case 'caminando':
+                                                                                    {
+                                                                                          Object.assign(document.createElement("a"), {
+                                                                                          target: "_blank",
+                                                                                          href: "https://goo.gl/maps/upvHj6NAq9YSre4fA"
+                                                                                          }).click();
+                                                                                          palabra.value = "";
+                                                                                    }
+                                                                              break;
+                                                                              case 'felicidad':
+                                                                                    {
+                                                                                          Object.assign(document.createElement("a"), {
+                                                                                          target: "_blank",
+                                                                                          href: "https://goo.gl/maps/j5TpryRPwdkL4VnP6"
+                                                                                          }).click();
+                                                                                          palabra.value = "";
+                                                                                    }
+                                                                              break;                                                                              
+                                                                              default:
+                                                                                    {
+                                                                                          // Object.assign(document.createElement("a"), {
+                                                                                          // target: "_blank",
+                                                                                          // href: "#"
+                                                                                          // }).click();
+                                                                                    }
+                                                                              }
+                                                                        };                                                                                                
+                                                            </script> 
+                                                      </form>
+                                                      <!-- fin de mi prueba --> 
+
+                  </div>
+
+      </div>
+
+
+      <script src="js/object-fit-videos.js"></script>
+      <script src="js/app.js"></script>
+      
+</body>
+</html>

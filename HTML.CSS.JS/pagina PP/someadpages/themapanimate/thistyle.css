@@ -1,0 +1,49 @@
+/* Agregaremos algo de estilo para visualizar el 
+   elemento sobre el que vamos a realizar la prueba */
+
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.808);
+    color:rgba(0, 0, 0, 0);
+}
+.hijo {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0);
+    color:rgba(255, 0, 179, 0)
+}
+.app {
+}
+
+
+  
+  
+  /* Esta es la parte que nos interesa */
+  @media screen and (max-width: 780px) and (orientation: portrait) {
+    * {
+        background-color: rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
+     }
+    .contenedor {
+      display: none;
+    }
+    .app {
+      display: none;
+    }
+    .twin1 {
+      background-color: rgba(0, 0, 0, 0);
+      color: rgb(255, 0, 0);
+      /*font-weight: 100%;
+      font-size: 50px;
+      text-align: center;
+      background-color: rgba(255, 0, 0, 0);
+      color: rgb(0, 0, 0);
+      padding-top: 20px; 
+      background: url("./girar.gif") 0 0; */
+    }
+    .twin1::after {
+      padding-top: 20px;
+      Content: url("./girar.gif");
+    }
+  }

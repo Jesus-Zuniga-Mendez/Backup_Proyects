@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mandilla Producciones</title>
+
+
+	<style>
+		#myBoton{
+			width: 100px;
+			height: 75px;
+			background: rgb(253, 9, 9);
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<!-- <iframe id="lacosa" clasee="app" src="./imagen.jpg">
+		Your browser doesn't support iframes
+	</iframe> -->
+	<h1>Aplicacion Fullscreedfdn</h1>
+	<ul>
+		<li>usando javascript</li>
+	</ul>
+
+	<div id="myBoton">
+		Esto es un boton
+	</div>	
+	<script>
+		function getFullscreenElement(){
+			return document.fullscreenElement
+				|| document.webkitFullscreenElement
+				|| document.mozFullscreenElement
+				|| document.msFullscreenElement;
+		}
+
+		function toggleFullscreen(){
+			if (getFullscreenElement()){
+				document.exitFullscreen();
+			} else {
+				/*esta linea pone la pantalla en fulllscreen*/
+				document.documentElement.requestFullscreen().catch(console.log);
+				/*esta linia pone el boton en fullscreen*/
+				document.getElementById("myBoton").requestFullscreen().catch(console.log);
+			}
+		}
+		document.addEventListener("dblclick", () => {
+			toggleFullscreen();		
+		});
+
+		document.addEventListener("fullscreenchange", () => {
+			console.log("se cambio la pantalla");
+		});
+
+	</script>
+
+	
+</body>
+</html>

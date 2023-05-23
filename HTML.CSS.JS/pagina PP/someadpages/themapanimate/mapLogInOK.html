@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Mandilla Producciones</title>
+
+      <link href="https://fonts.googleapis.com/css?family=Oswald:700|PT+Sans&display=swap" rel="stylesheet">
+
+      <link href="css/normalize.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+<!-- font awesome -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css" />
+
+<!-- animate.css -->
+<link rel="stylesheet" href="../../assets/animate/animate.css" />
+<link rel="stylesheet" href="../../assets/animate/set.css" />
+
+<!-- gallery -->
+<link rel="stylesheet" href="../../assets/gallery/blueimp-gallery.min.css">
+
+<!-- favicon -->
+<link rel="shortcut icon" href="../../images/favicon1.ico" type="image/x-icon">
+<link rel="icon" href="../../images/favicon1.ico" type="image/x-icon">
+
+
+<link rel="stylesheet" href="assets/style.css">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./thistyle.css">
+</head>
+<body>
+      <div class="contenedor" id="otroContenedor">
+      <div id="hero">
+            <div class="texture"></div>
+            <video
+            loop
+            muted
+            autoplay
+            preload="auto"
+            >
+                  <source src="compressed.mp4" type="video/mp4">
+                  Your browser does not support the video tag.  
+            </video>
+            <div class="caption">
+			<form>
+                        <h1><label for="ElTexto" id="ElTexto"><mark>¿Pin?</mark></label> </h1>
+                        <br>
+                        <input type="password" id="clave" 
+                        name="clave" required size="20" placeholder="palabra" 
+                        minlength="1" maxlength="20" value="" style="text-transform:lowercase" 
+                        onkeyup="javascript:this.value=this.value.toLowerCase();" disabled >                                                                    
+                  </form>
+            </div>
+      </div>
+      </div>
+      <div class="contenedor" id="elContenedor">
+		<div class="hijo" id="elhijo">
+			<iframe id="elframe" clasee="app" src="./compressed.mp4" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+				<div></div>
+			</iframe>	
+		</div>
+	</div>
+      <span class="twin1"></span>
+
+<!-- <script src="js/object-fit-videos.js"></script>
+<script src="js/app.js"></script> -->
+<script>
+      const cont = document.getElementById("elContenedor");
+      cont.style.visibility="hidden";
+      const elframecito = document.getElementById("elframe");
+      //elframecito.src="./MapAnimation/MapAnimate.html";
+      let palabra = document.getElementById('clave');
+      palabra.disabled = false;
+      /*previene enter en passwords*/
+      document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input[type=password]').forEach( node => node.addEventListener('keypress', e => {
+        if(e.keyCode == 13) {
+          e.preventDefault();
+        }
+      }))
+      });
+      //hace pantalla completa
+      function getFullscreenElement(){
+            return document.fullscreenElement
+                  || document.webkitFullscreenElement
+                  || document.mozFullscreenElement
+                  || document.msFullscreenElement;
+      }
+      function toggleFullscreen(){
+            if (getFullscreenElement()){
+                  document.exitFullscreen();
+            } else {
+                  document.documentElement.requestFullscreen().catch(console.log);
+            }
+      }
+      /*document.addEventListener("dblclick", () => {
+            toggleFullscreen();		
+      });*/
+      document.addEventListener("fullscreenchange", () => {
+            if (getFullscreenElement()){
+                  console.log("en el if");
+            }else{
+                  //document.exitFullscreen();
+                  console.log("en el else");
+                  cont.style.visibility="hidden";
+                  palabra.disabled = false;
+            }
+      });
+
+      /*hace visible la animacion al colocar el pin*/
+      document.getElementById("clave").oninput =       function activarBoton()
+      {
+            let choice = palabra.value; 
+            switch (choice) {
+            case '1622014':
+                  {
+                        palabra.value = "";
+                        palabra.disabled = false;
+                        toggleFullscreen();
+                        palabra.blur();
+                        elframecito.src="./MapAnimation/MapAnimate.html";
+                        cont.style.visibility="visible";	
+                  }
+            break;                                                                                                                          
+            default:
+                  {
+                        cont.style.visibility="hidden";	
+                  }                                            
+            }
+      }  
+</script>
+</body>
+</html>
