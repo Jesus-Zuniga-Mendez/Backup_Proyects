@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "include"
+		}
+	],
+	"settings": {
+		"C_Cpp.errorSquiggles": "Disabled",
+		"files.associations": {
+			"includes.h": "c"
+		}
+	}
+}

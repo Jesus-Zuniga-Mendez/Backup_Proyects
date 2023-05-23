@@ -1,0 +1,208 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @file main.cpp}
+\PYG{c+cm}{ * @author Jesus Zuñiga Mendez}
+\PYG{c+cm}{ * @brief Archivo pricipal, Proyecto final, Programacion bajo plataformas abiertas}
+\PYG{c+cm}{ * @version 1.0}
+\PYG{c+cm}{ * @date 18 de julio de 2019}
+\PYG{c+cm}{ * @copyright Copyleft (l) 2019}
+\PYG{c+cm}{ */}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./include/Includes.h\PYGZdq{}}
+
+\PYG{c+c1}{//controlan los colores de impresion}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}RED     \PYGZdq{}\PYGZbs{}x1b[31m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}GREEN   \PYGZdq{}\PYGZbs{}x1b[32m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}YELLOW  \PYGZdq{}\PYGZbs{}x1b[33m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}BLUE    \PYGZdq{}\PYGZbs{}x1b[34m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}MAGENTA \PYGZdq{}\PYGZbs{}x1b[35m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}CYAN    \PYGZdq{}\PYGZbs{}x1b[36m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}RESET   \PYGZdq{}\PYGZbs{}x1b[0m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}BOLD\PYGZus{}YELLOW   \PYGZdq{}\PYGZbs{}x1b[01;33m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}BOLD\PYGZus{}GREEN   \PYGZdq{}\PYGZbs{}x1b[01;32m\PYGZdq{}}
+
+\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Función que imprime una bienvenida para el usuario}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{Bienvenida}\PYG{p}{()\PYGZob{}}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}                               }
+    \PYG{n}{\PYGZus{}}      \PYG{n}{\PYGZus{}}          \PYG{n}{\PYGZus{}}  \PYG{n}{\PYGZus{}}  \PYG{n}{\PYGZus{}} \PYG{l+s}{\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ (\PYGZus{})                             }
+  \PYG{o}{|}  \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)}    \PYG{o}{|} \PYG{o}{|}        \PYG{o}{|} \PYG{o}{||} \PYG{o}{||} \PYG{o}{|}\PYG{l+s}{\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}) | \PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{} \PYGZus{}\PYGZus{} \PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{} \PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{} \PYGZus{}\PYGZus{} }
+  \PYG{o}{|}  \PYG{n}{\PYGZus{}}   \PYG{n}{\PYGZus{}\PYGZus{}}\PYG{o}{|} \PYG{o}{|}  \PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}}   \PYG{o}{|} \PYG{o}{||} \PYG{o}{||} \PYG{o}{|}\PYG{l+s}{\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{} \PYGZlt{} | | / \PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{| \PYGZsq{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ / // \PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{|}
+  \PYG{o}{|} \PYG{err}{\PYGZsq{}}\PYG{n}{\PYGZus{}} \PYG{err}{\PYGZbs{}\PYGZbs{}} \PYG{o}{|} \PYG{o}{|} \PYG{o}{/} \PYG{n}{\PYGZus{}}\PYG{err}{`} \PYG{o}{|} \PYG{o}{/} \PYG{n}{\PYGZus{}} \PYG{err}{\PYGZbs{}\PYGZbs{}}  \PYG{o}{|} \PYG{o}{||} \PYG{o}{||} \PYG{o}{|}\PYG{l+s}{\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}) || ||  \PYGZus{}\PYGZus{}/| | | |}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ V /|  \PYGZus{}\PYGZus{}/| | |}
+  \PYG{o}{|} \PYG{o}{||} \PYG{o}{||} \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{o}{||} \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)} \PYG{o}{|} \PYG{o}{|}\PYG{n}{\PYGZus{}}\PYG{o}{||}\PYG{n}{\PYGZus{}}\PYG{o}{||}\PYG{n}{\PYGZus{}}\PYG{o}{|}\PYG{l+s}{\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}/ |\PYGZus{}| }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}| |\PYGZus{}| }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}/  }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}|}
+  \PYG{o}{|} \PYG{o}{|}\PYG{n}{\PYGZus{}}\PYG{o}{||}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{err}{\PYGZbs{}\PYGZbs{}}\PYG{n}{\PYGZus{}\PYGZus{}}\PYG{p}{,}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{err}{\PYGZbs{}\PYGZbs{}}\PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}}\PYG{o}{/}  \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)(}\PYG{n}{\PYGZus{}}\PYG{p}{)(}\PYG{n}{\PYGZus{}}\PYG{p}{)}\PYG{l+s}{\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Función que imprime un numero tres}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n}{ImpTres}\PYG{p}{()\PYGZob{}}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}|\PYGZus{}\PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZus{}\PYGZus{}) |\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |\PYGZus{}\PYGZus{} \PYGZlt{} \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZus{}\PYGZus{}\PYGZus{}) |\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}|\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}/ \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Función que imprime un numero dos}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n}{ImpDos}\PYG{p}{()\PYGZob{}}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZus{}\PYGZus{}\PYGZus{}  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}|\PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}   ) |\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  / / \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} / /\PYGZus{} \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}|\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Función que imprime un numero uno}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n}{ImpUno}\PYG{p}{()\PYGZob{}}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZus{}\PYGZus{}   \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} /\PYGZus{} |  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  | |  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  | |  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  | |  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  |\PYGZus{}|  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Funcion que realia una cuenta regresiva de tres segundos}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n}{Regresiva}\PYG{p}{()\PYGZob{}}
+  \PYG{k+kt}{int} \PYG{n}{s}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}clear\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RED} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+  \PYG{n}{ImpTres}\PYG{p}{();}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sleep 1\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}clear\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}YELLOW} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+  \PYG{n}{ImpDos}\PYG{p}{();}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sleep 1\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}clear\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}GREEN} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+  \PYG{n}{ImpUno}\PYG{p}{();}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sleep 1\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sleep 1\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{s}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Funcion que imprime el menu}
+\PYG{c+cm}{ * @return seleccion Es la opcion escogida por el usuario}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int} \PYG{n}{Menu}\PYG{p}{()\PYGZob{}}
+  \PYG{k+kt}{int} \PYG{n}{respuesta} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+  \PYG{n}{string} \PYG{n}{entrada}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite el numero de la opcion que quiere realizar.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t\PYGZbs{}t}\PYG{l+s}{1. Iniciar.\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t\PYGZbs{}t}\PYG{l+s}{2. Agregar gesto.\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t\PYGZbs{}t}\PYG{l+s}{3. Eliminar Gesto.\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t\PYGZbs{}t}\PYG{l+s}{0. SALIR.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{entrada}\PYG{p}{;}
+  \PYG{n}{respuesta} \PYG{o}{=} \PYG{n}{atoi}\PYG{p}{(}\PYG{n}{entrada}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{respuesta} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{entrada}\PYG{p}{.}\PYG{n}{compare}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+      \PYG{n}{respuesta} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{return} \PYG{n}{respuesta}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Funcion Principal, contiene el codigo que ejecuta las demas acciones}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int} \PYG{n}{main}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,} \PYG{k+kt}{char}\PYG{o}{**} \PYG{n}{argv}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k+kt}{int} \PYG{n}{seleccion} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{k+kt}{int} \PYG{n}{s}\PYG{p}{;}
+  \PYG{n}{string} \PYG{n}{nombreGesto}\PYG{p}{;}
+  \PYG{n}{Bienvenida}\PYG{p}{();}
+  \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+  \PYG{c+c1}{//se repite el ciclo hasta que el usuario salga}
+  \PYG{k}{do}\PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{//seleccion contiene la opcion escogida por el usuario}
+    \PYG{n}{seleccion} \PYG{o}{=} \PYG{n}{Menu}\PYG{p}{();}
+    \PYG{k}{switch} \PYG{p}{(}\PYG{n}{seleccion}\PYG{p}{)}
+    \PYG{p}{\PYGZob{}}
+    \PYG{k}{case} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{:}
+      \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Solo puede digitar numeros\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+      \PYG{k}{break}\PYG{p}{;}
+    \PYG{k}{case} \PYG{l+m+mi}{1}\PYG{o}{:}
+      \PYG{c+c1}{//se ejecuta el binario ComprobarGesto}
+      \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}./sample/ComprobarGesto\PYGZdq{}}\PYG{p}{);}
+      \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}rm \PYGZhy{}r ./resources/temp/*\PYGZdq{}}\PYG{p}{);}
+      \PYG{k}{break}\PYG{p}{;}
+    \PYG{k}{case} \PYG{l+m+mi}{2}\PYG{o}{:}
+      \PYG{c+c1}{//sepide el nombre del gesto}
+      \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+      \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite La accion que el gesto debe realizar\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+      \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{nombreGesto}\PYG{p}{;}
+      \PYG{n}{nombreGesto} \PYG{o}{=} \PYG{n}{QuitarEspacios}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{);}
+      \PYG{n}{Regresiva}\PYG{p}{();}
+      \PYG{c+c1}{//si se logra crear el archivo}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n}{GuardarGesto}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{c+c1}{//se ejecuta el binario GuardarGesto}
+        \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}./sample/GuardarGesto\PYGZdq{}}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{ComprobarGestoCantidad}\PYG{p}{()} \PYG{o}{==} \PYG{l+m+mi}{300}\PYG{p}{)\PYGZob{}}
+          \PYG{c+c1}{//si no se leyo bien el numero de manos}
+          \PYG{k}{if} \PYG{p}{(}\PYG{n}{ComprobarGestoManos}\PYG{p}{()} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RED}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Retiró alguna mano durante la lectura del gesto\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{n}{BorrarGesto}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{);}
+            \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}rm \PYGZhy{}r ./resources/temp/*\PYGZdq{}}\PYG{p}{);}
+          \PYG{p}{\PYGZcb{}}\PYG{c+c1}{//si no se leyo bien el numero de dedos}
+          \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{ComprobarGestoDedos}\PYG{p}{()} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RED}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Algún dedo se movio o se cerro al realizar el gesto\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{n}{BorrarGesto}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{);}
+            \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}rm \PYGZhy{}r ./resources/temp/*\PYGZdq{}}\PYG{p}{);}
+          \PYG{p}{\PYGZcb{}}
+          \PYG{c+c1}{//si todo se leyo bien}
+          \PYG{k}{else}\PYG{p}{\PYGZob{}}
+            \PYG{n}{CalcularGesto}\PYG{p}{();}
+            \PYG{n}{MoverArchivos}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{);}
+            \PYG{n}{ActualizarRegistro}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}RegistroGestos\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}GREEN}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Gesto Guardado\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+          \PYG{p}{\PYGZcb{}}
+          \PYG{n}{nombreGesto} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+          \PYG{n}{BorrarGesto}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{);}
+          \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}rm \PYGZhy{}r ./resources/temp/*\PYGZdq{}}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+      \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+        \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RED}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Error al crear el gesto, La acción ya existe\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{break}\PYG{p}{;}
+    \PYG{k}{case} \PYG{l+m+mi}{3}\PYG{o}{:}
+      \PYG{c+c1}{//si se desea borrar un gesto primero si imprime la lista de gestos guardados}
+      \PYG{n}{ImprimirRegistro}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}RegistroGestos\PYGZdq{}}\PYG{p}{);}
+      \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite el gesto quiere eliminar\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+      \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{nombreGesto}\PYG{p}{;}
+      \PYG{n}{nombreGesto} \PYG{o}{=} \PYG{n}{QuitarEspacios}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{);}
+      \PYG{c+c1}{//se elimina de la lista y el directorio}
+      \PYG{n}{EliminarGesto}\PYG{p}{(}\PYG{n}{nombreGesto}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}RegistroGestos\PYGZdq{}}\PYG{p}{);}
+      \PYG{n}{EliminarGesto}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}RegistroGestos\PYGZdq{}}\PYG{p}{);}
+      \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}GREEN}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+      \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Gesto Eliminado\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+      \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+      \PYG{n}{nombreGesto} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+      \PYG{k}{break}\PYG{p}{;}
+    \PYG{k}{default}\PYG{o}{:}
+      \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}cero}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+      \PYG{k}{break}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}\PYG{k}{while} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{s}\PYG{p}{;}
+  \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,402 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @file main.c}
+\PYG{c+cm}{ * @author Jesus Zuñiga Mendez}
+\PYG{c+cm}{ * @author Dennis Chavarria Soto}
+\PYG{c+cm}{ * @brief Archivo pricipal, Simulacion simplificada del juego de clue}
+\PYG{c+cm}{ * @version 1.0}
+\PYG{c+cm}{ * @date 08 de setiembre de 2019}
+\PYG{c+cm}{ * @copyright Copyleft (l) 2019}
+\PYG{c+cm}{ */}
+
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./include/includes.h\PYGZdq{}}
+
+\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+
+\PYG{c+cm}{/*@brief random: Método que recibe dos números y establece un intervalo a partir de ellos, para así determinar un número al azar.}
+\PYG{c+cm}{ *@param menor: Límite izquierdo del intervalo lo incluye.}
+\PYG{c+cm}{ *@param mayor: Límite derecho del intervalo lo incluye.}
+\PYG{c+cm}{ *@return devuelve un número aleatorio}
+\PYG{c+cm}{ */}
+
+\PYG{k+kt}{int} \PYG{n+nf}{numRandom}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{menor}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{mayor}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{mayor}\PYG{o}{++}\PYG{p}{;}
+    \PYG{c+c1}{//codigo tomado de https://en.cppreference.com/w/cpp/numeric/random/uniform\PYGZus{}real\PYGZus{}distribution}
+    \PYG{n}{random\PYGZus{}device} \PYG{n}{rd}\PYG{p}{;}  \PYG{c+c1}{//Will be used to obtain a seed for the random number engine}
+    \PYG{n}{mt19937} \PYG{n}{gen}\PYG{p}{(}\PYG{n}{rd}\PYG{p}{());} \PYG{c+c1}{//Standard mersenne\PYGZus{}twister\PYGZus{}engine seeded with rd()}
+    \PYG{n}{uniform\PYGZus{}real\PYGZus{}distribution}\PYG{o}{\PYGZlt{}\PYGZgt{}} \PYG{n}{dis}\PYG{p}{(}\PYG{n}{menor}\PYG{p}{,} \PYG{n}{mayor}\PYG{p}{);}
+    \PYG{k}{return}\PYG{p}{(}\PYG{n}{dis}\PYG{p}{(}\PYG{n}{gen}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/*@brief AutoName: Método que recibe la cantidad de jugadores;solo solicita y asigna la cantidad de nombres de jugador necesaria.}
+\PYG{c+cm}{ *@param numJugadores: Cantidad de jugadores total.}
+\PYG{c+cm}{ *@param *players: Arreglo de jugadores pasado por referencia, para asignarles nombre.}
+\PYG{c+cm}{ */}
+
+\PYG{k+kt}{void} \PYG{n+nf}{crearJugadores} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{numJugadores}\PYG{p}{,} \PYG{n}{Jugador} \PYG{o}{*} \PYG{n}{jugadores}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{string} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{l+s}{\PYGZdq{}Ingrese el nombre del jugador \PYGZdq{}}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{p}{(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{cin}\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{n}{nombre}\PYG{p}{;}
+        \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{Jugador} \PYG{p}{(}\PYG{n}{nombre}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/*@brief Mr\PYGZus{}Vladimir: Este método, llamado así en honor a un repartidor de cartas, se encarga de eso mismo, pero las distribuye a cada jugador del tablero, de forma equitativa.}
+\PYG{c+cm}{ *@param num\PYGZus{}players: Cantidad de jugadores total.}
+\PYG{c+cm}{ *@param *players: Arreglo de jugadores pasado por referencia para asignarles las cartas.}
+\PYG{c+cm}{ *@param *received\PYGZus{}array: Arreglo con elementos que van a ser asignados a las barajas de forma automática .}
+\PYG{c+cm}{ *@param array\PYGZus{}lenght: Tamaño del arreglo; funciona para determinar qué tantas cartas debe asignar o recorrer.}
+\PYG{c+cm}{ *@param position\PYGZus{}in\PYGZus{}deck: Determina en cuál posición de la baraja asignará una carta.}
+\PYG{c+cm}{ */}
+
+\PYG{k+kt}{void} \PYG{n+nf}{Mr\PYGZus{}Vladimir}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{num\PYGZus{}players}\PYG{p}{,} \PYG{n}{Jugador} \PYG{o}{*} \PYG{n}{players}\PYG{p}{,} \PYG{n}{string} \PYG{o}{*} \PYG{n}{received\PYGZus{}array}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{array\PYGZus{}lenght}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{position\PYGZus{}in\PYGZus{}deck}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{work\PYGZus{}lng}\PYG{o}{=}\PYG{n}{array\PYGZus{}lenght}\PYG{p}{;} \PYG{c+c1}{//Esta variable indica hasta donde, para el arreglo source, se deben agregar o tomar cartas.}
+    \PYG{k+kt}{int} \PYG{n}{work\PYGZus{}lng2}\PYG{o}{=}\PYG{n}{array\PYGZus{}lenght}\PYG{p}{;} \PYG{c+c1}{//Esta variable será constante a lo largo del método, sirve para comparar la cantidad de elementos disponibles con los 0 que indican que no lo son}
+    \PYG{k+kt}{int} \PYG{n}{repeater}\PYG{p}{;} \PYG{c+c1}{//Repetidor es la variable que permite al repartidor de cartas no saltarse la posicion igualada a 0, de la forma mas efectiva posible}
+    \PYG{n}{string} \PYG{n}{source}\PYG{p}{[}\PYG{n}{work\PYGZus{}lng}\PYG{p}{];} \PYG{c+c1}{//Source es el arreglo que contiene todas las cartas disponibles}
+    \PYG{n}{string} \PYG{n}{general\PYGZus{}array}\PYG{p}{[}\PYG{n}{work\PYGZus{}lng}\PYG{p}{];}\PYG{c+cm}{/*General array es muy similar a source, solo que este almacena unos valores}
+\PYG{c+cm}{                                    de 0 temporales, que usa source para borrar las cartas que ya no están disponibles*/}
+
+
+    \PYG{k+kt}{int} \PYG{n}{card}\PYG{p}{;} \PYG{c+c1}{//carta en uso}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{work\PYGZus{}lng}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{source}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n}{received\PYGZus{}array}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{n}{general\PYGZus{}array}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n}{received\PYGZus{}array}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{T}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{T}\PYG{o}{\PYGZlt{}}\PYG{n}{num\PYGZus{}players}\PYG{p}{;} \PYG{n}{T}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{repeater}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{n}{card}\PYG{o}{=}\PYG{n}{numRandom}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{work\PYGZus{}lng}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{);}
+        \PYG{n}{general\PYGZus{}array}\PYG{p}{[}\PYG{n}{card}\PYG{p}{]}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{;}
+        \PYG{n}{players}\PYG{p}{[}\PYG{n}{T}\PYG{p}{].}\PYG{n}{barajaJugador}\PYG{p}{[}\PYG{n}{position\PYGZus{}in\PYGZus{}deck}\PYG{p}{]}\PYG{o}{=}\PYG{n}{source}\PYG{p}{[}\PYG{n}{card}\PYG{p}{];} \PYG{c+c1}{//T de turno, P de place}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{work\PYGZus{}lng2}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{general\PYGZus{}array}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{!=}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{source}\PYG{p}{[}\PYG{n}{repeater}\PYG{p}{]}\PYG{o}{=}\PYG{n}{general\PYGZus{}array}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                \PYG{n}{repeater}\PYG{o}{++}\PYG{p}{;} \PYG{c+c1}{//Fundamental, si entro aquí, la posición se suma, sino, se almacenará un cero o se dejará la carta que source tiene.}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{n}{work\PYGZus{}lng}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;} \PYG{c+c1}{//Lo de abajo es imprescindible, sino se quedan las cartas viejas y el random puede retormarlas y crear incongruencias}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{work\PYGZus{}lng}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{general\PYGZus{}array}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n}{source}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];} \PYG{c+c1}{//Actualiza el general con el source para seguir asignando 0 y cartas.}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n+nf}{imprimirArreglo} \PYG{p}{(}\PYG{n}{string}\PYG{o}{*} \PYG{n}{arreglo}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{tamanio}\PYG{p}{)\PYGZob{}}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}} \PYG{n}{tamanio}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{arreglo}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZdq{}}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Funcion que distribuye las cartas entre el total de jugadores}
+\PYG{c+cm}{ * @param habitaciones es el arreglo que contiene las habitaciones}
+\PYG{c+cm}{ * @param numhaHitaciones tamaño del arreglo habitaciones}
+\PYG{c+cm}{ * @param armas es el arreglo que contiene las armas}
+\PYG{c+cm}{ * @param numArmas es el tamaño del arreglo armas}
+\PYG{c+cm}{ * @param nombreJugadores es el arreglo que contiene los nombres de los jugadores}
+\PYG{c+cm}{ * @param jugadores es el arreglo que contiene los objetos de tipo jugador}
+\PYG{c+cm}{ * @param numJugadores es el tamaño del arreglo jugadores}
+\PYG{c+cm}{ * @param totalCartas es el total de cartas que se deben repartir}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{repartirCartas}\PYG{p}{(}\PYG{n}{string} \PYG{o}{*} \PYG{n}{habitaciones}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{numHabitaciones}\PYG{p}{,} 
+                    \PYG{n}{string} \PYG{o}{*} \PYG{n}{armas}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{numArmas}\PYG{p}{,} 
+                    \PYG{n}{string} \PYG{o}{*} \PYG{n}{nombresJugadores}\PYG{p}{,} \PYG{n}{Jugador}\PYG{o}{*} \PYG{n}{jugadores}\PYG{p}{,} 
+                    \PYG{k+kt}{int} \PYG{n}{numJugadores}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{totalCartas}\PYG{p}{)\PYGZob{}}
+
+    \PYG{k+kt}{int} \PYG{n}{numAleatorio} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{c+c1}{//primero creamos un arreglo que contendra las cartas ardenadas de forma aleatoria y lo}
+    \PYG{c+c1}{//llenamos con caracteres vacios ademas de hacer otro arreglo de enteros que tendra un }
+    \PYG{c+c1}{//orden de almacenado de las cartas }
+    \PYG{n}{string} \PYG{n}{baraja}\PYG{p}{[}\PYG{n}{totalCartas}\PYG{p}{];}
+    \PYG{k+kt}{int} \PYG{n}{ordenAcomodar}\PYG{p}{[}\PYG{n}{totalCartas}\PYG{p}{];}
+    \PYG{k+kt}{int} \PYG{n}{existe} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{c+c1}{//int que sirve como marcador de un numero que ya existe}
+    \PYG{k+kt}{int} \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{c+c1}{//llenamos los arreglos con informacion para evitar errores}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{totalCartas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{baraja}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{totalCartas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{ordenAcomodar}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{//ciclo que llena el arreglo con numeros aleatorios}
+    \PYG{k}{while} \PYG{p}{(}\PYG{n}{contador} \PYG{o}{\PYGZlt{}} \PYG{n}{totalCartas}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{numAleatorio} \PYG{o}{=} \PYG{n}{numRandom}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,(}\PYG{n}{totalCartas}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{));}
+        \PYG{c+c1}{//recorremos el arreglo de orden para ver si el numero existe}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}} \PYG{n}{totalCartas}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{ordenAcomodar}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{n}{numAleatorio}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{existe} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{c+c1}{//si el numero existe no lo almacenamos}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{existe} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{ordenAcomodar}\PYG{p}{[}\PYG{n}{contador}\PYG{p}{]} \PYG{o}{=} \PYG{n}{numAleatorio}\PYG{p}{;}
+            \PYG{n}{contador} \PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+            \PYG{n}{existe} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+c1}{//distriuimos las cartas segun el orden que se calculo}
+    \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{numHabitaciones} \PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{habitaciones}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{!=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{baraja}\PYG{p}{[}\PYG{n}{ordenAcomodar}\PYG{p}{[}\PYG{n}{contador}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{habitaciones}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{numArmas} \PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{armas}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{!=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{baraja}\PYG{p}{[}\PYG{n}{ordenAcomodar}\PYG{p}{[}\PYG{n}{contador}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{armas}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{numJugadores} \PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{nombresJugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{!=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)\PYGZob{}}    
+            \PYG{n}{baraja}\PYG{p}{[}\PYG{n}{ordenAcomodar}\PYG{p}{[}\PYG{n}{contador}\PYG{p}{]]} \PYG{o}{=} \PYG{n}{nombresJugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k+kt}{int} \PYG{n}{cartasPorJugador} \PYG{o}{=} \PYG{n}{totalCartas} \PYG{o}{/} \PYG{n}{numJugadores}\PYG{p}{;}
+    \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{c+c1}{//distrinuimos las cartas a cada jugador}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{cartasPorJugador}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{barajaJugador}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{baraja}\PYG{p}{[}\PYG{n}{contador}\PYG{p}{];}
+            \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{//dependiendo de la cantidad de jugadores las cartas se distribuyen de forma}
+    \PYG{c+c1}{//desigual entonces con este ciclo repartimos el resto de las cartas}
+    \PYG{k+kt}{int} \PYG{n}{juga} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{while} \PYG{p}{(}\PYG{n}{contador} \PYG{o}{\PYGZlt{}} \PYG{n}{totalCartas}\PYG{p}{)}
+    \PYG{p}{\PYGZob{}}
+        \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{juga}\PYG{p}{].}\PYG{n}{barajaJugador}\PYG{p}{[}\PYG{n}{cartasPorJugador}\PYG{p}{]} \PYG{o}{=} \PYG{n}{baraja}\PYG{p}{[}\PYG{n}{contador}\PYG{p}{];}   
+        \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+        \PYG{n}{juga}\PYG{o}{++}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Metodo que despliega las opciones para sospechar y ejecuta la accion}
+\PYG{c+cm}{ * @param jugadores que es el arreglo de objetos jugador}
+\PYG{c+cm}{ * @param cartas que es el objeto cartas}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{sospechar}\PYG{p}{(}\PYG{n}{Jugador}\PYG{o}{*} \PYG{n}{jugadores}\PYG{p}{,} \PYG{n}{Cartas} \PYG{n}{cartas}\PYG{p}{)\PYGZob{}}
+    \PYG{c+c1}{//primero imprimimos la lista de habitaciones}
+    \PYG{n}{string} \PYG{n}{habitacionSospechada} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{armaSospechada} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{jugadorSospechado} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{seleccion} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite el numero de la habitacion\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numHabitaciones}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}:  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{seleccion}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{seleccion} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{\PYGZlt{}=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numHabitaciones}\PYG{p}{))\PYGZob{}}
+        \PYG{n}{habitacionSospechada} \PYG{o}{=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{n}{seleccion}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite el nnumero del Arma\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numArmas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}:  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copiaarmas}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{seleccion}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{seleccion} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{\PYGZlt{}=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numArmas}\PYG{p}{))\PYGZob{}}
+        \PYG{n}{armaSospechada} \PYG{o}{=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copiaarmas}\PYG{p}{[}\PYG{n}{seleccion}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite el nnumero del Jugador\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}:  \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copianombresJugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{seleccion}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{seleccion} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{\PYGZlt{}=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numJugadores}\PYG{p}{))\PYGZob{}}
+        \PYG{n}{jugadorSospechado} \PYG{o}{=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copianombresJugadores}\PYG{p}{[}\PYG{n}{seleccion}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{//Muestra una pista de los demas jugadores hasta que se encuentre con}
+    \PYG{n}{string} \PYG{n}{encontrada} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}la habitacion sispechada es \PYGZdq{} \PYGZlt{}\PYGZlt{} habitacionSospechada \PYGZlt{}\PYGZlt{} endl;}
+    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}la arma sispechada es \PYGZdq{} \PYGZlt{}\PYGZlt{} armaSospechada \PYGZlt{}\PYGZlt{} endl;}
+    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}la jugador sispechada es \PYGZdq{} \PYGZlt{}\PYGZlt{} jugadorSospechado \PYGZlt{}\PYGZlt{} endl;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{9} \PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{barajaJugador}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{o}{==} \PYG{n}{armaSospechada}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{encontrada} \PYG{o}{=} \PYG{n}{armaSospechada}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{barajaJugador}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{o}{==} \PYG{n}{habitacionSospechada}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{encontrada} \PYG{o}{=} \PYG{n}{habitacionSospechada}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{barajaJugador}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{o}{==} \PYG{n}{jugadorSospechado}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{encontrada} \PYG{o}{=} \PYG{n}{jugadorSospechado}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{encontrada} \PYG{o}{!=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}El jugador \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} tiene la pista \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{encontrada} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{n}{i} \PYG{o}{=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numJugadores}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se encontraron coincidencias en el jugador \PYGZdq{}}\PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Metodo que despliega las opciones para acusar y ejecuta la accion}
+\PYG{c+cm}{ * @param jugadores que es el arreglo de objetos jugador}
+\PYG{c+cm}{ * @param cartas que es el objeto cartas}
+\PYG{c+cm}{ * @return devuelve 3 si acerto en la sospecha}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int} \PYG{n+nf}{acusar}\PYG{p}{(}\PYG{n}{Jugador}\PYG{o}{*} \PYG{n}{jugadores}\PYG{p}{,} \PYG{n}{Cartas} \PYG{n}{cartas}\PYG{p}{)\PYGZob{}}
+    \PYG{c+c1}{//primero imprimimos la lista de habitaciones}
+    \PYG{n}{string} \PYG{n}{habitacionSospechada} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{armaSospechada} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{jugadorSospechado} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{acierto} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{seleccion} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite el numero de la habitacion\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numHabitaciones}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}:  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{seleccion}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{seleccion} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{\PYGZlt{}=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numHabitaciones}\PYG{p}{))\PYGZob{}}
+        \PYG{n}{habitacionSospechada} \PYG{o}{=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{n}{seleccion}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite el nnumero del Arma\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numArmas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}:  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copiaarmas}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{seleccion}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{seleccion} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{\PYGZlt{}=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numArmas}\PYG{p}{))\PYGZob{}}
+        \PYG{n}{armaSospechada} \PYG{o}{=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copiaarmas}\PYG{p}{[}\PYG{n}{seleccion}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite el nnumero del Jugador\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}:  \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copianombresJugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{seleccion}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{seleccion} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{\PYGZlt{}=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numJugadores}\PYG{p}{))\PYGZob{}}
+        \PYG{n}{jugadorSospechado} \PYG{o}{=} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{copianombresJugadores}\PYG{p}{[}\PYG{n}{seleccion}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{];}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{//Muestra una pista de los demas jugadores hasta que se encuentre con}
+    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}la habitacion sispechada es \PYGZdq{} \PYGZlt{}\PYGZlt{} habitacionSospechada \PYGZlt{}\PYGZlt{} endl;}
+    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}la arma sispechada es \PYGZdq{} \PYGZlt{}\PYGZlt{} armaSospechada \PYGZlt{}\PYGZlt{} endl;}
+    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}la jugador sispechada es \PYGZdq{} \PYGZlt{}\PYGZlt{} jugadorSospechado \PYGZlt{}\PYGZlt{} endl;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{habitacionSospechada} \PYG{o}{==} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{combinacionGanadora}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])\PYGZob{}}
+        \PYG{n}{acierto}\PYG{o}{++}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{armaSospechada} \PYG{o}{==} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{combinacionGanadora}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])\PYGZob{}}
+        \PYG{n}{acierto}\PYG{o}{++}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{jugadorSospechado} \PYG{o}{==} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{combinacionGanadora}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])\PYGZob{}}
+        \PYG{n}{acierto}\PYG{o}{++}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{acierto}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Funcion main del codigo}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int} \PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,} \PYG{k+kt}{char}\PYG{o}{**} \PYG{n}{argv}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{Tablero} \PYG{n}{juego} \PYG{o}{=} \PYG{n}{Tablero}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}clue.txt\PYGZdq{}}\PYG{p}{);}
+    \PYG{k+kt}{int} \PYG{n}{numJugadores}\PYG{p}{;}
+    \PYG{n}{cout}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{l+s}{\PYGZdq{}Ingrese la cantidad de jugadores que van a jugar\PYGZdq{}}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{cin}\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{n}{numJugadores}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{numJugadores} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{numJugadores} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{6}\PYG{p}{))\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Este Juego debe ser jugado por un minimo de 2 jugadores\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}y un maximo de 6 jugadores\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+        \PYG{n}{Jugador} \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{numJugadores}\PYG{p}{];}
+        \PYG{n}{crearJugadores}\PYG{p}{(}\PYG{n}{numJugadores}\PYG{p}{,} \PYG{n}{jugadores}\PYG{p}{);}
+        \PYG{n}{Cartas} \PYG{n}{cartas} \PYG{o}{=} \PYG{n}{Cartas}\PYG{p}{(}\PYG{n}{numJugadores}\PYG{p}{,}\PYG{n}{jugadores}\PYG{p}{);}
+        \PYG{n}{repartirCartas}\PYG{p}{(}\PYG{n}{cartas}\PYG{p}{.}\PYG{n}{habitaciones}\PYG{p}{,} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numHabitaciones}\PYG{p}{,} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{armas} \PYG{p}{,} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numArmas}\PYG{p}{,} \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{nombresJugadores}\PYG{p}{,} 
+        \PYG{n}{jugadores}\PYG{p}{,} \PYG{n}{numJugadores}\PYG{p}{,} \PYG{p}{(}\PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numHabitaciones}\PYG{o}{+}\PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numArmas}\PYG{o}{+}\PYG{n}{cartas}\PYG{p}{.}\PYG{n}{numJugadores}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{));}
+
+        \PYG{c+c1}{// empezamos con las rondas del juego}
+        \PYG{k+kt}{int} \PYG{n}{ganar} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{jugador} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{dado} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{movimientos} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{n}{string} \PYG{n}{lectura}\PYG{p}{;}
+        \PYG{k+kt}{char} \PYG{n}{direccion}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{];}
+        \PYG{k+kt}{int} \PYG{n}{rspMovimiento} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{seleccion}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{viveomuere} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{c+c1}{//se repite hasta que haya un ganador}
+        \PYG{k}{while}\PYG{p}{(}\PYG{n}{ganar} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{k+kt}{char} \PYG{n}{fichas}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}2\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}3\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}4\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}5\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}6\PYGZsq{}}\PYG{p}{\PYGZcb{};}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{jugador} \PYG{o}{\PYGZgt{}} \PYG{n}{numJugadores}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{jugador} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{jugador}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{estaVivo} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{juego}\PYG{p}{.}\PYG{n}{imprimirTablero}\PYG{p}{(}\PYG{n}{fichas}\PYG{p}{[}\PYG{n}{jugador}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]);}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Jugador \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{jugador} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} es su turno, precione ALGUNA teclas para girar los dados\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{lectura}\PYG{p}{;}
+                \PYG{n}{dado} \PYG{o}{=} \PYG{n}{numRandom} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{12}\PYG{p}{);}
+                \PYG{n}{movimientos} \PYG{o}{=} \PYG{n}{dado}\PYG{p}{;}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Sacó un \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{dado} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{k}{while} \PYG{p}{(}\PYG{n}{movimientos} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Le quedan \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{movimientos} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} movimientos\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite un movmiento (w = ↑, a = ← ,s = ↓ ,d = ➝)\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+\PYG{c+c1}{//                    cin \PYGZgt{}\PYGZgt{} direccion;}
+                    \PYG{n}{rspMovimiento} \PYG{o}{=} \PYG{n}{juego}\PYG{p}{.}\PYG{n}{moverFicha}\PYG{p}{(}\PYG{n}{fichas}\PYG{p}{[}\PYG{n}{jugador}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{n}{direccion}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]);}
+                    \PYG{n}{juego}\PYG{p}{.}\PYG{n}{imprimirTablero}\PYG{p}{(}\PYG{n}{fichas}\PYG{p}{[}\PYG{n}{jugador}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]);}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rspMovimiento} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+                        \PYG{n}{movimientos}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{rspMovimiento} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}***************************************************\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}***************************************************\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}***************************************************\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}***************************************************\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Pueda sospechar(1) o acusar(2)\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{seleccion}\PYG{p}{;}
+                        \PYG{k}{if} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{};}
+                            \PYG{n}{sospechar}\PYG{p}{(}\PYG{n}{jugadores}\PYG{p}{,} \PYG{n}{cartas}\PYG{p}{);}
+                            \PYG{n}{movimientos} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} 
+                        \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{)\PYGZob{}}
+                            \PYG{n}{cartas}\PYG{p}{.}\PYG{n}{imprimirArreglos}\PYG{p}{();}
+                            \PYG{n}{viveomuere} \PYG{o}{=} \PYG{n}{acusar}\PYG{p}{(}\PYG{n}{jugadores}\PYG{p}{,} \PYG{n}{cartas}\PYG{p}{);}
+                            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}vive\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{viveomuere} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{viveomuere} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{)\PYGZob{}}
+                                \PYG{n}{movimientos} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                                \PYG{n}{ganar} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                                \PYG{c+c1}{//matamos el resto de jugadores}
+                                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{o}{!=} \PYG{p}{(}\PYG{n}{jugador}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{))\PYGZob{}}
+                                        \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{estaVivo}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+                                    \PYG{p}{\PYGZcb{}}
+                                \PYG{p}{\PYGZcb{}}
+                            \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Jugador \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{jugador} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} ha muerto\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                                \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{jugador}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{estaVivo} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                                \PYG{n}{movimientos} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                            \PYG{p}{\PYGZcb{}}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{c+c1}{//recorremos el arreglo de jugadores para ver cuantos estan vivos si solo queda 1}
+            \PYG{c+c1}{//entonces se dicta el ganador}
+            \PYG{k+kt}{int} \PYG{n}{ganador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{ganador} \PYG{o}{=} \PYG{n}{ganador} \PYG{o}{+} \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{estaVivo}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{c+c1}{//quiere decir que solo hay uno vimo}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{ganador} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{estaVivo} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Felicidades \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{nombre} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} es el ganador\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}   
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{jugador}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

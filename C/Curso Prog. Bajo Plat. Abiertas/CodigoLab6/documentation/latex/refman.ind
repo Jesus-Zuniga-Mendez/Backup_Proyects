@@ -1,0 +1,80 @@
+\begin{theindex}
+
+  \item {\+\_\+lista}, \hyperpage{5}
+  \item {\+\_\+posicion}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Agregar\+Elemento}
+    \subitem {lista.\+c}, \hyperpage{8}
+  \item {Anterior}
+    \subitem {posicion.\+c}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Buscar\+Dato}
+    \subitem {lista.\+c}, \hyperpage{8}
+  \item {BuscarK}
+    \subitem {lista.\+c}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Crear\+Lista}
+    \subitem {lista.\+c}, \hyperpage{10}
+  \item {Crear\+Posision}
+    \subitem {posicion.\+c}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Eliminar\+Elemento}
+    \subitem {lista.\+c}, \hyperpage{10}
+  \item {Eliminar\+Lista}
+    \subitem {lista.\+c}, \hyperpage{10}
+  \item {Eliminar\+Posicion}
+    \subitem {posicion.\+c}, \hyperpage{13}
+  \item {Estirar}
+    \subitem {lista.\+c}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Imprimir\+Lista}
+    \subitem {lista.\+c}, \hyperpage{11}
+
+  \indexspace
+
+  \item {lista.\+c}
+    \subitem {Agregar\+Elemento}, \hyperpage{8}
+    \subitem {Buscar\+Dato}, \hyperpage{8}
+    \subitem {BuscarK}, \hyperpage{8}
+    \subitem {Crear\+Lista}, \hyperpage{10}
+    \subitem {Eliminar\+Elemento}, \hyperpage{10}
+    \subitem {Eliminar\+Lista}, \hyperpage{10}
+    \subitem {Estirar}, \hyperpage{10}
+    \subitem {Imprimir\+Lista}, \hyperpage{11}
+    \subitem {Vaciar}, \hyperpage{11}
+
+  \indexspace
+
+  \item {main.\+c}, \hyperpage{7}
+
+  \indexspace
+
+  \item {posicion.\+c}
+    \subitem {Anterior}, \hyperpage{12}
+    \subitem {Crear\+Posision}, \hyperpage{12}
+    \subitem {Eliminar\+Posicion}, \hyperpage{13}
+    \subitem {Siguiente}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Siguiente}
+    \subitem {posicion.\+c}, \hyperpage{13}
+  \item {sourcecode/lista.\+c}, \hyperpage{7}
+  \item {sourcecode/posicion.\+c}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Vaciar}
+    \subitem {lista.\+c}, \hyperpage{11}
+
+\end{theindex}

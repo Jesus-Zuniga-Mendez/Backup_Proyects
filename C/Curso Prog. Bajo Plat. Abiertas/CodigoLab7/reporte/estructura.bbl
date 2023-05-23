@@ -1,0 +1,74 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+González%
+}{%
+González%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+SergioGCron}
+\APACinsertmetastar {%
+SergioGCron}%
+\begin{APACrefauthors}%
+González, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+\APACrefbtitle {Manual básico de {C}ron.} {Manual básico de {C}ron.}
+\newblock
+\APAChowpublished {Recuperado de:
+  {https://www.linuxtotal.com.mx/?cont=info\_admon\_006}}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Khamitov%
+}{%
+Khamitov%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+rsyncCopiar}
+\APACinsertmetastar {%
+rsyncCopiar}%
+\begin{APACrefauthors}%
+Khamitov, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+\APACrefbtitle {Cómo copiar archivos con Rsync sobre SSH.} {Cómo copiar
+  archivos con rsync sobre ssh.}
+\newblock
+\APAChowpublished {Recuperado de:
+  {https://www.digitalocean.com/community/tutorials/how-to-copy-files-with-rsync-over-ssh}}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+usemoslinux%
+}{%
+usemoslinux%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+usemoslinuxClaves}
+\APACinsertmetastar {%
+usemoslinuxClaves}%
+\begin{APACrefauthors}%
+usemoslinux.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+\APACrefbtitle {Configura conexiones SSH sin password en solo 3 pasos.}
+  {Configura conexiones ssh sin password en solo 3 pasos.}
+\newblock
+\APAChowpublished {Recuperado de:
+  {https://blog.desdelinux.net/ssh-sin-password-solo-3-pasos/}}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

@@ -1,0 +1,6 @@
+`include "primitives.v"
+`include "except.v"
+`include "pre_norm.v"
+`include "pre_norm_fmul.v"
+`include "post_norm.v"
+`include "fpu.v"

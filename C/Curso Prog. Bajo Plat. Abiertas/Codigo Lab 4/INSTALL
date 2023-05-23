@@ -1,0 +1,12 @@
+Jesus Zuñigam Méndez
+jesus.zunigamendez@ucr.ac.cr
+
+Para compilar y correr el programa:
+make
+
+correr el pdf:
+make run
+
+Borrar archivos innecesarios:
+make clean
+

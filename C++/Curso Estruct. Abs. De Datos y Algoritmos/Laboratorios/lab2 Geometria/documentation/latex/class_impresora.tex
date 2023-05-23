@@ -1,0 +1,120 @@
+\hypertarget{class_impresora}{}\section{Impresora$<$ T $>$ Class Template Reference}
+\label{class_impresora}\index{Impresora$<$ T $>$@{Impresora$<$ T $>$}}
+
+
+clase que imprmime objetos  
+
+
+
+
+{\ttfamily \#include $<$Impresora.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_impresora_a68f5ddc334afffb8715f6a6a06ee917b}\label{class_impresora_a68f5ddc334afffb8715f6a6a06ee917b}} 
+\hyperlink{class_impresora_a68f5ddc334afffb8715f6a6a06ee917b}{Impresora} ()
+\begin{DoxyCompactList}\small\item\em constructor por defecto \end{DoxyCompactList}\item 
+\hyperlink{class_impresora_a82093c181cb0601fc82dbbeff7247763}{Impresora} (T fig, string impresion)
+\begin{DoxyCompactList}\small\item\em constructor creado mediante template \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_impresora_a6e8f0ae96313109222fe715137f68b3e}\label{class_impresora_a6e8f0ae96313109222fe715137f68b3e}} 
+\hyperlink{class_impresora_a6e8f0ae96313109222fe715137f68b3e}{$\sim$\+Impresora} ()
+\begin{DoxyCompactList}\small\item\em destructor por defecto de la clase \end{DoxyCompactList}\item 
+string \hyperlink{class_impresora_abab8709ec339f549ef44dae439b33f12}{Obtener\+Color} (string nom\+Color)
+\begin{DoxyCompactList}\small\item\em clase que permite imprimir en el color correcto \end{DoxyCompactList}\item 
+void \hyperlink{class_impresora_a7427f11d194603c5ae2b7f4837c49f14}{imprimir\+Pantalla} (const T \&objeto)
+\begin{DoxyCompactList}\small\item\em metodo que permite imprmir la pantalla \end{DoxyCompactList}\item 
+void \hyperlink{class_impresora_ac63e5482787086f73c351732f4731239}{imprimir\+Archivo} (const T \&objeto, string ruta\+Archivo)
+\begin{DoxyCompactList}\small\item\em metodo que permite imprmir a un archivo \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_impresora_a65df8a4e9e23fe2ff39c0b786e833b34}\label{class_impresora_a65df8a4e9e23fe2ff39c0b786e833b34}} 
+string {\bfseries ruta}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Impresora$<$ T $>$}
+
+clase que imprmime objetos 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_impresora_a82093c181cb0601fc82dbbeff7247763}\label{class_impresora_a82093c181cb0601fc82dbbeff7247763}} 
+\index{Impresora@{Impresora}!Impresora@{Impresora}}
+\index{Impresora@{Impresora}!Impresora@{Impresora}}
+\subsubsection{\texorpdfstring{Impresora()}{Impresora()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{class_impresora}{Impresora}$<$ T $>$\+::\hyperlink{class_impresora}{Impresora} (\begin{DoxyParamCaption}\item[{T}]{fig,  }\item[{string}]{impresion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor creado mediante template 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fig} & es el objeto recibido por parametro \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_impresora_ac63e5482787086f73c351732f4731239}\label{class_impresora_ac63e5482787086f73c351732f4731239}} 
+\index{Impresora@{Impresora}!imprimir\+Archivo@{imprimir\+Archivo}}
+\index{imprimir\+Archivo@{imprimir\+Archivo}!Impresora@{Impresora}}
+\subsubsection{\texorpdfstring{imprimir\+Archivo()}{imprimirArchivo()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{class_impresora}{Impresora}$<$ T $>$\+::imprimir\+Archivo (\begin{DoxyParamCaption}\item[{const T \&}]{objeto,  }\item[{string}]{ruta\+Archivo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+metodo que permite imprmir a un archivo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objeto} & es el objeto que debe imprimir \\
+\hline
+{\em suta\+Archivo} & es la ruta del archivo a escribir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_impresora_a7427f11d194603c5ae2b7f4837c49f14}\label{class_impresora_a7427f11d194603c5ae2b7f4837c49f14}} 
+\index{Impresora@{Impresora}!imprimir\+Pantalla@{imprimir\+Pantalla}}
+\index{imprimir\+Pantalla@{imprimir\+Pantalla}!Impresora@{Impresora}}
+\subsubsection{\texorpdfstring{imprimir\+Pantalla()}{imprimirPantalla()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{class_impresora}{Impresora}$<$ T $>$\+::imprimir\+Pantalla (\begin{DoxyParamCaption}\item[{const T \&}]{objeto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+metodo que permite imprmir la pantalla 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objeto} & es el objeto que debe imprimir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_impresora_abab8709ec339f549ef44dae439b33f12}\label{class_impresora_abab8709ec339f549ef44dae439b33f12}} 
+\index{Impresora@{Impresora}!Obtener\+Color@{Obtener\+Color}}
+\index{Obtener\+Color@{Obtener\+Color}!Impresora@{Impresora}}
+\subsubsection{\texorpdfstring{Obtener\+Color()}{ObtenerColor()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+string \hyperlink{class_impresora}{Impresora}$<$ T $>$\+::Obtener\+Color (\begin{DoxyParamCaption}\item[{string}]{nom\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+clase que permite imprimir en el color correcto 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+Color} & es el color que debe buscar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+debuelve el codigo de color que debe imprimir 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_impresora_8hpp}{Impresora.\+hpp}\end{DoxyCompactItemize}

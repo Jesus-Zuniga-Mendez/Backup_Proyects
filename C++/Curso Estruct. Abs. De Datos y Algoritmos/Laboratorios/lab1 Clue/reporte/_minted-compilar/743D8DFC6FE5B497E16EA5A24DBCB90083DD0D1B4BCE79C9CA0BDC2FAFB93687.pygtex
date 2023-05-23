@@ -1,0 +1,254 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}ifndef TABLERO\PYGZus{}H}
+\PYG{c+cp}{\PYGZsh{}define TABLERO\PYGZus{}H}
+    \PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./includes.h\PYGZdq{}}
+
+    \PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+
+    \PYG{k}{class} \PYG{n+nc}{Tablero}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public}\PYG{o}{:}
+            \PYG{n}{Tablero}\PYG{p}{(}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{ruta} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/\PYGZdq{}}\PYG{o}{+}\PYG{n}{nombre}\PYG{p}{;}
+                \PYG{n}{obtenerDimensiones}\PYG{p}{();}
+                \PYG{c+c1}{//reservamos memoria para la matriz del tablero}
+                \PYG{n}{matriz} \PYG{o}{=} \PYG{k}{new} \PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{[}\PYG{n}{filas}\PYG{p}{];}
+                \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0} \PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}} \PYG{n}{filas} \PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{matriz}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{k}{new} \PYG{k+kt}{char}\PYG{p}{[}\PYG{n}{columnas}\PYG{p}{];}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cargarTablero}\PYG{p}{();}
+                \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}constructor string\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+            \PYG{p}{\PYGZcb{};}
+
+            \PYG{o}{\PYGZti{}}\PYG{n}{Tablero}\PYG{p}{()\PYGZob{}}
+                \PYG{k}{delete} \PYG{n}{matriz}\PYG{p}{;}
+                \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}destructor\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+            \PYG{p}{\PYGZcb{};}
+
+            \PYG{c+cm}{/**}
+\PYG{c+cm}{             * @brief imprimime una matriz}
+\PYG{c+cm}{             */}
+            \PYG{k+kt}{void} \PYG{n+nf}{imprimirTablero}\PYG{p}{(}\PYG{k+kt}{char} \PYG{n}{jugador}\PYG{p}{)\PYGZob{}}
+                \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{filas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{columnas}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                        \PYG{k}{if} \PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{n}{matriz}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{13}\PYG{p}{)\PYGZob{}}
+                            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                        \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                            \PYG{n}{formato}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{n}{matriz}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)} \PYG{p}{,} \PYG{n}{jugador}\PYG{p}{);}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{c+cm}{/**}
+\PYG{c+cm}{             * @brief funcion que mueve jugadores por el tablero}
+\PYG{c+cm}{             * @param ficha es el jugador}
+\PYG{c+cm}{             * @param direccion es un identificador w arriba, a izquierda, s abajo, d derecha.}
+\PYG{c+cm}{             * @return devuelve 1 se se pudo mover, 0 si no pudo, \PYGZhy{}1 si entro a una habitacion}
+\PYG{c+cm}{             */}
+            \PYG{k+kt}{int} \PYG{n+nf}{moverFicha}\PYG{p}{(}\PYG{k+kt}{char} \PYG{n}{ficha}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{direccion}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{uint} \PYG{n}{posicionX} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                \PYG{n}{uint} \PYG{n}{posicionY} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                \PYG{k+kt}{int} \PYG{n}{respuesta} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                \PYG{n}{uint} \PYG{n}{moverX} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                \PYG{n}{uint} \PYG{n}{moverY} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{filas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{columnas}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                        \PYG{k}{if} \PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{n}{matriz}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)} \PYG{o}{==} \PYG{n}{ficha}\PYG{p}{)\PYGZob{}}
+                            \PYG{n}{posicionY} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+                            \PYG{n}{posicionX} \PYG{o}{=} \PYG{n}{j}\PYG{p}{;}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}la posicion de  \PYGZdq{} \PYGZlt{}\PYGZlt{} ficha \PYGZlt{}\PYGZlt{} \PYGZdq{}es \PYGZdq{}\PYGZlt{}\PYGZlt{} posicionX \PYGZlt{}\PYGZlt{} \PYGZdq{} \PYGZdq{} \PYGZlt{}\PYGZlt{} posicionY \PYGZlt{}\PYGZlt{} endl;}
+                \PYG{n}{moverY} \PYG{o}{=} \PYG{n}{posicionY}\PYG{p}{;}
+                \PYG{n}{moverX} \PYG{o}{=} \PYG{n}{posicionX}\PYG{p}{;}
+                \PYG{k}{if} \PYG{p}{((}\PYG{n}{direccion} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}w\PYGZsq{}}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{direccion} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}W\PYGZsq{}}\PYG{p}{))\PYGZob{}}
+                    \PYG{n}{moverY}\PYG{o}{=} \PYG{n}{posicionY} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{if} \PYG{p}{((}\PYG{n}{direccion} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}s\PYGZsq{}}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{direccion} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}S\PYGZsq{}}\PYG{p}{))\PYGZob{}}
+                    \PYG{n}{moverY}\PYG{o}{=} \PYG{n}{posicionY} \PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{if} \PYG{p}{((}\PYG{n}{direccion} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{direccion} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}A\PYGZsq{}}\PYG{p}{))\PYGZob{}}
+                    \PYG{n}{moverX}\PYG{o}{=} \PYG{n}{posicionX} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{if} \PYG{p}{((}\PYG{n}{direccion} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}d\PYGZsq{}}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{direccion} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}D\PYGZsq{}}\PYG{p}{))\PYGZob{}}
+                    \PYG{n}{moverX}\PYG{o}{=} \PYG{n}{posicionX} \PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{if} \PYG{p}{((}\PYG{n}{moverX} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{moverY} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{))\PYGZob{}}
+                    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}primer if \PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+                    \PYG{n}{moverX} \PYG{o}{=} \PYG{n}{columnas} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{3}\PYG{p}{;}                            
+                    \PYG{n}{moverY} \PYG{o}{=} \PYG{n}{filas} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{((}\PYG{n}{moverX} \PYG{o}{==} \PYG{n}{columnas} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{moverY} \PYG{o}{==} \PYG{n}{filas} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{))\PYGZob{}}
+                    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}segundo if \PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+                    \PYG{n}{moverX} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                    \PYG{n}{moverY} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{((}\PYG{n}{moverX} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{moverY} \PYG{o}{==} \PYG{n}{filas} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{))\PYGZob{}}
+                    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}tercer if \PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+                    \PYG{n}{moverX} \PYG{o}{=} \PYG{n}{columnas} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{3}\PYG{p}{;}
+                    \PYG{n}{moverY} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{((}\PYG{n}{moverX} \PYG{o}{==} \PYG{n}{columnas} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{moverY} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{))\PYGZob{}}
+                    \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}cuerto if \PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+                    \PYG{n}{moverX} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                    \PYG{n}{moverY} \PYG{o}{=} \PYG{n}{filas}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}la voy a mover a  \PYGZdq{} \PYGZlt{}\PYGZlt{} moverX \PYGZlt{}\PYGZlt{} \PYGZdq{} \PYGZdq{} \PYGZlt{}\PYGZlt{} moverY \PYGZlt{}\PYGZlt{} endl;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{tamEspaciosPermitidos}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{n}{matriz}\PYG{o}{+}\PYG{n}{moverY}\PYG{p}{)}\PYG{o}{+}\PYG{n}{moverX}\PYG{p}{)}\PYG{o}{==} \PYG{n}{espaciosPermitidos}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])\PYGZob{}}
+                        \PYG{o}{*}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{n}{matriz}\PYG{o}{+}\PYG{n}{moverY}\PYG{p}{)}\PYG{o}{+}\PYG{n}{moverX}\PYG{p}{)} \PYG{o}{=} \PYG{n}{ficha}\PYG{p}{;}
+                        
+                        
+                        \PYG{k}{if} \PYG{p}{((}\PYG{n}{espaciosPermitidos} \PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{espaciosPermitidos}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{!=} \PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}}\PYG{p}{))\PYGZob{}}
+                            \PYG{n}{respuesta} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+                        \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                            \PYG{n}{respuesta} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                        \PYG{p}{\PYGZcb{}}
+                        
+                        
+                        
+                        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{tamJugadores}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracterPosicionJugador}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{==} \PYG{n}{ficha}\PYG{p}{)\PYGZob{}}
+                                \PYG{o}{*}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{n}{matriz}\PYG{o}{+}\PYG{n}{posicionY}\PYG{p}{)}\PYG{o}{+}\PYG{n}{posicionX}\PYG{p}{)} \PYG{o}{=} \PYG{n}{caracterPosicionJugador}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{];}
+                                \PYG{n}{caracterPosicionJugador}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{espaciosPermitidos}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                            \PYG{p}{\PYGZcb{}}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}} 
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{k}{return} \PYG{n}{respuesta}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{k}{private}\PYG{o}{:}  
+            \PYG{n}{uint} \PYG{n}{filas} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{n}{uint} \PYG{n}{columnas} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{n}{string} \PYG{n}{ruta} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{char} \PYG{o}{**} \PYG{n}{matriz} \PYG{o}{=} \PYG{n+nb}{NULL}\PYG{p}{;}
+            \PYG{c+c1}{//se puede cambiar este array por uno dinamico para tableros diferentes}
+            \PYG{k+kt}{int} \PYG{n}{tamEspaciosPermitidos} \PYG{o}{=} \PYG{l+m+mi}{11}\PYG{p}{;}
+            \PYG{k+kt}{char} \PYG{n}{espaciosPermitidos}\PYG{p}{[}\PYG{l+m+mi}{11}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+sc}{\PYGZsq{}A\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}H\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}G\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}B\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}F\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}D\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}E\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}C\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}}\PYG{p}{\PYGZcb{};}
+            \PYG{k+kt}{int} \PYG{n}{tamJugadores} \PYG{o}{=} \PYG{l+m+mi}{6}\PYG{p}{;}
+            \PYG{k+kt}{char} \PYG{n}{caracterPosicionJugador}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{][}\PYG{l+m+mi}{6}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZob{}}\PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}2\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}3\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}4\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}5\PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}6\PYGZsq{}}\PYG{p}{\PYGZcb{},\PYGZob{}}\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{\PYGZcb{}\PYGZcb{};}
+            \PYG{c+cm}{/**}
+\PYG{c+cm}{             * @brief abre un archivo}
+\PYG{c+cm}{             */}
+            \PYG{n}{ifstream} \PYG{n+nf}{abrirArchivo}\PYG{p}{()\PYGZob{}}
+                \PYG{n}{ifstream} \PYG{n}{archivo}\PYG{p}{;}
+                \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ruta} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{return} \PYG{n}{archivo}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{c+cm}{/*}
+\PYG{c+cm}{            *@brief Funion que permite obtener el numero de filas y columnas del tablero}
+\PYG{c+cm}{            */}
+            \PYG{k+kt}{void} \PYG{n+nf}{obtenerDimensiones}\PYG{p}{()\PYGZob{}} \PYG{p}{;}
+                \PYG{n}{ifstream} \PYG{n}{archivo} \PYG{o}{=} \PYG{n}{abrirArchivo}\PYG{p}{();}
+                \PYG{n}{string} \PYG{n}{linea} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{k+kt}{int} \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+                    \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{linea}\PYG{p}{);}
+                    \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{linea}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{n}{columnas}\PYG{p}{)\PYGZob{}}
+                        \PYG{n}{columnas} \PYG{o}{=} \PYG{n}{linea}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{filas} \PYG{o}{=} \PYG{n}{contador}\PYG{p}{;}
+                \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{c+cm}{/**}
+\PYG{c+cm}{             * @brief funcion que carga el tablero en el arreglo}
+\PYG{c+cm}{             */}
+            \PYG{k+kt}{void} \PYG{n+nf}{cargarTablero} \PYG{p}{()\PYGZob{}}\PYG{c+c1}{//char **matriz, uint f, uint c)\PYGZob{}}
+                \PYG{n}{ifstream} \PYG{n}{archivo} \PYG{o}{=} \PYG{n}{abrirArchivo}\PYG{p}{();}
+                \PYG{n}{string} \PYG{n}{linea} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{k+kt}{char} \PYG{n}{salto} \PYG{o}{=} \PYG{l+m+mo}{00}\PYG{p}{;}
+                \PYG{c+c1}{//primero llenamos la matriz con algun caracter en este caso caracter nulo}
+                \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{filas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{columnas}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                        \PYG{o}{*}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{n}{matriz}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)} \PYG{o}{=} \PYG{n}{salto}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+                    \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{filas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                        \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{linea}\PYG{p}{);}
+                        \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{linea}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                            \PYG{o}{*}\PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{n}{matriz}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)} \PYG{o}{=} \PYG{n}{linea}\PYG{p}{[}\PYG{n}{j}\PYG{p}{];}
+
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}}
+
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{clear}\PYG{p}{();}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k+kt}{void} \PYG{n+nf}{formato} \PYG{p}{(}\PYG{k+kt}{char} \PYG{n}{caracter}\PYG{p}{,} \PYG{k+kt}{char} \PYG{n}{jugador}\PYG{p}{)\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{n}{jugador}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BLINK\PYGZus{}EFFECT} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}GREEN} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}RED} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{caracter}\PYG{p}{;}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{p}{;}
+                    \PYG{n}{caracter} \PYG{o}{=} \PYG{l+m+mo}{00}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{switch} \PYG{p}{(}\PYG{n}{caracter}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}H\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//ElCataluña}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}BLUE} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}I\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//ELCatilinux}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}BROWN} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}A\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Panters}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}BLUE} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}G\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//ElRey}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}GREEN} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}B\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Masagex}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}PURPLE} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}F\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Pangea}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}PURPLE} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}E\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Pangea}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}TURQUOISE} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}D\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Pangea}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}BLUE} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}  
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}C\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Pangea}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}BROWN} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}/\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Pangea}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}WHITE} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}  
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{}\PYGZsh{}\PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Pangea}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}RESET} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}BLACK} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}\PYGZsh{}\PYGZdq{}}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                    \PYG{k}{case} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{o}{:}
+                        \PYG{c+c1}{//Pangea}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}WHITE} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}          
+                    \PYG{k}{default}\PYG{o}{:}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}BLACK} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}RED}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{caracter}\PYG{p}{;}
+                        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{p}{;}
+                        \PYG{k}{break}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{};}
+
+\PYG{c+cp}{\PYGZsh{}endif}
+\end{Verbatim}

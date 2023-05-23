@@ -1,0 +1,236 @@
+\hypertarget{class_leap_1_1_mask}{}\section{Leap\+:\+:Mask Class Reference}
+\label{class_leap_1_1_mask}\index{Leap\+::\+Mask@{Leap\+::\+Mask}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Mask\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Mask\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_mask_aa15e9b70a0ab3252ac257f007e0bfd35}\label{class_leap_1_1_mask_aa15e9b70a0ab3252ac257f007e0bfd35}} 
+{\bfseries Mask} (Mask\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_mask_acc02d69baac946a67656212f7da5f146}{Mask} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int64\+\_\+t \hyperlink{class_leap_1_1_mask_af4a05e08d5b18f8b4bfd02d3ba249fc5}{sequence\+Id} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t \hyperlink{class_leap_1_1_mask_abc851fccb2981f034194506b9fee69c2}{id} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const unsigned char $\ast$ \hyperlink{class_leap_1_1_mask_abea2ed1fae02f57711c550a3729ea39f}{data} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_mask_a6fc60754da194b5d3840425388282f23}\label{class_leap_1_1_mask_a6fc60754da194b5d3840425388282f23}} 
+void {\bfseries data} (unsigned char $\ast$dst) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_mask_a23da195872ad61e3d4c33da09d20c3f7}\label{class_leap_1_1_mask_a23da195872ad61e3d4c33da09d20c3f7}} 
+void $\ast$ {\bfseries data\+Pointer} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_mask_af452cfeac9999ea09b9a5277dcfc150f}{width} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_mask_a29f50a387a54fe4b54529b0afc0ce96d}{height} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_mask_a223fe75539f8afa78665ae55b2270dc2}{offsetX} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_mask_ab39e76c8f416f1c7f00a6a40e3652753}{offsetY} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_mask_a8b579ee2f0a32247b4c38cc48b4ed208}{is\+Valid} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_mask_aa2daf5211ff234c895b9f9564dc7374a}{operator==} (const \hyperlink{class_leap_1_1_mask}{Mask} \&) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_mask_ac73f5624c50061cd0c5a5c2f140c0830}{operator!=} (const \hyperlink{class_leap_1_1_mask}{Mask} \&) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_mask_a17dde3d69f91b0dffb49ebce19b6cacd}\label{class_leap_1_1_mask_a17dde3d69f91b0dffb49ebce19b6cacd}} 
+std\+::string {\bfseries to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_mask}{Mask} \& \hyperlink{class_leap_1_1_mask_ab2eddf087a16d99191aca5cc2a4a508b}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream \& \hyperlink{class_leap_1_1_mask_a5905cc939d0e7c29749499cde771dfce}{operator$<$$<$} (std\+::ostream \&, const \hyperlink{class_leap_1_1_mask}{Mask} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Note\+: This class is an experimental A\+PI for internal use only. It may be removed without warning.
+
+A bitmap mask defining areas of an image in which a finger or part of a hand is in front of the tracked quad. The mask is a subset of the camera image containing a the region including the quad. Pixels in the mask representing the hand have the value 255. Pixels in the rest of the mask have the value 0.
+
+Two masks are provided for every Leap Motion frame. The mask with the id of 0 is for the left image. The right image has id 1.
+
+The mask corresponds to the uncorrected image from the camera sensor. If you correct the image for distortion before displaying it, you should also correct the mask.
+
+\begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_mask_acc02d69baac946a67656212f7da5f146}\label{class_leap_1_1_mask_acc02d69baac946a67656212f7da5f146}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!Mask@{Mask}}
+\index{Mask@{Mask}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{Mask()}{Mask()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Mask\+::\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a new \hyperlink{class_leap_1_1_mask}{Mask} object. Do not use. Get \hyperlink{class_leap_1_1_mask}{Mask} objects from \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad}. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_mask_abea2ed1fae02f57711c550a3729ea39f}\label{class_leap_1_1_mask_abea2ed1fae02f57711c550a3729ea39f}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!data@{data}}
+\index{data@{data}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const unsigned char$\ast$ Leap\+::\+Mask\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The pixels of the mask.
+
+Pixels with the value of 255 represent areas of the image where a finger or part of a hand is in front of the quad. The rest of the mask has the value 0. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_a29f50a387a54fe4b54529b0afc0ce96d}\label{class_leap_1_1_mask_a29f50a387a54fe4b54529b0afc0ce96d}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!height@{height}}
+\index{height@{height}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Mask\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The height of the mask in \hyperlink{class_leap_1_1_image}{Image} pixels. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_abc851fccb2981f034194506b9fee69c2}\label{class_leap_1_1_mask_abc851fccb2981f034194506b9fee69c2}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!id@{id}}
+\index{id@{id}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t Leap\+::\+Mask\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+An id indicating whether the mask goes with the left (0) or right (1) image. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_ab2eddf087a16d99191aca5cc2a4a508b}\label{class_leap_1_1_mask_ab2eddf087a16d99191aca5cc2a4a508b}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_mask}{Mask}\& Leap\+::\+Mask\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An invalid \hyperlink{class_leap_1_1_mask}{Mask} object. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_a8b579ee2f0a32247b4c38cc48b4ed208}\label{class_leap_1_1_mask_a8b579ee2f0a32247b4c38cc48b4ed208}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Mask\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this is a valid \hyperlink{class_leap_1_1_mask}{Mask} object. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_a223fe75539f8afa78665ae55b2270dc2}\label{class_leap_1_1_mask_a223fe75539f8afa78665ae55b2270dc2}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!offsetX@{offsetX}}
+\index{offsetX@{offsetX}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{offset\+X()}{offsetX()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Mask\+::offsetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The offset of the mask from the left edge of the \hyperlink{class_leap_1_1_image}{Image} in pixels. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_ab39e76c8f416f1c7f00a6a40e3652753}\label{class_leap_1_1_mask_ab39e76c8f416f1c7f00a6a40e3652753}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!offsetY@{offsetY}}
+\index{offsetY@{offsetY}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{offset\+Y()}{offsetY()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Mask\+::offsetY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The offset of the mask from the top edge of the \hyperlink{class_leap_1_1_image}{Image} in pixels. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_ac73f5624c50061cd0c5a5c2f140c0830}\label{class_leap_1_1_mask_ac73f5624c50061cd0c5a5c2f140c0830}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Mask\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_mask}{Mask} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compares two \hyperlink{class_leap_1_1_mask}{Mask} objects for inequality. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_aa2daf5211ff234c895b9f9564dc7374a}\label{class_leap_1_1_mask_aa2daf5211ff234c895b9f9564dc7374a}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!operator==@{operator==}}
+\index{operator==@{operator==}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Mask\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_mask}{Mask} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compares two \hyperlink{class_leap_1_1_mask}{Mask} objects for equality. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_af4a05e08d5b18f8b4bfd02d3ba249fc5}\label{class_leap_1_1_mask_af4a05e08d5b18f8b4bfd02d3ba249fc5}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!sequence\+Id@{sequence\+Id}}
+\index{sequence\+Id@{sequence\+Id}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{sequence\+Id()}{sequenceId()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int64\+\_\+t Leap\+::\+Mask\+::sequence\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+An id value based on the sequence in which the mask is produced. Corresponds to the \hyperlink{class_leap_1_1_image}{Image} sequence id. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_af452cfeac9999ea09b9a5277dcfc150f}\label{class_leap_1_1_mask_af452cfeac9999ea09b9a5277dcfc150f}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!width@{width}}
+\index{width@{width}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Mask\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The width of the mask in \hyperlink{class_leap_1_1_image}{Image} pixels. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_mask_a5905cc939d0e7c29749499cde771dfce}\label{class_leap_1_1_mask_a5905cc939d0e7c29749499cde771dfce}} 
+\index{Leap\+::\+Mask@{Leap\+::\+Mask}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Leap\+::\+Mask@{Leap\+::\+Mask}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \hyperlink{class_leap_1_1_mask}{Mask} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Writes a brief, human readable description of the \hyperlink{class_leap_1_1_mask}{Mask} object. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

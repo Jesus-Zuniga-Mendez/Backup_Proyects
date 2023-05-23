@@ -1,0 +1,96 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+Archivo pricipal, Proyecto final, Programacion bajo plataformas abiertas.  
+
+
+{\ttfamily \#include \char`\"{}./include/\+Includes.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a34995b955465f6bbb37c359173d50477}\label{main_8cpp_a34995b955465f6bbb37c359173d50477}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+R\+ED}~\char`\"{}\textbackslash{}x1b\mbox{[}31m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_a966c72d8d733c7734c6c784753d894c7}\label{main_8cpp_a966c72d8d733c7734c6c784753d894c7}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+G\+R\+E\+EN}~\char`\"{}\textbackslash{}x1b\mbox{[}32m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_a5a123b382640b3aa65dd5db386002fbc}\label{main_8cpp_a5a123b382640b3aa65dd5db386002fbc}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+Y\+E\+L\+L\+OW}~\char`\"{}\textbackslash{}x1b\mbox{[}33m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_aca16e6a49eb51333c5fd3eee19487315}\label{main_8cpp_aca16e6a49eb51333c5fd3eee19487315}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+L\+UE}~\char`\"{}\textbackslash{}x1b\mbox{[}34m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_acb30614ba1535da5b9d0c490b3c10515}\label{main_8cpp_acb30614ba1535da5b9d0c490b3c10515}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+M\+A\+G\+E\+N\+TA}~\char`\"{}\textbackslash{}x1b\mbox{[}35m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_a8d0b0043e152438bb39b918a1f98c65f}\label{main_8cpp_a8d0b0043e152438bb39b918a1f98c65f}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+C\+Y\+AN}~\char`\"{}\textbackslash{}x1b\mbox{[}36m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_a92a364c2b863dde1a024a77eac2a5b3b}\label{main_8cpp_a92a364c2b863dde1a024a77eac2a5b3b}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+R\+E\+S\+ET}~\char`\"{}\textbackslash{}x1b\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_afc678c0192b6f24b33fde8a85ff8f0fa}\label{main_8cpp_afc678c0192b6f24b33fde8a85ff8f0fa}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+O\+L\+D\+\_\+\+Y\+E\+L\+L\+OW}~\char`\"{}\textbackslash{}x1b\mbox{[}01;33m\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_a4b8b0eb58c3f7eeb333031a48f70b402}\label{main_8cpp_a4b8b0eb58c3f7eeb333031a48f70b402}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+O\+L\+D\+\_\+\+G\+R\+E\+EN}~\char`\"{}\textbackslash{}x1b\mbox{[}01;32m\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a3b7304a2c94d4d09e6929e5a98d3d85b}\label{main_8cpp_a3b7304a2c94d4d09e6929e5a98d3d85b}} 
+void \hyperlink{main_8cpp_a3b7304a2c94d4d09e6929e5a98d3d85b}{Bienvenida} ()
+\begin{DoxyCompactList}\small\item\em Función que imprime una bienvenida para el usuario. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_aef40ff562a9b29c1afee73e2582acee0}\label{main_8cpp_aef40ff562a9b29c1afee73e2582acee0}} 
+void \hyperlink{main_8cpp_aef40ff562a9b29c1afee73e2582acee0}{Imp\+Tres} ()
+\begin{DoxyCompactList}\small\item\em Función que imprime un numero tres. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a2b42a5954360b2ce2eec9f78b82e91ef}\label{main_8cpp_a2b42a5954360b2ce2eec9f78b82e91ef}} 
+void \hyperlink{main_8cpp_a2b42a5954360b2ce2eec9f78b82e91ef}{Imp\+Dos} ()
+\begin{DoxyCompactList}\small\item\em Función que imprime un numero dos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a7ce2f93695fc8308b9f46da5f9169a75}\label{main_8cpp_a7ce2f93695fc8308b9f46da5f9169a75}} 
+void \hyperlink{main_8cpp_a7ce2f93695fc8308b9f46da5f9169a75}{Imp\+Uno} ()
+\begin{DoxyCompactList}\small\item\em Función que imprime un numero uno. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a32fc0c6de52300c5b2419eb40b8e8f40}\label{main_8cpp_a32fc0c6de52300c5b2419eb40b8e8f40}} 
+void \hyperlink{main_8cpp_a32fc0c6de52300c5b2419eb40b8e8f40}{Regresiva} ()
+\begin{DoxyCompactList}\small\item\em Funcion que realia una cuenta regresiva de tres segundos. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a6b0067666ba7d74453f3a3c2c61d84a6}{Menu} ()
+\begin{DoxyCompactList}\small\item\em Funcion que imprime el menu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Funcion Principal, contiene el codigo que ejecuta las demas acciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo pricipal, Proyecto final, Programacion bajo plataformas abiertas. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 de julio de 2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyleft (l) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a6b0067666ba7d74453f3a3c2c61d84a6}\label{main_8cpp_a6b0067666ba7d74453f3a3c2c61d84a6}} 
+\index{main.\+cpp@{main.\+cpp}!Menu@{Menu}}
+\index{Menu@{Menu}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily int Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funcion que imprime el menu. 
+
+\begin{DoxyReturn}{Returns}
+seleccion Es la opcion escogida por el usuario 
+\end{DoxyReturn}

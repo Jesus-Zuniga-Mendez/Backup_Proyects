@@ -1,0 +1,42 @@
+###########Este readme nos sirve para la documentación###########
+
+Según citas de internet 
+"Pero el caso es que, incluso jugando una partida entre 3 personas, 
+el “misterio” se resuelve de forma rápida y carece de alicientes 
+pues los jugadores comienzan con excesiva información en su mano."
+
+Por eso propongo tener varios jugadores pasivos que respondan a las
+preguntas de uno, eso sí, controlados por computadora. Ellos van a
+tomar uno de los nombre que yo voy a inventar.
+
+1-A partir de aquí, qué le parece si creamos un menú que despliegue las
+posibles cosas, habitaciones o asesinos. Sería fácil, solo, con un for
+hacemos que imprima el total de cosas que el jugador no tiene en su baraja
+
+	a-Debemos crear un sistema de dificultad que será "Llenar jugado-
+	  res" y "Juego aislado". Si pasa juego aislado, solo juegan los
+	  maes que se anotaron al inicio, ellos reciben una cantidad bes-
+	  tial de cartas y pasa lo de la cita de internet. En "Llenar ju-
+	  gadores", la pc recibe cartas.
+
+2-Veo un problema al distribuir las cartas y es que, rem_cards es igual 
+que 17, osea esas cartas hay que distribuir, por lo tanto, siempre hay 
+alguien que tiene una carta más. 
+3-Mi solucion mas rapida para pasar informacion adicional en la parte de 
+lvl_deck_generator, fue sumar 100 para cuando el modo de juego es con 
+solo la cantidad indicada de jugadores, o 200 para cuando incluye a la
+computadora, luego un if compara y resta eso y obtiene, primero, la 
+dificultad, la cual sera utilizada en el main, luego, da a la definicion
+del array el tamaño apropiado
+
+La vara esta asi, la funcion anterior dice de que tamaño seran las manos,
+eso con base en la dificultad y la cantidad de maes que uno introduce
+mi plan es pasar ese tamaño al dynamic_deck para que se construya el
+arreglo de ese tamaño, luego, se usaria un for con una vara asi y se po-
+dria recorrer:
+
+	jugador=3*(numero_jugador) //Habiendo 8 jugadores, si contamos al primero como el numero 0
+	for (int i; i<tamano; i++){
+		elemento=dynamic_deck[i+jugador];
+	}
+		

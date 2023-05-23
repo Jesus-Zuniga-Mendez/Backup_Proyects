@@ -1,0 +1,121 @@
+\begin{theindex}
+
+  \item {\+\_\+lista}, \hyperpage{5}
+  \item {\+\_\+matriz}, \hyperpage{5}
+  \item {\+\_\+posicion}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Agregar\+Elemento}
+    \subitem {lista.\+c}, \hyperpage{11}
+  \item {Anterior}
+    \subitem {posicion.\+c}, \hyperpage{13}
+
+  \indexspace
+
+  \item {buscar\+Queso}
+    \subitem {Recorrer.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Crear\+Lista}
+    \subitem {lista.\+c}, \hyperpage{11}
+  \item {Crear\+Posision}
+    \subitem {posicion.\+c}, \hyperpage{13}
+  \item {Crear\+Tablero}
+    \subitem {Laberinto.\+c}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Eliminar\+Lista}
+    \subitem {lista.\+c}, \hyperpage{12}
+  \item {Eliminar\+Posicion}
+    \subitem {posicion.\+c}, \hyperpage{14}
+  \item {Escribir\+Caracter}
+    \subitem {Laberinto.\+c}, \hyperpage{9}
+  \item {Esperar}
+    \subitem {Laberinto.\+c}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Guardar\+Laberinto}
+    \subitem {Laberinto.\+c}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Hacer\+Camino}
+    \subitem {Laberinto.\+c}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Imprimir\+Lista}
+    \subitem {lista.\+c}, \hyperpage{12}
+  \item {Imprimir\+Matriz}
+    \subitem {Laberinto.\+c}, \hyperpage{10}
+
+  \indexspace
+
+  \item {L\+Lenar\+Laberinto}
+    \subitem {Recorrer.\+c}, \hyperpage{15}
+  \item {Laberinto.\+c}
+    \subitem {Crear\+Tablero}, \hyperpage{8}
+    \subitem {Escribir\+Caracter}, \hyperpage{9}
+    \subitem {Esperar}, \hyperpage{9}
+    \subitem {Guardar\+Laberinto}, \hyperpage{9}
+    \subitem {Hacer\+Camino}, \hyperpage{9}
+    \subitem {Imprimir\+Matriz}, \hyperpage{10}
+    \subitem {Llenar\+Gatos}, \hyperpage{10}
+    \subitem {Me\+Puedo\+Mover}, \hyperpage{10}
+  \item {lista.\+c}
+    \subitem {Agregar\+Elemento}, \hyperpage{11}
+    \subitem {Crear\+Lista}, \hyperpage{11}
+    \subitem {Eliminar\+Lista}, \hyperpage{12}
+    \subitem {Imprimir\+Lista}, \hyperpage{12}
+  \item {Llenar\+Gatos}
+    \subitem {Laberinto.\+c}, \hyperpage{10}
+  \item {Llenar\+Tablero}
+    \subitem {Recorrer.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {main.\+c}, \hyperpage{7}
+  \item {Me\+Puedo\+Mover}
+    \subitem {Laberinto.\+c}, \hyperpage{10}
+
+  \indexspace
+
+  \item {posicion.\+c}
+    \subitem {Anterior}, \hyperpage{13}
+    \subitem {Crear\+Posision}, \hyperpage{13}
+    \subitem {Eliminar\+Posicion}, \hyperpage{14}
+    \subitem {Siguiente}, \hyperpage{14}
+
+  \indexspace
+
+  \item {Recorrer.\+c}
+    \subitem {buscar\+Queso}, \hyperpage{15}
+    \subitem {L\+Lenar\+Laberinto}, \hyperpage{15}
+    \subitem {Llenar\+Tablero}, \hyperpage{15}
+    \subitem {Ubicar\+Raton}, \hyperpage{17}
+    \subitem {Verificar\+Laberinto}, \hyperpage{17}
+
+  \indexspace
+
+  \item {Siguiente}
+    \subitem {posicion.\+c}, \hyperpage{14}
+  \item {sourcecode/\+Laberinto.\+c}, \hyperpage{7}
+  \item {sourcecode/\+Recorrer.\+c}, \hyperpage{14}
+  \item {sourcecode/lista.\+c}, \hyperpage{11}
+  \item {sourcecode/posicion.\+c}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Ubicar\+Raton}
+    \subitem {Recorrer.\+c}, \hyperpage{17}
+
+  \indexspace
+
+  \item {Verificar\+Laberinto}
+    \subitem {Recorrer.\+c}, \hyperpage{17}
+
+\end{theindex}

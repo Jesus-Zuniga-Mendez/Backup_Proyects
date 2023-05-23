@@ -1,0 +1,406 @@
+
+\documentclass[11pt]{article}
+
+
+% Document config
+\setlength{\parindent}{12pt}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{tcolorbox}
+\usepackage[nottoc]{tocbibind}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{lineno}
+\usepackage{fancyvrb}
+\usepackage[utf8]{inputenc}
+\graphicspath{ {./Documents/Tarea2/} }
+
+\bibliographystyle{plain}
+
+% Color definitions
+\definecolor{darkblue}{rgb}{0 , 0.054 , 0.196}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.8,0.8,0.8}
+\definecolor{codeBG}{rgb}{0.9, 0.97, 0.9}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{miestilo}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{red},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{black},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false, 
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=miestilo}
+
+
+%\addto\captionsspanish{% Replace "english" with the language you %use
+%  \renewcommand{\contentsname}%
+%    {Tabla de contenidos}%
+%}
+
+
+
+%\title{
+%{
+%    \begin{tikzpicture}[overlay, remember picture]
+%        \node[anchor=north west, %anchor is upper left corner of %the graphic
+%            xshift=3cm, %shifting around
+%            yshift=-4cm] 
+%            at (current page.north west) %left upper corner of the %page
+%        {\includegraphics[height=1.3cm]{logoEIE.png}}; 
+%    \end{tikzpicture}
+%    \begin{tikzpicture}[overlay, remember picture]
+%        \node[anchor=north east, %anchor is upper left corner of %the graphic
+%            xshift=-3cm, %shifting around
+%            yshift=-4cm] 
+%            at (current page.north east) %left upper corner of the %page
+%        {\includegraphics[height=1.3cm]{logoUCR.png}}; 
+%    \end{tikzpicture}
+%    \Large 
+%        \textbf{Universidad de Costa Rica}\\
+%        Facultad de Ingeniería\\
+%        Escuela de Ingeniería Eléctrica\\~\\
+%        \texttt{IE-0313} Electronica I
+%    }
+%    ~\\~\\
+%    {\LARGE Demostración del JFET}
+%}
+%\author{Dennis Chavarría Soto B82097\\}
+%\date{II ciclo\\25 de octubre de 2019}%
+
+
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{times}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{float}%para acomodar imagenes
+\usepackage{hyperref}%agrega hipervinculos a el indice y citas
+\usepackage{url}%citar paginas web
+\usepackage{apacite}%estilo apa
+\usepackage{minted} % para resaltar código fuente
+%\usepackage{listings}%para insertar el codigo en 
+%\usepackage{moreverb} 
+
+\usepackage[none]{hyphenat}%justifica el texto sin dividir palabras
+
+
+
+
+
+\begin{document}
+\sloppy%para que justifique el texto correctamente
+
+\newmintedfile[mycplusplus]{c++}{
+    linenos, % muestra el número de línea
+    numbersep=5pt, % separación entre el código y el número de línea
+    gobble=0, % columna desde la que empieza a mostrar código
+    frame=lines, % dibuja las líneas enmarcando el código
+    framesep=2mm, % separación entre la línea y el código
+    tabsize=3, % tamaño de la tabulación
+}
+
+\newmintedfile[mypython]{py}{
+    linenos, % muestra el número de línea
+    numbersep=5pt, % separación entre el código y el número de línea
+    gobble=0, % columna desde la que empieza a mostrar código
+    frame=lines, % dibuja las líneas enmarcando el código
+    framesep=2mm, % separación entre la línea y el código
+    tabsize=3, % tamaño de la tabulación
+}
+\renewcommand{\refname}{}
+
+\bibliographystyle{apacite}%estilo apa
+\nocite{*} % si quieren que todas las referencias de su bibtex aparezcan en el documento
+
+\begin{titlepage}
+		\bf
+		\centering
+		\includegraphics[width=0.20\textwidth]{logoEIE.png}			
+		\hspace{7cm} 
+		\includegraphics[width=0.30\textwidth]{logoUCR.png}	
+		\par
+		\vspace{2cm}			
+		{\scshape\large Universidad de Costa Rica \par}
+		\vspace{0.6cm}
+		{\scshape\large Facultad de Ingenieria\par}
+		\vspace{0.6cm}
+		{\scshape\large Escuela de Ingenieria Eléctrica\par}
+		\vspace{0.6cm}
+		{\scshape\large Estructuras Abstractas De Datos y Algoritmos Para Ingeniería   \par}
+		\vspace{1.5cm}		
+		{\scshape\large Informe Proyecto 0: Eféctos en imágenes digitales \par}
+		\vspace{2.5cm}		
+		{\scshape\large Estudiantes:\\ Jesús Zúñiga Méndez (B59084) \\ Dennis Chavarría Soto (B82097)  \par}
+		\vspace{2.5cm}		
+		{\scshape\large Profesor:\\ Ricardo Román Brenes; M. Sc. \par}
+		\vspace{2.5cm}
+		{\scshape\large II ciclo 2019 \par}
+\end{titlepage}
+
+
+
+%\begin{document}
+%\maketitle 
+\tableofcontents
+\listoffigures
+\newpage
+
+\hrule
+\hrule
+
+\section{Reseña del programa}\\
+Como parte del plan del curso de Estructuras Abstractas y Algoritmos para Ingeniería, es necesario desarrollar un primer proyecto, que permite a los estudiantes aplicar los conocimientos adquiridos de programación hasta entonces, para solucionar un problema dado. En esta oportunidad, el objetivo fue el de desarrollar un programa que tenga la capacidad de aplicar filtros morfológicos a imágenes que el usuario selecciona, para, luego, devolver una copia de la misma pero modificada.\\
+
+El programa fue desarrollado con el lenguaje de programación C++, e implementa la librería OpenCV; tiene la capacidad de ser invocado mediante la línea de comandos, y buscar el archivo de imagen y el filtro que el usuario indique. Cuando esto ocurre, se realizan las operaciones pertinentes para editar el archivo; una vez resuelto, se exporta el resultado final con el formato de salida que el usuario indica al invocar la aplicación.\\
+
+El impacto en la formación profesional y académica de los estudiantes, al tener que desarrollar un software que complete el objetivo establecido por el profesor, es inmedible en cuanto, entre otros aspectos, aumenta la capacidad de razonamiento y análisis para solución de problemas; además de aprender a utilizar librerías de terceros con métodos, variables y funcionalidades totalmente distintas, pero versátiles, que no estaban disponibles anteriormente.
+
+\section{Funcionamiento del programa}\\
+
+El programa se desarrolló con el lenguaje de programación C++, sin embargo, para la lectura y escritura se hace uso de la librería OpenCV. Las imágenes objetivo deben estar en la carpeta del programa y este se invoca siguiendo la sintaxis \textit{./proyecto0 IMAGEN.FORMATO OPERACION NUEVOFORMATO} de forma que, el nombre del ejecutable es proyecto0; IMAGEN.FORMATO es el objetivo de la edición, donde el nombre y su extensión son los del archivo original, la operación debe ser una de las siguientes:
+
+\begin{itemize}
+
+    \item FG: Filtro Gaussiano, hace ver borrosa la imagen.
+    \item FSTD: Filtro de Desviación Estándar, asigna la desviación estándar a los pixeles de la imagen, remarcando los borden y coloreando lo demás con colores muy oscuros.
+    \item ED: Detección de bordes (edge detection), resalta los bordes de la imagen en blanco y negro
+    \item MB: Difuminado de movimiento (motion blur), crea el efecto de desenfoque de una imagen tomada por una cámara en movimiento
+    \item S&P: Ruido sal y pimienta, añade ruido a la imagen, lo que crea el efecto de que se añade sal y pimienta
+    \item E: Erosión. Reduce los bordes en blanco y negro de una imagen, parece que la reduce o que erosiona los bordes.
+    \item (D) Dilatación, este efecto crea el resultado opuesto al de erosión, aumentando bordes y franjas de color, de forma que parece aumentar el tamaño de los objetos.
+    \item (I) Inversión de color consiste en que la imagen se re coloree con colores negativos.
+    \item (G) Transformación de escala de grises, transforma una imagen a color, de tres canales, a una en blanco y negro.
+    
+\end{itemize}
+
+Seguido a la operación que se desea aplicar, se indica el forma de salida de la imagen. La edición genera un archivo llamado o \textit{IMAGEN.EXTENSION.OPERACION.NUEVOFORMATO}. Esto debe repetirse de la misma forma varias veces si se desea aplicar varias ediciones a la foto, o distorsionarla más con los filtros gaussiano o de movimiento.
+
+
+\subsection{Filtros}\\
+
+Para todos los filtros se utilizan objetos de tipo MAT,  tipo que se incluye en la librería OpenCV. Este consiste en una matriz multidimensional que almacena los valores de intensidad para cada canal, en caso de ser de 3 colores, o de un solo canal, si es en escala de grises. Se implementa un MAT imagen para la fotografía que es leída, y un MAT nueva para la imagen editada.\\
+
+\subsubsection{Filtro Gaussiano}\\
+
+Este filtro produce el efecto de distorsionado en imágenes mediante la asignación del valor promedio de los valores de intensidad de cada pixel de un kernel a uno central, esto para cada canal si es a color  (universidad de Murcia, s.f.). Una de sus utilidades es la de eliminar ruido en imágenes. Para implementar el código se defininen 3 vectores, del tipo Vec3b que incluye la librería OpenCV.\\
+
+\begin{itemize}
+    \item Tripleta1 almacena los valores de pixel tomados de la matriz de la imagen.
+    \item Pixel es un vector de 3 canales que se utiliza para asignar a la matriz de la nueva imagen editada los valores de pixel modificados. Los guarda en el orden azul, verde y rojo.
+    \item TriValoresPixel almacena 3 valores de pixel que corresponden a los promedios que el filtro Gaussiano debe obtener. Son 3 números que corresponden a cada canal de la imagen; azul, verde y rojo, en tal orden.
+    \item fprom es una variable de tipo float que almacena los valores de la suma de la intensidad de los pixeles del kernel.
+    \item iprom es una variable de tipo int que almacena los valores de fprom después de que este obtuviera la suma de las intensidades en el kernel pero los divide entre 8 y lo convierte a un número entero; de esta forma es almacenable en los vectores Vec3b de OpenCV.
+\end{itemize}
+
+La estructura de este método consiste en un conjunto de ciclos anidados de tipo "for". El primero de ellos itera por cada fila, luego uno interno itera por columna, seguido hay uno que repite tres veces, para cambiar el color; este tiene la particularidad de que su valor de repetición se utiliza en los vectores para asignar el los promedios iprom a una posición determinada.
+
+\subsubsection{Filtro Desviación estandar}\\
+
+Este filtro crea el efecto de pintar la pantalla de color negro y resaltar mucho los bordes de la imagen original, lo que lo hace parecer un detector de borde; esto mediante la asignación del valor de desviación estándar obtenido por los valores de intensidad de cada pixel de un kernel a uno central (Mathworks, s.f.-b)., esto para cada canal si es a color. Una de sus utilidades es la de eliminar ruido en imágenes. Para implementar el código se defininen 3 vectores, del tipo Vec3b que incluye la librería OpenCV. 
+
+\begin{itemize}
+    \item Tripleta1 almacena los valores de pixel tomados de la matriz de la imagen.
+    \item Pixel es un vector de 3 canales que se utiliza para asignar a la matriz de la nueva imagen editada los valores de pixel modificados. Los guarda en el orden azul, verde y rojo.
+    \item TriValoresPixel almacena 3 valores de pixel que corresponden a los promedios que del kernel. Son 3 números que corresponden a cada canal de la imagen; azul, verde y rojo, en tal orden.
+    \item fprom es una variable de tipo float que almacena los valores de la suma de la intensidad de los pixeles del kernel.
+    \item iprom es una variable de tipo int que almacena los valores de fprom después de que este obtuviera la suma de las intensidades en el kernel pero los divide entre 8 y lo convierte a un número entero; de esta forma es almacenable en los vectores Vec3b de OpenCV.
+    \item Distancia es una variable de tipo int que se utiliza para almacenar las sumas elevadas al cuadrado de la ecuación de la desviación estándar
+\end{itemize}
+
+Ya se mencionó la existencia de un ciclo que itera por cada color, sin embargo, dentro de él hay dos repetidores más además de un condicional. Primeramente, el valor de fprom se establece como 0 cada vez que se entra a este contexto, debido a que el valor de promedio del nuevo canal es diferente. Luego se ingresa al primer ciclo que empieza en la posición x=-1 y termina en x=1. Este se encarga de repetir por cada fila del kernel, luego hay otro contexto de repetición que tiene el mismo rango que el anterior, pero su variable es llamada \textit{rep}. La finalidad de estos dos últimos \textit{for} es definir el tamaño del kernel en el cuál se obtendrá el promedio de los valores de intensidad de los pixeles. El condicional se encarga de omitir el pixel central del kernel, además de los valores de los extremos de la matriz de la imagen; así evita un core dumped.
+Luego de obtener la suma, se guardan como promedios por canal en iprom, este se usa para asignarlos a TriPromediosCanal.\\
+
+Hasta aquí, el método del filtro de la desviación estándar es idéntico al del filtro gaussiano, sin embargo, ahora se tiene otros dos ciclos que usan la variable x y rep con los mismos rangos anteriormente mencionados, así como la inclusión del mismo condicional. Dentro de todo se encuentra tripleta1, que tomará los valores de la matriz de imagen original y seleccionará una de las intensidades de algún color, según el valor de la variable del iterador de color; así, se restará al valor del promedio que corresponde al canal y se elevará al cuadrado. Tal resultado corresponde a distancia, el cuál se sumará por cada pixel de la matriz original.\\
+
+El valor que tomará el pixel se asigna inmediatamente antes de iterar por cada color, así se llena la tripleta y, antes de cambiar de pixel desde el que se toma el kernel, se asignan los tres valores de pixel a la nueva matriz de la imagen que se creará.
+
+
+\subsubsection{Detección de bordes}
+La detección de bordes se basa en el algoritmo de Canny, primero se convierte la imagen a escala de grises tal y como se realiza en el filtro de escala de grises de este apartado, después se aplica el filtro Gaussiano para eliminar el ruido de la imagen y por ultimo se aplica la operación de Kernel de Sobe, en la cual básicamente se realiza el calculo de la gradiente vertical y horizontal, después de esto se calcula la norma de las gradientes y en base a esto se definen los bordes, asignando a los pixeles los valores obtenidos. Es importante realizar una serie de filtrados para garantizar que el resultado sea el optimo, uno de ellos es comparar los pixeles que estén perpendiculares al angulo de la gradiente, si los pixeles de mayor valor se encuentran en dicha dirección se acepta ese pixel como un máximo si no se descarta.
+
+\subsubsection{Difuminado de movimiento}\\
+
+Para el difuminado de movimiento, el efecto es el de una foto tomada por una cámara en movimiento. Se definen 4 vectores Vec3b, lo cuáles son pixel, tripleta1, tripleta2 y tripleta 3. Luego, se definen tres variables de tipo int que son promedio-rojo, promedio-verde y promedio-azul. luego tiene un ciclo que repite 4 veces el procedimiento que se explicará a continuación. Dentro se encuentra el iterador de filas y el de columnas. Dentro del último contexto se define a pixel como el vector que contiene los valores de los 3 canales que conforman a la matriz de la imagen original localizado en las coordenadas i, j que los ciclos determinan. Sigue un condicional que solo funciona si no se encuentra en los bordes de la matriz, esto para evitar el core dumped. Posteriormente, cada tripleta obtiene los valores de la intensidad de los tres canales del los pixeles, central, izquierdo y derecho, de i,j; luego se calculan los promedios de cada color con las intensidades de cada tripleta, una vez hecho esto, se asignan a una posición del vector pixel para luego asignarlo a la nueva matriz de imagen. Este procedimiento es el que se repite por 4 veces, para obtener el efecto de difuminado.\\
+
+\subsubsection{Ruido sal y pimienta (S\&P)}
+En este filtro se agregan pixeles blancos y negros de forma aleatoria a los pixeles de la imagen, es un filtro relativamente sencillo ya que depende de un numero aleatorio y de un porcentaje de ruido que se quiere agregar, se recorre la matriz de la imagen en orden y cada cierta cantidad de pixeles se decide si se modifica el pixel o no, en este filtro es importante variar el grado de desplazamiento de los pixeles a modificar para evitar que se creen lineas verticales u horizontales poco estéticas en la imagen
+	
+\subsubsection{Erosión y Dilatación}
+Estos filtros se comportan exactente igual, la única diferencia entre ellos es si se asigna un pixel negro o blanco, y su elemento estructuraste, un elemento estructuraste se una matriz de algún tamaño en este caso 3 x 3, en esta matriz se agregan valores de estructuración 0 o 1 ya que es una operación morfológica sobre imágenes binarias, se compara el vecindario de el pixel estudiado contra el elemento estructuraste, en el caso de la dilatación ningún pixel vecino debe ser mayor a la matriz de ceros y en el caso de la erosión ninguno debe ser menor a la matriz de unos, si se cumple la condición se mantiene el pixel si no se cambia por el valor contrario, el grado del filtro se puede cambiar modificando las dimensiones de el elemento estructuraste, es importante aclarar que este filtro puede ser aplicado a imágenes a color, sin embargo la operación morfológica fue la primera utilizada y para efectos de este proyecto se quiso utilizar sobre imágenes binarias para ver un resultado mas marcado en cada imagen.
+	
+	
+\subsubsection{Filtro Inversión de Color}\\
+
+Este filtro invierte los colores, comúnmente llamados colores negativos. Define el vector de tipo Vec3b, pixel; también un número entero llamado PixelTemporal. Utiliza un ciclo para iterar entre columnas, dentro tiene otro que itera entre filas y, en ese último contexto, guarda a pixel el valor de la matriz en las coordenadas i, j que dependen de los primeros dos ciclos. Luego, repite 3 veces el procedimiento de asignar a pixel temporal el valor que guarda el vector en el primer canal, el azul, luego a pixel le asigna el valor de la variable temporal pero siendo restada a 255. De esta forma se repite para cada color; el nuevo vector de 3 canal se asigna a la nueva matriz de imagen, luego se repite el proceso para cada uno de la matriz real hasta recrear la imagen final editada.
+
+\subsubsection{Filtro Transformación a escala de grises}\\
+
+
+Este filtro permite transformar una imagen a color a una en blanco y negro. define el vector de tipo Vec3b, pixel; también los enteros B, G, R y ValorTriMedio. Utiliza un ciclo para iterar entre columnas, dentro tiene otro que itera entre filas y, en ese último contexto, guarda a pixel el valor de la matriz en las coordenadas i, j que dependen de los primeros dos ciclos. Luego, a las variables B, G y R asigna los valores de las posiciones 0, 1, 2 del vector pixel. ValorTriMedio guarda el promedio entre los valores de las 3 variables anteriores; luego, este resultado se asigna a cada posición del vector pixel, osea a cada canal; posteriormente a la matriz de nueva imagen, se le asigna al pixel que coincide con la posición i,j de los ciclos, los valores de pixel.
+
+\subsubsection{Main}\\
+
+El método main es el encargado de operar con los objetos como filtros e imágenes. Se encarga de procesar la entrada del usuario y asociarla con las operaciones, formatos e indicaciones adecuadas.
+
+
+
+\section{Experimentos Realizados}\\
+
+    Como plataforma de creación y validación del programa se escogió C++ y junto al sistema operativo linux, esto gracias a que estas dos plataformas permiten un mayor desarrollo de los conocimientos gracias a su mayor nivel de complejidad.
+    
+	Para la prueba y validación del programa que se realizó se hicieron múltiples corridas con cada uno de los filtros que se crearon, esto con el fin de realizar ajustes oportunos para la optimización de cada filtro, Además se corrieron diferentes pruebas del programa para cada filtro con la misma imagen y con imágenes distintas para poder cerciorarse que los filtros se aplicaran correctamente independientemente de imagen.
+	A continuación se sintetizan las diferentes etapas de experimentación y sus resultados.
+	\begin{enumerate}
+	    \item Se realizaron pruebas con opencv para corroborar que fuese capaz de leer y escribir en todos los formatos, como resultado se obtuvo que podía manejar todos los formatos excepto gif.
+		\item Se busco una alternativa para resolver el problema del gif, la solución fue usar imageMagick para leer el gif y realizar la conversión a un formato soportado por opencv
+		\item Se crearon filtros gradualmente, enfocándose en cada oportunidad en un solo filtro para garantizar que los resultados fueran aceptables con cada uno, se corría una prueba con cada filtro y se evaluaba la imagen haciendo ajustes en caso de ser necesario
+		\item Una vez que cada filtro estuvo optimizado, se realizaron múltiples corridas con diferentes tamaños de imagen para comprobar la robustez del programa escrito
+		\item Se intento optimizar el código para mejorar de alguna forma el tiempo de ejecución.
+	\end{enumerate} 
+
+\newpage
+\section{Resultados}\\
+
+De los experimentos realizados, se toma una imagen original, al aplicar las modificaciones que puede realizar el programa, se obtienen imágenes con aspecto distinto, acorde con la operación seleccionada, tal y como se muestra en las siguientes figuras:
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{d51fc313-0c3c-40eb-9b9e-8d5e6a4bcfab.jpg}};
+    \textbf{\caption{Foto Original}}\\
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{11a0a9aa-436b-40e7-91a5-7be292252eb9.jpg}};
+    \textbf{\caption{Foto con el filtro Gaussiano}}\\
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{f083a011-6500-418d-976f-e7759bed33ff.jpg}};
+    \textbf{\caption{Foto con difuminado de movimiento}}\\
+\end{figure}
+
+%\begin{figure}[H]
+%    \centering
+%    {\includegraphics[height=8.3cm]{f083a011-6500-418d-976f-e7759bed33ff.jpg}};
+%    \textbf{\caption{Foto con el filtro Gaussiano}}\\
+%\end{figure}
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{8772ae65-5c95-41db-a5f3-a1057eb7c158.jpg}};
+    \textbf{\caption{Foto con ruido sal-pimienta}}\\
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{5449145d-bf80-4573-b188-7cf53cf0e210.jpg}};
+    \textbf{\caption{Foto en blanco y negro}}\\
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{5108acd4-6602-4ded-bf78-f754c1d66a1b.jpg}};
+    \textbf{\caption{Foto con inversión de colores}}\\
+\end{figure}
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{3bfbd5f1-d183-4d44-add7-f66f03a5a95b.jpg}};
+    \textbf{\caption{Foto con erosión}}\\
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{6f3e5dc9-7f0d-4151-8303-8434e20ab6ec.jpg}};
+    \textbf{\caption{Foto con dilatación}}\\
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{f7e85d14-0952-40a7-a983-d2d0cfdbf054.jpg}};
+    \textbf{\caption{Foto con detector de bordes}}\\
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[height=8.3cm]{0e20c16c-16e8-4b2f-8e34-1ed946cc7907.jpg}};
+    \textbf{\caption{Foto con filtro de desviación estándar}}\\
+\end{figure}
+
+Es recalcable que la figura 8 aumenta la distribución del color negro en la imagen, eso hace que se noten menos los detalles faciales en los ojos, así como el pelo; por otra parte, la dilatación realiza el efecto contrario, por lo que se remarcan más zonas con el color blanco y los detalles faciales, principalmente los ojos, destacan más.
+
+\newpage
+\section{Conclusiones}\\
+    \begin{itemize}
+        \item Se desarrolló un programa con la capacidad de aplicar múltiples filtros morfológicos que puede leer y escribir imágenes editadas a partir de las operaciones indicadas por el usuario.
+        \item Todas las operaciones para la edición de las fotografías fueron implementadas satisfactoriamente.
+        \item Fue posible la aplicación de librerías de terceros, en este caso, OpenCV para lograr el adecuado funcionamiento del programa. 
+        \item Queda patente el hecho de que las librerías de terceros facilitan la implementación y desarrollo de funcionalidades; también incluyen métodos que pueden reducir el código y tipos de variables que proporcionan aún más funcionalidad
+    \end{itemize}
+
+\newpage
+\section{Referencias}\\
+\begin{itemize}
+    \item Mathworks. (s.f.-a). Edge detection. Recuperado de: https://www.mathworks.com/discovery/
+    edge-detection.html.
+    \item Mathworks. (s.f.-b). stdfilt. Recuperado de: https://es.mathworks.com/help/images/ref/stdfilt.html.
+    \item Murias, D. (2017). 16 fotos manipuladas que pasaron a la historia.
+Recuperado de: https://magnet.xataka.com/un-mundo-fascinante
+/16-fotos-manipuladas-que-pasaron-a-la-historia.
+    \item universidad de Murcia. (s.f.). Tecnicas de filtrado. ´ Recuperado de: https://www.um.es/geograf/
+    sigmur/teledet/tema06.pdf. Universidad de Murcia.
+    \item thedenverherald(2018). Rising star Who is Mackenzie Davis? New Terminator movie actress and star of Blade Runner Recuperado de: https://thedenverherald.com/rising-star-who-is-mackenzie-davis-new
+    -terminator-movie-actress-and-star-of-blade-runner/
+\end{itemize}
+
+\newpage
+\section{Anexos}\\
+
+\Large{\texttt{main.cpp}:}
+\lstinputlisting[language=C++]{main.cpp}
+\newpage
+\Large{\texttt{Filtros.cpp}:}
+\lstinputlisting[language=C++]{filtros.cpp}
+\newpage
+\Large{\texttt{Filtros.hpp}:}
+\lstinputlisting[language=C++]{Filtros.hpp}
+\newpage
+\Large{\texttt{Includes.hpp}:}
+\lstinputlisting[language=C++]{Includes.hpp}
+
+
+
+
+
+
+\end{document}

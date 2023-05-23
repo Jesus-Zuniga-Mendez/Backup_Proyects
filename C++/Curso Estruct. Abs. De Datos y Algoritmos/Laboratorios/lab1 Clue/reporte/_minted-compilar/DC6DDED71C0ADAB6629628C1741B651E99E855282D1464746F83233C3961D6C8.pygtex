@@ -1,0 +1,144 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}ifndef CARTAS\PYGZus{}H}
+\PYG{c+cp}{\PYGZsh{}define CARTAS\PYGZus{}H}
+
+    \PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./includes.h\PYGZdq{}}
+
+    \PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+
+    \PYG{k}{class} \PYG{n+nc}{Cartas}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public}\PYG{o}{:}
+
+            \PYG{n}{Cartas}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{ctdJugadores}\PYG{p}{,} \PYG{n}{Jugador} \PYG{n}{jugadores}\PYG{p}{[])\PYGZob{}}
+                \PYG{n}{numHabitaciones} \PYG{o}{=} \PYG{l+m+mi}{9}\PYG{p}{;}
+                \PYG{n}{numArmas} \PYG{o}{=} \PYG{l+m+mi}{5}\PYG{p}{;}
+                \PYG{n}{numJugadores} \PYG{o}{=} \PYG{n}{ctdJugadores}\PYG{p}{;}
+                \PYG{n}{habitaciones} \PYG{o}{=} \PYG{k}{new} \PYG{n}{string}\PYG{p}{[}\PYG{n}{numHabitaciones}\PYG{p}{];}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El Eden\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El CataLinux\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El Paraiso\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Masajex\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El Cataluña\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El Rey\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}La Oficina\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Venus\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{habitaciones}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}La Casa\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones} \PYG{o}{=} \PYG{k}{new} \PYG{n}{string}\PYG{p}{[}\PYG{n}{numHabitaciones}\PYG{p}{];}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El Eden\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El CataLinux\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El Paraiso\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Masajex\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El Cataluña\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}El Rey\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}La Oficina\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Venus\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiahabitaciones}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}La Casa\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{armas} \PYG{o}{=} \PYG{k}{new} \PYG{n}{string}\PYG{p}{[}\PYG{n}{numArmas}\PYG{p}{];}
+                \PYG{n}{armas}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Ak 47 con silenciador\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{armas}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Bazooka\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{armas}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Espada del Rey Arturo\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{armas}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Conversor Religioso\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{armas}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Mjolnir\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiaarmas} \PYG{o}{=} \PYG{k}{new} \PYG{n}{string}\PYG{p}{[}\PYG{n}{numArmas}\PYG{p}{];}
+                \PYG{n}{copiaarmas}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Ak 47 con silenciador\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiaarmas}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Bazooka\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiaarmas}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Espada del Rey Arturo\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiaarmas}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Conversor Religioso\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{copiaarmas}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Mjolnir\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{nombresJugadores} \PYG{o}{=} \PYG{k}{new} \PYG{n}{string}\PYG{p}{[}\PYG{n}{ctdJugadores}\PYG{p}{];}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{nombresJugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{nombre}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{copianombresJugadores} \PYG{o}{=} \PYG{k}{new} \PYG{n}{string}\PYG{p}{[}\PYG{n}{ctdJugadores}\PYG{p}{];}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{numJugadores}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{copianombresJugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{jugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{nombre}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{combinacionGanadora} \PYG{o}{=} \PYG{k}{new} \PYG{n}{string}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{];}
+                \PYG{n}{combinacionGanadora}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sacarCombinacionGanadora}\PYG{p}{(}\PYG{n}{habitaciones}\PYG{p}{,} \PYG{p}{(}\PYG{n}{numHabitaciones}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{));}
+                \PYG{n}{combinacionGanadora}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sacarCombinacionGanadora}\PYG{p}{(}\PYG{n}{armas}\PYG{p}{,} \PYG{p}{(}\PYG{n}{numArmas}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{));}
+                \PYG{n}{combinacionGanadora}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sacarCombinacionGanadora}\PYG{p}{(}\PYG{n}{nombresJugadores}\PYG{p}{,} \PYG{p}{(}\PYG{n}{numJugadores}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{o}{\PYGZti{}}\PYG{n}{Cartas}\PYG{p}{()\PYGZob{}}
+                \PYG{c+c1}{// delete habitaciones;}
+                \PYG{c+c1}{// delete armas;}
+                \PYG{c+c1}{// delete nombresJugadores;}
+                \PYG{c+c1}{// delete combinacionGanadora;}
+                \PYG{c+c1}{// delete copiahabitaciones;}
+                \PYG{c+c1}{// delete copiaarmas;}
+                \PYG{c+c1}{// delete copianombresJugadores;}
+            \PYG{p}{\PYGZcb{}}
+
+
+            \PYG{c+cm}{/**}
+\PYG{c+cm}{             * @brief Funcion que toma un arreglo y devuelve una casilla del mismo al azar}
+\PYG{c+cm}{             * @param habitaciones es el arreglo que contien las habitaciones}
+\PYG{c+cm}{             * @param tamanio es la dimension del arreglo}
+\PYG{c+cm}{             * @return devuelve el dato seleccionado}
+\PYG{c+cm}{             */}
+            \PYG{n}{string} \PYG{n}{sacarCombinacionGanadora} \PYG{p}{(}\PYG{n}{string}\PYG{o}{*} \PYG{n}{arreglo}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{tamanio}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{string} \PYG{n}{seleccion} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{k+kt}{int} \PYG{n}{aleatorio} \PYG{o}{=} \PYG{n}{numRandom}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{tamanio}\PYG{p}{);}
+                \PYG{n}{seleccion} \PYG{o}{=} \PYG{n}{arreglo}\PYG{p}{[}\PYG{n}{aleatorio}\PYG{p}{];}
+                \PYG{n}{arreglo}\PYG{p}{[}\PYG{n}{aleatorio}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{k}{return} \PYG{n}{seleccion}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+
+            \PYG{c+cm}{/*@brief random: Método que recibe dos números y establece un intervalo a partir de ellos, para así determinar un número al azar.}
+\PYG{c+cm}{             *@param menor: Límite izquierdo del intervalo lo incluye.}
+\PYG{c+cm}{             *@param mayor: Límite derecho del intervalo lo incluye.}
+\PYG{c+cm}{             *@return devuelve un número aleatorio}
+\PYG{c+cm}{             */}
+            
+            \PYG{k+kt}{int} \PYG{n}{numRandom}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{menor}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{mayor}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{mayor}\PYG{o}{++}\PYG{p}{;}
+                \PYG{c+c1}{//codigo tomado de https://en.cppreference.com/w/cpp/numeric/random/uniform\PYGZus{}real\PYGZus{}distribution}
+                \PYG{n}{random\PYGZus{}device} \PYG{n}{rd}\PYG{p}{;}  \PYG{c+c1}{//Will be used to obtain a seed for the random number engine}
+                \PYG{n}{mt19937} \PYG{n+nf}{gen}\PYG{p}{(}\PYG{n}{rd}\PYG{p}{());} \PYG{c+c1}{//Standard mersenne\PYGZus{}twister\PYGZus{}engine seeded with rd()}
+                \PYG{n}{uniform\PYGZus{}real\PYGZus{}distribution}\PYG{o}{\PYGZlt{}\PYGZgt{}} \PYG{n}{dis}\PYG{p}{(}\PYG{n}{menor}\PYG{p}{,} \PYG{n}{mayor}\PYG{p}{);}
+                \PYG{k}{return}\PYG{p}{(}\PYG{n}{dis}\PYG{p}{(}\PYG{n}{gen}\PYG{p}{));}
+            \PYG{p}{\PYGZcb{}}
+            
+            \PYG{c+cm}{/**}
+\PYG{c+cm}{             * @brief Imprime el arreglo solicitado}
+\PYG{c+cm}{             */}
+            \PYG{k+kt}{void} \PYG{n}{imprimirArreglos}\PYG{p}{()\PYGZob{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Habitaciones\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}} \PYG{n}{numHabitaciones}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{habitaciones}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZdq{}}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Armas\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}} \PYG{n}{numArmas}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{armas}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZdq{}}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Jugadores\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}} \PYG{n}{numJugadores}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{nombresJugadores}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZdq{}}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Ganadora\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{n}{i}\PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{3}\PYG{p}{;}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{combinacionGanadora}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZdq{}}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+
+            \PYG{k+kt}{int} \PYG{n}{numHabitaciones}\PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{numArmas}\PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{numJugadores}\PYG{p}{;}
+            \PYG{n}{string} \PYG{o}{*} \PYG{n}{habitaciones}\PYG{p}{;}
+            \PYG{n}{string} \PYG{o}{*} \PYG{n}{armas}\PYG{p}{;}
+            \PYG{n}{string} \PYG{o}{*} \PYG{n}{combinacionGanadora}\PYG{p}{;}
+            \PYG{n}{string} \PYG{o}{*} \PYG{n}{nombresJugadores}\PYG{p}{;}
+            \PYG{n}{string} \PYG{o}{*} \PYG{n}{copiahabitaciones}\PYG{p}{;}
+            \PYG{n}{string} \PYG{o}{*} \PYG{n}{copiaarmas}\PYG{p}{;}
+            \PYG{n}{string} \PYG{o}{*} \PYG{n}{copianombresJugadores}\PYG{p}{;}
+        \PYG{k}{private}\PYG{o}{:}
+    \PYG{p}{\PYGZcb{};}
+\PYG{c+cp}{\PYGZsh{}endif}
+\end{Verbatim}

@@ -1,0 +1,462 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @file GuardarrGesto.cpp}
+\PYG{c+cm}{ * @author Jesus Zuñiga Mendez}
+\PYG{c+cm}{ * @brief Archivo que permite guardar un gesto en un grupo de archivos se toma como base el ejemplo del sdk}
+\PYG{c+cm}{ * @version 1.0}
+\PYG{c+cm}{ * @date 18 de julio de 2019}
+\PYG{c+cm}{ * @copyright Copyleft (l) 2019}
+\PYG{c+cm}{ */}
+\PYG{c+cm}{/******************************************************************************\PYGZbs{}}
+\PYG{c+cm}{* Copyright (C) 2012\PYGZhy{}2014 Leap Motion, Inc. All rights reserved.               *}
+\PYG{c+cm}{* Leap Motion proprietary and confidential. Not for distribution.              *}
+\PYG{c+cm}{* Use subject to the terms of the Leap Motion SDK Agreement available at       *}
+\PYG{c+cm}{* https://developer.leapmotion.com/sdk\PYGZus{}agreement, or another agreement         *}
+\PYG{c+cm}{* between Leap Motion and you, your company or other organization.             *}
+\PYG{c+cm}{\PYGZbs{}******************************************************************************/}
+
+
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}iostream\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}cstring\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./include/Leap.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}fstream\PYGZgt{}}
+
+\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{Leap}\PYG{p}{;}
+
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}RESET   \PYGZdq{}\PYGZbs{}x1b[0m\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}define ANSI\PYGZus{}COLOR\PYGZus{}RED     \PYGZdq{}\PYGZbs{}x1b[31m\PYGZdq{}}
+
+\PYG{c+cm}{/*@brief Funciones que dibuja un rotulo en pantalla}
+\PYG{c+cm}{ *@param opcion es el rotulo que se quier imprimir}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{Espere}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{opcion}\PYG{p}{)\PYGZob{}}
+  \PYG{k}{switch} \PYG{p}{(}\PYG{n}{opcion}\PYG{p}{)}
+  \PYG{p}{\PYGZob{}}
+  \PYG{k}{case} \PYG{l+m+mi}{0}\PYG{o}{:}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}| / \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||  \PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||  \PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}\PYGZus{}   | (\PYGZus{}\PYGZus{}\PYGZus{}  | |\PYGZus{}\PYGZus{}) || |\PYGZus{}\PYGZus{}   | |\PYGZus{}\PYGZus{}) || |\PYGZus{}\PYGZus{}     \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{}\PYGZus{}|   }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}\PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}/ |  \PYGZus{}\PYGZus{}|  |  \PYGZus{}  / |  \PYGZus{}\PYGZus{}|  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}) || |     | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} | | }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}/ |\PYGZus{}|     |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}|  }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{|\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{break}\PYG{p}{;}
+  \PYG{k}{case} \PYG{l+m+mi}{1}\PYG{o}{:}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}          \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}| / \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||  \PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||  \PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|       \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}\PYGZus{}   | (\PYGZus{}\PYGZus{}\PYGZus{}  | |\PYGZus{}\PYGZus{}) || |\PYGZus{}\PYGZus{}   | |\PYGZus{}\PYGZus{}) || |\PYGZus{}\PYGZus{}            \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{}\PYGZus{}|   }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}\PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}/ |  \PYGZus{}\PYGZus{}|  |  \PYGZus{}  / |  \PYGZus{}\PYGZus{}|         \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}) || |     | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} | | }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}      \PYGZus{} \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}/ |\PYGZus{}|     |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}|  }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{|\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|    (\PYGZus{})\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{break}\PYG{p}{;}
+  \PYG{k}{case} \PYG{l+m+mi}{2}\PYG{o}{:}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}              \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}| / \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||  \PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||  \PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|           \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}\PYGZus{}   | (\PYGZus{}\PYGZus{}\PYGZus{}  | |\PYGZus{}\PYGZus{}) || |\PYGZus{}\PYGZus{}   | |\PYGZus{}\PYGZus{}) || |\PYGZus{}\PYGZus{}                \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{}\PYGZus{}|   }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}\PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}/ |  \PYGZus{}\PYGZus{}|  |  \PYGZus{}  / |  \PYGZus{}\PYGZus{}|             \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}) || |     | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} | | }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}      \PYGZus{}   \PYGZus{} \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}/ |\PYGZus{}|     |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}|  }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{|\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|    (\PYGZus{}) (\PYGZus{})\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{break}\PYG{p}{;}
+  \PYG{k}{case} \PYG{l+m+mi}{3}\PYG{o}{:}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}                  \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}| / \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||  \PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||  \PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|               \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}\PYGZus{}   | (\PYGZus{}\PYGZus{}\PYGZus{}  | |\PYGZus{}\PYGZus{}) || |\PYGZus{}\PYGZus{}   | |\PYGZus{}\PYGZus{}) || |\PYGZus{}\PYGZus{}                    \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |  \PYGZus{}\PYGZus{}|   }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}\PYGZus{}\PYGZus{} }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ |  \PYGZus{}\PYGZus{}\PYGZus{}/ |  \PYGZus{}\PYGZus{}|  |  \PYGZus{}  / |  \PYGZus{}\PYGZus{}|                 \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}) || |     | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{} | | }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{ | |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}      \PYGZus{}   \PYGZus{}   \PYGZus{} \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}/ |\PYGZus{}|     |\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}||\PYGZus{}|  }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{\PYGZus{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{|\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}|    (\PYGZus{}) (\PYGZus{}) (\PYGZus{})\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{k}{break}\PYG{p}{;}
+  \PYG{k}{default}\PYG{o}{:}
+    \PYG{k}{break}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que dibuja un punto en pantalla}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{Punto}\PYG{p}{()\PYGZob{}}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}    \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}    \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}    \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}    \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}  \PYGZus{} \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} (\PYGZus{})\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*@brief Funciones que cuenta la cantidad de lineas de un archivo}
+\PYG{c+cm}{ *@param nombre es el nombre del archivo}
+\PYG{c+cm}{ *@return devuelve la cantidad de lineas}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int} \PYG{n+nf}{ContarFrames}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{ifstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{linea}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo modo añadir}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{nombre} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} contarFrames \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+      \PYG{n}{std}\PYG{o}{::}\PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{linea}\PYG{p}{);}
+      \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+    \PYG{k}{return} \PYG{n}{contador}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*@brief Funciones que escriben en un archivo los datos extraidos por el leap}
+\PYG{c+cm}{ *@param dato es lo que se va a escribir}
+\PYG{c+cm}{ *@param modo es como se debe abrir el archivo}
+\PYG{c+cm}{ *@param nombre es el nombre del archivo}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{EscribirCadena}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{dato}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{modo}\PYG{p}{,}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{ofstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{modo} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{out}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo }
+    \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{app}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo modo añadir}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{nombre}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} escribir cadema\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{archivo} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{dato}\PYG{p}{;}
+
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que escriben en un archivo los datos extraidos por el leap}
+\PYG{c+cm}{ *@param dato es lo que se va a escribir}
+\PYG{c+cm}{ *@param modo es como se debe abrir el archivo}
+\PYG{c+cm}{ *@param nombre es el nombre del archivo}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{EscribirNumero}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{dato}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{modo}\PYG{p}{,}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{ofstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{modo} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{out}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo }
+    \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{app}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo modo añadir}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo\PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{nombre}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} escribir numero\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{archivo} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{dato}\PYG{p}{;}
+
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que escriben en un archivo los datos extraidos por el leap}
+\PYG{c+cm}{ *@param dato es lo que se va a escribir}
+\PYG{c+cm}{ *@param modo es como se debe abrir el archivo}
+\PYG{c+cm}{ *@param nombre es el nombre del archivo}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{EscribirVector}\PYG{p}{(}\PYG{n}{Leap}\PYG{o}{::}\PYG{n}{Vector} \PYG{n}{dato}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{modo}\PYG{p}{,}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{ofstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{modo} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{out}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo }
+    \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{app}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo modo añadir}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{nombre}   \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} escribir vector\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{archivo} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{dato}\PYG{p}{;}
+
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief clase que define el listener}
+\PYG{c+cm}{ */}
+\PYG{k}{class} \PYG{n+nc}{SampleListener} \PYG{o}{:} \PYG{k}{public} \PYG{n}{Listener} \PYG{p}{\PYGZob{}}
+  \PYG{k}{public}\PYG{o}{:}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n}{onInit}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onConnect}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onDisconnect}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onExit}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onFrame}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onFocusGained}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onFocusLost}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onDeviceChange}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onServiceConnect}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+    \PYG{k}{virtual} \PYG{k+kt}{void} \PYG{n+nf}{onServiceDisconnect}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}}\PYG{p}{);}
+
+  \PYG{k}{private}\PYG{o}{:}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{fingerNames}\PYG{p}{[]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}Thumb\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Index\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Middle\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Ring\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Pinky\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{boneNames}\PYG{p}{[]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}Metacarpal\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Proximal\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Middle\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}Distal\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{stateNames}\PYG{p}{[]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}STATE\PYGZus{}INVALID\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}STATE\PYGZus{}START\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}STATE\PYGZus{}UPDATE\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}STATE\PYGZus{}END\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onInit}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Initialized\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onConnect}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Connected\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+  \PYG{n}{controller}\PYG{p}{.}\PYG{n}{enableGesture}\PYG{p}{(}\PYG{n}{Gesture}\PYG{o}{::}\PYG{n}{TYPE\PYGZus{}CIRCLE}\PYG{p}{);}
+  \PYG{n}{controller}\PYG{p}{.}\PYG{n}{enableGesture}\PYG{p}{(}\PYG{n}{Gesture}\PYG{o}{::}\PYG{n}{TYPE\PYGZus{}KEY\PYGZus{}TAP}\PYG{p}{);}
+  \PYG{n}{controller}\PYG{p}{.}\PYG{n}{enableGesture}\PYG{p}{(}\PYG{n}{Gesture}\PYG{o}{::}\PYG{n}{TYPE\PYGZus{}SCREEN\PYGZus{}TAP}\PYG{p}{);}
+  \PYG{n}{controller}\PYG{p}{.}\PYG{n}{enableGesture}\PYG{p}{(}\PYG{n}{Gesture}\PYG{o}{::}\PYG{n}{TYPE\PYGZus{}SWIPE}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onDisconnect}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{// Note: not dispatched when running in a debugger.}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Disconnected\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onExit}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Exited\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onFrame}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{// Get the most recent frame and report some basic information}
+  \PYG{c+c1}{//system(\PYGZdq{}sleep 1\PYGZdq{});}
+  \PYG{k}{const} \PYG{n}{Frame} \PYG{n}{frame} \PYG{o}{=} \PYG{n}{controller}\PYG{p}{.}\PYG{n}{frame}\PYG{p}{();}
+  \PYG{n}{HandList} \PYG{n}{manitos} \PYG{o}{=} \PYG{n}{frame}\PYG{p}{.}\PYG{n}{hands}\PYG{p}{();}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{manitos}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{()} \PYG{o}{==} \PYG{n}{manitos}\PYG{p}{.}\PYG{n}{end}\PYG{p}{())\PYGZob{}}
+    \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RED}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Mantenga las manos en el sensor\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+c1}{////////////////////////////////////////// std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Frame id: \PYGZdq{} \PYGZlt{}\PYGZlt{} frame.id()}
+  \PYG{c+c1}{//////////////////////////////////////////           \PYGZlt{}\PYGZlt{} \PYGZdq{}, timestamp: \PYGZdq{} \PYGZlt{}\PYGZlt{} frame.timestamp()}
+  \PYG{c+c1}{//////////////////////////////////////////           \PYGZlt{}\PYGZlt{} \PYGZdq{}, hands: \PYGZdq{} \PYGZlt{}\PYGZlt{} frame.hands().count()}
+  \PYG{c+c1}{//////////////////////////////////////////           \PYGZlt{}\PYGZlt{} \PYGZdq{}, extended fingers: \PYGZdq{} \PYGZlt{}\PYGZlt{} frame.fingers().extended().count()}
+  \PYG{c+c1}{//////////////////////////////////////////           \PYGZlt{}\PYGZlt{} \PYGZdq{}, tools: \PYGZdq{} \PYGZlt{}\PYGZlt{} frame.tools().count()}
+  \PYG{c+c1}{//////////////////////////////////////////           \PYGZlt{}\PYGZlt{} \PYGZdq{}, gestures: \PYGZdq{} \PYGZlt{}\PYGZlt{} frame.gestures().count() \PYGZlt{}\PYGZlt{} std::endl;}
+  \PYG{c+c1}{//codigo modificado}
+  \PYG{c+c1}{//}
+  \PYG{c+c1}{//}
+  \PYG{k+kt}{int} \PYG{n}{salir} \PYG{o}{=} \PYG{n}{ContarFrames}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}FrameID\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{mano}\PYG{p}{;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{dedo}\PYG{p}{;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{hueso}\PYG{p}{;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{espacio} \PYG{o}{=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{salir} \PYG{o}{\PYGZgt{}=}\PYG{l+m+mi}{301}\PYG{p}{)\PYGZob{}}\PYG{c+c1}{//termina de ejecutarse cuando ha leido una cantidad de 300 frames}
+    \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k+kt}{int} \PYG{n}{s} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{salir} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}clear\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{Espere}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{salir} \PYG{o}{==} \PYG{l+m+mi}{75}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}clear\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{Espere}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{salir} \PYG{o}{==} \PYG{l+m+mi}{150}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}clear\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{Espere}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{salir} \PYG{o}{==} \PYG{l+m+mi}{225}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}clear\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{Espere}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n}{s}\PYG{o}{=}\PYG{n}{s}\PYG{p}{;}
+  \PYG{n}{EscribirNumero}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{.}\PYG{n}{id}\PYG{p}{(),}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}FrameID\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}FrameID\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirNumero}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{.}\PYG{n}{hands}\PYG{p}{().}\PYG{n}{count}\PYG{p}{(),}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}CtdManos\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}CtdManos\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirNumero}\PYG{p}{(}\PYG{n}{frame}\PYG{p}{.}\PYG{n}{fingers}\PYG{p}{().}\PYG{n}{extended}\PYG{p}{().}\PYG{n}{count}\PYG{p}{(),}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}CtdDedos\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}CtdDedos\PYGZdq{}}\PYG{p}{);}
+  \PYG{c+c1}{//}
+  \PYG{c+c1}{//}
+  \PYG{c+c1}{//}
+  \PYG{n}{HandList} \PYG{n}{hands} \PYG{o}{=} \PYG{n}{frame}\PYG{p}{.}\PYG{n}{hands}\PYG{p}{();}
+  \PYG{k}{for} \PYG{p}{(}\PYG{n}{HandList}\PYG{o}{::}\PYG{n}{const\PYGZus{}iterator} \PYG{n}{hl} \PYG{o}{=} \PYG{n}{hands}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{();} \PYG{n}{hl} \PYG{o}{!=} \PYG{n}{hands}\PYG{p}{.}\PYG{n}{end}\PYG{p}{();} \PYG{o}{++}\PYG{n}{hl}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// Get the first hand}
+    \PYG{k}{const} \PYG{n}{Hand} \PYG{n}{hand} \PYG{o}{=} \PYG{o}{*}\PYG{n}{hl}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{handType} \PYG{o}{=} \PYG{n}{hand}\PYG{p}{.}\PYG{n}{isLeft}\PYG{p}{()} \PYG{o}{?} \PYG{l+s}{\PYGZdq{}Left hand\PYGZdq{}} \PYG{o}{:} \PYG{l+s}{\PYGZdq{}Right hand\PYGZdq{}}\PYG{p}{;}
+\PYG{c+c1}{//////////////////////////////////////////    std::cout \PYGZlt{}\PYGZlt{} std::string(2, \PYGZsq{} \PYGZsq{}) \PYGZlt{}\PYGZlt{} handType \PYGZlt{}\PYGZlt{} \PYGZdq{}, id: \PYGZdq{} \PYGZlt{}\PYGZlt{} hand.id()}
+\PYG{c+c1}{//////////////////////////////////////////              \PYGZlt{}\PYGZlt{} \PYGZdq{}, palm position: \PYGZdq{} \PYGZlt{}\PYGZlt{} hand.palmPosition() \PYGZlt{}\PYGZlt{} std::endl;}
+    \PYG{c+c1}{// Get the hand\PYGZsq{}s normal vector and direction}
+\PYG{c+c1}{//////////////////////////////////////////    const Vector normal = hand.palmNormal();}
+\PYG{c+c1}{//////////////////////////////////////////    const Vector direction = hand.direction();}
+    \PYG{n}{mano} \PYG{o}{=} \PYG{n}{handType}\PYG{p}{;}
+    \PYG{c+c1}{// Calculate the hand\PYGZsq{}s pitch, roll, and yaw angles}
+\PYG{c+c1}{//////////////////////////////////////////    std::cout \PYGZlt{}\PYGZlt{} std::string(2, \PYGZsq{} \PYGZsq{}) \PYGZlt{}\PYGZlt{}  \PYGZdq{}pitch: \PYGZdq{} \PYGZlt{}\PYGZlt{} direction.pitch() * RAD\PYGZus{}TO\PYGZus{}DEG \PYGZlt{}\PYGZlt{} \PYGZdq{} degrees, \PYGZdq{}}
+\PYG{c+c1}{//////////////////////////////////////////              \PYGZlt{}\PYGZlt{} \PYGZdq{}roll: \PYGZdq{} \PYGZlt{}\PYGZlt{} normal.roll() * RAD\PYGZus{}TO\PYGZus{}DEG \PYGZlt{}\PYGZlt{} \PYGZdq{} degrees, \PYGZdq{}}
+\PYG{c+c1}{//////////////////////////////////////////              \PYGZlt{}\PYGZlt{} \PYGZdq{}yaw: \PYGZdq{} \PYGZlt{}\PYGZlt{} direction.yaw() * RAD\PYGZus{}TO\PYGZus{}DEG \PYGZlt{}\PYGZlt{} \PYGZdq{} degrees\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+
+    \PYG{c+c1}{// Get the Arm bone}
+    \PYG{n}{Arm} \PYG{n}{arm} \PYG{o}{=} \PYG{n}{hand}\PYG{p}{.}\PYG{n}{arm}\PYG{p}{();}
+\PYG{c+c1}{//////////////////////////////////////////    std::cout \PYGZlt{}\PYGZlt{} std::string(2, \PYGZsq{} \PYGZsq{}) \PYGZlt{}\PYGZlt{}  \PYGZdq{}Arm direction: \PYGZdq{} \PYGZlt{}\PYGZlt{} arm.direction()}
+\PYG{c+c1}{//////////////////////////////////////////              \PYGZlt{}\PYGZlt{} \PYGZdq{} wrist position: \PYGZdq{} \PYGZlt{}\PYGZlt{} arm.wristPosition()}
+\PYG{c+c1}{//////////////////////////////////////////              \PYGZlt{}\PYGZlt{} \PYGZdq{} elbow position: \PYGZdq{} \PYGZlt{}\PYGZlt{} arm.elbowPosition() \PYGZlt{}\PYGZlt{} std::endl;}
+
+    \PYG{c+c1}{// Get fingers}
+    \PYG{k}{const} \PYG{n}{FingerList} \PYG{n}{fingers} \PYG{o}{=} \PYG{n}{hand}\PYG{p}{.}\PYG{n}{fingers}\PYG{p}{();}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{FingerList}\PYG{o}{::}\PYG{n}{const\PYGZus{}iterator} \PYG{n}{fl} \PYG{o}{=} \PYG{n}{fingers}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{();} \PYG{n}{fl} \PYG{o}{!=} \PYG{n}{fingers}\PYG{p}{.}\PYG{n}{end}\PYG{p}{();} \PYG{o}{++}\PYG{n}{fl}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{const} \PYG{n}{Finger} \PYG{n}{finger} \PYG{o}{=} \PYG{o}{*}\PYG{n}{fl}\PYG{p}{;}
+\PYG{c+c1}{//////////////////////////////////////////      std::cout \PYGZlt{}\PYGZlt{} std::string(4, \PYGZsq{} \PYGZsq{}) \PYGZlt{}\PYGZlt{}  fingerNames[finger.type()]}
+\PYG{c+c1}{//////////////////////////////////////////                \PYGZlt{}\PYGZlt{} \PYGZdq{} finger, id: \PYGZdq{} \PYGZlt{}\PYGZlt{} finger.id()}
+\PYG{c+c1}{//////////////////////////////////////////                \PYGZlt{}\PYGZlt{} \PYGZdq{}, length: \PYGZdq{} \PYGZlt{}\PYGZlt{} finger.length()}
+\PYG{c+c1}{//////////////////////////////////////////                \PYGZlt{}\PYGZlt{} \PYGZdq{}mm, width: \PYGZdq{} \PYGZlt{}\PYGZlt{} finger.width() \PYGZlt{}\PYGZlt{} std::endl;}
+      \PYG{n}{dedo} \PYG{o}{=} \PYG{n}{fingerNames}\PYG{p}{[}\PYG{n}{finger}\PYG{p}{.}\PYG{n}{type}\PYG{p}{()];}
+      \PYG{c+c1}{// Get finger bones}
+      \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{b} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{b} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{4}\PYG{p}{;} \PYG{o}{++}\PYG{n}{b}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{Bone}\PYG{o}{::}\PYG{n}{Type} \PYG{n}{boneType} \PYG{o}{=} \PYG{k}{static\PYGZus{}cast}\PYG{o}{\PYGZlt{}}\PYG{n}{Bone}\PYG{o}{::}\PYG{n}{Type}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{b}\PYG{p}{);}
+        \PYG{n}{Bone} \PYG{n}{bone} \PYG{o}{=} \PYG{n}{finger}\PYG{p}{.}\PYG{n}{bone}\PYG{p}{(}\PYG{n}{boneType}\PYG{p}{);}
+\PYG{c+c1}{//////////////////////////////////////////        std::cout \PYGZlt{}\PYGZlt{} std::string(6, \PYGZsq{} \PYGZsq{}) \PYGZlt{}\PYGZlt{}  boneNames[boneType]}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{} \PYGZdq{} bone, start: \PYGZdq{} \PYGZlt{}\PYGZlt{} bone.prevJoint()}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{} \PYGZdq{}, end: \PYGZdq{} \PYGZlt{}\PYGZlt{} bone.nextJoint()}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{} \PYGZdq{}, direction: \PYGZdq{} \PYGZlt{}\PYGZlt{} bone.direction() * RAD\PYGZus{}TO\PYGZus{}DEG \PYGZlt{}\PYGZlt{} \PYGZdq{}grados\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+        \PYG{n}{hueso} \PYG{o}{=} \PYG{n}{boneNames}\PYG{p}{[}\PYG{n}{boneType}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{salir} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+          \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{mano}\PYG{o}{+}\PYG{n}{espacio}\PYG{o}{+}\PYG{n}{dedo}\PYG{o}{+}\PYG{n}{espacio}\PYG{o}{+}\PYG{n}{hueso}\PYG{p}{);}
+          \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{n}{mano}\PYG{o}{+}\PYG{n}{espacio}\PYG{o}{+}\PYG{n}{dedo}\PYG{o}{+}\PYG{n}{espacio}\PYG{o}{+}\PYG{n}{hueso}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}ListaArchivos\PYGZdq{}}\PYG{p}{);}
+          \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}ListaArchivos\PYGZdq{}}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{n}{EscribirVector}\PYG{p}{(}\PYG{n}{bone}\PYG{p}{.}\PYG{n}{direction}\PYG{p}{()} \PYG{o}{*} \PYG{n}{RAD\PYGZus{}TO\PYGZus{}DEG}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{mano}\PYG{o}{+}\PYG{n}{espacio}\PYG{o}{+}\PYG{n}{dedo}\PYG{o}{+}\PYG{n}{espacio}\PYG{o}{+}\PYG{n}{hueso}\PYG{p}{);}
+        \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{mano}\PYG{o}{+}\PYG{n}{espacio}\PYG{o}{+}\PYG{n}{dedo}\PYG{o}{+}\PYG{n}{espacio}\PYG{o}{+}\PYG{n}{hueso}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+c1}{// Get tools}
+  \PYG{k}{const} \PYG{n}{ToolList} \PYG{n}{tools} \PYG{o}{=} \PYG{n}{frame}\PYG{p}{.}\PYG{n}{tools}\PYG{p}{();}
+  \PYG{k}{for} \PYG{p}{(}\PYG{n}{ToolList}\PYG{o}{::}\PYG{n}{const\PYGZus{}iterator} \PYG{n}{tl} \PYG{o}{=} \PYG{n}{tools}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{();} \PYG{n}{tl} \PYG{o}{!=} \PYG{n}{tools}\PYG{p}{.}\PYG{n}{end}\PYG{p}{();} \PYG{o}{++}\PYG{n}{tl}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{const} \PYG{n}{Tool} \PYG{n}{tool} \PYG{o}{=} \PYG{o}{*}\PYG{n}{tl}\PYG{p}{;}
+\PYG{c+c1}{//////////////////////////////////////////    std::cout \PYGZlt{}\PYGZlt{} std::string(2, \PYGZsq{} \PYGZsq{}) \PYGZlt{}\PYGZlt{}  \PYGZdq{}Tool, id: \PYGZdq{} \PYGZlt{}\PYGZlt{} tool.id()}
+\PYG{c+c1}{//////////////////////////////////////////              \PYGZlt{}\PYGZlt{} \PYGZdq{}, position: \PYGZdq{} \PYGZlt{}\PYGZlt{} tool.tipPosition()}
+\PYG{c+c1}{//////////////////////////////////////////              \PYGZlt{}\PYGZlt{} \PYGZdq{}, direction: \PYGZdq{} \PYGZlt{}\PYGZlt{} tool.direction() \PYGZlt{}\PYGZlt{} std::endl;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+c1}{// Get gestures}
+  \PYG{k}{const} \PYG{n}{GestureList} \PYG{n}{gestures} \PYG{o}{=} \PYG{n}{frame}\PYG{p}{.}\PYG{n}{gestures}\PYG{p}{();}
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{g} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{g} \PYG{o}{\PYGZlt{}} \PYG{n}{gestures}\PYG{p}{.}\PYG{n}{count}\PYG{p}{();} \PYG{o}{++}\PYG{n}{g}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{Gesture} \PYG{n}{gesture} \PYG{o}{=} \PYG{n}{gestures}\PYG{p}{[}\PYG{n}{g}\PYG{p}{];}
+
+    \PYG{k}{switch} \PYG{p}{(}\PYG{n}{gesture}\PYG{p}{.}\PYG{n}{type}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+      \PYG{k}{case} \PYG{n}{Gesture}\PYG{o}{::}\PYG{n+nl}{TYPE\PYGZus{}CIRCLE}\PYG{p}{:}
+      \PYG{p}{\PYGZob{}}
+        \PYG{n}{CircleGesture} \PYG{n}{circle} \PYG{o}{=} \PYG{n}{gesture}\PYG{p}{;}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{clockwiseness}\PYG{p}{;}
+
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{circle}\PYG{p}{.}\PYG{n}{pointable}\PYG{p}{().}\PYG{n}{direction}\PYG{p}{().}\PYG{n}{angleTo}\PYG{p}{(}\PYG{n}{circle}\PYG{p}{.}\PYG{n}{normal}\PYG{p}{())} \PYG{o}{\PYGZlt{}=} \PYG{n}{PI}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+          \PYG{n}{clockwiseness} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}clockwise\PYGZdq{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+          \PYG{n}{clockwiseness} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}counterclockwise\PYGZdq{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{// Calculate angle swept since last frame}
+        \PYG{c+c1}{//float sweptAngle = 0;}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{circle}\PYG{p}{.}\PYG{n}{state}\PYG{p}{()} \PYG{o}{!=} \PYG{n}{Gesture}\PYG{o}{::}\PYG{n}{STATE\PYGZus{}START}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+          \PYG{n}{CircleGesture} \PYG{n}{previousUpdate} \PYG{o}{=} \PYG{n}{CircleGesture}\PYG{p}{(}\PYG{n}{controller}\PYG{p}{.}\PYG{n}{frame}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{).}\PYG{n}{gesture}\PYG{p}{(}\PYG{n}{circle}\PYG{p}{.}\PYG{n}{id}\PYG{p}{()));}
+          \PYG{c+c1}{//sweptAngle = (circle.progress() \PYGZhy{} previousUpdate.progress()) * 2 * PI;}
+        \PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{//////////////////////////////////////////        std::cout \PYGZlt{}\PYGZlt{} std::string(2, \PYGZsq{} \PYGZsq{})}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{} \PYGZdq{}Circle id: \PYGZdq{} \PYGZlt{}\PYGZlt{} gesture.id()}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{} \PYGZdq{}, state: \PYGZdq{} \PYGZlt{}\PYGZlt{} stateNames[gesture.state()]}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{} \PYGZdq{}, progress: \PYGZdq{} \PYGZlt{}\PYGZlt{} circle.progress()}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{} \PYGZdq{}, radius: \PYGZdq{} \PYGZlt{}\PYGZlt{} circle.radius()}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{} \PYGZdq{}, angle \PYGZdq{} \PYGZlt{}\PYGZlt{} sweptAngle * RAD\PYGZus{}TO\PYGZus{}DEG}
+\PYG{c+c1}{//////////////////////////////////////////                  \PYGZlt{}\PYGZlt{}  \PYGZdq{}, \PYGZdq{} \PYGZlt{}\PYGZlt{} clockwiseness \PYGZlt{}\PYGZlt{} std::endl;}
+        \PYG{k}{break}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{case} \PYG{n}{Gesture}\PYG{o}{::}\PYG{n+nl}{TYPE\PYGZus{}SWIPE}\PYG{p}{:}
+      \PYG{p}{\PYGZob{}}
+        \PYG{n}{SwipeGesture} \PYG{n}{swipe} \PYG{o}{=} \PYG{n}{gesture}\PYG{p}{;}
+\PYG{c+c1}{//////////////////////////////////////////        std::cout \PYGZlt{}\PYGZlt{} std::string(2, \PYGZsq{} \PYGZsq{})}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}Swipe id: \PYGZdq{} \PYGZlt{}\PYGZlt{} gesture.id()}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, state: \PYGZdq{} \PYGZlt{}\PYGZlt{} stateNames[gesture.state()]}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, direction: \PYGZdq{} \PYGZlt{}\PYGZlt{} swipe.direction()}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, speed: \PYGZdq{} \PYGZlt{}\PYGZlt{} swipe.speed() \PYGZlt{}\PYGZlt{} std::endl;}
+        \PYG{k}{break}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{case} \PYG{n}{Gesture}\PYG{o}{::}\PYG{n+nl}{TYPE\PYGZus{}KEY\PYGZus{}TAP}\PYG{p}{:}
+      \PYG{p}{\PYGZob{}}
+        \PYG{n}{KeyTapGesture} \PYG{n}{tap} \PYG{o}{=} \PYG{n}{gesture}\PYG{p}{;}
+\PYG{c+c1}{//////////////////////////////////////////        std::cout \PYGZlt{}\PYGZlt{} std::string(2, \PYGZsq{} \PYGZsq{})}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}Key Tap id: \PYGZdq{} \PYGZlt{}\PYGZlt{} gesture.id()}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, state: \PYGZdq{} \PYGZlt{}\PYGZlt{} stateNames[gesture.state()]}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, position: \PYGZdq{} \PYGZlt{}\PYGZlt{} tap.position()}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, direction: \PYGZdq{} \PYGZlt{}\PYGZlt{} tap.direction()\PYGZlt{}\PYGZlt{} std::endl;}
+        \PYG{k}{break}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{case} \PYG{n}{Gesture}\PYG{o}{::}\PYG{n+nl}{TYPE\PYGZus{}SCREEN\PYGZus{}TAP}\PYG{p}{:}
+      \PYG{p}{\PYGZob{}}
+        \PYG{n}{ScreenTapGesture} \PYG{n}{screentap} \PYG{o}{=} \PYG{n}{gesture}\PYG{p}{;}
+\PYG{c+c1}{//////////////////////////////////////////        std::cout \PYGZlt{}\PYGZlt{} std::string(2, \PYGZsq{} \PYGZsq{})}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}Screen Tap id: \PYGZdq{} \PYGZlt{}\PYGZlt{} gesture.id()}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, state: \PYGZdq{} \PYGZlt{}\PYGZlt{} stateNames[gesture.state()]}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, position: \PYGZdq{} \PYGZlt{}\PYGZlt{} screentap.position()}
+\PYG{c+c1}{//////////////////////////////////////////          \PYGZlt{}\PYGZlt{} \PYGZdq{}, direction: \PYGZdq{} \PYGZlt{}\PYGZlt{} screentap.direction()\PYGZlt{}\PYGZlt{} std::endl;}
+        \PYG{k}{break}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{k}{default}\PYG{o}{:}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{)}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Unknown gesture type.\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{k}{break}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{frame}\PYG{p}{.}\PYG{n}{hands}\PYG{p}{().}\PYG{n}{isEmpty}\PYG{p}{()} \PYG{o}{||} \PYG{o}{!}\PYG{n}{gestures}\PYG{p}{.}\PYG{n}{isEmpty}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{//std::cout \PYGZlt{}\PYGZlt{} std::endl;}
+  \PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onFocusGained}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Focus Gained\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onFocusLost}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Focus Lost\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onDeviceChange}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Device Changed\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+  \PYG{k}{const} \PYG{n}{DeviceList} \PYG{n}{devices} \PYG{o}{=} \PYG{n}{controller}\PYG{p}{.}\PYG{n}{devices}\PYG{p}{();}
+
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{devices}\PYG{p}{.}\PYG{n}{count}\PYG{p}{();} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////    std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}id: \PYGZdq{} \PYGZlt{}\PYGZlt{} devices[i].toString() \PYGZlt{}\PYGZlt{} std::endl;}
+\PYG{c+c1}{//////////////////////////////////////////    std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}  isStreaming: \PYGZdq{} \PYGZlt{}\PYGZlt{} (devices[i].isStreaming() ? \PYGZdq{}true\PYGZdq{} : \PYGZdq{}false\PYGZdq{}) \PYGZlt{}\PYGZlt{} std::endl;}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onServiceConnect}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Service Connected\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{void} \PYG{n}{SampleListener}\PYG{o}{::}\PYG{n}{onServiceDisconnect}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Controller}\PYG{o}{\PYGZam{}} \PYG{n}{controller}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//////////////////////////////////////////  std::cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Service Disconnected\PYGZdq{} \PYGZlt{}\PYGZlt{} std::endl;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief Funcion principal, inicializa el listener y el controlador, mantien el proceso hasta que se digite enter}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int} \PYG{n}{main}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,} \PYG{k+kt}{char}\PYG{o}{**} \PYG{n}{argv}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n}{printf}\PYG{p}{(}\PYG{n}{ANSI\PYGZus{}COLOR\PYGZus{}RESET} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}FrameID\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}CtdManos\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}CtdDedos\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}ListaArchivos\PYGZdq{}}\PYG{p}{);}
+  \PYG{c+c1}{// Create a sample listener and controller}
+  \PYG{n}{SampleListener} \PYG{n}{listener}\PYG{p}{;}
+  \PYG{n}{Controller} \PYG{n}{controller}\PYG{p}{;}
+  \PYG{c+c1}{// Have the sample listener receive events from the controller}
+  \PYG{n}{controller}\PYG{p}{.}\PYG{n}{addListener}\PYG{p}{(}\PYG{n}{listener}\PYG{p}{);}
+  
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{argc} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{argv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{l+s}{\PYGZdq{}\PYGZhy{}\PYGZhy{}bg\PYGZdq{}}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{n}{controller}\PYG{p}{.}\PYG{n}{setPolicy}\PYG{p}{(}\PYG{n}{Leap}\PYG{o}{::}\PYG{n}{Controller}\PYG{o}{::}\PYG{n}{POLICY\PYGZus{}BACKGROUND\PYGZus{}FRAMES}\PYG{p}{);}
+
+  \PYG{c+c1}{// Keep this process running until Enter is pressed}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;;}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{cin}\PYG{p}{.}\PYG{n}{get}\PYG{p}{();}
+
+  \PYG{c+c1}{// Remove the sample listener when done}
+  \PYG{n}{controller}\PYG{p}{.}\PYG{n}{removeListener}\PYG{p}{(}\PYG{n}{listener}\PYG{p}{);}
+  
+  \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

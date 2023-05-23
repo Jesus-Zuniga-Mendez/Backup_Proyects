@@ -1,0 +1,11 @@
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Class Documentation}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Cartas Class Reference}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Member Function Documentation}{3}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}sacar\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Combinacion\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Ganadora()}{3}{subsubsection.2.1.1.1}
+\contentsline {section}{\numberline {2.2}Jugador Class Reference}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Tablero Class Reference}{4}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Member Function Documentation}{4}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1.1}mover\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Ficha()}{4}{subsubsection.2.3.1.1}
+\contentsline {chapter}{Index}{7}{section*.7}

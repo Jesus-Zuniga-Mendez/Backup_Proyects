@@ -1,0 +1,23 @@
+\begin{theindex}
+
+  \item {Binary\+Search\+Tree}
+    \subitem {calcular\+Niveles}, \hyperpage{4}
+    \subitem {calcular\+Nodos}, \hyperpage{4}
+    \subitem {devolver\+String\+Nivel}, \hyperpage{5}
+  \item {Binary\+Search\+Tree$<$ Data, Type\+Nodo $>$}, \hyperpage{3}
+
+  \indexspace
+
+  \item {calcular\+Niveles}
+    \subitem {Binary\+Search\+Tree}, \hyperpage{4}
+  \item {calcular\+Nodos}
+    \subitem {Binary\+Search\+Tree}, \hyperpage{4}
+  \item {Class\+Node$<$ Dato $>$}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Dato\+No\+Primitivo$<$ Tipo\+Dato $>$}, \hyperpage{6}
+  \item {devolver\+String\+Nivel}
+    \subitem {Binary\+Search\+Tree}, \hyperpage{5}
+
+\end{theindex}

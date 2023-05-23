@@ -1,0 +1,73 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+
+
+Archivo pricipal, laboratorio que trata sobre listas enlazadas.  
+
+
+{\ttfamily \#include \char`\"{}./include/includes.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a3b7304a2c94d4d09e6929e5a98d3d85b}\label{main_8c_a3b7304a2c94d4d09e6929e5a98d3d85b}} 
+void \hyperlink{main_8c_a3b7304a2c94d4d09e6929e5a98d3d85b}{Bienvenida} ()
+\begin{DoxyCompactList}\small\item\em Función que imprime una bienvenida para el usuario. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a6b0067666ba7d74453f3a3c2c61d84a6}{Menu} ()
+\begin{DoxyCompactList}\small\item\em Funcion que imprime el menu. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_aff9373453542d46f423a17244f72eb05}{Liberar\+Lista\+Listas} (\hyperlink{struct__lista}{lista} $\ast$$\ast$lista\+Listas, int cantidad)
+\begin{DoxyCompactList}\small\item\em Funcion que libera la memoria utilizada por la lista que contiene las demas listas. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Funcion Principal, contiene el codigo que ejecuta las demas acciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo pricipal, laboratorio que trata sobre listas enlazadas. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20 de junio de 2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyleft (l) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_aff9373453542d46f423a17244f72eb05}\label{main_8c_aff9373453542d46f423a17244f72eb05}} 
+\index{main.\+c@{main.\+c}!Liberar\+Lista\+Listas@{Liberar\+Lista\+Listas}}
+\index{Liberar\+Lista\+Listas@{Liberar\+Lista\+Listas}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Liberar\+Lista\+Listas()}{LiberarListaListas()}}
+{\footnotesize\ttfamily void Liberar\+Lista\+Listas (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$$\ast$}]{lista\+Listas,  }\item[{int}]{cantidad }\end{DoxyParamCaption})}
+
+
+
+Funcion que libera la memoria utilizada por la lista que contiene las demas listas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Listas} & es la lista que contiene las demas listas \\
+\hline
+{\em cantidad} & es la cantidad de listas que creo el usuario \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a6b0067666ba7d74453f3a3c2c61d84a6}\label{main_8c_a6b0067666ba7d74453f3a3c2c61d84a6}} 
+\index{main.\+c@{main.\+c}!Menu@{Menu}}
+\index{Menu@{Menu}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily int Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funcion que imprime el menu. 
+
+\begin{DoxyReturn}{Returns}
+seleccion Es la opcion escogida por el usuario 
+\end{DoxyReturn}

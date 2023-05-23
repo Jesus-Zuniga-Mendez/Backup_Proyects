@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['type_5fboolean',['TYPE_BOOLEAN',['../class_leap_1_1_config.html#aee9819af7eacacc324aa72619310a9d8a592e8eabddb7d95b192fee923c423760',1,'Leap::Config']]],
+  ['type_5fcircle',['TYPE_CIRCLE',['../class_leap_1_1_gesture.html#a6fa6dd4f28c502f0d55abc6b71c6f9b1a32c2a26d674d97f9c9b2e72569ff6869',1,'Leap::Gesture']]],
+  ['type_5fdistal',['TYPE_DISTAL',['../class_leap_1_1_bone.html#ac2f949e05b22edc21a308df42580b5e1a0f3eb18922a8269e2e1c6ebb4c757125',1,'Leap::Bone']]],
+  ['type_5ffloat',['TYPE_FLOAT',['../class_leap_1_1_config.html#aee9819af7eacacc324aa72619310a9d8a85ccbf5a55972697b350b394f7d87cfa',1,'Leap::Config']]],
+  ['type_5findex',['TYPE_INDEX',['../class_leap_1_1_finger.html#a1e94681e6d2168b2f854fcad7c8ac483a65b574719317f125da20e9ba297510a2',1,'Leap::Finger']]],
+  ['type_5fint32',['TYPE_INT32',['../class_leap_1_1_config.html#aee9819af7eacacc324aa72619310a9d8af552faf6063e26e0b5a995c344cfaebd',1,'Leap::Config']]],
+  ['type_5fintermediate',['TYPE_INTERMEDIATE',['../class_leap_1_1_bone.html#ac2f949e05b22edc21a308df42580b5e1a4295c9df146b92098c857833030cd6d2',1,'Leap::Bone']]],
+  ['type_5finvalid',['TYPE_INVALID',['../class_leap_1_1_gesture.html#a6fa6dd4f28c502f0d55abc6b71c6f9b1a743fdf6ff0a893a5b7bf6a56739af618',1,'Leap::Gesture']]],
+  ['type_5fkey_5ftap',['TYPE_KEY_TAP',['../class_leap_1_1_gesture.html#a6fa6dd4f28c502f0d55abc6b71c6f9b1a4db232d45dfde82ff0c319f623cc3471',1,'Leap::Gesture']]],
+  ['type_5fkeyboard',['TYPE_KEYBOARD',['../class_leap_1_1_device.html#a1b7477f6d382b15a77a00712a70628b2ac0aaf88576a6b2408c130c7344c8adad',1,'Leap::Device']]],
+  ['type_5flaptop',['TYPE_LAPTOP',['../class_leap_1_1_device.html#a1b7477f6d382b15a77a00712a70628b2a6e685da1e914524572163c510c5acc58',1,'Leap::Device']]],
+  ['type_5fmetacarpal',['TYPE_METACARPAL',['../class_leap_1_1_bone.html#ac2f949e05b22edc21a308df42580b5e1a64438d8f76c83b77f96cbe6d7a18af6a',1,'Leap::Bone']]],
+  ['type_5fmiddle',['TYPE_MIDDLE',['../class_leap_1_1_finger.html#a1e94681e6d2168b2f854fcad7c8ac483aa36099c9c5f567dff6e8f7225046e1e3',1,'Leap::Finger']]],
+  ['type_5fperipheral',['TYPE_PERIPHERAL',['../class_leap_1_1_device.html#a1b7477f6d382b15a77a00712a70628b2ab6881a7011d2914e86b452fd3e0f903f',1,'Leap::Device']]],
+  ['type_5fpinky',['TYPE_PINKY',['../class_leap_1_1_finger.html#a1e94681e6d2168b2f854fcad7c8ac483a44d0034d17dfd2494075891249397ee8',1,'Leap::Finger']]],
+  ['type_5fproximal',['TYPE_PROXIMAL',['../class_leap_1_1_bone.html#ac2f949e05b22edc21a308df42580b5e1a83869c024e17895c58bfbb23c8f4058b',1,'Leap::Bone']]],
+  ['type_5fring',['TYPE_RING',['../class_leap_1_1_finger.html#a1e94681e6d2168b2f854fcad7c8ac483af7dac3433734b7b30fe2176f8ab9712b',1,'Leap::Finger']]],
+  ['type_5fscreen_5ftap',['TYPE_SCREEN_TAP',['../class_leap_1_1_gesture.html#a6fa6dd4f28c502f0d55abc6b71c6f9b1aa099d1aa238c369e5b2519f2aaca2218',1,'Leap::Gesture']]],
+  ['type_5fstring',['TYPE_STRING',['../class_leap_1_1_config.html#aee9819af7eacacc324aa72619310a9d8a312ad72cfe51163b2817732f7530e04e',1,'Leap::Config']]],
+  ['type_5fswipe',['TYPE_SWIPE',['../class_leap_1_1_gesture.html#a6fa6dd4f28c502f0d55abc6b71c6f9b1a0845a054bc76e298900d3bd735d26c9c',1,'Leap::Gesture']]],
+  ['type_5fthumb',['TYPE_THUMB',['../class_leap_1_1_finger.html#a1e94681e6d2168b2f854fcad7c8ac483a35bc2239c4fd03e7a7bc4a1796ff5369',1,'Leap::Finger']]],
+  ['type_5funknown',['TYPE_UNKNOWN',['../class_leap_1_1_config.html#aee9819af7eacacc324aa72619310a9d8a61027e87139ecf1153e7b7f41fd9adfa',1,'Leap::Config']]]
+];

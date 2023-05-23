@@ -1,0 +1,30 @@
+\documentclass[10pt]{article}
+
+\usepackage{graphicx}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{times}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{float}%para acomodar imagenes
+\usepackage{hyperref}%agrega hipervinculos a el indice y citas
+\usepackage{url}%citar paginas web
+\usepackage{apacite}%estilo apa
+\usepackage{listings}%para insertar el codigo en 
+\usepackage{moreverb} 
+
+\usepackage[none]{hyphenat}%justifica el texto sin dividir palabras
+
+
+\begin{document}
+\sloppy%para que justifique el texto correctamente
+
+
+\bibliographystyle{apacite}%estilo apa
+%\nocite{*} % si quieren que todas las referencias de su bibtex aparezcan en el documento
+
+\input{./portada.tex}
+\input{./contenido.tex}
+%\bibliography{./DB}
+
+\end{document}

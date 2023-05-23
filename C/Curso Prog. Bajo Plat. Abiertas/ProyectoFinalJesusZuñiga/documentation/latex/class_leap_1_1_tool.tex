@@ -1,0 +1,126 @@
+\hypertarget{class_leap_1_1_tool}{}\section{Leap\+:\+:Tool Class Reference}
+\label{class_leap_1_1_tool}\index{Leap\+::\+Tool@{Leap\+::\+Tool}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Tool\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Tool\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_tool_a856522513b4dbf3ef4e2a9a9667f5735}\label{class_leap_1_1_tool_a856522513b4dbf3ef4e2a9a9667f5735}} 
+{\bfseries Tool} (Tool\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_tool_a6debbdfc14096362bf32228ba3e5c72f}{Tool} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_tool_a6dfea4c318389bcc6d1ef373d7a4432e}{Tool} (const \hyperlink{class_leap_1_1_pointable}{Pointable} \&)
+\item 
+std\+::string \hyperlink{class_leap_1_1_tool_a0a5eb02f6687ad828cf0f9f1e6494a44}{to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_tool}{Tool} \& \hyperlink{class_leap_1_1_tool_af47b7fe3674536f265470e7ab3467ef1}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_tool}{Tool} class represents a tracked tool.
+
+Tools are \hyperlink{class_leap_1_1_pointable}{Pointable} objects that the Leap Motion software has classified as a tool.
+
+Get valid \hyperlink{class_leap_1_1_tool}{Tool} objects from a \hyperlink{class_leap_1_1_frame}{Frame} object.
+
+
+
+Note that \hyperlink{class_leap_1_1_tool}{Tool} objects can be invalid, which means that they do not contain valid tracking data and do not correspond to a physical tool. Invalid \hyperlink{class_leap_1_1_tool}{Tool} objects can be the result of asking for a \hyperlink{class_leap_1_1_tool}{Tool} object using an ID from an earlier frame when no \hyperlink{class_leap_1_1_tool}{Tool} objects with that ID exist in the current frame. A \hyperlink{class_leap_1_1_tool}{Tool} object created from the \hyperlink{class_leap_1_1_tool}{Tool} constructor is also invalid. Test for validity with the \hyperlink{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}{Tool\+::is\+Valid()} function. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_tool_a6debbdfc14096362bf32228ba3e5c72f}\label{class_leap_1_1_tool_a6debbdfc14096362bf32228ba3e5c72f}} 
+\index{Leap\+::\+Tool@{Leap\+::\+Tool}!Tool@{Tool}}
+\index{Tool@{Tool}!Leap\+::\+Tool@{Leap\+::\+Tool}}
+\subsubsection{\texorpdfstring{Tool()}{Tool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Tool\+::\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a \hyperlink{class_leap_1_1_tool}{Tool} object.
+
+An uninitialized tool is considered invalid. Get valid \hyperlink{class_leap_1_1_tool}{Tool} objects from a \hyperlink{class_leap_1_1_frame}{Frame} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tool_a6dfea4c318389bcc6d1ef373d7a4432e}\label{class_leap_1_1_tool_a6dfea4c318389bcc6d1ef373d7a4432e}} 
+\index{Leap\+::\+Tool@{Leap\+::\+Tool}!Tool@{Tool}}
+\index{Tool@{Tool}!Leap\+::\+Tool@{Leap\+::\+Tool}}
+\subsubsection{\texorpdfstring{Tool()}{Tool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Tool\+::\+Tool (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_pointable}{Pointable} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+If the specified \hyperlink{class_leap_1_1_pointable}{Pointable} object represents a tool, creates a copy of it as a \hyperlink{class_leap_1_1_tool}{Tool} object; otherwise, creates an invalid \hyperlink{class_leap_1_1_tool}{Tool} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_tool_af47b7fe3674536f265470e7ab3467ef1}\label{class_leap_1_1_tool_af47b7fe3674536f265470e7ab3467ef1}} 
+\index{Leap\+::\+Tool@{Leap\+::\+Tool}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Tool@{Leap\+::\+Tool}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_tool}{Tool}\& Leap\+::\+Tool\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an invalid \hyperlink{class_leap_1_1_tool}{Tool} object.
+
+You can use the instance returned by this function in comparisons testing whether a given \hyperlink{class_leap_1_1_tool}{Tool} instance is valid or invalid. (You can also use the \hyperlink{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}{Tool\+::is\+Valid()} function.)
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The invalid \hyperlink{class_leap_1_1_tool}{Tool} instance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tool_a0a5eb02f6687ad828cf0f9f1e6494a44}\label{class_leap_1_1_tool_a0a5eb02f6687ad828cf0f9f1e6494a44}} 
+\index{Leap\+::\+Tool@{Leap\+::\+Tool}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Leap\+::\+Tool@{Leap\+::\+Tool}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Tool\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A string containing a brief, human readable description of the \hyperlink{class_leap_1_1_tool}{Tool} object.
+
+\begin{DoxyReturn}{Returns}
+A description of the \hyperlink{class_leap_1_1_tool}{Tool} object as a string. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

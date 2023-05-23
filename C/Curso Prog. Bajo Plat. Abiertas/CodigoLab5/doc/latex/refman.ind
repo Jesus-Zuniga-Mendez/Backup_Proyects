@@ -1,0 +1,64 @@
+\begin{theindex}
+
+  \item {Bienvenido}
+    \subitem {tools.\+c}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Crear\+Matriz}
+    \subitem {matriz.\+c}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Imprimir\+Matriz}
+    \subitem {matriz.\+c}, \hyperpage{5}
+  \item {incl/matriz.\+h}, \hyperpage{3}
+
+  \indexspace
+
+  \item {Limpiar\+Matriz}
+    \subitem {matriz.\+c}, \hyperpage{5}
+  \item {Llenar\+Matriz}
+    \subitem {matriz.\+c}, \hyperpage{6}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\+c}, \hyperpage{4}
+  \item {main.\+c}, \hyperpage{3}
+    \subitem {main}, \hyperpage{4}
+  \item {matriz.\+c}
+    \subitem {Crear\+Matriz}, \hyperpage{5}
+    \subitem {Imprimir\+Matriz}, \hyperpage{5}
+    \subitem {Limpiar\+Matriz}, \hyperpage{5}
+    \subitem {Llenar\+Matriz}, \hyperpage{6}
+    \subitem {Multiplicar\+Escalar}, \hyperpage{6}
+    \subitem {Multiplicar\+Matrices}, \hyperpage{7}
+    \subitem {Sumar\+Escalar}, \hyperpage{7}
+    \subitem {Sumar\+Matrices}, \hyperpage{8}
+    \subitem {Transpuesta}, \hyperpage{8}
+  \item {Menu}
+    \subitem {tools.\+c}, \hyperpage{9}
+  \item {Multiplicar\+Escalar}
+    \subitem {matriz.\+c}, \hyperpage{6}
+  \item {Multiplicar\+Matrices}
+    \subitem {matriz.\+c}, \hyperpage{7}
+
+  \indexspace
+
+  \item {src/matriz.\+c}, \hyperpage{4}
+  \item {src/tools.\+c}, \hyperpage{8}
+  \item {Sumar\+Escalar}
+    \subitem {matriz.\+c}, \hyperpage{7}
+  \item {Sumar\+Matrices}
+    \subitem {matriz.\+c}, \hyperpage{8}
+
+  \indexspace
+
+  \item {tools.\+c}
+    \subitem {Bienvenido}, \hyperpage{9}
+    \subitem {Menu}, \hyperpage{9}
+  \item {Transpuesta}
+    \subitem {matriz.\+c}, \hyperpage{8}
+
+\end{theindex}

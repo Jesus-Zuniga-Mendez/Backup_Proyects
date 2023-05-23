@@ -1,0 +1,18 @@
+Soy un rectangulo.
+ Mi base es: 20.0
+Mi altura es 10.0
+
+Lista de vertices 
+Vertice 1
+Coordenada en X es:0.0 y mi Coordenada en Y es:0.0
+Vertice 2
+Coordenada en X es:0.0 y mi Coordenada en Y es:10.0
+Vertice 3
+Coordenada en X es:20.0 y mi Coordenada en Y es:10.0
+Vertice 4
+Coordenada en X es:20.0 y mi Coordenada en Y es:0.0
+
+Mi nombre es: Rectangulo Multiple
+Mi color es: cualquier color
+Mi superfice es: 200.0
+Mi perimetro es: 60.0

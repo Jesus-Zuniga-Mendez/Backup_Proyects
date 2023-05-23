@@ -1,0 +1,203 @@
+\hypertarget{matriz_8c}{}\section{src/matriz.c File Reference}
+\label{matriz_8c}\index{src/matriz.\+c@{src/matriz.\+c}}
+
+
+Archivo que contiene las funciones relacionadas a las matrices.  
+
+
+{\ttfamily \#include \char`\"{}../incl/matriz.\+h\char`\"{}}\newline
+Include dependency graph for matriz.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float $\ast$$\ast$ \hyperlink{matriz_8c_aeb821498ffd43f71c3f23cffd752a9a5}{Crear\+Matriz} (int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Funcion que crea una matriz del tamaño deseado por el usuario. \end{DoxyCompactList}\item 
+void \hyperlink{matriz_8c_a0376d447e777b2429abe16f1d01ddefd}{Imprimir\+Matriz} (float $\ast$$\ast$matriz, int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Funcion que permite imprimir una matriz. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{matriz_8c_a458a91d26d8e26c3c474b4f6be16adc1}{Llenar\+Matriz} (float $\ast$$\ast$matriz, int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Funcion que permite llenar una matriz. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{matriz_8c_a85f68ca7ba5f13683becb2b9d1bd11a0}{Limpiar\+Matriz} (float $\ast$$\ast$matriz, int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Funcion que permite limpiar una matriz, es decir llenarla de ceros. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{matriz_8c_ab5390669539f6709f129fbe240a7ec82}{Sumar\+Matrices} (float $\ast$$\ast$matrizA, float $\ast$$\ast$matrizB, int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Funcion que permite sumar dos matrices. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{matriz_8c_ad915a7207413cbd6f1d2d1a25c6dd162}{Multiplicar\+Matrices} (float $\ast$$\ast$matrizA, float $\ast$$\ast$matrizB, int filasA, int columnasA, int filasB, int columnasB)
+\begin{DoxyCompactList}\small\item\em Funcion que permite multiplicar dos matrices. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{matriz_8c_aeaeaab234f519537c879d08cfc5efd41}{Sumar\+Escalar} (float $\ast$$\ast$matriz, int filas, int columnas, float escalar)
+\begin{DoxyCompactList}\small\item\em Funcion que suma un escalar a ua matriz. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{matriz_8c_ac8aa8550b582f2109f4033b40e459ecb}{Multiplicar\+Escalar} (float $\ast$$\ast$matriz, int filas, int columnas, float escalar)
+\begin{DoxyCompactList}\small\item\em Funcion que multiplica un escalar a ua matriz. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{matriz_8c_a16f1d2786bf0c43035b95b3d0fe0e6ce}{Transpuesta} (float $\ast$$\ast$matriz, int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Funcion que transpone una matriz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo que contiene las funciones relacionadas a las matrices. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{matriz_8c_aeb821498ffd43f71c3f23cffd752a9a5}\label{matriz_8c_aeb821498ffd43f71c3f23cffd752a9a5}} 
+\index{matriz.\+c@{matriz.\+c}!Crear\+Matriz@{Crear\+Matriz}}
+\index{Crear\+Matriz@{Crear\+Matriz}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Crear\+Matriz()}{CrearMatriz()}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Crear\+Matriz (\begin{DoxyParamCaption}\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Funcion que crea una matriz del tamaño deseado por el usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filas} & es el tamaño de filas de la matriz \\
+\hline
+{\em columnas} & es el tamaño de columnas de la matriz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve un puntero con la matriz creada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matriz_8c_a0376d447e777b2429abe16f1d01ddefd}\label{matriz_8c_a0376d447e777b2429abe16f1d01ddefd}} 
+\index{matriz.\+c@{matriz.\+c}!Imprimir\+Matriz@{Imprimir\+Matriz}}
+\index{Imprimir\+Matriz@{Imprimir\+Matriz}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Imprimir\+Matriz()}{ImprimirMatriz()}}
+{\footnotesize\ttfamily void Imprimir\+Matriz (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{matriz,  }\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Funcion que permite imprimir una matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a la matriz el numero de filas y de columnas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no devuelve ningun valor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matriz_8c_a85f68ca7ba5f13683becb2b9d1bd11a0}\label{matriz_8c_a85f68ca7ba5f13683becb2b9d1bd11a0}} 
+\index{matriz.\+c@{matriz.\+c}!Limpiar\+Matriz@{Limpiar\+Matriz}}
+\index{Limpiar\+Matriz@{Limpiar\+Matriz}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Limpiar\+Matriz()}{LimpiarMatriz()}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Limpiar\+Matriz (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{matriz,  }\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Funcion que permite limpiar una matriz, es decir llenarla de ceros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a la matriz el numero de filas y de columnas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve la mnatriz llena 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matriz_8c_a458a91d26d8e26c3c474b4f6be16adc1}\label{matriz_8c_a458a91d26d8e26c3c474b4f6be16adc1}} 
+\index{matriz.\+c@{matriz.\+c}!Llenar\+Matriz@{Llenar\+Matriz}}
+\index{Llenar\+Matriz@{Llenar\+Matriz}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Llenar\+Matriz()}{LlenarMatriz()}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Llenar\+Matriz (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{matriz,  }\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Funcion que permite llenar una matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a la matriz el numero de filas y de columnas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve la matriz llena 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matriz_8c_ac8aa8550b582f2109f4033b40e459ecb}\label{matriz_8c_ac8aa8550b582f2109f4033b40e459ecb}} 
+\index{matriz.\+c@{matriz.\+c}!Multiplicar\+Escalar@{Multiplicar\+Escalar}}
+\index{Multiplicar\+Escalar@{Multiplicar\+Escalar}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Multiplicar\+Escalar()}{MultiplicarEscalar()}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Multiplicar\+Escalar (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{matriz,  }\item[{int}]{filas,  }\item[{int}]{columnas,  }\item[{float}]{escalar }\end{DoxyParamCaption})}
+
+
+
+Funcion que multiplica un escalar a ua matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a la matriz y el escalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve la mnatriz sumada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matriz_8c_ad915a7207413cbd6f1d2d1a25c6dd162}\label{matriz_8c_ad915a7207413cbd6f1d2d1a25c6dd162}} 
+\index{matriz.\+c@{matriz.\+c}!Multiplicar\+Matrices@{Multiplicar\+Matrices}}
+\index{Multiplicar\+Matrices@{Multiplicar\+Matrices}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Multiplicar\+Matrices()}{MultiplicarMatrices()}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Multiplicar\+Matrices (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{matrizA,  }\item[{float $\ast$$\ast$}]{matrizB,  }\item[{int}]{filasA,  }\item[{int}]{columnasA,  }\item[{int}]{filasB,  }\item[{int}]{columnasB }\end{DoxyParamCaption})}
+
+
+
+Funcion que permite multiplicar dos matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a cada una de las matrices y el tamaño en filas y columnas del mismo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve la mnatriz multiplicada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matriz_8c_aeaeaab234f519537c879d08cfc5efd41}\label{matriz_8c_aeaeaab234f519537c879d08cfc5efd41}} 
+\index{matriz.\+c@{matriz.\+c}!Sumar\+Escalar@{Sumar\+Escalar}}
+\index{Sumar\+Escalar@{Sumar\+Escalar}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Sumar\+Escalar()}{SumarEscalar()}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Sumar\+Escalar (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{matriz,  }\item[{int}]{filas,  }\item[{int}]{columnas,  }\item[{float}]{escalar }\end{DoxyParamCaption})}
+
+
+
+Funcion que suma un escalar a ua matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a la matriz y el escalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve la mnatriz sumada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matriz_8c_ab5390669539f6709f129fbe240a7ec82}\label{matriz_8c_ab5390669539f6709f129fbe240a7ec82}} 
+\index{matriz.\+c@{matriz.\+c}!Sumar\+Matrices@{Sumar\+Matrices}}
+\index{Sumar\+Matrices@{Sumar\+Matrices}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Sumar\+Matrices()}{SumarMatrices()}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Sumar\+Matrices (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{matrizA,  }\item[{float $\ast$$\ast$}]{matrizB,  }\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Funcion que permite sumar dos matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a cada una de las matrices y el tamaño en filas y columnas del mismo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve la mnatriz sumada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matriz_8c_a16f1d2786bf0c43035b95b3d0fe0e6ce}\label{matriz_8c_a16f1d2786bf0c43035b95b3d0fe0e6ce}} 
+\index{matriz.\+c@{matriz.\+c}!Transpuesta@{Transpuesta}}
+\index{Transpuesta@{Transpuesta}!matriz.\+c@{matriz.\+c}}
+\subsubsection{\texorpdfstring{Transpuesta()}{Transpuesta()}}
+{\footnotesize\ttfamily float$\ast$$\ast$ Transpuesta (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{matriz,  }\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Funcion que transpone una matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a la matriz, las filas y las columnas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve la mnatriz traspuesta 
+\end{DoxyReturn}

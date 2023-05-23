@@ -1,0 +1,599 @@
+\hypertarget{struct_leap_1_1_matrix}{}\section{Leap\+:\+:Matrix Struct Reference}
+\label{struct_leap_1_1_matrix}\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+
+
+{\ttfamily \#include $<$Leap\+Math.\+h$>$}
+
+
+
+Collaboration diagram for Leap\+:\+:Matrix\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_leap_1_1_matrix_a4d6481d902815a4cb8d3982fed44499c}{Matrix} ()
+\item 
+\hyperlink{struct_leap_1_1_matrix_a21ac99c16f55dbbb9295254fd4deb0ea}{Matrix} (const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&other)
+\item 
+\hyperlink{struct_leap_1_1_matrix_a64f54ffc81b0ab492edb8a4c19dc6675}{Matrix} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&\+\_\+x\+Basis, const \hyperlink{struct_leap_1_1_vector}{Vector} \&\+\_\+y\+Basis, const \hyperlink{struct_leap_1_1_vector}{Vector} \&\+\_\+z\+Basis)
+\item 
+\hyperlink{struct_leap_1_1_matrix_a54c6172ddcd4f52de044faedad060e04}{Matrix} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&\+\_\+x\+Basis, const \hyperlink{struct_leap_1_1_vector}{Vector} \&\+\_\+y\+Basis, const \hyperlink{struct_leap_1_1_vector}{Vector} \&\+\_\+z\+Basis, const \hyperlink{struct_leap_1_1_vector}{Vector} \&\+\_\+origin)
+\item 
+\hyperlink{struct_leap_1_1_matrix_afbd0364e85e050f935432b27cfb7c8cc}{Matrix} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&axis, float angle\+Radians)
+\item 
+\hyperlink{struct_leap_1_1_matrix_ac0004234bfba1a275a062725b8c56572}{Matrix} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&axis, float angle\+Radians, const \hyperlink{struct_leap_1_1_vector}{Vector} \&translation)
+\item 
+void \hyperlink{struct_leap_1_1_matrix_ac48ea6588487ef4be20a31a663f58be6}{set\+Rotation} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&axis, float angle\+Radians)
+\item 
+\hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{struct_leap_1_1_matrix_ac583a10a7bdbf7ed03fd53b8604a41fc}{transform\+Point} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&in) const
+\item 
+\hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{struct_leap_1_1_matrix_a6c7151d9d80487f7a16587e9e4896796}{transform\+Direction} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&in) const
+\item 
+\hyperlink{struct_leap_1_1_matrix}{Matrix} \hyperlink{struct_leap_1_1_matrix_a7fe723887951b2f2259c3e35fb217187}{rigid\+Inverse} () const
+\item 
+\hyperlink{struct_leap_1_1_matrix}{Matrix} \hyperlink{struct_leap_1_1_matrix_a6d695143ff17c54a421280aee585da6a}{operator$\ast$} (const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&other) const
+\item 
+\hyperlink{struct_leap_1_1_matrix}{Matrix} \& \hyperlink{struct_leap_1_1_matrix_a44df5bc99d32339961cd0f923c516dcd}{operator$\ast$=} (const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&other)
+\item 
+bool \hyperlink{struct_leap_1_1_matrix_aa7e006236498192d08492e0e161d6692}{operator==} (const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&other) const
+\item 
+bool \hyperlink{struct_leap_1_1_matrix_a140da87a056c7944a85a05cd834d90c7}{operator!=} (const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&other) const
+\item 
+{\footnotesize template$<$typename Matrix3x3\+Type $>$ }\\const Matrix3x3\+Type \hyperlink{struct_leap_1_1_matrix_a8cdd078bc3c45361ab0b5fdcea9befd0}{to\+Matrix3x3} () const
+\item 
+{\footnotesize template$<$typename Matrix4x4\+Type $>$ }\\const Matrix4x4\+Type \hyperlink{struct_leap_1_1_matrix_a6e77d8f3c86df0dd807f4f9f6bf200fe}{to\+Matrix4x4} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{struct_leap_1_1_matrix_a76088d466f47ec5203917a8885afb4ef}{to\+Array3x3} (T $\ast$output) const
+\item 
+\hyperlink{struct_leap_1_1_float_array}{Float\+Array} \hyperlink{struct_leap_1_1_matrix_a311a7a928b61d3e75cb4980b832f163a}{to\+Array3x3} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{struct_leap_1_1_matrix_ab2a3581b5daee17470d91af3b20928ac}{to\+Array4x4} (T $\ast$output) const
+\item 
+\hyperlink{struct_leap_1_1_float_array}{Float\+Array} \hyperlink{struct_leap_1_1_matrix_a5faf9ff63d63ff95f6631606e610dc29}{to\+Array4x4} () const
+\item 
+std\+::string \hyperlink{struct_leap_1_1_matrix_a5ed060fc00784808820940511c342df1}{to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{struct_leap_1_1_matrix}{Matrix} \& \hyperlink{struct_leap_1_1_matrix_abd8dff1c625a2c21ea01536335334183}{identity} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{struct_leap_1_1_matrix_a9e5e56926e88315a309007843860eced}{x\+Basis}
+\item 
+\hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{struct_leap_1_1_matrix_ad13e4c2baa3681ee9b92faf9da33b19b}{y\+Basis}
+\item 
+\hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{struct_leap_1_1_matrix_a62c45d9b2370027de27781fadcfc13d8}{z\+Basis}
+\item 
+\hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{struct_leap_1_1_matrix_a64cc576f42312999153c26b6b558fb9d}{origin}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{struct_leap_1_1_matrix_a5e736a2de52898e1930820f93bfdfba4}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&matrix)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{struct_leap_1_1_matrix}{Matrix} struct represents a transformation matrix.
+
+To use this struct to transform a \hyperlink{struct_leap_1_1_vector}{Vector}, construct a matrix containing the desired transformation and then use the \hyperlink{struct_leap_1_1_matrix_ac583a10a7bdbf7ed03fd53b8604a41fc}{Matrix\+::transform\+Point()} or \hyperlink{struct_leap_1_1_matrix_a6c7151d9d80487f7a16587e9e4896796}{Matrix\+::transform\+Direction()} functions to apply the transform.
+
+Transforms can be combined by multiplying two or more transform matrices using the $\ast$ operator. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a4d6481d902815a4cb8d3982fed44499c}\label{struct_leap_1_1_matrix_a4d6481d902815a4cb8d3982fed44499c}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Leap\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an identity transformation matrix.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a21ac99c16f55dbbb9295254fd4deb0ea}\label{struct_leap_1_1_matrix_a21ac99c16f55dbbb9295254fd4deb0ea}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Leap\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a copy of the specified \hyperlink{struct_leap_1_1_matrix}{Matrix} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a64f54ffc81b0ab492edb8a4c19dc6675}\label{struct_leap_1_1_matrix_a64f54ffc81b0ab492edb8a4c19dc6675}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Leap\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{\+\_\+x\+Basis,  }\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{\+\_\+y\+Basis,  }\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{\+\_\+z\+Basis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a transformation matrix from the specified basis vectors.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x\+Basis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying rotation and scale factors for the x-\/axis. \\
+\hline
+{\em \+\_\+y\+Basis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying rotation and scale factors for the y-\/axis. \\
+\hline
+{\em \+\_\+z\+Basis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying rotation and scale factors for the z-\/axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a54c6172ddcd4f52de044faedad060e04}\label{struct_leap_1_1_matrix_a54c6172ddcd4f52de044faedad060e04}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Leap\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{\+\_\+x\+Basis,  }\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{\+\_\+y\+Basis,  }\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{\+\_\+z\+Basis,  }\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{\+\_\+origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a transformation matrix from the specified basis and translation vectors.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x\+Basis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying rotation and scale factors for the x-\/axis. \\
+\hline
+{\em \+\_\+y\+Basis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying rotation and scale factors for the y-\/axis. \\
+\hline
+{\em \+\_\+z\+Basis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying rotation and scale factors for the z-\/axis. \\
+\hline
+{\em \+\_\+origin} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying translation factors on all three axes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_afbd0364e85e050f935432b27cfb7c8cc}\label{struct_leap_1_1_matrix_afbd0364e85e050f935432b27cfb7c8cc}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Leap\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{axis,  }\item[{float}]{angle\+Radians }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a transformation matrix specifying a rotation around the specified vector.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying the axis of rotation. \\
+\hline
+{\em angle\+Radians} & The amount of rotation in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_ac0004234bfba1a275a062725b8c56572}\label{struct_leap_1_1_matrix_ac0004234bfba1a275a062725b8c56572}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Leap\+::\+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{axis,  }\item[{float}]{angle\+Radians,  }\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a transformation matrix specifying a rotation around the specified vector and a translation by the specified vector.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying the axis of rotation. \\
+\hline
+{\em angle\+Radians} & The angle of rotation in radians. \\
+\hline
+{\em translation} & A \hyperlink{struct_leap_1_1_vector}{Vector} representing the translation part of the transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_abd8dff1c625a2c21ea01536335334183}\label{struct_leap_1_1_matrix_abd8dff1c625a2c21ea01536335334183}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!identity@{identity}}
+\index{identity@{identity}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{identity()}{identity()}}
+{\footnotesize\ttfamily static const \hyperlink{struct_leap_1_1_matrix}{Matrix}\& Leap\+::\+Matrix\+::identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns the identity matrix specifying no translation, rotation, and scale.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The identity matrix. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a140da87a056c7944a85a05cd834d90c7}\label{struct_leap_1_1_matrix_a140da87a056c7944a85a05cd834d90c7}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Leap\+::\+Matrix\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compare \hyperlink{struct_leap_1_1_matrix}{Matrix} inequality component-\/wise.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a6d695143ff17c54a421280aee585da6a}\label{struct_leap_1_1_matrix_a6d695143ff17c54a421280aee585da6a}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_matrix}{Matrix} Leap\+::\+Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiply transform matrices.
+
+Combines two transformations into a single equivalent transformation.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{struct_leap_1_1_matrix}{Matrix} to multiply on the right hand side. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{struct_leap_1_1_matrix}{Matrix} representing the transformation equivalent to applying the other transformation followed by this transformation. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a44df5bc99d32339961cd0f923c516dcd}\label{struct_leap_1_1_matrix_a44df5bc99d32339961cd0f923c516dcd}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_matrix}{Matrix}\& Leap\+::\+Matrix\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiply transform matrices and assign the product.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_aa7e006236498192d08492e0e161d6692}\label{struct_leap_1_1_matrix_aa7e006236498192d08492e0e161d6692}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!operator==@{operator==}}
+\index{operator==@{operator==}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Leap\+::\+Matrix\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compare \hyperlink{struct_leap_1_1_matrix}{Matrix} equality component-\/wise.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a7fe723887951b2f2259c3e35fb217187}\label{struct_leap_1_1_matrix_a7fe723887951b2f2259c3e35fb217187}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!rigid\+Inverse@{rigid\+Inverse}}
+\index{rigid\+Inverse@{rigid\+Inverse}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{rigid\+Inverse()}{rigidInverse()}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_matrix}{Matrix} Leap\+::\+Matrix\+::rigid\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a matrix inverse if the matrix consists entirely of rigid transformations (translations and rotations). If the matrix is not rigid, this operation will not represent an inverse.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note that all matrices that are directly returned by the A\+PI are rigid.
+
+\begin{DoxyReturn}{Returns}
+The rigid inverse of the matrix. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_ac48ea6588487ef4be20a31a663f58be6}\label{struct_leap_1_1_matrix_ac48ea6588487ef4be20a31a663f58be6}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{set\+Rotation()}{setRotation()}}
+{\footnotesize\ttfamily void Leap\+::\+Matrix\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{axis,  }\item[{float}]{angle\+Radians }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets this transformation matrix to represent a rotation around the specified vector.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+This function erases any previous rotation and scale transforms applied to this matrix, but does not affect translation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & A \hyperlink{struct_leap_1_1_vector}{Vector} specifying the axis of rotation. \\
+\hline
+{\em angle\+Radians} & The amount of rotation in radians. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a76088d466f47ec5203917a8885afb4ef}\label{struct_leap_1_1_matrix_a76088d466f47ec5203917a8885afb4ef}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!to\+Array3x3@{to\+Array3x3}}
+\index{to\+Array3x3@{to\+Array3x3}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{to\+Array3x3()}{toArray3x3()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ Leap\+::\+Matrix\+::to\+Array3x3 (\begin{DoxyParamCaption}\item[{T $\ast$}]{output }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Writes the 3x3 \hyperlink{struct_leap_1_1_matrix}{Matrix} object to a 9 element row-\/major float or double array.
+
+Translation factors are discarded.
+
+Returns a pointer to the same data. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a311a7a928b61d3e75cb4980b832f163a}\label{struct_leap_1_1_matrix_a311a7a928b61d3e75cb4980b832f163a}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!to\+Array3x3@{to\+Array3x3}}
+\index{to\+Array3x3@{to\+Array3x3}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{to\+Array3x3()}{toArray3x3()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_float_array}{Float\+Array} Leap\+::\+Matrix\+::to\+Array3x3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convert a 3x3 \hyperlink{struct_leap_1_1_matrix}{Matrix} object to a 9 element row-\/major float array.
+
+Translation factors are discarded.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Returns a \hyperlink{struct_leap_1_1_float_array}{Float\+Array} struct to avoid dynamic memory allocation. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_ab2a3581b5daee17470d91af3b20928ac}\label{struct_leap_1_1_matrix_ab2a3581b5daee17470d91af3b20928ac}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!to\+Array4x4@{to\+Array4x4}}
+\index{to\+Array4x4@{to\+Array4x4}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{to\+Array4x4()}{toArray4x4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ Leap\+::\+Matrix\+::to\+Array4x4 (\begin{DoxyParamCaption}\item[{T $\ast$}]{output }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Writes the 4x4 \hyperlink{struct_leap_1_1_matrix}{Matrix} object to a 16 element row-\/major float or double array.
+
+Returns a pointer to the same data. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a5faf9ff63d63ff95f6631606e610dc29}\label{struct_leap_1_1_matrix_a5faf9ff63d63ff95f6631606e610dc29}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!to\+Array4x4@{to\+Array4x4}}
+\index{to\+Array4x4@{to\+Array4x4}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{to\+Array4x4()}{toArray4x4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_float_array}{Float\+Array} Leap\+::\+Matrix\+::to\+Array4x4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convert a 4x4 \hyperlink{struct_leap_1_1_matrix}{Matrix} object to a 16 element row-\/major float array.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Returns a \hyperlink{struct_leap_1_1_float_array}{Float\+Array} struct to avoid dynamic memory allocation. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a8cdd078bc3c45361ab0b5fdcea9befd0}\label{struct_leap_1_1_matrix_a8cdd078bc3c45361ab0b5fdcea9befd0}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!to\+Matrix3x3@{to\+Matrix3x3}}
+\index{to\+Matrix3x3@{to\+Matrix3x3}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{to\+Matrix3x3()}{toMatrix3x3()}}
+{\footnotesize\ttfamily template$<$typename Matrix3x3\+Type $>$ \\
+const Matrix3x3\+Type Leap\+::\+Matrix\+::to\+Matrix3x3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convert a \hyperlink{struct_leap_1_1_matrix}{Leap\+::\+Matrix} object to another 3x3 matrix type.
+
+The new type must define a constructor function that takes each matrix element as a parameter in row-\/major order.
+
+Translation factors are discarded. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a6e77d8f3c86df0dd807f4f9f6bf200fe}\label{struct_leap_1_1_matrix_a6e77d8f3c86df0dd807f4f9f6bf200fe}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!to\+Matrix4x4@{to\+Matrix4x4}}
+\index{to\+Matrix4x4@{to\+Matrix4x4}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{to\+Matrix4x4()}{toMatrix4x4()}}
+{\footnotesize\ttfamily template$<$typename Matrix4x4\+Type $>$ \\
+const Matrix4x4\+Type Leap\+::\+Matrix\+::to\+Matrix4x4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convert a \hyperlink{struct_leap_1_1_matrix}{Leap\+::\+Matrix} object to another 4x4 matrix type.
+
+The new type must define a constructor function that takes each matrix element as a parameter in row-\/major order. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a5ed060fc00784808820940511c342df1}\label{struct_leap_1_1_matrix_a5ed060fc00784808820940511c342df1}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Matrix\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Write the matrix to a string in a human readable format. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a6c7151d9d80487f7a16587e9e4896796}\label{struct_leap_1_1_matrix_a6c7151d9d80487f7a16587e9e4896796}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!transform\+Direction@{transform\+Direction}}
+\index{transform\+Direction@{transform\+Direction}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{transform\+Direction()}{transformDirection()}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Matrix\+::transform\+Direction (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{in }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transforms a vector with this matrix by transforming its rotation and scale only.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The \hyperlink{struct_leap_1_1_vector}{Vector} to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{struct_leap_1_1_vector}{Vector} representing the transformed original. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_ac583a10a7bdbf7ed03fd53b8604a41fc}\label{struct_leap_1_1_matrix_ac583a10a7bdbf7ed03fd53b8604a41fc}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!transform\+Point@{transform\+Point}}
+\index{transform\+Point@{transform\+Point}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{transform\+Point()}{transformPoint()}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Matrix\+::transform\+Point (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{in }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transforms a vector with this matrix by transforming its rotation, scale, and translation.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Translation is applied after rotation and scale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The \hyperlink{struct_leap_1_1_vector}{Vector} to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{struct_leap_1_1_vector}{Vector} representing the transformed original. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a5e736a2de52898e1930820f93bfdfba4}\label{struct_leap_1_1_matrix_a5e736a2de52898e1930820f93bfdfba4}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \hyperlink{struct_leap_1_1_matrix}{Matrix} \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Write the matrix to an output stream in a human readable format.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a64cc576f42312999153c26b6b558fb9d}\label{struct_leap_1_1_matrix_a64cc576f42312999153c26b6b558fb9d}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!origin@{origin}}
+\index{origin@{origin}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Matrix\+::origin}
+
+The translation factors for all three axes.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a9e5e56926e88315a309007843860eced}\label{struct_leap_1_1_matrix_a9e5e56926e88315a309007843860eced}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!x\+Basis@{x\+Basis}}
+\index{x\+Basis@{x\+Basis}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{x\+Basis}{xBasis}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Matrix\+::x\+Basis}
+
+The basis vector for the x-\/axis.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_ad13e4c2baa3681ee9b92faf9da33b19b}\label{struct_leap_1_1_matrix_ad13e4c2baa3681ee9b92faf9da33b19b}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!y\+Basis@{y\+Basis}}
+\index{y\+Basis@{y\+Basis}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{y\+Basis}{yBasis}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Matrix\+::y\+Basis}
+
+The basis vector for the y-\/axis.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{struct_leap_1_1_matrix_a62c45d9b2370027de27781fadcfc13d8}\label{struct_leap_1_1_matrix_a62c45d9b2370027de27781fadcfc13d8}} 
+\index{Leap\+::\+Matrix@{Leap\+::\+Matrix}!z\+Basis@{z\+Basis}}
+\index{z\+Basis@{z\+Basis}!Leap\+::\+Matrix@{Leap\+::\+Matrix}}
+\subsubsection{\texorpdfstring{z\+Basis}{zBasis}}
+{\footnotesize\ttfamily \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Matrix\+::z\+Basis}
+
+The basis vector for the z-\/axis.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap\+Math.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,259 @@
+\hypertarget{class_leap_1_1_tracked_quad}{}\section{Leap\+:\+:Tracked\+Quad Class Reference}
+\label{class_leap_1_1_tracked_quad}\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Tracked\+Quad\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Tracked\+Quad\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_af6d46e9ed1a347775af7ac44e3b42194}\label{class_leap_1_1_tracked_quad_af6d46e9ed1a347775af7ac44e3b42194}} 
+{\bfseries Tracked\+Quad} (Tracked\+Quad\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_tracked_quad_a58cbed47b386a0a4273c8e2f5eb9cd25}{Tracked\+Quad} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_tracked_quad_ada574f601b0b78188d61e9a47342337f}{width} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_tracked_quad_abce390c8b28040de3062cddfcf2c532a}{height} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_tracked_quad_a2adfad3946e7333ba91760161f9ec3f6}{resolutionX} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_tracked_quad_ac74149a92d09d9549e934afc42eae434}{resolutionY} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_tracked_quad_ac03a01d07228515363eb81ace6cd2d99}{visible} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} \hyperlink{class_leap_1_1_tracked_quad_ac382fefda8c3c3d4dc8791d7f74d1a56}{orientation} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_tracked_quad_a3c5aac36dc71997c5244fc9d248ae98f}{position} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_mask_list}{Mask\+List} \hyperlink{class_leap_1_1_tracked_quad_a36aa583b32b798ffd94c1a11c3f00d40}{masks} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list}{Image\+List} \hyperlink{class_leap_1_1_tracked_quad_ae0d15342d6e8ce286d137feb971d0a50}{images} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_tracked_quad_a5e7e10b0dad60d0951fcb0eae67b2300}{is\+Valid} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_tracked_quad_a728752126b184f5e8d2bc22b77897662}{operator==} (const \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} \&) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_tracked_quad_aff1ee3d987b9f4d0fe099339fbf889bb}{operator!=} (const \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} \&) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_a904246d360485e47c506c3f0c17095dd}\label{class_leap_1_1_tracked_quad_a904246d360485e47c506c3f0c17095dd}} 
+std\+::string {\bfseries to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} \& \hyperlink{class_leap_1_1_tracked_quad_ab9742292d499c87642dcadfde87385c5}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream \& \hyperlink{class_leap_1_1_tracked_quad_a954712e5d46bca5109e8508a9397538a}{operator$<$$<$} (std\+::ostream \&, const \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Note\+: This class is an experimental A\+PI for internal use only. It may be removed without warning.
+
+Represents a quad-\/like object tracked by the Leap Motion sensors.
+
+Only one quad can be tracked. Once a supported quad is tracked, the state of that quad will be updated for each frame of Leap Motion tracking data.
+
+A \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} object represents the state of the quad at one moment in time. Get a new object from subsequent frames to get the latest state information. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_a58cbed47b386a0a4273c8e2f5eb9cd25}\label{class_leap_1_1_tracked_quad_a58cbed47b386a0a4273c8e2f5eb9cd25}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!Tracked\+Quad@{Tracked\+Quad}}
+\index{Tracked\+Quad@{Tracked\+Quad}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{Tracked\+Quad()}{TrackedQuad()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Tracked\+Quad\+::\+Tracked\+Quad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a new \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} object. Do not use. Get valid Tracked\+Quads from a \hyperlink{class_leap_1_1_controller}{Controller} or \hyperlink{class_leap_1_1_frame}{Frame} object. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_abce390c8b28040de3062cddfcf2c532a}\label{class_leap_1_1_tracked_quad_abce390c8b28040de3062cddfcf2c532a}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!height@{height}}
+\index{height@{height}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Tracked\+Quad\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The physical height of the quad display area in millimeters. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_ae0d15342d6e8ce286d137feb971d0a50}\label{class_leap_1_1_tracked_quad_ae0d15342d6e8ce286d137feb971d0a50}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!images@{images}}
+\index{images@{images}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{images()}{images()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list}{Image\+List} Leap\+::\+Tracked\+Quad\+::images (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The images from which the state of this \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} was derived. These are the same image objects that you can get from the \hyperlink{class_leap_1_1_controller}{Controller} or \hyperlink{class_leap_1_1_frame}{Frame} object from which you got this \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad}. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_ab9742292d499c87642dcadfde87385c5}\label{class_leap_1_1_tracked_quad_ab9742292d499c87642dcadfde87385c5}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad}\& Leap\+::\+Tracked\+Quad\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+An invalid object. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_a5e7e10b0dad60d0951fcb0eae67b2300}\label{class_leap_1_1_tracked_quad_a5e7e10b0dad60d0951fcb0eae67b2300}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Tracked\+Quad\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this is a valid object. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_a36aa583b32b798ffd94c1a11c3f00d40}\label{class_leap_1_1_tracked_quad_a36aa583b32b798ffd94c1a11c3f00d40}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!masks@{masks}}
+\index{masks@{masks}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{masks()}{masks()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_mask_list}{Mask\+List} Leap\+::\+Tracked\+Quad\+::masks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The list of masks for the current set of images. A mask is a bitmap indicating which pixels in the image contain fingers or part of the hand in front of the quad.
+
+The mask at index 0 corresponds to the left image; that with index 1, to the right image. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_aff1ee3d987b9f4d0fe099339fbf889bb}\label{class_leap_1_1_tracked_quad_aff1ee3d987b9f4d0fe099339fbf889bb}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Tracked\+Quad\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compares quad objects for inequality. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_a728752126b184f5e8d2bc22b77897662}\label{class_leap_1_1_tracked_quad_a728752126b184f5e8d2bc22b77897662}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!operator==@{operator==}}
+\index{operator==@{operator==}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Tracked\+Quad\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compares quad objects for equality. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_ac382fefda8c3c3d4dc8791d7f74d1a56}\label{class_leap_1_1_tracked_quad_ac382fefda8c3c3d4dc8791d7f74d1a56}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!orientation@{orientation}}
+\index{orientation@{orientation}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{orientation()}{orientation()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} Leap\+::\+Tracked\+Quad\+::orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The orientation of the quad within the Leap Motion frame of reference. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_a3c5aac36dc71997c5244fc9d248ae98f}\label{class_leap_1_1_tracked_quad_a3c5aac36dc71997c5244fc9d248ae98f}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!position@{position}}
+\index{position@{position}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Tracked\+Quad\+::position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The position of the center of the quad display area within the Leap Motion frame of reference. In millimeters. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_a2adfad3946e7333ba91760161f9ec3f6}\label{class_leap_1_1_tracked_quad_a2adfad3946e7333ba91760161f9ec3f6}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!resolutionX@{resolutionX}}
+\index{resolutionX@{resolutionX}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{resolution\+X()}{resolutionX()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Tracked\+Quad\+::resolutionX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The horizontal resolution of the quad display area in pixels. This value is set in a configuration file. It is not determined dynamically. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_ac74149a92d09d9549e934afc42eae434}\label{class_leap_1_1_tracked_quad_ac74149a92d09d9549e934afc42eae434}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!resolutionY@{resolutionY}}
+\index{resolutionY@{resolutionY}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{resolution\+Y()}{resolutionY()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Tracked\+Quad\+::resolutionY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The vertical resolution of the quad display area in pixels. This value is set in a configuration file. It is not determined dynamically. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_ac03a01d07228515363eb81ace6cd2d99}\label{class_leap_1_1_tracked_quad_ac03a01d07228515363eb81ace6cd2d99}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!visible@{visible}}
+\index{visible@{visible}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{visible()}{visible()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Tracked\+Quad\+::visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether the quad is currently detected within the Leap Motion field of view. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_ada574f601b0b78188d61e9a47342337f}\label{class_leap_1_1_tracked_quad_ada574f601b0b78188d61e9a47342337f}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!width@{width}}
+\index{width@{width}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Tracked\+Quad\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The physical width of the quad display area in millimeters. 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_tracked_quad_a954712e5d46bca5109e8508a9397538a}\label{class_leap_1_1_tracked_quad_a954712e5d46bca5109e8508a9397538a}} 
+\index{Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Leap\+::\+Tracked\+Quad@{Leap\+::\+Tracked\+Quad}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \hyperlink{class_leap_1_1_tracked_quad}{Tracked\+Quad} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Provides a brief, human-\/readable description of this quad. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

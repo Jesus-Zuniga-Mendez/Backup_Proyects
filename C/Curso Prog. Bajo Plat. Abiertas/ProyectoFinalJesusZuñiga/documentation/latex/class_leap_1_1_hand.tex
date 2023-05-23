@@ -1,0 +1,1017 @@
+\hypertarget{class_leap_1_1_hand}{}\section{Leap\+:\+:Hand Class Reference}
+\label{class_leap_1_1_hand}\index{Leap\+::\+Hand@{Leap\+::\+Hand}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Hand\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Hand\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_hand_a52cbd09a5d4f7677d5761d0eafa8c806}\label{class_leap_1_1_hand_a52cbd09a5d4f7677d5761d0eafa8c806}} 
+{\bfseries Hand} (Hand\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand_a56f41d7f4cded32073c7bec2cebe926d}{Hand} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t \hyperlink{class_leap_1_1_hand_a8ef8fb5d06e31b5aa3cc19548d3af205}{id} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_frame}{Frame} \hyperlink{class_leap_1_1_hand_abb609377d80becfcaffd5c1ea490f0ea}{frame} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} \hyperlink{class_leap_1_1_hand_a845e544e674ab315f10ead9f4a7210fe}{pointables} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} \hyperlink{class_leap_1_1_hand_aa9e572f18122453856267a527abf2bcb}{pointable} (int32\+\_\+t \hyperlink{class_leap_1_1_hand_a8ef8fb5d06e31b5aa3cc19548d3af205}{id}) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list}{Finger\+List} \hyperlink{class_leap_1_1_hand_a48bed0aebb87180056eab2bbfbc1e5fe}{fingers} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} \hyperlink{class_leap_1_1_hand_afe7cf68c3375a2e45f90d80698313ccb}{finger} (int32\+\_\+t \hyperlink{class_leap_1_1_hand_a8ef8fb5d06e31b5aa3cc19548d3af205}{id}) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_tool_list}{Tool\+List} \hyperlink{class_leap_1_1_hand_a715c211881d94e441eab3110b5075a0f}{tools} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_tool}{Tool} \hyperlink{class_leap_1_1_hand_a1d66d728af5d56f6021ab62090c8c77d}{tool} (int32\+\_\+t \hyperlink{class_leap_1_1_hand_a8ef8fb5d06e31b5aa3cc19548d3af205}{id}) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_a4c5037d0f2bdad73d2ba31f8a5b53e67}{palm\+Position} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_acc0aa1360411dee646658fed75b056cf}{stabilized\+Palm\+Position} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_a33dfe22cc108e346acc6ebcacebd122f}{palm\+Velocity} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_ae47ff36b818f724db2f139a6e3fa0eb3}{palm\+Normal} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_ab9ed5affee0cc08226a3d334341b0496}{palm\+Width} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_a71e62bf83996e26ccd497dd70803b46b}{direction} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} \hyperlink{class_leap_1_1_hand_a967f114a0f3b394eb7e17777dcc06334}{basis} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_arm}{Arm} \hyperlink{class_leap_1_1_hand_a6844547eb4a7ff6193fb0a052be93401}{arm} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_a6b5b9a08f5fe21d3eb1b1ab43dcec817}{wrist\+Position} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_aede162c1102ca6acf796f4735044ce10}{sphere\+Center} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_a3ff1cd29c23c1aa2c6482932b9a8fb1e}{sphere\+Radius} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_a736348fe9174978d23b27297da5de072}{pinch\+Strength} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_a8a23340aebe604b2100bd864e8091058}{grab\+Strength} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_ad0ba1e3c607cb893619b668cc7750b89}{translation} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_a11543de2538fba2e3f15aa422dd5b892}{translation\+Probability} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_hand_ad76ae361b3b7861ce79fba94f3cca44b}{rotation\+Axis} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_ad7dd8985dde02d07daf7c81a050e6e24}{rotation\+Angle} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_aedf018db2f7ead885e78c9d88bc9d3e3}{rotation\+Angle} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame, const \hyperlink{struct_leap_1_1_vector}{Vector} \&axis) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} \hyperlink{class_leap_1_1_hand_a247046c6a2557e8d7ac28ea68ff925ef}{rotation\+Matrix} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_a32ed1424fa35250b69299d9e8cb7d030}{rotation\+Probability} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_a2c1afe066bbc1b33433c84d6302447cb}{scale\+Factor} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_a62e912199ab38b96702afd6eb63b34e0}{scale\+Probability} (const \hyperlink{class_leap_1_1_frame}{Frame} \&since\+Frame) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_aa0bfd236f2c3729ea8ae7081bcbc55b5}{time\+Visible} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_hand_ac28deea645d5e5119feccc05cf4dbbcf}{confidence} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_hand_a97a82aa4c1ca8ef138fc8d9939b017d8}{is\+Left} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_hand_aeff477c4cb80ac3fd7e76db4911c300a}{is\+Right} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_hand_a596f55bc25a088c0a1760bbbca5ec2a8}{is\+Valid} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_hand_a90a005182d02abd6ffef181d7d64f4a4}{operator==} (const \hyperlink{class_leap_1_1_hand}{Hand} \&) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_hand_ae837a29788bd93824e3de029eb67ce02}{operator!=} (const \hyperlink{class_leap_1_1_hand}{Hand} \&) const
+\item 
+std\+::string \hyperlink{class_leap_1_1_hand_aadce42e29675b791f85aa39056e7d585}{to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_hand}{Hand} \& \hyperlink{class_leap_1_1_hand_ae66c7683d1c179cb3fa1913be320ea6a}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream \& \hyperlink{class_leap_1_1_hand_a0b79e476fe0b74207a5d574c4ae4fe3d}{operator$<$$<$} (std\+::ostream \&, const \hyperlink{class_leap_1_1_hand}{Hand} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_hand}{Hand} class reports the physical characteristics of a detected hand.
+
+\hyperlink{class_leap_1_1_hand}{Hand} tracking data includes a palm position and velocity; vectors for the palm normal and direction to the fingers; properties of a sphere fit to the hand; and lists of the attached fingers.
+
+Get \hyperlink{class_leap_1_1_hand}{Hand} objects from a \hyperlink{class_leap_1_1_frame}{Frame} object\+:
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note that \hyperlink{class_leap_1_1_hand}{Hand} objects can be invalid, which means that they do not contain valid tracking data and do not correspond to a physical entity. Invalid \hyperlink{class_leap_1_1_hand}{Hand} objects can be the result of asking for a \hyperlink{class_leap_1_1_hand}{Hand} object using an ID from an earlier frame when no \hyperlink{class_leap_1_1_hand}{Hand} objects with that ID exist in the current frame. A \hyperlink{class_leap_1_1_hand}{Hand} object created from the \hyperlink{class_leap_1_1_hand}{Hand} constructor is also invalid. Test for validity with the \hyperlink{class_leap_1_1_hand_a596f55bc25a088c0a1760bbbca5ec2a8}{Hand\+::is\+Valid()} function. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_hand_a56f41d7f4cded32073c7bec2cebe926d}\label{class_leap_1_1_hand_a56f41d7f4cded32073c7bec2cebe926d}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!Hand@{Hand}}
+\index{Hand@{Hand}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{Hand()}{Hand()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Hand\+::\+Hand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a \hyperlink{class_leap_1_1_hand}{Hand} object.
+
+An uninitialized hand is considered invalid. Get valid \hyperlink{class_leap_1_1_hand}{Hand} objects from a \hyperlink{class_leap_1_1_frame}{Frame} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_hand_a6844547eb4a7ff6193fb0a052be93401}\label{class_leap_1_1_hand_a6844547eb4a7ff6193fb0a052be93401}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!arm@{arm}}
+\index{arm@{arm}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{arm()}{arm()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_arm}{Arm} Leap\+::\+Hand\+::arm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The arm to which this hand is attached.
+
+If the arm is not completely in view, \hyperlink{class_leap_1_1_arm}{Arm} attributes are estimated based on the attributes of entities that are in view combined with typical human anatomy.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_arm}{Arm} object for this hand. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0.\+3 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a967f114a0f3b394eb7e17777dcc06334}\label{class_leap_1_1_hand_a967f114a0f3b394eb7e17777dcc06334}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!basis@{basis}}
+\index{basis@{basis}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{basis()}{basis()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} Leap\+::\+Hand\+::basis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The orientation of the hand as a basis matrix.
+
+The basis is defined as follows\+:
+
+{\bfseries x\+Axis} Positive in the direction of the pinky
+
+{\bfseries y\+Axis} Positive above the hand
+
+{\bfseries z\+Axis} Positive in the direction of the wrist
+
+Note\+: Since the left hand is a mirror of the right hand, the basis matrix will be left-\/handed for left hands.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The basis of the hand as a matrix. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_ac28deea645d5e5119feccc05cf4dbbcf}\label{class_leap_1_1_hand_ac28deea645d5e5119feccc05cf4dbbcf}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!confidence@{confidence}}
+\index{confidence@{confidence}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{confidence()}{confidence()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::confidence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+How confident we are with a given hand pose.
+
+The confidence level ranges between 0.\+0 and 1.\+0 inclusive.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a71e62bf83996e26ccd497dd70803b46b}\label{class_leap_1_1_hand_a71e62bf83996e26ccd497dd70803b46b}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!direction@{direction}}
+\index{direction@{direction}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{direction()}{direction()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The direction from the palm position toward the fingers.
+
+The direction is expressed as a unit vector pointing in the same direction as the directed line from the palm position to the fingers.
+
+You can use the palm direction vector to compute the pitch and yaw angles of the palm with respect to the horizontal plane\+:
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} pointing from the palm position toward the fingers. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_afe7cf68c3375a2e45f90d80698313ccb}\label{class_leap_1_1_hand_afe7cf68c3375a2e45f90d80698313ccb}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!finger@{finger}}
+\index{finger@{finger}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{finger()}{finger()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} Leap\+::\+Hand\+::finger (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{id }\end{DoxyParamCaption}) const}
+
+The \hyperlink{class_leap_1_1_finger}{Finger} object with the specified ID attached to this hand.
+
+Use the \hyperlink{class_leap_1_1_hand_afe7cf68c3375a2e45f90d80698313ccb}{Hand\+::finger()} function to retrieve a \hyperlink{class_leap_1_1_finger}{Finger} object attached to this hand using an ID value obtained from a previous frame. This function always returns a \hyperlink{class_leap_1_1_finger}{Finger} object, but if no finger with the specified ID is present, an invalid \hyperlink{class_leap_1_1_finger}{Finger} object is returned.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note that ID values persist across frames, but only until tracking of a particular object is lost. If tracking of a finger is lost and subsequently regained, the new \hyperlink{class_leap_1_1_finger}{Finger} object representing that finger may have a different ID than that representing the finger in an earlier frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID value of a \hyperlink{class_leap_1_1_finger}{Finger} object from a previous frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_finger}{Finger} object with the matching ID if one exists for this hand in this frame; otherwise, an invalid \hyperlink{class_leap_1_1_finger}{Finger} object is returned. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a48bed0aebb87180056eab2bbfbc1e5fe}\label{class_leap_1_1_hand_a48bed0aebb87180056eab2bbfbc1e5fe}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!fingers@{fingers}}
+\index{fingers@{fingers}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{fingers()}{fingers()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list}{Finger\+List} Leap\+::\+Hand\+::fingers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The list of \hyperlink{class_leap_1_1_finger}{Finger} objects detected in this frame that are attached to this hand, given in order from thumb to pinky. The list cannot be empty.
+
+Use \hyperlink{class_leap_1_1_pointable_list_a47919c7b8198806da5af4c7d351d83fc}{Pointable\+List\+::extended()} to remove non-\/extended fingers from the list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_finger_list}{Finger\+List} containing all \hyperlink{class_leap_1_1_finger}{Finger} objects attached to this hand. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_abb609377d80becfcaffd5c1ea490f0ea}\label{class_leap_1_1_hand_abb609377d80becfcaffd5c1ea490f0ea}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!frame@{frame}}
+\index{frame@{frame}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{frame()}{frame()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_frame}{Frame} Leap\+::\+Hand\+::frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The \hyperlink{class_leap_1_1_frame}{Frame} associated with this \hyperlink{class_leap_1_1_hand}{Hand}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The associated \hyperlink{class_leap_1_1_frame}{Frame} object, if available; otherwise, an invalid \hyperlink{class_leap_1_1_frame}{Frame} object is returned. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a8a23340aebe604b2100bd864e8091058}\label{class_leap_1_1_hand_a8a23340aebe604b2100bd864e8091058}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!grab\+Strength@{grab\+Strength}}
+\index{grab\+Strength@{grab\+Strength}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{grab\+Strength()}{grabStrength()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::grab\+Strength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The strength of a grab hand pose.
+
+The strength is zero for an open hand, and blends to 1.\+0 when a grabbing hand pose is recognized.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+A float value in the \mbox{[}0..1\mbox{]} range representing the holding strength of the pose. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a8ef8fb5d06e31b5aa3cc19548d3af205}\label{class_leap_1_1_hand_a8ef8fb5d06e31b5aa3cc19548d3af205}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!id@{id}}
+\index{id@{id}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t Leap\+::\+Hand\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+A unique ID assigned to this \hyperlink{class_leap_1_1_hand}{Hand} object, whose value remains the same across consecutive frames while the tracked hand remains visible. If tracking is lost (for example, when a hand is occluded by another hand or when it is withdrawn from or reaches the edge of the Leap Motion \hyperlink{class_leap_1_1_controller}{Controller} field of view), the Leap Motion software may assign a new ID when it detects the hand in a future frame.
+
+Use the ID value with the \hyperlink{class_leap_1_1_frame_aa5bfff6dba5e38bb779716ec309f1966}{Frame\+::hand()} function to find this \hyperlink{class_leap_1_1_hand}{Hand} object in future frames\+:
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The ID of this hand. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_ae66c7683d1c179cb3fa1913be320ea6a}\label{class_leap_1_1_hand_ae66c7683d1c179cb3fa1913be320ea6a}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_hand}{Hand}\& Leap\+::\+Hand\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an invalid \hyperlink{class_leap_1_1_hand}{Hand} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+You can use the instance returned by this function in comparisons testing whether a given \hyperlink{class_leap_1_1_hand}{Hand} instance is valid or invalid. (You can also use the \hyperlink{class_leap_1_1_hand_a596f55bc25a088c0a1760bbbca5ec2a8}{Hand\+::is\+Valid()} function.)
+
+\begin{DoxyReturn}{Returns}
+The invalid \hyperlink{class_leap_1_1_hand}{Hand} instance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a97a82aa4c1ca8ef138fc8d9939b017d8}\label{class_leap_1_1_hand_a97a82aa4c1ca8ef138fc8d9939b017d8}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!is\+Left@{is\+Left}}
+\index{is\+Left@{is\+Left}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{is\+Left()}{isLeft()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Hand\+::is\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Identifies whether this \hyperlink{class_leap_1_1_hand}{Hand} is a left hand.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True if the hand is identified as a left hand. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_aeff477c4cb80ac3fd7e76db4911c300a}\label{class_leap_1_1_hand_aeff477c4cb80ac3fd7e76db4911c300a}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!is\+Right@{is\+Right}}
+\index{is\+Right@{is\+Right}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{is\+Right()}{isRight()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Hand\+::is\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Identifies whether this \hyperlink{class_leap_1_1_hand}{Hand} is a right hand.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True if the hand is identified as a right hand. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a596f55bc25a088c0a1760bbbca5ec2a8}\label{class_leap_1_1_hand_a596f55bc25a088c0a1760bbbca5ec2a8}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Hand\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this is a valid \hyperlink{class_leap_1_1_hand}{Hand} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if this \hyperlink{class_leap_1_1_hand}{Hand} object contains valid tracking data. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_ae837a29788bd93824e3de029eb67ce02}\label{class_leap_1_1_hand_ae837a29788bd93824e3de029eb67ce02}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Hand\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_hand}{Hand} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_hand}{Hand} object inequality.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Two \hyperlink{class_leap_1_1_hand}{Hand} objects are equal if and only if both \hyperlink{class_leap_1_1_hand}{Hand} objects represent the exact same physical hand in the same frame and both \hyperlink{class_leap_1_1_hand}{Hand} objects are valid. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a90a005182d02abd6ffef181d7d64f4a4}\label{class_leap_1_1_hand_a90a005182d02abd6ffef181d7d64f4a4}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!operator==@{operator==}}
+\index{operator==@{operator==}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Hand\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_hand}{Hand} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_hand}{Hand} object equality.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Two \hyperlink{class_leap_1_1_hand}{Hand} objects are equal if and only if both \hyperlink{class_leap_1_1_hand}{Hand} objects represent the exact same physical hand in the same frame and both \hyperlink{class_leap_1_1_hand}{Hand} objects are valid. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_ae47ff36b818f724db2f139a6e3fa0eb3}\label{class_leap_1_1_hand_ae47ff36b818f724db2f139a6e3fa0eb3}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!palm\+Normal@{palm\+Normal}}
+\index{palm\+Normal@{palm\+Normal}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{palm\+Normal()}{palmNormal()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::palm\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The normal vector to the palm. If your hand is flat, this vector will point downward, or \char`\"{}out\char`\"{} of the front surface of your palm.
+
+
+
+The direction is expressed as a unit vector pointing in the same direction as the palm normal (that is, a vector orthogonal to the palm).
+
+You can use the palm normal vector to compute the roll angle of the palm with respect to the horizontal plane\+:
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} normal to the plane formed by the palm. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a4c5037d0f2bdad73d2ba31f8a5b53e67}\label{class_leap_1_1_hand_a4c5037d0f2bdad73d2ba31f8a5b53e67}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!palm\+Position@{palm\+Position}}
+\index{palm\+Position@{palm\+Position}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{palm\+Position()}{palmPosition()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::palm\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The center position of the palm in millimeters from the Leap Motion \hyperlink{class_leap_1_1_controller}{Controller} origin.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} representing the coordinates of the palm position. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a33dfe22cc108e346acc6ebcacebd122f}\label{class_leap_1_1_hand_a33dfe22cc108e346acc6ebcacebd122f}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!palm\+Velocity@{palm\+Velocity}}
+\index{palm\+Velocity@{palm\+Velocity}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{palm\+Velocity()}{palmVelocity()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::palm\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The rate of change of the palm position in millimeters/second.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} representing the coordinates of the palm velocity. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_ab9ed5affee0cc08226a3d334341b0496}\label{class_leap_1_1_hand_ab9ed5affee0cc08226a3d334341b0496}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!palm\+Width@{palm\+Width}}
+\index{palm\+Width@{palm\+Width}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{palm\+Width()}{palmWidth()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::palm\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The estimated width of the palm when the hand is in a flat position.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The width of the palm in millimeters 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a736348fe9174978d23b27297da5de072}\label{class_leap_1_1_hand_a736348fe9174978d23b27297da5de072}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!pinch\+Strength@{pinch\+Strength}}
+\index{pinch\+Strength@{pinch\+Strength}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{pinch\+Strength()}{pinchStrength()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::pinch\+Strength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The holding strength of a pinch hand pose.
+
+The strength is zero for an open hand, and blends to 1.\+0 when a pinching hand pose is recognized. Pinching can be done between the thumb and any other finger of the same hand.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+A float value in the \mbox{[}0..1\mbox{]} range representing the holding strength of the pinch pose. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_aa9e572f18122453856267a527abf2bcb}\label{class_leap_1_1_hand_aa9e572f18122453856267a527abf2bcb}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!pointable@{pointable}}
+\index{pointable@{pointable}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{pointable()}{pointable()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} Leap\+::\+Hand\+::pointable (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{id }\end{DoxyParamCaption}) const}
+
+The \hyperlink{class_leap_1_1_pointable}{Pointable} object with the specified ID associated with this hand.
+
+Use the \hyperlink{class_leap_1_1_hand_aa9e572f18122453856267a527abf2bcb}{Hand\+::pointable()} function to retrieve a \hyperlink{class_leap_1_1_pointable}{Pointable} object associated with this hand using an ID value obtained from a previous frame. This function always returns a \hyperlink{class_leap_1_1_pointable}{Pointable} object, but if no finger with the specified ID is present, an invalid \hyperlink{class_leap_1_1_pointable}{Pointable} object is returned.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note that the ID values assigned to fingers are based on the hand ID. \hyperlink{class_leap_1_1_hand}{Hand} I\+Ds persist across frames, but only until tracking of that hand is lost. If tracking of the hand is lost and subsequently regained, the new \hyperlink{class_leap_1_1_hand}{Hand} object and its child \hyperlink{class_leap_1_1_finger}{Finger} objects will have a different ID than in an earlier frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID value of a \hyperlink{class_leap_1_1_pointable}{Pointable} object from a previous frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_pointable}{Pointable} object with the matching ID if one exists for this hand in this frame; otherwise, an invalid \hyperlink{class_leap_1_1_pointable}{Pointable} object is returned. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a845e544e674ab315f10ead9f4a7210fe}\label{class_leap_1_1_hand_a845e544e674ab315f10ead9f4a7210fe}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!pointables@{pointables}}
+\index{pointables@{pointables}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{pointables()}{pointables()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} Leap\+::\+Hand\+::pointables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The list of \hyperlink{class_leap_1_1_pointable}{Pointable} objects detected in this frame that are associated with this hand, given in arbitrary order. The list will always contain 5 fingers.
+
+Use \hyperlink{class_leap_1_1_pointable_list_a47919c7b8198806da5af4c7d351d83fc}{Pointable\+List\+::extended()} to remove non-\/extended fingers from the list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} containing all \hyperlink{class_leap_1_1_pointable}{Pointable} objects associated with this hand. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_ad7dd8985dde02d07daf7c81a050e6e24}\label{class_leap_1_1_hand_ad7dd8985dde02d07daf7c81a050e6e24}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!rotation\+Angle@{rotation\+Angle}}
+\index{rotation\+Angle@{rotation\+Angle}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{rotation\+Angle()}{rotationAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::rotation\+Angle (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame }\end{DoxyParamCaption}) const}
+
+The angle of rotation around the rotation axis derived from the change in orientation of this hand, and any associated fingers, between the current frame and the specified frame.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+The returned angle is expressed in radians measured clockwise around the rotation axis (using the right-\/hand rule) between the start and end frames. The value is always between 0 and pi radians (0 and 180 degrees).
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then the angle of rotation is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the relative rotation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A positive value representing the heuristically determined rotational change of the hand between the current frame and that specified in the since\+Frame parameter. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_aedf018db2f7ead885e78c9d88bc9d3e3}\label{class_leap_1_1_hand_aedf018db2f7ead885e78c9d88bc9d3e3}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!rotation\+Angle@{rotation\+Angle}}
+\index{rotation\+Angle@{rotation\+Angle}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{rotation\+Angle()}{rotationAngle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::rotation\+Angle (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame,  }\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{axis }\end{DoxyParamCaption}) const}
+
+The angle of rotation around the specified axis derived from the change in orientation of this hand, and any associated fingers, between the current frame and the specified frame.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+The returned angle is expressed in radians measured clockwise around the rotation axis (using the right-\/hand rule) between the start and end frames. The value is always between -\/pi and pi radians (-\/180 and 180 degrees).
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then the angle of rotation is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the relative rotation. \\
+\hline
+{\em axis} & The axis to measure rotation around. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A value representing the heuristically determined rotational change of the hand between the current frame and that specified in the since\+Frame parameter around the specified axis. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_ad76ae361b3b7861ce79fba94f3cca44b}\label{class_leap_1_1_hand_ad76ae361b3b7861ce79fba94f3cca44b}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!rotation\+Axis@{rotation\+Axis}}
+\index{rotation\+Axis@{rotation\+Axis}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{rotation\+Axis()}{rotationAxis()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::rotation\+Axis (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame }\end{DoxyParamCaption}) const}
+
+The axis of rotation derived from the change in orientation of this hand, and any associated fingers, between the current frame and the specified frame.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+The returned direction vector is normalized.
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then this method returns a zero vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the relative rotation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A normalized direction \hyperlink{struct_leap_1_1_vector}{Vector} representing the heuristically determined axis of rotational change of the hand between the current frame and that specified in the since\+Frame parameter. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a247046c6a2557e8d7ac28ea68ff925ef}\label{class_leap_1_1_hand_a247046c6a2557e8d7ac28ea68ff925ef}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!rotation\+Matrix@{rotation\+Matrix}}
+\index{rotation\+Matrix@{rotation\+Matrix}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{rotation\+Matrix()}{rotationMatrix()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} Leap\+::\+Hand\+::rotation\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame }\end{DoxyParamCaption}) const}
+
+The transform matrix expressing the rotation derived from the change in orientation of this hand, and any associated fingers, between the current frame and the specified frame.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then this method returns an identity matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the relative rotation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A transformation \hyperlink{struct_leap_1_1_matrix}{Matrix} representing the heuristically determined rotational change of the hand between the current frame and that specified in the since\+Frame parameter. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a32ed1424fa35250b69299d9e8cb7d030}\label{class_leap_1_1_hand_a32ed1424fa35250b69299d9e8cb7d030}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!rotation\+Probability@{rotation\+Probability}}
+\index{rotation\+Probability@{rotation\+Probability}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{rotation\+Probability()}{rotationProbability()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::rotation\+Probability (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame }\end{DoxyParamCaption}) const}
+
+The estimated probability that the hand motion between the current frame and the specified frame is intended to be a rotating motion.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then this method returns zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the relative rotation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A value between 0 and 1 representing the estimated probability that the hand motion between the current frame and the specified frame is intended to be a rotating motion. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a2c1afe066bbc1b33433c84d6302447cb}\label{class_leap_1_1_hand_a2c1afe066bbc1b33433c84d6302447cb}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!scale\+Factor@{scale\+Factor}}
+\index{scale\+Factor@{scale\+Factor}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{scale\+Factor()}{scaleFactor()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::scale\+Factor (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame }\end{DoxyParamCaption}) const}
+
+The scale factor derived from this hand\textquotesingle{}s motion between the current frame and the specified frame.
+
+The scale factor is always positive. A value of 1.\+0 indicates no scaling took place. Values between 0.\+0 and 1.\+0 indicate contraction and values greater than 1.\+0 indicate expansion.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+The Leap Motion software derives scaling from the relative inward or outward motion of a hand and its associated fingers (independent of translation and rotation).
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then this method returns 1.\+0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the relative scaling. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A positive value representing the heuristically determined scaling change ratio of the hand between the current frame and that specified in the since\+Frame parameter. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a62e912199ab38b96702afd6eb63b34e0}\label{class_leap_1_1_hand_a62e912199ab38b96702afd6eb63b34e0}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!scale\+Probability@{scale\+Probability}}
+\index{scale\+Probability@{scale\+Probability}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{scale\+Probability()}{scaleProbability()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::scale\+Probability (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame }\end{DoxyParamCaption}) const}
+
+The estimated probability that the hand motion between the current frame and the specified frame is intended to be a scaling motion.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then this method returns zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the relative scaling. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A value between 0 and 1 representing the estimated probability that the hand motion between the current frame and the specified frame is intended to be a scaling motion. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_aede162c1102ca6acf796f4735044ce10}\label{class_leap_1_1_hand_aede162c1102ca6acf796f4735044ce10}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!sphere\+Center@{sphere\+Center}}
+\index{sphere\+Center@{sphere\+Center}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{sphere\+Center()}{sphereCenter()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::sphere\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The center of a sphere fit to the curvature of this hand.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+This sphere is placed roughly as if the hand were holding a ball.
+
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} representing the center position of the sphere. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a3ff1cd29c23c1aa2c6482932b9a8fb1e}\label{class_leap_1_1_hand_a3ff1cd29c23c1aa2c6482932b9a8fb1e}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!sphere\+Radius@{sphere\+Radius}}
+\index{sphere\+Radius@{sphere\+Radius}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{sphere\+Radius()}{sphereRadius()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::sphere\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The radius of a sphere fit to the curvature of this hand.
+
+This sphere is placed roughly as if the hand were holding a ball. Thus the size of the sphere decreases as the fingers are curled into a fist.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The radius of the sphere in millimeters. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_acc0aa1360411dee646658fed75b056cf}\label{class_leap_1_1_hand_acc0aa1360411dee646658fed75b056cf}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!stabilized\+Palm\+Position@{stabilized\+Palm\+Position}}
+\index{stabilized\+Palm\+Position@{stabilized\+Palm\+Position}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{stabilized\+Palm\+Position()}{stabilizedPalmPosition()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::stabilized\+Palm\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The stabilized palm position of this \hyperlink{class_leap_1_1_hand}{Hand}.
+
+Smoothing and stabilization is performed in order to make this value more suitable for interaction with 2D content. The stabilized position lags behind the palm position by a variable amount, depending primarily on the speed of movement.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+A modified palm position of this \hyperlink{class_leap_1_1_hand}{Hand} object with some additional smoothing and stabilization applied. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_aa0bfd236f2c3729ea8ae7081bcbc55b5}\label{class_leap_1_1_hand_aa0bfd236f2c3729ea8ae7081bcbc55b5}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!time\+Visible@{time\+Visible}}
+\index{time\+Visible@{time\+Visible}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{time\+Visible()}{timeVisible()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::time\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The duration of time this \hyperlink{class_leap_1_1_hand}{Hand} has been visible to the Leap Motion \hyperlink{class_leap_1_1_controller}{Controller}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The duration (in seconds) that this \hyperlink{class_leap_1_1_hand}{Hand} has been tracked. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a1d66d728af5d56f6021ab62090c8c77d}\label{class_leap_1_1_hand_a1d66d728af5d56f6021ab62090c8c77d}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!tool@{tool}}
+\index{tool@{tool}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{tool()}{tool()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_tool}{Tool} Leap\+::\+Hand\+::tool (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{id }\end{DoxyParamCaption}) const}
+
+Tools are not associated with hands in version 2+. This function always returns an invalid \hyperlink{class_leap_1_1_tool}{Tool} object.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000002}{Deprecated}]2.\+0 \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_leap_1_1_hand_a715c211881d94e441eab3110b5075a0f}\label{class_leap_1_1_hand_a715c211881d94e441eab3110b5075a0f}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!tools@{tools}}
+\index{tools@{tools}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{tools()}{tools()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_tool_list}{Tool\+List} Leap\+::\+Hand\+::tools (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Tools are not associated with hands in version 2+. This list is always empty.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]2.\+0 \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_leap_1_1_hand_aadce42e29675b791f85aa39056e7d585}\label{class_leap_1_1_hand_aadce42e29675b791f85aa39056e7d585}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Hand\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A string containing a brief, human readable description of the \hyperlink{class_leap_1_1_hand}{Hand} object.
+
+\begin{DoxyReturn}{Returns}
+A description of the \hyperlink{class_leap_1_1_hand}{Hand} as a string. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_ad0ba1e3c607cb893619b668cc7750b89}\label{class_leap_1_1_hand_ad0ba1e3c607cb893619b668cc7750b89}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!translation@{translation}}
+\index{translation@{translation}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::translation (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame }\end{DoxyParamCaption}) const}
+
+The change of position of this hand between the current frame and the specified frame.
+
+The returned translation vector provides the magnitude and direction of the movement in millimeters.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then this method returns a zero vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the translation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{struct_leap_1_1_vector}{Vector} representing the heuristically determined change in hand position between the current frame and that specified in the since\+Frame parameter. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a11543de2538fba2e3f15aa422dd5b892}\label{class_leap_1_1_hand_a11543de2538fba2e3f15aa422dd5b892}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!translation\+Probability@{translation\+Probability}}
+\index{translation\+Probability@{translation\+Probability}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{translation\+Probability()}{translationProbability()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Hand\+::translation\+Probability (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_frame}{Frame} \&}]{since\+Frame }\end{DoxyParamCaption}) const}
+
+The estimated probability that the hand motion between the current frame and the specified frame is intended to be a translating motion.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+If a corresponding \hyperlink{class_leap_1_1_hand}{Hand} object is not found in since\+Frame, or if either this frame or since\+Frame are invalid \hyperlink{class_leap_1_1_frame}{Frame} objects, then this method returns zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em since\+Frame} & The starting frame for computing the translation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A value between 0 and 1 representing the estimated probability that the hand motion between the current frame and the specified frame is intended to be a translating motion. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_a6b5b9a08f5fe21d3eb1b1ab43dcec817}\label{class_leap_1_1_hand_a6b5b9a08f5fe21d3eb1b1ab43dcec817}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!wrist\+Position@{wrist\+Position}}
+\index{wrist\+Position@{wrist\+Position}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{wrist\+Position()}{wristPosition()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Hand\+::wrist\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The position of the wrist of this hand.
+
+\begin{DoxyReturn}{Returns}
+A vector containing the coordinates of the wrist position in millimeters. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0.\+3 
+\end{DoxySince}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_hand_a0b79e476fe0b74207a5d574c4ae4fe3d}\label{class_leap_1_1_hand_a0b79e476fe0b74207a5d574c4ae4fe3d}} 
+\index{Leap\+::\+Hand@{Leap\+::\+Hand}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Leap\+::\+Hand@{Leap\+::\+Hand}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \hyperlink{class_leap_1_1_hand}{Hand} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Writes a brief, human readable description of the \hyperlink{class_leap_1_1_hand}{Hand} object to an output stream.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

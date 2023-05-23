@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}ifndef JUGADOR\PYGZus{}H}
+\PYG{c+cp}{\PYGZsh{}define JUGADOR\PYGZus{}H}
+
+    \PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./includes.h\PYGZdq{}}
+
+    \PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+
+    \PYG{k}{class} \PYG{n+nc}{Jugador}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k}{public}\PYG{o}{:}
+            \PYG{n}{Jugador}\PYG{p}{(}\PYG{n}{string} \PYG{n}{nom}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{nombre} \PYG{o}{=} \PYG{n}{nom}\PYG{p}{;}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{9}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{barajaJugador}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{estaVivo} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{Jugador}\PYG{p}{()\PYGZob{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{o}{\PYGZti{}}\PYG{n}{Jugador}\PYG{p}{()\PYGZob{}}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{n}{string} \PYG{n}{barajaJugador}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{];} \PYG{c+c1}{// es la baraja/mano personal para cada jugador}
+            \PYG{n}{string} \PYG{n}{nombre}\PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{estaVivo}\PYG{p}{;}
+        \PYG{k}{private}\PYG{o}{:}
+    \PYG{p}{\PYGZcb{};}
+\PYG{c+cp}{\PYGZsh{}endif}
+\end{Verbatim}

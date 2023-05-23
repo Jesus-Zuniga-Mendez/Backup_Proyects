@@ -1,0 +1,411 @@
+\hypertarget{class_leap_1_1_bone}{}\section{Leap\+:\+:Bone Class Reference}
+\label{class_leap_1_1_bone}\index{Leap\+::\+Bone@{Leap\+::\+Bone}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Bone\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Bone\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}{Type} \{ \hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a64438d8f76c83b77f96cbe6d7a18af6a}{T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+C\+A\+R\+P\+AL} = 0, 
+\hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a83869c024e17895c58bfbb23c8f4058b}{T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+I\+M\+AL} = 1, 
+\hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a4295c9df146b92098c857833030cd6d2}{T\+Y\+P\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+TE} = 2, 
+\hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a0f3eb18922a8269e2e1c6ebb4c757125}{T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+AL} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_bone_addaf061946589164faa9ad6c09899cd2}\label{class_leap_1_1_bone_addaf061946589164faa9ad6c09899cd2}} 
+{\bfseries Bone} (Bone\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_bone_ae2e654e7cdce4c22c27afe44ae8a424e}{Bone} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_bone_a4bb40ba22404ed3626969fd035773bf9}{prev\+Joint} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_bone_a7122040fb8c15dfa2a99801394e054e1}{next\+Joint} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_bone_a0d81133eeea02f5586a927935d50027f}{center} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_bone_a15296070d028b684811d5aa555933ad7}{direction} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_bone_abc4a685582203d7dfed0b13e0cf7f117}{length} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_bone_a6275e4d9e6cbca6871a5dc21273ab329}{width} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}{Type} \hyperlink{class_leap_1_1_bone_aa4d62475c2bd1fd0ae8cf218d220d0d8}{type} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} \hyperlink{class_leap_1_1_bone_a057fbba7053f148cf3ae5f43f01ed9b8}{basis} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_bone_a82b71f671aedac1eb3cf5ff4e762e963}{is\+Valid} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_bone_ab76b765abf359b2c3e85d60a07673d55}{operator==} (const \hyperlink{class_leap_1_1_bone}{Bone} \&) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_bone_afd944f35b0d10e17e8a579a38f9ad260}{operator!=} (const \hyperlink{class_leap_1_1_bone}{Bone} \&) const
+\item 
+std\+::string \hyperlink{class_leap_1_1_bone_ae628cd1722bdef446ff37679b5f28481}{to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_bone}{Bone} \& \hyperlink{class_leap_1_1_bone_a5751c0c4533daf8332aa48b986e75cc2}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream \& \hyperlink{class_leap_1_1_bone_a432facbe3496dc0ec64ce42c840eacd6}{operator$<$$<$} (std\+::ostream \&, const \hyperlink{class_leap_1_1_bone}{Bone} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_bone}{Bone} class represents a tracked bone.
+
+All fingers contain 4 bones that make up the anatomy of the finger. Get valid \hyperlink{class_leap_1_1_bone}{Bone} objects from a \hyperlink{class_leap_1_1_finger}{Finger} object.
+
+Bones are ordered from base to tip, indexed from 0 to 3. Additionally, the bone\textquotesingle{}s Type enum may be used to index a specific bone anatomically.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+The thumb does not have a base metacarpal bone and therefore contains a valid, zero length bone at that location.
+
+Note that \hyperlink{class_leap_1_1_bone}{Bone} objects can be invalid, which means that they do not contain valid tracking data and do not correspond to a physical bone. Invalid \hyperlink{class_leap_1_1_bone}{Bone} objects can be the result of asking for a \hyperlink{class_leap_1_1_bone}{Bone} object from an invalid finger, indexing a bone out of range, or constructing a new bone. Test for validity with the \hyperlink{class_leap_1_1_bone_a82b71f671aedac1eb3cf5ff4e762e963}{Bone\+::is\+Valid()} function. \begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}\label{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!Type@{Type}}
+\index{Type@{Type}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}{Leap\+::\+Bone\+::\+Type}}
+
+Enumerates the names of the bones.
+
+Members of this enumeration are returned by \hyperlink{class_leap_1_1_bone_aa4d62475c2bd1fd0ae8cf218d220d0d8}{Bone\+::type()} to identify a \hyperlink{class_leap_1_1_bone}{Bone} object. \begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+C\+A\+R\+P\+AL@{T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+C\+A\+R\+P\+AL}!Leap\+::\+Bone@{Leap\+::\+Bone}}\index{Leap\+::\+Bone@{Leap\+::\+Bone}!T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+C\+A\+R\+P\+AL@{T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+C\+A\+R\+P\+AL}}}\mbox{\Hypertarget{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a64438d8f76c83b77f96cbe6d7a18af6a}\label{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a64438d8f76c83b77f96cbe6d7a18af6a}} 
+T\+Y\+P\+E\+\_\+\+M\+E\+T\+A\+C\+A\+R\+P\+AL&\hyperlink{class_leap_1_1_bone}{Bone} connected to the wrist inside the palm \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+I\+M\+AL@{T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+I\+M\+AL}!Leap\+::\+Bone@{Leap\+::\+Bone}}\index{Leap\+::\+Bone@{Leap\+::\+Bone}!T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+I\+M\+AL@{T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+I\+M\+AL}}}\mbox{\Hypertarget{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a83869c024e17895c58bfbb23c8f4058b}\label{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a83869c024e17895c58bfbb23c8f4058b}} 
+T\+Y\+P\+E\+\_\+\+P\+R\+O\+X\+I\+M\+AL&\hyperlink{class_leap_1_1_bone}{Bone} connecting to the palm \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+TE@{T\+Y\+P\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+TE}!Leap\+::\+Bone@{Leap\+::\+Bone}}\index{Leap\+::\+Bone@{Leap\+::\+Bone}!T\+Y\+P\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+TE@{T\+Y\+P\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+TE}}}\mbox{\Hypertarget{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a4295c9df146b92098c857833030cd6d2}\label{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a4295c9df146b92098c857833030cd6d2}} 
+T\+Y\+P\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+TE&\hyperlink{class_leap_1_1_bone}{Bone} between the tip and the base \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+AL@{T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+AL}!Leap\+::\+Bone@{Leap\+::\+Bone}}\index{Leap\+::\+Bone@{Leap\+::\+Bone}!T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+AL@{T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+AL}}}\mbox{\Hypertarget{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a0f3eb18922a8269e2e1c6ebb4c757125}\label{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1a0f3eb18922a8269e2e1c6ebb4c757125}} 
+T\+Y\+P\+E\+\_\+\+D\+I\+S\+T\+AL&\hyperlink{class_leap_1_1_bone}{Bone} at the tip of the finger \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_bone_ae2e654e7cdce4c22c27afe44ae8a424e}\label{class_leap_1_1_bone_ae2e654e7cdce4c22c27afe44ae8a424e}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!Bone@{Bone}}
+\index{Bone@{Bone}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{Bone()}{Bone()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Bone\+::\+Bone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an invalid \hyperlink{class_leap_1_1_bone}{Bone} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Get valid \hyperlink{class_leap_1_1_bone}{Bone} objects from a \hyperlink{class_leap_1_1_finger}{Finger} object.
+
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_bone_a057fbba7053f148cf3ae5f43f01ed9b8}\label{class_leap_1_1_bone_a057fbba7053f148cf3ae5f43f01ed9b8}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!basis@{basis}}
+\index{basis@{basis}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{basis()}{basis()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} Leap\+::\+Bone\+::basis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The orthonormal basis vectors for this \hyperlink{class_leap_1_1_bone}{Bone} as a \hyperlink{struct_leap_1_1_matrix}{Matrix}.
+
+Basis vectors specify the orientation of a bone.
+
+{\bfseries x\+Basis} Perpendicular to the longitudinal axis of the bone; exits the sides of the finger.
+
+{\bfseries y\+Basis or up vector} Perpendicular to the longitudinal axis of the bone; exits the top and bottom of the finger. More positive in the upward direction.
+
+{\bfseries z\+Basis} Aligned with the longitudinal axis of the bone. More positive toward the base of the finger.
+
+The bases provided for the right hand use the right-\/hand rule; those for the left hand use the left-\/hand rule. Thus, the positive direction of the x-\/basis is to the right for the right hand and to the left for the left hand. You can change from right-\/hand to left-\/hand rule by multiplying the z basis vector by -\/1.
+
+You can use the basis vectors for such purposes as measuring complex finger poses and skeletal animation.
+
+Note that converting the basis vectors directly into a quaternion representation is not mathematically valid. If you use quaternions, create them from the derived rotation matrix not directly from the bases.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The basis of the bone as a matrix. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_a0d81133eeea02f5586a927935d50027f}\label{class_leap_1_1_bone_a0d81133eeea02f5586a927935d50027f}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!center@{center}}
+\index{center@{center}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Bone\+::center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The midpoint of the bone.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The midpoint in the center of the bone. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_a15296070d028b684811d5aa555933ad7}\label{class_leap_1_1_bone_a15296070d028b684811d5aa555933ad7}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!direction@{direction}}
+\index{direction@{direction}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{direction()}{direction()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Bone\+::direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The normalized direction of the bone from base to tip.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The normalized direction of the bone from base to tip. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_a5751c0c4533daf8332aa48b986e75cc2}\label{class_leap_1_1_bone_a5751c0c4533daf8332aa48b986e75cc2}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_bone}{Bone}\& Leap\+::\+Bone\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an invalid \hyperlink{class_leap_1_1_bone}{Bone} object.
+
+You can use the instance returned by this function in comparisons testing whether a given \hyperlink{class_leap_1_1_bone}{Bone} instance is valid or invalid. (You can also use the \hyperlink{class_leap_1_1_bone_a82b71f671aedac1eb3cf5ff4e762e963}{Bone\+::is\+Valid()} function.)
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The invalid \hyperlink{class_leap_1_1_bone}{Bone} instance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_a82b71f671aedac1eb3cf5ff4e762e963}\label{class_leap_1_1_bone_a82b71f671aedac1eb3cf5ff4e762e963}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Bone\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this is a valid \hyperlink{class_leap_1_1_bone}{Bone} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if this \hyperlink{class_leap_1_1_bone}{Bone} object contains valid tracking data. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_abc4a685582203d7dfed0b13e0cf7f117}\label{class_leap_1_1_bone_abc4a685582203d7dfed0b13e0cf7f117}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!length@{length}}
+\index{length@{length}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Bone\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The estimated length of the bone in millimeters.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The length of the bone in millimeters. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_a7122040fb8c15dfa2a99801394e054e1}\label{class_leap_1_1_bone_a7122040fb8c15dfa2a99801394e054e1}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!next\+Joint@{next\+Joint}}
+\index{next\+Joint@{next\+Joint}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{next\+Joint()}{nextJoint()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Bone\+::next\+Joint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The end of the bone, closest to the finger tip.
+
+In anatomical terms, this is the distal end of the bone.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} containing the coordinates of the next joint position. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_afd944f35b0d10e17e8a579a38f9ad260}\label{class_leap_1_1_bone_afd944f35b0d10e17e8a579a38f9ad260}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Bone\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_bone}{Bone} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_bone}{Bone} object inequality.
+
+Two \hyperlink{class_leap_1_1_bone}{Bone} objects are equal if and only if both \hyperlink{class_leap_1_1_bone}{Bone} objects represent the exact same physical bone in the same frame and both \hyperlink{class_leap_1_1_bone}{Bone} objects are valid. \begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_ab76b765abf359b2c3e85d60a07673d55}\label{class_leap_1_1_bone_ab76b765abf359b2c3e85d60a07673d55}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!operator==@{operator==}}
+\index{operator==@{operator==}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Bone\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_bone}{Bone} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_bone}{Bone} object equality.
+
+Two \hyperlink{class_leap_1_1_bone}{Bone} objects are equal if and only if both \hyperlink{class_leap_1_1_bone}{Bone} objects represent the exact same physical bone in the same frame and both \hyperlink{class_leap_1_1_bone}{Bone} objects are valid. \begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_a4bb40ba22404ed3626969fd035773bf9}\label{class_leap_1_1_bone_a4bb40ba22404ed3626969fd035773bf9}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!prev\+Joint@{prev\+Joint}}
+\index{prev\+Joint@{prev\+Joint}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{prev\+Joint()}{prevJoint()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Bone\+::prev\+Joint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The base of the bone, closest to the wrist.
+
+In anatomical terms, this is the proximal end of the bone.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} containing the coordinates of the previous joint position. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_ae628cd1722bdef446ff37679b5f28481}\label{class_leap_1_1_bone_ae628cd1722bdef446ff37679b5f28481}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Bone\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A string containing a brief, human readable description of the \hyperlink{class_leap_1_1_bone}{Bone} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+A description of the \hyperlink{class_leap_1_1_bone}{Bone} object as a string. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_aa4d62475c2bd1fd0ae8cf218d220d0d8}\label{class_leap_1_1_bone_aa4d62475c2bd1fd0ae8cf218d220d0d8}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!type@{type}}
+\index{type@{type}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}{Type} Leap\+::\+Bone\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The name of this bone.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The anatomical type of this bone as a member of the \hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}{Bone\+::\+Type} enumeration. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_bone_a6275e4d9e6cbca6871a5dc21273ab329}\label{class_leap_1_1_bone_a6275e4d9e6cbca6871a5dc21273ab329}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!width@{width}}
+\index{width@{width}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Bone\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The average width of the flesh around the bone in millimeters.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The width of the flesh around the bone in millimeters. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_bone_a432facbe3496dc0ec64ce42c840eacd6}\label{class_leap_1_1_bone_a432facbe3496dc0ec64ce42c840eacd6}} 
+\index{Leap\+::\+Bone@{Leap\+::\+Bone}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Leap\+::\+Bone@{Leap\+::\+Bone}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \hyperlink{class_leap_1_1_bone}{Bone} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Writes a brief, human readable description of the \hyperlink{class_leap_1_1_bone}{Bone} object to an output stream.
+
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

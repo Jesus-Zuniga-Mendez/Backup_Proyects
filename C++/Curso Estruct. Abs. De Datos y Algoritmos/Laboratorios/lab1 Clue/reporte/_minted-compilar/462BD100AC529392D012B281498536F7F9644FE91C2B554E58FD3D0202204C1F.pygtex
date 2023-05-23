@@ -1,0 +1,56 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @file main.c}
+\PYG{c+cm}{ * @author Jesus Zuñiga Mendez}
+\PYG{c+cm}{ * @brief Archivo pricipal, laboratorio que permite refrescar conceptos basicos}
+\PYG{c+cm}{ * @version 1.0}
+\PYG{c+cm}{ * @date 26 de agosto de 2019}
+\PYG{c+cm}{ * @copyright Copyleft (l) 2019}
+\PYG{c+cm}{ */}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./include/includes.h\PYGZdq{}}
+
+\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Función que imprime una bienvenida para el usuario}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{Bienvenida}\PYG{p}{()\PYGZob{}}
+    \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}  \PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}   \PYGZus{}                                 \PYGZus{}      \PYGZus{}          \PYGZus{}  \PYGZus{}  \PYGZus{} }
+    \PYG{err}{\PYGZbs{}}\PYG{n}{n} \PYG{o}{|}  \PYG{n}{\PYGZus{}} \PYG{err}{\PYGZbs{}\PYGZbs{}} \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)}                               \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)}    \PYG{o}{|} \PYG{o}{|}        \PYG{o}{|} \PYG{o}{||} \PYG{o}{||} \PYG{o}{|}
+    \PYG{err}{\PYGZbs{}}\PYG{n}{n} \PYG{o}{|} \PYG{o}{|}\PYG{n}{\PYGZus{}}\PYG{p}{)} \PYG{o}{|} \PYG{n}{\PYGZus{}}   \PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}}  \PYG{n}{\PYGZus{}} \PYG{n}{\PYGZus{}\PYGZus{}} \PYG{n}{\PYGZus{}\PYGZus{}}   \PYG{n}{\PYGZus{}\PYGZus{}} \PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}}  \PYG{n}{\PYGZus{}} \PYG{n}{\PYGZus{}\PYGZus{}}   \PYG{n}{\PYGZus{}}   \PYG{n}{\PYGZus{}\PYGZus{}}\PYG{o}{|} \PYG{o}{|}  \PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}}   \PYG{o}{|} \PYG{o}{||} \PYG{o}{||} \PYG{o}{|}
+    \PYG{err}{\PYGZbs{}}\PYG{n}{n} \PYG{o}{|}  \PYG{n}{\PYGZus{}} \PYG{o}{\PYGZlt{}} \PYG{o}{|} \PYG{o}{|} \PYG{o}{/} \PYG{n}{\PYGZus{}} \PYG{err}{\PYGZbs{}\PYGZbs{}}\PYG{o}{|} \PYG{err}{\PYGZsq{}}\PYG{n}{\PYGZus{}} \PYG{err}{\PYGZbs{}\PYGZbs{}\PYGZbs{}\PYGZbs{}} \PYG{err}{\PYGZbs{}\PYGZbs{}} \PYG{o}{/} \PYG{c+c1}{// \PYGZus{} \PYGZbs{}\PYGZbs{}| \PYGZsq{}\PYGZus{} \PYGZbs{}\PYGZbs{} | | / \PYGZus{}` | / \PYGZus{} \PYGZbs{}\PYGZbs{}  | || || |}
+    \PYG{err}{\PYGZbs{}}\PYG{n}{n} \PYG{o}{|} \PYG{o}{|}\PYG{n}{\PYGZus{}}\PYG{p}{)} \PYG{o}{||} \PYG{o}{||}  \PYG{n}{\PYGZus{}\PYGZus{}}\PYG{o}{/|} \PYG{o}{|} \PYG{o}{|} \PYG{o}{|}\PYG{err}{\PYGZbs{}\PYGZbs{}} \PYG{n}{V} \PYG{o}{/|}  \PYG{n}{\PYGZus{}\PYGZus{}}\PYG{o}{/|} \PYG{o}{|} \PYG{o}{|} \PYG{o}{||} \PYG{o}{||} \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{o}{||} \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)} \PYG{o}{|} \PYG{o}{|}\PYG{n}{\PYGZus{}}\PYG{o}{||}\PYG{n}{\PYGZus{}}\PYG{o}{||}\PYG{n}{\PYGZus{}}\PYG{o}{|}
+    \PYG{err}{\PYGZbs{}}\PYG{n}{n} \PYG{o}{|}\PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}\PYGZus{}}\PYG{o}{/} \PYG{o}{|}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{err}{\PYGZbs{}\PYGZbs{}}\PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}}\PYG{o}{||}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{o}{|}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{err}{\PYGZbs{}\PYGZbs{}}\PYG{n}{\PYGZus{}}\PYG{o}{/}  \PYG{err}{\PYGZbs{}\PYGZbs{}}\PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}}\PYG{o}{||}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{o}{|}\PYG{n}{\PYGZus{}}\PYG{o}{||}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{err}{\PYGZbs{}\PYGZbs{}}\PYG{n}{\PYGZus{}\PYGZus{}}\PYG{p}{,}\PYG{n}{\PYGZus{}}\PYG{o}{|} \PYG{err}{\PYGZbs{}\PYGZbs{}}\PYG{n}{\PYGZus{}\PYGZus{}\PYGZus{}}\PYG{o}{/}  \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)(}\PYG{n}{\PYGZus{}}\PYG{p}{)(}\PYG{n}{\PYGZus{}}\PYG{p}{)}\PYG{err}{\PYGZbs{}}\PYG{n}{n}\PYG{l+s}{\PYGZdq{}); }
+    \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Funcion Principal}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int} \PYG{n}{main}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,} \PYG{k+kt}{char}\PYG{o}{**} \PYG{n}{argv}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{Bienvenida}\PYG{p}{();}
+    \PYG{n}{string} \PYG{n}{codon}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{analizar} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{resultado} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{argc} \PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{argc}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{analizar} \PYG{o}{=}  \PYG{n}{argv} \PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{k}{if} \PYG{p}{((}\PYG{n}{analizar}\PYG{p}{.}\PYG{n}{length}\PYG{p}{()} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+                \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}} \PYG{n}{analizar}\PYG{p}{.}\PYG{n}{length}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{codon} \PYG{o}{=} \PYG{n}{codon} \PYG{o}{+} \PYG{n}{analizar}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+                    \PYG{k}{if} \PYG{p}{(((}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+                        \PYG{n}{resultado} \PYG{o}{=} \PYG{n}{resultado} \PYG{o}{+} \PYG{n}{CompararProteina}\PYG{p}{(}\PYG{n}{codon}\PYG{p}{);}
+                        \PYG{n}{codon} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{resultado} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{n}{resultado} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}la lista \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{analizar} \PYG{o}{\PYGZlt{}\PYGZlt{}} 
+                \PYG{l+s}{\PYGZdq{} no tiene una extension correcta\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,22 @@
+SRC_DIR=./src
+INCL_DIR=./incl
+BIN_DIR=./bin
+DOC_DIR=./doc
+
+CC=gcc
+BIN=a.out
+CFLAGS=-O3 -g
+###################
+
+all:build run clean
+
+build:
+	@$(CC) $(CFLAGS) -I $(INCL_DIR) -o $(BIN_DIR)/$(BIN) $(SRC_DIR)/*.c main.c
+	@sleep 1
+clean:
+	@rm -rf $(BIN_DIR)/$(BIN)
+
+run:
+	@./$(BIN_DIR)/$(BIN)
+
+doc:

@@ -1,0 +1,36 @@
+\begin{theindex}
+
+  \item {Algoritmos}, \hyperpage{5}
+    \subitem {Colorear}, \hyperpage{6}
+    \subitem {contar\+Pixeles}, \hyperpage{6}
+    \subitem {Conversor\+Inicial}, \hyperpage{6}
+    \subitem {Pavlidi}, \hyperpage{7}
+    \subitem {Square\+Tracing\+Alg}, \hyperpage{7}
+    \subitem {Start\+Finder}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Colorear}
+    \subitem {Algoritmos}, \hyperpage{6}
+  \item {contar\+Pixeles}
+    \subitem {Algoritmos}, \hyperpage{6}
+  \item {Conversor\+Inicial}
+    \subitem {Algoritmos}, \hyperpage{6}
+
+  \indexspace
+
+  \item {include/\+Includes.\+h}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Pavlidi}
+    \subitem {Algoritmos}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Square\+Tracing\+Alg}
+    \subitem {Algoritmos}, \hyperpage{7}
+  \item {Start\+Finder}
+    \subitem {Algoritmos}, \hyperpage{7}
+
+\end{theindex}

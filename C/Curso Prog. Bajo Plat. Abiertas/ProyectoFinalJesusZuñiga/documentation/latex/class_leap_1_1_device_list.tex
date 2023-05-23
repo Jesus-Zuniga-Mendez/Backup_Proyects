@@ -1,0 +1,160 @@
+\hypertarget{class_leap_1_1_device_list}{}\section{Leap\+:\+:Device\+List Class Reference}
+\label{class_leap_1_1_device_list}\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Device\+List\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Device\+List\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$ \hyperlink{class_leap_1_1_device_list}{Device\+List}, \hyperlink{class_leap_1_1_device}{Device} $>$ \hyperlink{class_leap_1_1_device_list_acfe5b07cda502759bf8fe768e8c6ba87}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_device_list_a5526b7741f4a2689c330d34fc7a865db}\label{class_leap_1_1_device_list_a5526b7741f4a2689c330d34fc7a865db}} 
+{\bfseries Device\+List} (const \hyperlink{class_leap_1_1_list_base_implementation}{List\+Base\+Implementation}$<$ \hyperlink{class_leap_1_1_device}{Device} $>$ \&)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_list_a6b438e4f4e9486c9d38e6ac01a9e7b93}{Device\+List} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_device_list_a2a62cf3b681aef4342d3f5fe309a7d61}{count} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_device_list_a6dd3954b95415db108f1afcc4fba0041}{is\+Empty} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device}{Device} \hyperlink{class_leap_1_1_device_list_a82c41ea0a7175aca06d00bfb2505ee4f}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_list}{Device\+List} \& \hyperlink{class_leap_1_1_device_list_aa5a6dd4fcc38029bfd381e34bcae4c43}{append} (const \hyperlink{class_leap_1_1_device_list}{Device\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_list_acfe5b07cda502759bf8fe768e8c6ba87}{const\+\_\+iterator} \hyperlink{class_leap_1_1_device_list_ad388e702535f69c3d09c699cb13f7e1e}{begin} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_list_acfe5b07cda502759bf8fe768e8c6ba87}{const\+\_\+iterator} \hyperlink{class_leap_1_1_device_list_aa725ececd31b45086dde456b810c178d}{end} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_device_list}{Device\+List} class represents a list of \hyperlink{class_leap_1_1_device}{Device} objects.
+
+Get a \hyperlink{class_leap_1_1_device_list}{Device\+List} object by calling \hyperlink{class_leap_1_1_controller_ad3b6ea558fb39cb32c20c3fd44dc5da1}{Controller\+::devices()}. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_leap_1_1_device_list_acfe5b07cda502759bf8fe768e8c6ba87}\label{class_leap_1_1_device_list_acfe5b07cda502759bf8fe768e8c6ba87}} 
+\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$\hyperlink{class_leap_1_1_device_list}{Device\+List}, \hyperlink{class_leap_1_1_device}{Device}$>$ \hyperlink{class_leap_1_1_device_list_acfe5b07cda502759bf8fe768e8c6ba87}{Leap\+::\+Device\+List\+::const\+\_\+iterator}}
+
+A C++ iterator type for this \hyperlink{class_leap_1_1_device_list}{Device\+List} objects. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_device_list_a6b438e4f4e9486c9d38e6ac01a9e7b93}\label{class_leap_1_1_device_list_a6b438e4f4e9486c9d38e6ac01a9e7b93}} 
+\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}!Device\+List@{Device\+List}}
+\index{Device\+List@{Device\+List}!Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+\subsubsection{\texorpdfstring{Device\+List()}{DeviceList()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Device\+List\+::\+Device\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty list of devices. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_device_list_aa5a6dd4fcc38029bfd381e34bcae4c43}\label{class_leap_1_1_device_list_aa5a6dd4fcc38029bfd381e34bcae4c43}} 
+\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_list}{Device\+List}\& Leap\+::\+Device\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_device_list}{Device\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the members of the specified \hyperlink{class_leap_1_1_device_list}{Device\+List} to this \hyperlink{class_leap_1_1_device_list}{Device\+List}. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{class_leap_1_1_device_list}{Device\+List} object containing \hyperlink{class_leap_1_1_device}{Device} objects to append to the end of this \hyperlink{class_leap_1_1_device_list}{Device\+List}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_list_ad388e702535f69c3d09c699cb13f7e1e}\label{class_leap_1_1_device_list_ad388e702535f69c3d09c699cb13f7e1e}} 
+\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}!begin@{begin}}
+\index{begin@{begin}!Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_list_acfe5b07cda502759bf8fe768e8c6ba87}{const\+\_\+iterator} Leap\+::\+Device\+List\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the beginning of this \hyperlink{class_leap_1_1_device_list}{Device\+List}. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_list_a2a62cf3b681aef4342d3f5fe309a7d61}\label{class_leap_1_1_device_list_a2a62cf3b681aef4342d3f5fe309a7d61}} 
+\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}!count@{count}}
+\index{count@{count}!Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Device\+List\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of devices in this list. \begin{DoxyReturn}{Returns}
+The number of devices in this list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_list_aa725ececd31b45086dde456b810c178d}\label{class_leap_1_1_device_list_aa725ececd31b45086dde456b810c178d}} 
+\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}!end@{end}}
+\index{end@{end}!Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_list_acfe5b07cda502759bf8fe768e8c6ba87}{const\+\_\+iterator} Leap\+::\+Device\+List\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the end of this \hyperlink{class_leap_1_1_device_list}{Device\+List}. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_list_a6dd3954b95415db108f1afcc4fba0041}\label{class_leap_1_1_device_list_a6dd3954b95415db108f1afcc4fba0041}} 
+\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Device\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether the list is empty.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if the list has no members. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_list_a82c41ea0a7175aca06d00bfb2505ee4f}\label{class_leap_1_1_device_list_a82c41ea0a7175aca06d00bfb2505ee4f}} 
+\index{Leap\+::\+Device\+List@{Leap\+::\+Device\+List}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Leap\+::\+Device\+List@{Leap\+::\+Device\+List}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device}{Device} Leap\+::\+Device\+List\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Access a list member by its position in the list. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The zero-\/based list position index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_device}{Device} object at the specified index. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

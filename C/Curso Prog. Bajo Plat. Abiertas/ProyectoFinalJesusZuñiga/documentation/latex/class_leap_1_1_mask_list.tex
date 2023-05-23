@@ -1,0 +1,123 @@
+\hypertarget{class_leap_1_1_mask_list}{}\section{Leap\+:\+:Mask\+List Class Reference}
+\label{class_leap_1_1_mask_list}\index{Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Mask\+List\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Mask\+List\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_mask_list_a78efb66c6393e9f3864695d709646f36}\label{class_leap_1_1_mask_list_a78efb66c6393e9f3864695d709646f36}} 
+typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$ \hyperlink{class_leap_1_1_mask_list}{Mask\+List}, \hyperlink{class_leap_1_1_mask}{Mask} $>$ {\bfseries const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_mask_list_ac99108afe11c18783fd4c76e7a884b59}\label{class_leap_1_1_mask_list_ac99108afe11c18783fd4c76e7a884b59}} 
+{\bfseries Mask\+List} (const \hyperlink{class_leap_1_1_list_base_implementation}{List\+Base\+Implementation}$<$ \hyperlink{class_leap_1_1_mask}{Mask} $>$ \&)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_mask_list_ab3bdfdd5be09ded98e9c2f586b77d640}{Mask\+List} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_mask_list_a768de3705c97cc0ddf5e03c4776123d6}{count} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_mask_list_a41f3f8bb83d3addd214180c49b8a033e}{is\+Empty} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_mask}{Mask} \hyperlink{class_leap_1_1_mask_list_ae977a3f2ab4749d6225997969d0476c3}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_mask_list}{Mask\+List} \& \hyperlink{class_leap_1_1_mask_list_acbde19bc85660b467662bcb2796f3a53}{append} (const \hyperlink{class_leap_1_1_mask_list}{Mask\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_const_list_iterator}{const\+\_\+iterator} \hyperlink{class_leap_1_1_mask_list_ae29ce07a589fe2b48a5e19368198668d}{begin} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_const_list_iterator}{const\+\_\+iterator} \hyperlink{class_leap_1_1_mask_list_a1decd80ee1b76ee7bf7f4ed832c2bf19}{end} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Note\+: This class is an experimental A\+PI for internal use only. It may be removed without warning.
+
+A list containing \hyperlink{class_leap_1_1_mask}{Mask} objects. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_mask_list_ab3bdfdd5be09ded98e9c2f586b77d640}\label{class_leap_1_1_mask_list_ab3bdfdd5be09ded98e9c2f586b77d640}} 
+\index{Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}!Mask\+List@{Mask\+List}}
+\index{Mask\+List@{Mask\+List}!Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}}
+\subsubsection{\texorpdfstring{Mask\+List()}{MaskList()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Mask\+List\+::\+Mask\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty list for \hyperlink{class_leap_1_1_mask}{Mask} objects. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_mask_list_acbde19bc85660b467662bcb2796f3a53}\label{class_leap_1_1_mask_list_acbde19bc85660b467662bcb2796f3a53}} 
+\index{Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_mask_list}{Mask\+List}\& Leap\+::\+Mask\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_mask_list}{Mask\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the contents of another list of masks to this one. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_list_ae29ce07a589fe2b48a5e19368198668d}\label{class_leap_1_1_mask_list_ae29ce07a589fe2b48a5e19368198668d}} 
+\index{Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}!begin@{begin}}
+\index{begin@{begin}!Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_const_list_iterator}{const\+\_\+iterator} Leap\+::\+Mask\+List\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+A list iterator set to the beginning of the list. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_list_a768de3705c97cc0ddf5e03c4776123d6}\label{class_leap_1_1_mask_list_a768de3705c97cc0ddf5e03c4776123d6}} 
+\index{Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}!count@{count}}
+\index{count@{count}!Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Mask\+List\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The number of masks in this list. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_list_a1decd80ee1b76ee7bf7f4ed832c2bf19}\label{class_leap_1_1_mask_list_a1decd80ee1b76ee7bf7f4ed832c2bf19}} 
+\index{Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}!end@{end}}
+\index{end@{end}!Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_const_list_iterator}{const\+\_\+iterator} Leap\+::\+Mask\+List\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+A list iterator set to the end of the list. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_list_a41f3f8bb83d3addd214180c49b8a033e}\label{class_leap_1_1_mask_list_a41f3f8bb83d3addd214180c49b8a033e}} 
+\index{Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Mask\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this list is empty. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_mask_list_ae977a3f2ab4749d6225997969d0476c3}\label{class_leap_1_1_mask_list_ae977a3f2ab4749d6225997969d0476c3}} 
+\index{Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Leap\+::\+Mask\+List@{Leap\+::\+Mask\+List}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_mask}{Mask} Leap\+::\+Mask\+List\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+The \hyperlink{class_leap_1_1_mask_list}{Mask\+List} supports array indexing. \begin{DoxySince}{Since}
+2.\+2.\+6 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

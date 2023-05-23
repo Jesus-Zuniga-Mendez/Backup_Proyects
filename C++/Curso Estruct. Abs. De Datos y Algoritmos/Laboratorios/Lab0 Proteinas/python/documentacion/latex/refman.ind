@@ -1,0 +1,27 @@
+\begin{theindex}
+
+  \item {codon}
+    \subitem {principal}, \hyperpage{5}
+  \item {comparator}
+    \subitem {principal}, \hyperpage{5}
+
+  \indexspace
+
+  \item {ordenador}
+    \subitem {principal}, \hyperpage{5}
+
+  \indexspace
+
+  \item {principal}, \hyperpage{5}
+    \subitem {codon}, \hyperpage{5}
+    \subitem {comparator}, \hyperpage{5}
+    \subitem {ordenador}, \hyperpage{5}
+    \subitem {repeater}, \hyperpage{5}
+  \item {principal.\+py}, \hyperpage{7}
+
+  \indexspace
+
+  \item {repeater}
+    \subitem {principal}, \hyperpage{5}
+
+\end{theindex}

@@ -1,0 +1,14 @@
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Class Documentation}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Binary\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Search\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tree$<$ Data, Type\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nodo $>$ Class Template Reference}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Detailed Description}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Member Function Documentation}{4}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}calcular\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Niveles()}{4}{subsubsection.2.1.2.1}
+\contentsline {subsubsection}{\numberline {2.1.2.2}calcular\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nodos()}{5}{subsubsection.2.1.2.2}
+\contentsline {subsubsection}{\numberline {2.1.2.3}devolver\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}String\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nivel()}{5}{subsubsection.2.1.2.3}
+\contentsline {section}{\numberline {2.2}Class\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Node$<$ Dato $>$ Class Template Reference}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Detailed Description}{6}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Dato\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}No\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Primitivo$<$ Tipo\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Dato $>$ Class Template Reference}{6}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Detailed Description}{7}{subsection.2.3.1}
+\contentsline {chapter}{Index}{9}{section*.13}

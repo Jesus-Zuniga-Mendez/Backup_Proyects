@@ -1,0 +1,590 @@
+\hypertarget{class_sample_listener}{}\section{Sample\+Listener Class Reference}
+\label{class_sample_listener}\index{Sample\+Listener@{Sample\+Listener}}
+
+
+Inheritance diagram for Sample\+Listener\+:
+% FIG 0
+
+
+Collaboration diagram for Sample\+Listener\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_sample_listener_a8e28c251385c39ebd874f48396da7fb6}{on\+Init} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a91dfe9f4b35bca70a38237a7a09b4ebd}{on\+Connect} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a8df4ceac8fd1b88ce4bacbb068234315}{on\+Disconnect} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a60457e8e88223f71c15876f7d27d3bdd}{on\+Exit} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a39698af250954a27afb4a875ff0af38a}{on\+Frame} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a17d7075b90f556b34682eefd1f966219}{on\+Focus\+Gained} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a3b245f2961cec0c592ebdfaf797d6365}{on\+Focus\+Lost} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a2658fbd2db372f676d9d70665c637af3}{on\+Device\+Change} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a498412bdb417e605587ce25e836ff793}{on\+Service\+Connect} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_afb2cf676f82cb7df58052085ecc64dd1}{on\+Service\+Disconnect} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_ab2a418fbd9bd0da82f47e0e9b3149b38}{on\+Init} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_afb49688d9bcf7e71a7841c70a6baab1d}{on\+Connect} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_ade7366cefc72f74663f892c2c97b7554}{on\+Disconnect} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_affb615dc62b6936718c40497e819adb7}{on\+Exit} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a9ae2f07da65353a8bda75c6807ecee35}{on\+Frame} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_afd74ae8efc625ef62985d9d0fa33290c}{on\+Focus\+Gained} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a9510c508c13ed2ce6afe224dca483e0b}{on\+Focus\+Lost} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a4030bfba07f6a34dabf77459968acd39}{on\+Device\+Change} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a52b985b9f9a2db11b99fba2af3c3b6a6}{on\+Service\+Connect} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\item 
+virtual void \hyperlink{class_sample_listener_a60f017a145fbad1dd41b1d171a7a8c69}{on\+Service\+Disconnect} (const \hyperlink{class_leap_1_1_controller}{Controller} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sample_listener_afb49688d9bcf7e71a7841c70a6baab1d}\label{class_sample_listener_afb49688d9bcf7e71a7841c70a6baab1d}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Connect@{on\+Connect}}
+\index{on\+Connect@{on\+Connect}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Connect()}{onConnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Connect (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the Controller object connects to the Leap Motion software and the Leap Motion hardware device is plugged in, or when this Listener object is added to a Controller that is already connected.
+
+When this callback is invoked, Controller\+::is\+Service\+Connected is true, Controller\+::devices() is not empty, and, for at least one of the Device objects in the list, Device\+::is\+Streaming() is true.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_adfef79f9a03b342384aaa17f3a8ebf15}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a91dfe9f4b35bca70a38237a7a09b4ebd}\label{class_sample_listener_a91dfe9f4b35bca70a38237a7a09b4ebd}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Connect@{on\+Connect}}
+\index{on\+Connect@{on\+Connect}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Connect()}{onConnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Connect (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the Controller object connects to the Leap Motion software and the Leap Motion hardware device is plugged in, or when this Listener object is added to a Controller that is already connected.
+
+When this callback is invoked, Controller\+::is\+Service\+Connected is true, Controller\+::devices() is not empty, and, for at least one of the Device objects in the list, Device\+::is\+Streaming() is true.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_adfef79f9a03b342384aaa17f3a8ebf15}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a4030bfba07f6a34dabf77459968acd39}\label{class_sample_listener_a4030bfba07f6a34dabf77459968acd39}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Device\+Change@{on\+Device\+Change}}
+\index{on\+Device\+Change@{on\+Device\+Change}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Device\+Change()}{onDeviceChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Device\+Change (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when a Leap Motion controller plugged in, unplugged, or the device changes state.
+
+State changes include changes in frame rate and entering or leaving \char`\"{}robust\char`\"{} mode. Note that there is currently no way to query whether a device is in robust mode. You can use Frame\+::current\+Framerate() to get the framerate.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_adb6de7817e0b316b82f781a03aae5448}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a2658fbd2db372f676d9d70665c637af3}\label{class_sample_listener_a2658fbd2db372f676d9d70665c637af3}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Device\+Change@{on\+Device\+Change}}
+\index{on\+Device\+Change@{on\+Device\+Change}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Device\+Change()}{onDeviceChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Device\+Change (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when a Leap Motion controller plugged in, unplugged, or the device changes state.
+
+State changes include changes in frame rate and entering or leaving \char`\"{}robust\char`\"{} mode. Note that there is currently no way to query whether a device is in robust mode. You can use Frame\+::current\+Framerate() to get the framerate.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_adb6de7817e0b316b82f781a03aae5448}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_ade7366cefc72f74663f892c2c97b7554}\label{class_sample_listener_ade7366cefc72f74663f892c2c97b7554}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Disconnect@{on\+Disconnect}}
+\index{on\+Disconnect@{on\+Disconnect}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Disconnect()}{onDisconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Disconnect (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the Controller object disconnects from the Leap Motion software or the Leap Motion hardware is unplugged. The controller can disconnect when the Leap Motion device is unplugged, the user shuts the Leap Motion software down, or the Leap Motion software encounters an unrecoverable error.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note\+: When you launch a Leap-\/enabled application in a debugger, the Leap Motion library does not disconnect from the application. This is to allow you to step through code without losing the connection because of time outs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_ac031e2d95b530097e2060518a9190f5e}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a8df4ceac8fd1b88ce4bacbb068234315}\label{class_sample_listener_a8df4ceac8fd1b88ce4bacbb068234315}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Disconnect@{on\+Disconnect}}
+\index{on\+Disconnect@{on\+Disconnect}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Disconnect()}{onDisconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Disconnect (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the Controller object disconnects from the Leap Motion software or the Leap Motion hardware is unplugged. The controller can disconnect when the Leap Motion device is unplugged, the user shuts the Leap Motion software down, or the Leap Motion software encounters an unrecoverable error.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note\+: When you launch a Leap-\/enabled application in a debugger, the Leap Motion library does not disconnect from the application. This is to allow you to step through code without losing the connection because of time outs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_ac031e2d95b530097e2060518a9190f5e}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_affb615dc62b6936718c40497e819adb7}\label{class_sample_listener_affb615dc62b6936718c40497e819adb7}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Exit (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when this Listener object is removed from the Controller or the Controller instance is destroyed.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_ac8f779a9208101f0084953560923f88c}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a60457e8e88223f71c15876f7d27d3bdd}\label{class_sample_listener_a60457e8e88223f71c15876f7d27d3bdd}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Exit (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when this Listener object is removed from the Controller or the Controller instance is destroyed.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_ac8f779a9208101f0084953560923f88c}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_afd74ae8efc625ef62985d9d0fa33290c}\label{class_sample_listener_afd74ae8efc625ef62985d9d0fa33290c}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Focus\+Gained@{on\+Focus\+Gained}}
+\index{on\+Focus\+Gained@{on\+Focus\+Gained}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Focus\+Gained()}{onFocusGained()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Focus\+Gained (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when this application becomes the foreground application.
+
+Only the foreground application receives tracking data from the Leap Motion Controller. This function is only called when the controller object is in a connected state.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_ab52aa99ad9e8fd0f35d9dffc3ef9f027}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a17d7075b90f556b34682eefd1f966219}\label{class_sample_listener_a17d7075b90f556b34682eefd1f966219}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Focus\+Gained@{on\+Focus\+Gained}}
+\index{on\+Focus\+Gained@{on\+Focus\+Gained}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Focus\+Gained()}{onFocusGained()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Focus\+Gained (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when this application becomes the foreground application.
+
+Only the foreground application receives tracking data from the Leap Motion Controller. This function is only called when the controller object is in a connected state.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_ab52aa99ad9e8fd0f35d9dffc3ef9f027}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a9510c508c13ed2ce6afe224dca483e0b}\label{class_sample_listener_a9510c508c13ed2ce6afe224dca483e0b}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Focus\+Lost@{on\+Focus\+Lost}}
+\index{on\+Focus\+Lost@{on\+Focus\+Lost}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Focus\+Lost()}{onFocusLost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Focus\+Lost (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when this application loses the foreground focus.
+
+Only the foreground application receives tracking data from the Leap Motion Controller. This function is only called when the controller object is in a connected state.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_a7bcae44a40674c3f1e367b911201d252}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a3b245f2961cec0c592ebdfaf797d6365}\label{class_sample_listener_a3b245f2961cec0c592ebdfaf797d6365}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Focus\+Lost@{on\+Focus\+Lost}}
+\index{on\+Focus\+Lost@{on\+Focus\+Lost}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Focus\+Lost()}{onFocusLost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Focus\+Lost (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when this application loses the foreground focus.
+
+Only the foreground application receives tracking data from the Leap Motion Controller. This function is only called when the controller object is in a connected state.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_a7bcae44a40674c3f1e367b911201d252}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a9ae2f07da65353a8bda75c6807ecee35}\label{class_sample_listener_a9ae2f07da65353a8bda75c6807ecee35}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Frame@{on\+Frame}}
+\index{on\+Frame@{on\+Frame}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Frame()}{onFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Frame (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when a new frame of hand and finger tracking data is available. Access the new frame data using the Controller\+::frame() function.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note, the Controller skips any pending on\+Frame events while your on\+Frame handler executes. If your implementation takes too long to return, one or more frames can be skipped. The Controller still inserts the skipped frames into the frame history. You can access recent frames by setting the history parameter when calling the Controller\+::frame() function. You can determine if any pending on\+Frame events were skipped by comparing the ID of the most recent frame with the ID of the last received frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_ab600421108bbc952d8f0f144384ca30f}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a39698af250954a27afb4a875ff0af38a}\label{class_sample_listener_a39698af250954a27afb4a875ff0af38a}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Frame@{on\+Frame}}
+\index{on\+Frame@{on\+Frame}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Frame()}{onFrame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Frame (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when a new frame of hand and finger tracking data is available. Access the new frame data using the Controller\+::frame() function.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note, the Controller skips any pending on\+Frame events while your on\+Frame handler executes. If your implementation takes too long to return, one or more frames can be skipped. The Controller still inserts the skipped frames into the frame history. You can access recent frames by setting the history parameter when calling the Controller\+::frame() function. You can determine if any pending on\+Frame events were skipped by comparing the ID of the most recent frame with the ID of the last received frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_ab600421108bbc952d8f0f144384ca30f}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_ab2a418fbd9bd0da82f47e0e9b3149b38}\label{class_sample_listener_ab2a418fbd9bd0da82f47e0e9b3149b38}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Init@{on\+Init}}
+\index{on\+Init@{on\+Init}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Init()}{onInit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Init (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called once, when this Listener object is newly added to a Controller.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_a180d621ad08afa5851d03d3546a82bbf}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a8e28c251385c39ebd874f48396da7fb6}\label{class_sample_listener_a8e28c251385c39ebd874f48396da7fb6}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Init@{on\+Init}}
+\index{on\+Init@{on\+Init}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Init()}{onInit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Init (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called once, when this Listener object is newly added to a Controller.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_a180d621ad08afa5851d03d3546a82bbf}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a52b985b9f9a2db11b99fba2af3c3b6a6}\label{class_sample_listener_a52b985b9f9a2db11b99fba2af3c3b6a6}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Service\+Connect@{on\+Service\+Connect}}
+\index{on\+Service\+Connect@{on\+Service\+Connect}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Service\+Connect()}{onServiceConnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Service\+Connect (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the Leap Motion daemon/service connects to your application Controller.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_aa9cc3f35ba72e58dc45cac415b9253f7}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a498412bdb417e605587ce25e836ff793}\label{class_sample_listener_a498412bdb417e605587ce25e836ff793}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Service\+Connect@{on\+Service\+Connect}}
+\index{on\+Service\+Connect@{on\+Service\+Connect}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Service\+Connect()}{onServiceConnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Service\+Connect (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the Leap Motion daemon/service connects to your application Controller.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_aa9cc3f35ba72e58dc45cac415b9253f7}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_a60f017a145fbad1dd41b1d171a7a8c69}\label{class_sample_listener_a60f017a145fbad1dd41b1d171a7a8c69}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Service\+Disconnect@{on\+Service\+Disconnect}}
+\index{on\+Service\+Disconnect@{on\+Service\+Disconnect}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Service\+Disconnect()}{onServiceDisconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Sample\+Listener\+::on\+Service\+Disconnect (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called if the Leap Motion daemon/service disconnects from your application Controller.
+
+Normally, this callback is not invoked. It is only called if some external event or problem shuts down the service or otherwise interrupts the connection.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_a894976a7ff7a101a08c9b88a43ec367b}{Leap\+::\+Listener}.
+
+\mbox{\Hypertarget{class_sample_listener_afb2cf676f82cb7df58052085ecc64dd1}\label{class_sample_listener_afb2cf676f82cb7df58052085ecc64dd1}} 
+\index{Sample\+Listener@{Sample\+Listener}!on\+Service\+Disconnect@{on\+Service\+Disconnect}}
+\index{on\+Service\+Disconnect@{on\+Service\+Disconnect}!Sample\+Listener@{Sample\+Listener}}
+\subsubsection{\texorpdfstring{on\+Service\+Disconnect()}{onServiceDisconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+Listener\+::on\+Service\+Disconnect (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_controller}{Controller} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called if the Leap Motion daemon/service disconnects from your application Controller.
+
+Normally, this callback is not invoked. It is only called if some external event or problem shuts down the service or otherwise interrupts the connection.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The Controller object invoking this callback function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+
+
+Reimplemented from \hyperlink{class_leap_1_1_listener_a894976a7ff7a101a08c9b88a43ec367b}{Leap\+::\+Listener}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sample/\hyperlink{_comprobar_gesto_8cpp}{Comprobar\+Gesto.\+cpp}\item 
+sample/Guardar\+Gesto.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{posicion_8c}{}\section{sourcecode/posicion.c File Reference}
+\label{posicion_8c}\index{sourcecode/posicion.\+c@{sourcecode/posicion.\+c}}
+
+
+Archivo que contiene las funciones para manipular las posiciones de una ñista.  
+
+
+{\ttfamily \#include \char`\"{}../include/includes.\+h\char`\"{}}\newline
+Include dependency graph for posicion.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct__posicion}{posicion} $\ast$ \hyperlink{posicion_8c_a7e6a824d08d3bc8fc822217319e86bc5}{Siguiente} (\hyperlink{struct__posicion}{posicion} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Funcion que devuelve la posicion siguiente de una lista. \end{DoxyCompactList}\item 
+\hyperlink{struct__posicion}{posicion} $\ast$ \hyperlink{posicion_8c_a367c5c417375940bd3a041c3d2988ea0}{Anterior} (\hyperlink{struct__posicion}{posicion} $\ast$p, \hyperlink{struct__lista}{lista} $\ast$ls)
+\begin{DoxyCompactList}\small\item\em Funcion que devuelve la posicion anterior de una lista. \end{DoxyCompactList}\item 
+\hyperlink{struct__posicion}{posicion} $\ast$ \hyperlink{posicion_8c_a3b42cfce25ae653aff8e7a53725c3f98}{Crear\+Posision} (int dato)
+\begin{DoxyCompactList}\small\item\em Funcion que crea una posicion vacia. \end{DoxyCompactList}\item 
+void \hyperlink{posicion_8c_a430493edde8db12b464906497058d0a9}{Eliminar\+Posicion} (\hyperlink{struct__posicion}{posicion} $\ast$p)
+\begin{DoxyCompactList}\small\item\em Funcion que elimina una poicion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo que contiene las funciones para manipular las posiciones de una ñista. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{posicion_8c_a367c5c417375940bd3a041c3d2988ea0}\label{posicion_8c_a367c5c417375940bd3a041c3d2988ea0}} 
+\index{posicion.\+c@{posicion.\+c}!Anterior@{Anterior}}
+\index{Anterior@{Anterior}!posicion.\+c@{posicion.\+c}}
+\subsubsection{\texorpdfstring{Anterior()}{Anterior()}}
+{\footnotesize\ttfamily \hyperlink{struct__posicion}{posicion}$\ast$ Anterior (\begin{DoxyParamCaption}\item[{\hyperlink{struct__posicion}{posicion} $\ast$}]{p,  }\item[{\hyperlink{struct__lista}{lista} $\ast$}]{ls }\end{DoxyParamCaption})}
+
+
+
+Funcion que devuelve la posicion anterior de una lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & posicion inicial \\
+\hline
+{\em ls} & lista en la que se va a buscar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{posicion_8c_a3b42cfce25ae653aff8e7a53725c3f98}\label{posicion_8c_a3b42cfce25ae653aff8e7a53725c3f98}} 
+\index{posicion.\+c@{posicion.\+c}!Crear\+Posision@{Crear\+Posision}}
+\index{Crear\+Posision@{Crear\+Posision}!posicion.\+c@{posicion.\+c}}
+\subsubsection{\texorpdfstring{Crear\+Posision()}{CrearPosision()}}
+{\footnotesize\ttfamily \hyperlink{struct__posicion}{posicion}$\ast$ Crear\+Posision (\begin{DoxyParamCaption}\item[{int}]{dato }\end{DoxyParamCaption})}
+
+
+
+Funcion que crea una posicion vacia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dato} & Es el dato que se ve a agregar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{posicion_8c_a430493edde8db12b464906497058d0a9}\label{posicion_8c_a430493edde8db12b464906497058d0a9}} 
+\index{posicion.\+c@{posicion.\+c}!Eliminar\+Posicion@{Eliminar\+Posicion}}
+\index{Eliminar\+Posicion@{Eliminar\+Posicion}!posicion.\+c@{posicion.\+c}}
+\subsubsection{\texorpdfstring{Eliminar\+Posicion()}{EliminarPosicion()}}
+{\footnotesize\ttfamily void Eliminar\+Posicion (\begin{DoxyParamCaption}\item[{\hyperlink{struct__posicion}{posicion} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Funcion que elimina una poicion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & es el posicion que se ve a eliminar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{posicion_8c_a7e6a824d08d3bc8fc822217319e86bc5}\label{posicion_8c_a7e6a824d08d3bc8fc822217319e86bc5}} 
+\index{posicion.\+c@{posicion.\+c}!Siguiente@{Siguiente}}
+\index{Siguiente@{Siguiente}!posicion.\+c@{posicion.\+c}}
+\subsubsection{\texorpdfstring{Siguiente()}{Siguiente()}}
+{\footnotesize\ttfamily \hyperlink{struct__posicion}{posicion}$\ast$ Siguiente (\begin{DoxyParamCaption}\item[{\hyperlink{struct__posicion}{posicion} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Funcion que devuelve la posicion siguiente de una lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & posicion inicial \\
+\hline
+\end{DoxyParams}

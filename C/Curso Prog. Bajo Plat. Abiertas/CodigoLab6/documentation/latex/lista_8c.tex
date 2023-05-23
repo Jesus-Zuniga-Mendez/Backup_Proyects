@@ -1,0 +1,190 @@
+\hypertarget{lista_8c}{}\section{sourcecode/lista.c File Reference}
+\label{lista_8c}\index{sourcecode/lista.\+c@{sourcecode/lista.\+c}}
+
+
+Archivo que contiene las funciones para manipular listas.  
+
+
+{\ttfamily \#include \char`\"{}../include/includes.\+h\char`\"{}}\newline
+Include dependency graph for lista.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct__lista}{lista} $\ast$$\ast$ \hyperlink{lista_8c_a9e1b91cc8c3416d47768ef499a389049}{Estirar} (\hyperlink{struct__lista}{lista} $\ast$$\ast$lista\+Anterior, int tamanio\+Viejo, int tamanio\+Nuevo)
+\begin{DoxyCompactList}\small\item\em Funcion que agranda la lista que contienen las demas listas. \end{DoxyCompactList}\item 
+\hyperlink{struct__lista}{lista} $\ast$ \hyperlink{lista_8c_a75a7275d979b89f4c1a5d14b1e73ab01}{Crear\+Lista} ()
+\begin{DoxyCompactList}\small\item\em Funcion que crea una lista vacia. \end{DoxyCompactList}\item 
+void \hyperlink{lista_8c_ab052b87592bc484294d188998d3e5ef7}{Eliminar\+Lista} (\hyperlink{struct__lista}{lista} $\ast$ls)
+\begin{DoxyCompactList}\small\item\em Funcion que elimina una lista. \end{DoxyCompactList}\item 
+void \hyperlink{lista_8c_a517fd69eab609a3101a24a11e474c1f2}{Vaciar} (\hyperlink{struct__lista}{lista} $\ast$ls)
+\begin{DoxyCompactList}\small\item\em Funcion que llena una lista de ceros. \end{DoxyCompactList}\item 
+void \hyperlink{lista_8c_a3afa558eb0382223e753af94d899e0aa}{Agregar\+Elemento} (\hyperlink{struct__lista}{lista} $\ast$ls, int elemnto)
+\begin{DoxyCompactList}\small\item\em Funcion que agrega un elemento a la lista. \end{DoxyCompactList}\item 
+void \hyperlink{lista_8c_ad656461edd21fdd20e28c96a624d34ea}{Eliminar\+Elemento} (\hyperlink{struct__lista}{lista} $\ast$ls, int elemento)
+\begin{DoxyCompactList}\small\item\em Funcion que elimina un elemnto de la lista. \end{DoxyCompactList}\item 
+void \hyperlink{lista_8c_ad057ba756c420afbb6fa5b742e5af409}{Imprimir\+Lista} (\hyperlink{struct__lista}{lista} $\ast$ls)
+\begin{DoxyCompactList}\small\item\em Funcion que imprime una lista. \end{DoxyCompactList}\item 
+\hyperlink{struct__posicion}{posicion} $\ast$ \hyperlink{lista_8c_a0cf2ec5d491565aa184ccd6a625ebc89}{Buscar\+Dato} (\hyperlink{struct__lista}{lista} $\ast$ls, int dato)
+\begin{DoxyCompactList}\small\item\em Funcion que busca un dato en la lista. \end{DoxyCompactList}\item 
+int \hyperlink{lista_8c_a8118146e66c2df595196540c5400b605}{BuscarK} (\hyperlink{struct__lista}{lista} $\ast$ls, \hyperlink{struct__posicion}{posicion} $\ast$la\+Posicion)
+\begin{DoxyCompactList}\small\item\em Funcion que busca una posicion dentro de la lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo que contiene las funciones para manipular listas. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{lista_8c_a3afa558eb0382223e753af94d899e0aa}\label{lista_8c_a3afa558eb0382223e753af94d899e0aa}} 
+\index{lista.\+c@{lista.\+c}!Agregar\+Elemento@{Agregar\+Elemento}}
+\index{Agregar\+Elemento@{Agregar\+Elemento}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Agregar\+Elemento()}{AgregarElemento()}}
+{\footnotesize\ttfamily void Agregar\+Elemento (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$}]{ls,  }\item[{int}]{elemnto }\end{DoxyParamCaption})}
+
+
+
+Funcion que agrega un elemento a la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ls} & lista con la que se va a trabajar \\
+\hline
+{\em elemento} & elemento que se va a agregar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lista_8c_a0cf2ec5d491565aa184ccd6a625ebc89}\label{lista_8c_a0cf2ec5d491565aa184ccd6a625ebc89}} 
+\index{lista.\+c@{lista.\+c}!Buscar\+Dato@{Buscar\+Dato}}
+\index{Buscar\+Dato@{Buscar\+Dato}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Buscar\+Dato()}{BuscarDato()}}
+{\footnotesize\ttfamily \hyperlink{struct__posicion}{posicion}$\ast$ Buscar\+Dato (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$}]{ls,  }\item[{int}]{dato }\end{DoxyParamCaption})}
+
+
+
+Funcion que busca un dato en la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ls} & lista donde se va a buscar \\
+\hline
+{\em dato} & es el dato que se va a buscar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lista_8c_a8118146e66c2df595196540c5400b605}\label{lista_8c_a8118146e66c2df595196540c5400b605}} 
+\index{lista.\+c@{lista.\+c}!BuscarK@{BuscarK}}
+\index{BuscarK@{BuscarK}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Buscar\+K()}{BuscarK()}}
+{\footnotesize\ttfamily int BuscarK (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$}]{ls,  }\item[{\hyperlink{struct__posicion}{posicion} $\ast$}]{la\+Posicion }\end{DoxyParamCaption})}
+
+
+
+Funcion que busca una posicion dentro de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ls} & lista donde se va a buscar \\
+\hline
+{\em la\+Posicion} & es la posicion que se va a buscar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lista_8c_a75a7275d979b89f4c1a5d14b1e73ab01}\label{lista_8c_a75a7275d979b89f4c1a5d14b1e73ab01}} 
+\index{lista.\+c@{lista.\+c}!Crear\+Lista@{Crear\+Lista}}
+\index{Crear\+Lista@{Crear\+Lista}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Crear\+Lista()}{CrearLista()}}
+{\footnotesize\ttfamily \hyperlink{struct__lista}{lista}$\ast$ Crear\+Lista (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funcion que crea una lista vacia. 
+
+\begin{DoxyReturn}{Returns}
+ls es la lista que se acaba de crear; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lista_8c_ad656461edd21fdd20e28c96a624d34ea}\label{lista_8c_ad656461edd21fdd20e28c96a624d34ea}} 
+\index{lista.\+c@{lista.\+c}!Eliminar\+Elemento@{Eliminar\+Elemento}}
+\index{Eliminar\+Elemento@{Eliminar\+Elemento}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Eliminar\+Elemento()}{EliminarElemento()}}
+{\footnotesize\ttfamily void Eliminar\+Elemento (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$}]{ls,  }\item[{int}]{elemento }\end{DoxyParamCaption})}
+
+
+
+Funcion que elimina un elemnto de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ls} & lista con la que se va a trabajar \\
+\hline
+{\em elemento} & elemento que se va a quitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lista_8c_ab052b87592bc484294d188998d3e5ef7}\label{lista_8c_ab052b87592bc484294d188998d3e5ef7}} 
+\index{lista.\+c@{lista.\+c}!Eliminar\+Lista@{Eliminar\+Lista}}
+\index{Eliminar\+Lista@{Eliminar\+Lista}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Eliminar\+Lista()}{EliminarLista()}}
+{\footnotesize\ttfamily void Eliminar\+Lista (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$}]{ls }\end{DoxyParamCaption})}
+
+
+
+Funcion que elimina una lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ls} & lista con la que se va a trabajar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lista_8c_a9e1b91cc8c3416d47768ef499a389049}\label{lista_8c_a9e1b91cc8c3416d47768ef499a389049}} 
+\index{lista.\+c@{lista.\+c}!Estirar@{Estirar}}
+\index{Estirar@{Estirar}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Estirar()}{Estirar()}}
+{\footnotesize\ttfamily \hyperlink{struct__lista}{lista}$\ast$$\ast$ Estirar (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$$\ast$}]{lista\+Anterior,  }\item[{int}]{tamanio\+Viejo,  }\item[{int}]{tamanio\+Nuevo }\end{DoxyParamCaption})}
+
+
+
+Funcion que agranda la lista que contienen las demas listas. 
+
+\begin{DoxyReturn}{Returns}
+lista\+Viejo es la lista que se acaba de crear con un espacio mas 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Anterior} & es la lista original \\
+\hline
+{\em tamanio\+Viejo} & es la cantidad de listas que existian antes de estirar \\
+\hline
+{\em Tamanio\+Nuevo} & es el nuevo numero de listas \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lista_8c_ad057ba756c420afbb6fa5b742e5af409}\label{lista_8c_ad057ba756c420afbb6fa5b742e5af409}} 
+\index{lista.\+c@{lista.\+c}!Imprimir\+Lista@{Imprimir\+Lista}}
+\index{Imprimir\+Lista@{Imprimir\+Lista}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Imprimir\+Lista()}{ImprimirLista()}}
+{\footnotesize\ttfamily void Imprimir\+Lista (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$}]{ls }\end{DoxyParamCaption})}
+
+
+
+Funcion que imprime una lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ls} & lista que se va a imprimir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lista_8c_a517fd69eab609a3101a24a11e474c1f2}\label{lista_8c_a517fd69eab609a3101a24a11e474c1f2}} 
+\index{lista.\+c@{lista.\+c}!Vaciar@{Vaciar}}
+\index{Vaciar@{Vaciar}!lista.\+c@{lista.\+c}}
+\subsubsection{\texorpdfstring{Vaciar()}{Vaciar()}}
+{\footnotesize\ttfamily void Vaciar (\begin{DoxyParamCaption}\item[{\hyperlink{struct__lista}{lista} $\ast$}]{ls }\end{DoxyParamCaption})}
+
+
+
+Funcion que llena una lista de ceros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ls} & lista con la que se va a trabajar \\
+\hline
+\end{DoxyParams}

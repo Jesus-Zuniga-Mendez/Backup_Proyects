@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}ifndef TOOLS\PYGZus{}H}
+\PYG{c+cp}{\PYGZsh{}define TOOLS\PYGZus{}H}
+    \PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./Includes.h\PYGZdq{}}
+    \PYG{k+kt}{void} \PYG{n+nf}{CalcularGesto}\PYG{p}{();}
+    \PYG{k+kt}{void} \PYG{n+nf}{EscribirCadena}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{,}\PYG{k+kt}{int}\PYG{p}{,}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{void} \PYG{n+nf}{ActualizarRegistro}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{,}\PYG{k+kt}{int}\PYG{p}{,}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{double} \PYG{n+nf}{devolverX}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{double} \PYG{n+nf}{devolverY}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{double} \PYG{n+nf}{devolverZ}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{int} \PYG{n+nf}{ComprobarGestoManos}\PYG{p}{();}
+    \PYG{k+kt}{int} \PYG{n+nf}{ComprobarGestoDedos}\PYG{p}{();}
+    \PYG{k+kt}{int} \PYG{n+nf}{ComprobarGestoCantidad}\PYG{p}{();}
+    \PYG{k+kt}{int}  \PYG{n+nf}{GuardarGesto}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{int}  \PYG{n+nf}{BorrarGesto}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{int}  \PYG{n+nf}{MoverArchivos}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{QuitarEspacios}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{PonerEspacios}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{void} \PYG{n+nf}{ImprimirRegistro}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+    \PYG{k+kt}{void} \PYG{n+nf}{EliminarGesto}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+\end{Verbatim}

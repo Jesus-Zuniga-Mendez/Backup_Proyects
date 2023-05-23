@@ -1,0 +1,104 @@
+\hypertarget{_comprobar_gesto_8cpp}{}\section{sample/\+Comprobar\+Gesto.cpp File Reference}
+\label{_comprobar_gesto_8cpp}\index{sample/\+Comprobar\+Gesto.\+cpp@{sample/\+Comprobar\+Gesto.\+cpp}}
+
+
+Archivo que permite comprobar cada frame del leap con el guardo en la base de datos, se toma como base el ejemplo dado en el sdk y se le realizan modificaciones.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include \char`\"{}./include/\+Leap.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+Include dependency graph for Comprobar\+Gesto.\+cpp\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_sample_listener}{Sample\+Listener}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a92a364c2b863dde1a024a77eac2a5b3b}\label{_comprobar_gesto_8cpp_a92a364c2b863dde1a024a77eac2a5b3b}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+R\+E\+S\+ET}~\char`\"{}\textbackslash{}x1b\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a34995b955465f6bbb37c359173d50477}\label{_comprobar_gesto_8cpp_a34995b955465f6bbb37c359173d50477}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+R\+ED}~\char`\"{}\textbackslash{}x1b\mbox{[}31m\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a2e20c3e8bd7a412bba1a807d25fa1eb5}\label{_comprobar_gesto_8cpp_a2e20c3e8bd7a412bba1a807d25fa1eb5}} 
+double {\bfseries devolverX} (std\+::string dato)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_ae583840dca9e1489e06790507d738b97}\label{_comprobar_gesto_8cpp_ae583840dca9e1489e06790507d738b97}} 
+double {\bfseries devolverY} (std\+::string dato)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a19ef700525d435280626a8cfe86ddc35}\label{_comprobar_gesto_8cpp_a19ef700525d435280626a8cfe86ddc35}} 
+double {\bfseries devolverZ} (std\+::string dato)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a3b744e5fe77b15341c39f87650736ba0}\label{_comprobar_gesto_8cpp_a3b744e5fe77b15341c39f87650736ba0}} 
+int {\bfseries Contar\+Lineas} (std\+::string ruta)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a1663365c867aef6051616aa5e0836f9e}\label{_comprobar_gesto_8cpp_a1663365c867aef6051616aa5e0836f9e}} 
+std\+::string {\bfseries Devolver\+Primera\+Linea} (std\+::string ruta)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a622d3c4c92d1090a1b6c5c4decfc8807}\label{_comprobar_gesto_8cpp_a622d3c4c92d1090a1b6c5c4decfc8807}} 
+std\+::string {\bfseries Devolver\+Quiero\+Linea} (std\+::string ruta, int numero\+Linea)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_af63c8766ee067c8c2ae3efc09915b178}\label{_comprobar_gesto_8cpp_af63c8766ee067c8c2ae3efc09915b178}} 
+double {\bfseries Calcular\+Porcentaje} (double Teorico, double Experimental)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a40706765e9a26716d073aa25c1923f49}\label{_comprobar_gesto_8cpp_a40706765e9a26716d073aa25c1923f49}} 
+double {\bfseries Porcentaje\+Error} (std\+::string vector\+Teorico, std\+::string vector\+Experimental)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a4400abe35a2b6a03e5e34eb59b49c489}\label{_comprobar_gesto_8cpp_a4400abe35a2b6a03e5e34eb59b49c489}} 
+std\+::string {\bfseries Comparar\+Vectores} (std\+::string vector\+Teorico, std\+::string vector\+Experimental)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_aa0eaabeb214067af8e7b4af267d9b272}\label{_comprobar_gesto_8cpp_aa0eaabeb214067af8e7b4af267d9b272}} 
+std\+::string {\bfseries Comprobar\+Actual} ()
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a4b272f95406cea0400ea73d663b06712}\label{_comprobar_gesto_8cpp_a4b272f95406cea0400ea73d663b06712}} 
+void {\bfseries Escribir\+Cadena} (std\+::string dato, int modo, std\+::string nombre)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_ad5e0a4f1783081707f62667e892e8443}\label{_comprobar_gesto_8cpp_ad5e0a4f1783081707f62667e892e8443}} 
+void {\bfseries Escribir\+Numero} (int dato, int modo, std\+::string nombre)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_aa13113ffa66bb8c51e5d42c98b38a5cf}\label{_comprobar_gesto_8cpp_aa13113ffa66bb8c51e5d42c98b38a5cf}} 
+void {\bfseries Escribir\+Vector} (\hyperlink{struct_leap_1_1_vector}{Leap\+::\+Vector} dato, int modo, std\+::string nombre)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a0ad07a6c546f88f14e5410665bb3eaa4}\label{_comprobar_gesto_8cpp_a0ad07a6c546f88f14e5410665bb3eaa4}} 
+int {\bfseries Contar\+Frames} (std\+::string nombre)
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{_comprobar_gesto_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a850e8f265809b21634d1d5613b5e2e4c}\label{_comprobar_gesto_8cpp_a850e8f265809b21634d1d5613b5e2e4c}} 
+const std\+::string {\bfseries finger\+Names} \mbox{[}$\,$\mbox{]} = \{\char`\"{}Thumb\char`\"{}, \char`\"{}Index\char`\"{}, \char`\"{}Middle\char`\"{}, \char`\"{}Ring\char`\"{}, \char`\"{}Pinky\char`\"{}\}
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a29c401f0b462bbe1153f704c8c47c206}\label{_comprobar_gesto_8cpp_a29c401f0b462bbe1153f704c8c47c206}} 
+const std\+::string {\bfseries bone\+Names} \mbox{[}$\,$\mbox{]} = \{\char`\"{}Metacarpal\char`\"{}, \char`\"{}Proximal\char`\"{}, \char`\"{}Middle\char`\"{}, \char`\"{}Distal\char`\"{}\}
+\item 
+\mbox{\Hypertarget{_comprobar_gesto_8cpp_a86da6d4b612b2da5c09e5e470befc6c0}\label{_comprobar_gesto_8cpp_a86da6d4b612b2da5c09e5e470befc6c0}} 
+const std\+::string {\bfseries state\+Names} \mbox{[}$\,$\mbox{]} = \{\char`\"{}S\+T\+A\+T\+E\+\_\+\+I\+N\+V\+A\+L\+ID\char`\"{}, \char`\"{}S\+T\+A\+T\+E\+\_\+\+S\+T\+A\+RT\char`\"{}, \char`\"{}S\+T\+A\+T\+E\+\_\+\+U\+P\+D\+A\+TE\char`\"{}, \char`\"{}S\+T\+A\+T\+E\+\_\+\+E\+ND\char`\"{}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo que permite comprobar cada frame del leap con el guardo en la base de datos, se toma como base el ejemplo dado en el sdk y se le realizan modificaciones. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 de julio de 2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyleft (l) 2019 
+\end{DoxyCopyright}

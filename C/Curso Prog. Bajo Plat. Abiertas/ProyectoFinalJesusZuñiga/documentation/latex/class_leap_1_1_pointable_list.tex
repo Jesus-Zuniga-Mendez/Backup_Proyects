@@ -1,0 +1,315 @@
+\hypertarget{class_leap_1_1_pointable_list}{}\section{Leap\+:\+:Pointable\+List Class Reference}
+\label{class_leap_1_1_pointable_list}\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Pointable\+List\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Pointable\+List\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$ \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}, \hyperlink{class_leap_1_1_pointable}{Pointable} $>$ \hyperlink{class_leap_1_1_pointable_list_a12b640b8c7e70885884a3a6ee903c21c}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_afeeb15c12648df910dbd27c120b4b649}\label{class_leap_1_1_pointable_list_afeeb15c12648df910dbd27c120b4b649}} 
+{\bfseries Pointable\+List} (const \hyperlink{class_leap_1_1_list_base_implementation}{List\+Base\+Implementation}$<$ \hyperlink{class_leap_1_1_pointable}{Pointable} $>$ \&)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list_ad8ba234f2a9491dd9c1062432e40ebf5}{Pointable\+List} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_pointable_list_a639d7f8ad33281f4a6c6c822416b90fc}{count} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_pointable_list_a42ea882e4e9562e59c75604d6a2ca64a}{is\+Empty} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} \hyperlink{class_leap_1_1_pointable_list_a9f5818d81e32a028dfb2ea9e593a26c7}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} \& \hyperlink{class_leap_1_1_pointable_list_a415fee35b60e79f69a440096d6818d75}{append} (const \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} \& \hyperlink{class_leap_1_1_pointable_list_a8da39b0c202e3ade7aad666dcceddfdf}{append} (const \hyperlink{class_leap_1_1_finger_list}{Finger\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} \& \hyperlink{class_leap_1_1_pointable_list_a091f0c1a7030f5f91701dd54f73a98de}{append} (const \hyperlink{class_leap_1_1_tool_list}{Tool\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} \hyperlink{class_leap_1_1_pointable_list_a1f3565cc31a527a850eda34a5f2446c3}{leftmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} \hyperlink{class_leap_1_1_pointable_list_ab16ac6f909711f5390ac267d4962be90}{rightmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} \hyperlink{class_leap_1_1_pointable_list_ab50430ce817b537ef2567eae2dc92f09}{frontmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} \hyperlink{class_leap_1_1_pointable_list_a47919c7b8198806da5af4c7d351d83fc}{extended} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list_a12b640b8c7e70885884a3a6ee903c21c}{const\+\_\+iterator} \hyperlink{class_leap_1_1_pointable_list_ad42582cce88a166f2ac21718082087ad}{begin} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list_a12b640b8c7e70885884a3a6ee903c21c}{const\+\_\+iterator} \hyperlink{class_leap_1_1_pointable_list_aaa748e3113d135ce8150e917f4dc9128}{end} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} class represents a list of \hyperlink{class_leap_1_1_pointable}{Pointable} objects.
+
+\hyperlink{class_leap_1_1_pointable}{Pointable} objects include entities that can be pointed, such as fingers and tools.
+
+Get a \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} object by calling \hyperlink{class_leap_1_1_frame_ae6c7c77ae805bdc6fc30381fa2b2ae3e}{Frame\+::pointables()} or \hyperlink{class_leap_1_1_hand_a845e544e674ab315f10ead9f4a7210fe}{Hand\+::pointables()}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a12b640b8c7e70885884a3a6ee903c21c}\label{class_leap_1_1_pointable_list_a12b640b8c7e70885884a3a6ee903c21c}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$\hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}, \hyperlink{class_leap_1_1_pointable}{Pointable}$>$ \hyperlink{class_leap_1_1_pointable_list_a12b640b8c7e70885884a3a6ee903c21c}{Leap\+::\+Pointable\+List\+::const\+\_\+iterator}}
+
+A C++ iterator type for \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} objects.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_ad8ba234f2a9491dd9c1062432e40ebf5}\label{class_leap_1_1_pointable_list_ad8ba234f2a9491dd9c1062432e40ebf5}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!Pointable\+List@{Pointable\+List}}
+\index{Pointable\+List@{Pointable\+List}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{Pointable\+List()}{PointableList()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Pointable\+List\+::\+Pointable\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty list of pointable entities. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a415fee35b60e79f69a440096d6818d75}\label{class_leap_1_1_pointable_list_a415fee35b60e79f69a440096d6818d75}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}\& Leap\+::\+Pointable\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the members of the specified \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} to this \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} object containing \hyperlink{class_leap_1_1_pointable}{Pointable} objects to append to the end of this \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a8da39b0c202e3ade7aad666dcceddfdf}\label{class_leap_1_1_pointable_list_a8da39b0c202e3ade7aad666dcceddfdf}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}\& Leap\+::\+Pointable\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_finger_list}{Finger\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the members of the specified \hyperlink{class_leap_1_1_finger_list}{Finger\+List} to this \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{class_leap_1_1_finger_list}{Finger\+List} object containing \hyperlink{class_leap_1_1_finger}{Finger} objects to append to the end of this \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a091f0c1a7030f5f91701dd54f73a98de}\label{class_leap_1_1_pointable_list_a091f0c1a7030f5f91701dd54f73a98de}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}\& Leap\+::\+Pointable\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_tool_list}{Tool\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the members of the specified \hyperlink{class_leap_1_1_tool_list}{Tool\+List} to this \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{class_leap_1_1_tool_list}{Tool\+List} object containing \hyperlink{class_leap_1_1_tool}{Tool} objects to append to the end of this \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_ad42582cce88a166f2ac21718082087ad}\label{class_leap_1_1_pointable_list_ad42582cce88a166f2ac21718082087ad}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!begin@{begin}}
+\index{begin@{begin}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list_a12b640b8c7e70885884a3a6ee903c21c}{const\+\_\+iterator} Leap\+::\+Pointable\+List\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the beginning of this \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a639d7f8ad33281f4a6c6c822416b90fc}\label{class_leap_1_1_pointable_list_a639d7f8ad33281f4a6c6c822416b90fc}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!count@{count}}
+\index{count@{count}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Pointable\+List\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of pointable entities in this list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The number of pointable entities in this list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_aaa748e3113d135ce8150e917f4dc9128}\label{class_leap_1_1_pointable_list_aaa748e3113d135ce8150e917f4dc9128}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!end@{end}}
+\index{end@{end}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list_a12b640b8c7e70885884a3a6ee903c21c}{const\+\_\+iterator} Leap\+::\+Pointable\+List\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the end of this \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a47919c7b8198806da5af4c7d351d83fc}\label{class_leap_1_1_pointable_list_a47919c7b8198806da5af4c7d351d83fc}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!extended@{extended}}
+\index{extended@{extended}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{extended()}{extended()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_list}{Pointable\+List} Leap\+::\+Pointable\+List\+::extended (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a new list containing those members of the current list that are extended. This includes all tools and any fingers whose is\+Extended() function is true.
+
+\begin{DoxyReturn}{Returns}
+The list of tools and extended fingers from the current list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_ab50430ce817b537ef2567eae2dc92f09}\label{class_leap_1_1_pointable_list_ab50430ce817b537ef2567eae2dc92f09}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!frontmost@{frontmost}}
+\index{frontmost@{frontmost}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{frontmost()}{frontmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} Leap\+::\+Pointable\+List\+::frontmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the front within the standard Leap Motion frame of reference (i.\+e has the smallest Z coordinate).
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The frontmost pointable, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a42ea882e4e9562e59c75604d6a2ca64a}\label{class_leap_1_1_pointable_list_a42ea882e4e9562e59c75604d6a2ca64a}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Pointable\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether the list is empty.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if the list has no members. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a1f3565cc31a527a850eda34a5f2446c3}\label{class_leap_1_1_pointable_list_a1f3565cc31a527a850eda34a5f2446c3}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!leftmost@{leftmost}}
+\index{leftmost@{leftmost}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{leftmost()}{leftmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} Leap\+::\+Pointable\+List\+::leftmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the left within the standard Leap Motion frame of reference (i.\+e has the smallest X coordinate).
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The leftmost pointable, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_a9f5818d81e32a028dfb2ea9e593a26c7}\label{class_leap_1_1_pointable_list_a9f5818d81e32a028dfb2ea9e593a26c7}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} Leap\+::\+Pointable\+List\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Access a list member by its position in the list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The zero-\/based list position index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_pointable}{Pointable} object at the specified index. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_list_ab16ac6f909711f5390ac267d4962be90}\label{class_leap_1_1_pointable_list_ab16ac6f909711f5390ac267d4962be90}} 
+\index{Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}!rightmost@{rightmost}}
+\index{rightmost@{rightmost}!Leap\+::\+Pointable\+List@{Leap\+::\+Pointable\+List}}
+\subsubsection{\texorpdfstring{rightmost()}{rightmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable}{Pointable} Leap\+::\+Pointable\+List\+::rightmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the right within the standard Leap Motion frame of reference (i.\+e has the largest X coordinate).
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The rightmost pointable, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

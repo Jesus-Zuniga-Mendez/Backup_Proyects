@@ -1,0 +1,237 @@
+\hypertarget{class_leap_1_1_finger}{}\section{Leap\+:\+:Finger Class Reference}
+\label{class_leap_1_1_finger}\index{Leap\+::\+Finger@{Leap\+::\+Finger}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Finger\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Finger\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_leap_1_1_finger_ac49e756a0440cb5b75a9ad7838f08137}{Joint} \{ {\bfseries J\+O\+I\+N\+T\+\_\+\+M\+CP} = 0, 
+{\bfseries J\+O\+I\+N\+T\+\_\+\+P\+IP} = 1, 
+{\bfseries J\+O\+I\+N\+T\+\_\+\+D\+IP} = 2, 
+{\bfseries J\+O\+I\+N\+T\+\_\+\+T\+IP} = 3
+ \}
+\item 
+enum \hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}{Type} \{ \newline
+\hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a35bc2239c4fd03e7a7bc4a1796ff5369}{T\+Y\+P\+E\+\_\+\+T\+H\+U\+MB} = 0, 
+\hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a65b574719317f125da20e9ba297510a2}{T\+Y\+P\+E\+\_\+\+I\+N\+D\+EX} = 1, 
+\hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483aa36099c9c5f567dff6e8f7225046e1e3}{T\+Y\+P\+E\+\_\+\+M\+I\+D\+D\+LE} = 2, 
+\hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483af7dac3433734b7b30fe2176f8ab9712b}{T\+Y\+P\+E\+\_\+\+R\+I\+NG} = 3, 
+\newline
+\hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a44d0034d17dfd2494075891249397ee8}{T\+Y\+P\+E\+\_\+\+P\+I\+N\+KY} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_finger_ac393e4d718a2163fabd65b85d5c09267}\label{class_leap_1_1_finger_ac393e4d718a2163fabd65b85d5c09267}} 
+{\bfseries Finger} (Finger\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_aed76c909a2904029d313538e01604c88}{Finger} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_a864d7de003b2d5b6d738c67da322e702}{Finger} (const \hyperlink{class_leap_1_1_pointable}{Pointable} \&)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_finger_a8f50342f74888b3628ffb7aeadcfe0b5}{joint\+Position} (\hyperlink{class_leap_1_1_finger_ac49e756a0440cb5b75a9ad7838f08137}{Joint} joint\+Ix) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_bone}{Bone} \hyperlink{class_leap_1_1_finger_aae013ec7b81ae141042ae64c15331e30}{bone} (\hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}{Bone\+::\+Type} bone\+Ix) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}{Type} \hyperlink{class_leap_1_1_finger_a1fcede81ae68fa7060eeae5a6961edcc}{type} () const
+\item 
+std\+::string \hyperlink{class_leap_1_1_finger_aaccf83b863c7cdbf820ed991d4a8faa1}{to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_finger}{Finger} \& \hyperlink{class_leap_1_1_finger_a2dec17262f38e1bb548da99086c5e8e3}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_finger}{Finger} class represents a tracked finger.
+
+Fingers are \hyperlink{class_leap_1_1_pointable}{Pointable} objects that the Leap Motion software has classified as a finger. Get valid \hyperlink{class_leap_1_1_finger}{Finger} objects from a \hyperlink{class_leap_1_1_frame}{Frame} or a \hyperlink{class_leap_1_1_hand}{Hand} object.
+
+Fingers may be permanently associated to a hand. In this case the angular order of the finger I\+Ds will be invariant. As fingers move in and out of view it is possible for the guessed ID of a finger to be incorrect. Consequently, it may be necessary for finger I\+Ds to be exchanged. All tracked properties, such as velocity, will remain continuous in the A\+PI. However, quantities that are derived from the A\+PI output (such as a history of positions) will be discontinuous unless they have a corresponding ID exchange.
+
+Note that \hyperlink{class_leap_1_1_finger}{Finger} objects can be invalid, which means that they do not contain valid tracking data and do not correspond to a physical finger. Invalid \hyperlink{class_leap_1_1_finger}{Finger} objects can be the result of asking for a \hyperlink{class_leap_1_1_finger}{Finger} object using an ID from an earlier frame when no \hyperlink{class_leap_1_1_finger}{Finger} objects with that ID exist in the current frame. A \hyperlink{class_leap_1_1_finger}{Finger} object created from the \hyperlink{class_leap_1_1_finger}{Finger} constructor is also invalid. Test for validity with the \hyperlink{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}{Finger\+::is\+Valid()} function. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_leap_1_1_finger_ac49e756a0440cb5b75a9ad7838f08137}\label{class_leap_1_1_finger_ac49e756a0440cb5b75a9ad7838f08137}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!Joint@{Joint}}
+\index{Joint@{Joint}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{Joint}{Joint}}
+{\footnotesize\ttfamily enum \hyperlink{class_leap_1_1_finger_ac49e756a0440cb5b75a9ad7838f08137}{Leap\+::\+Finger\+::\+Joint}}
+
+Deprecated as of version 2.\+0 \mbox{\Hypertarget{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}\label{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!Type@{Type}}
+\index{Type@{Type}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}{Leap\+::\+Finger\+::\+Type}}
+
+Enumerates the names of the fingers.
+
+Members of this enumeration are returned by \hyperlink{class_leap_1_1_finger_a1fcede81ae68fa7060eeae5a6961edcc}{Finger\+::type()} to identify a \hyperlink{class_leap_1_1_finger}{Finger} object. \begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+T\+H\+U\+MB@{T\+Y\+P\+E\+\_\+\+T\+H\+U\+MB}!Leap\+::\+Finger@{Leap\+::\+Finger}}\index{Leap\+::\+Finger@{Leap\+::\+Finger}!T\+Y\+P\+E\+\_\+\+T\+H\+U\+MB@{T\+Y\+P\+E\+\_\+\+T\+H\+U\+MB}}}\mbox{\Hypertarget{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a35bc2239c4fd03e7a7bc4a1796ff5369}\label{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a35bc2239c4fd03e7a7bc4a1796ff5369}} 
+T\+Y\+P\+E\+\_\+\+T\+H\+U\+MB&The thumb \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+I\+N\+D\+EX@{T\+Y\+P\+E\+\_\+\+I\+N\+D\+EX}!Leap\+::\+Finger@{Leap\+::\+Finger}}\index{Leap\+::\+Finger@{Leap\+::\+Finger}!T\+Y\+P\+E\+\_\+\+I\+N\+D\+EX@{T\+Y\+P\+E\+\_\+\+I\+N\+D\+EX}}}\mbox{\Hypertarget{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a65b574719317f125da20e9ba297510a2}\label{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a65b574719317f125da20e9ba297510a2}} 
+T\+Y\+P\+E\+\_\+\+I\+N\+D\+EX&The index or fore-\/finger \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+M\+I\+D\+D\+LE@{T\+Y\+P\+E\+\_\+\+M\+I\+D\+D\+LE}!Leap\+::\+Finger@{Leap\+::\+Finger}}\index{Leap\+::\+Finger@{Leap\+::\+Finger}!T\+Y\+P\+E\+\_\+\+M\+I\+D\+D\+LE@{T\+Y\+P\+E\+\_\+\+M\+I\+D\+D\+LE}}}\mbox{\Hypertarget{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483aa36099c9c5f567dff6e8f7225046e1e3}\label{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483aa36099c9c5f567dff6e8f7225046e1e3}} 
+T\+Y\+P\+E\+\_\+\+M\+I\+D\+D\+LE&The middle finger \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+R\+I\+NG@{T\+Y\+P\+E\+\_\+\+R\+I\+NG}!Leap\+::\+Finger@{Leap\+::\+Finger}}\index{Leap\+::\+Finger@{Leap\+::\+Finger}!T\+Y\+P\+E\+\_\+\+R\+I\+NG@{T\+Y\+P\+E\+\_\+\+R\+I\+NG}}}\mbox{\Hypertarget{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483af7dac3433734b7b30fe2176f8ab9712b}\label{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483af7dac3433734b7b30fe2176f8ab9712b}} 
+T\+Y\+P\+E\+\_\+\+R\+I\+NG&The ring finger \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+P\+I\+N\+KY@{T\+Y\+P\+E\+\_\+\+P\+I\+N\+KY}!Leap\+::\+Finger@{Leap\+::\+Finger}}\index{Leap\+::\+Finger@{Leap\+::\+Finger}!T\+Y\+P\+E\+\_\+\+P\+I\+N\+KY@{T\+Y\+P\+E\+\_\+\+P\+I\+N\+KY}}}\mbox{\Hypertarget{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a44d0034d17dfd2494075891249397ee8}\label{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483a44d0034d17dfd2494075891249397ee8}} 
+T\+Y\+P\+E\+\_\+\+P\+I\+N\+KY&The pinky or little finger \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_finger_aed76c909a2904029d313538e01604c88}\label{class_leap_1_1_finger_aed76c909a2904029d313538e01604c88}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!Finger@{Finger}}
+\index{Finger@{Finger}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{Finger()}{Finger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Finger\+::\+Finger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a \hyperlink{class_leap_1_1_finger}{Finger} object.
+
+An uninitialized finger is considered invalid. Get valid \hyperlink{class_leap_1_1_finger}{Finger} objects from a \hyperlink{class_leap_1_1_frame}{Frame} or a \hyperlink{class_leap_1_1_hand}{Hand} object. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_a864d7de003b2d5b6d738c67da322e702}\label{class_leap_1_1_finger_a864d7de003b2d5b6d738c67da322e702}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!Finger@{Finger}}
+\index{Finger@{Finger}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{Finger()}{Finger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Finger\+::\+Finger (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_pointable}{Pointable} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+If the specified \hyperlink{class_leap_1_1_pointable}{Pointable} object represents a finger, creates a copy of it as a \hyperlink{class_leap_1_1_finger}{Finger} object; otherwise, creates an invalid \hyperlink{class_leap_1_1_finger}{Finger} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_finger_aae013ec7b81ae141042ae64c15331e30}\label{class_leap_1_1_finger_aae013ec7b81ae141042ae64c15331e30}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!bone@{bone}}
+\index{bone@{bone}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{bone()}{bone()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_bone}{Bone} Leap\+::\+Finger\+::bone (\begin{DoxyParamCaption}\item[{\hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}{Bone\+::\+Type}}]{bone\+Ix }\end{DoxyParamCaption}) const}
+
+The bone at a given bone index on this finger.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em bone\+Ix} & An index value from the \hyperlink{class_leap_1_1_bone_ac2f949e05b22edc21a308df42580b5e1}{Bone\+::\+Type} enumeration identifying the bone of interest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_bone}{Bone} that has the specified bone type. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_a2dec17262f38e1bb548da99086c5e8e3}\label{class_leap_1_1_finger_a2dec17262f38e1bb548da99086c5e8e3}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_finger}{Finger}\& Leap\+::\+Finger\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an invalid \hyperlink{class_leap_1_1_finger}{Finger} object.
+
+You can use the instance returned by this function in comparisons testing whether a given \hyperlink{class_leap_1_1_finger}{Finger} instance is valid or invalid. (You can also use the \hyperlink{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}{Finger\+::is\+Valid()} function.)
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The invalid \hyperlink{class_leap_1_1_finger}{Finger} instance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_a8f50342f74888b3628ffb7aeadcfe0b5}\label{class_leap_1_1_finger_a8f50342f74888b3628ffb7aeadcfe0b5}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!joint\+Position@{joint\+Position}}
+\index{joint\+Position@{joint\+Position}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{joint\+Position()}{jointPosition()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Finger\+::joint\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{class_leap_1_1_finger_ac49e756a0440cb5b75a9ad7838f08137}{Joint}}]{joint\+Ix }\end{DoxyParamCaption}) const}
+
+Deprecated as of version 2.\+0 Use \textquotesingle{}bone\textquotesingle{} method instead. \mbox{\Hypertarget{class_leap_1_1_finger_aaccf83b863c7cdbf820ed991d4a8faa1}\label{class_leap_1_1_finger_aaccf83b863c7cdbf820ed991d4a8faa1}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Finger\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A string containing a brief, human readable description of the \hyperlink{class_leap_1_1_finger}{Finger} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+A description of the \hyperlink{class_leap_1_1_finger}{Finger} object as a string. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_a1fcede81ae68fa7060eeae5a6961edcc}\label{class_leap_1_1_finger_a1fcede81ae68fa7060eeae5a6961edcc}} 
+\index{Leap\+::\+Finger@{Leap\+::\+Finger}!type@{type}}
+\index{type@{type}!Leap\+::\+Finger@{Leap\+::\+Finger}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}{Type} Leap\+::\+Finger\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The name of this finger.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The anatomical type of this finger as a member of the \hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}{Finger\+::\+Type} enumeration. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

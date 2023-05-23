@@ -1,0 +1,52 @@
+\documentclass[10pt]{article}
+
+\usepackage{graphicx}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{times}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{float}%para acomodar imagenes
+\usepackage{hyperref}%agrega hipervinculos a el indice y citas
+\usepackage{url}%citar paginas web
+\usepackage{apacite}%estilo apa
+\usepackage{minted} % para resaltar código fuente
+%\usepackage{listings}%para insertar el codigo en 
+%\usepackage{moreverb} 
+
+\usepackage[none]{hyphenat}%justifica el texto sin dividir palabras
+
+\setlength{\parskip}{2ex}%espacio entre parrafos " veces la letra
+
+
+
+\begin{document}
+\sloppy%para que justifique el texto correctamente
+
+\newmintedfile[mycplusplus]{c++}{
+    linenos, % muestra el número de línea
+    numbersep=5pt, % separación entre el código y el número de línea
+    gobble=0, % columna desde la que empieza a mostrar código
+    frame=lines, % dibuja las líneas enmarcando el código
+    framesep=2mm, % separación entre la línea y el código
+    tabsize=3, % tamaño de la tabulación
+}
+
+\newmintedfile[mypython]{py}{
+    linenos, % muestra el número de línea
+    numbersep=5pt, % separación entre el código y el número de línea
+    gobble=0, % columna desde la que empieza a mostrar código
+    frame=lines, % dibuja las líneas enmarcando el código
+    framesep=2mm, % separación entre la línea y el código
+    tabsize=3, % tamaño de la tabulación
+}
+
+\bibliographystyle{apacite}%estilo apa
+\nocite{*} % si quieren que todas las referencias de su bibtex aparezcan en el documento
+
+\input{./portada.tex}
+\input{./contenido.tex}
+%\section{Bibliografía}
+\bibliography{./DB}
+%\input{./anexos}
+\end{document}

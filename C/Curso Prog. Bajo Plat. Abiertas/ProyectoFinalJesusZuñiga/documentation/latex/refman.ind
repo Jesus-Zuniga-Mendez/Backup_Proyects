@@ -1,0 +1,1284 @@
+\begin{theindex}
+
+  \item {$\sim$\+Listener}
+    \subitem {Leap\+::\+Listener}, \hyperpage{149}
+
+  \indexspace
+
+  \item {add\+Listener}
+    \subitem {Leap\+::\+Controller}, \hyperpage{37}
+  \item {angle\+To}
+    \subitem {Leap\+::\+Vector}, \hyperpage{227}
+  \item {append}
+    \subitem {Leap\+::\+Device\+List}, \hyperpage{54}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{62}
+    \subitem {Leap\+::\+Gesture\+List}, \hyperpage{96}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{120}
+    \subitem {Leap\+::\+Image\+List}, \hyperpage{136}
+    \subitem {Leap\+::\+Mask\+List}, \hyperpage{161}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{187, 188}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{215}
+  \item {Arm}
+    \subitem {Leap\+::\+Arm}, \hyperpage{10}
+  \item {arm}
+    \subitem {Leap\+::\+Hand}, \hyperpage{101}
+
+  \indexspace
+
+  \item {backward}
+    \subitem {Leap\+::\+Vector}, \hyperpage{227}
+  \item {baseline}
+    \subitem {Leap\+::\+Device}, \hyperpage{47}
+  \item {basis}
+    \subitem {Leap\+::\+Arm}, \hyperpage{10}
+    \subitem {Leap\+::\+Bone}, \hyperpage{16}
+    \subitem {Leap\+::\+Hand}, \hyperpage{101}
+  \item {begin}
+    \subitem {Leap\+::\+Device\+List}, \hyperpage{55}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{62}
+    \subitem {Leap\+::\+Gesture\+List}, \hyperpage{97}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{121}
+    \subitem {Leap\+::\+Image\+List}, \hyperpage{136}
+    \subitem {Leap\+::\+Mask\+List}, \hyperpage{161}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{188}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{215}
+  \item {Bone}
+    \subitem {Leap\+::\+Bone}, \hyperpage{16}
+  \item {bone}
+    \subitem {Leap\+::\+Finger}, \hyperpage{59}
+  \item {bytes\+Per\+Pixel}
+    \subitem {Leap\+::\+Image}, \hyperpage{126}
+
+  \indexspace
+
+  \item {center}
+    \subitem {Leap\+::\+Arm}, \hyperpage{10}
+    \subitem {Leap\+::\+Bone}, \hyperpage{17}
+    \subitem {Leap\+::\+Circle\+Gesture}, \hyperpage{24}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{139}
+  \item {Circle\+Gesture}
+    \subitem {Leap\+::\+Circle\+Gesture}, \hyperpage{23, 24}
+  \item {class\+Type}
+    \subitem {Leap\+::\+Circle\+Gesture}, \hyperpage{24}
+    \subitem {Leap\+::\+Key\+Tap\+Gesture}, \hyperpage{146}
+    \subitem {Leap\+::\+Screen\+Tap\+Gesture}, \hyperpage{205}
+    \subitem {Leap\+::\+Swipe\+Gesture}, \hyperpage{209}
+  \item {clear\+Policy}
+    \subitem {Leap\+::\+Controller}, \hyperpage{37}
+  \item {confidence}
+    \subitem {Leap\+::\+Hand}, \hyperpage{102}
+  \item {Config}
+    \subitem {Leap\+::\+Config}, \hyperpage{28}
+  \item {config}
+    \subitem {Leap\+::\+Controller}, \hyperpage{38}
+  \item {const\+\_\+iterator}
+    \subitem {Leap\+::\+Device\+List}, \hyperpage{54}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{61}
+    \subitem {Leap\+::\+Gesture\+List}, \hyperpage{96}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{120}
+    \subitem {Leap\+::\+Image\+List}, \hyperpage{135}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{186}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{214}
+  \item {Controller}
+    \subitem {Leap\+::\+Controller}, \hyperpage{36}
+  \item {count}
+    \subitem {Leap\+::\+Device\+List}, \hyperpage{55}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{63}
+    \subitem {Leap\+::\+Gesture\+List}, \hyperpage{97}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{121}
+    \subitem {Leap\+::\+Image\+List}, \hyperpage{136}
+    \subitem {Leap\+::\+Mask\+List}, \hyperpage{162}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{188}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{215}
+  \item {cross}
+    \subitem {Leap\+::\+Vector}, \hyperpage{228}
+  \item {current\+Frames\+Per\+Second}
+    \subitem {Leap\+::\+Frame}, \hyperpage{70}
+
+  \indexspace
+
+  \item {data}
+    \subitem {Leap\+::\+Image}, \hyperpage{126}
+    \subitem {Leap\+::\+Mask}, \hyperpage{156}
+  \item {denormalize\+Point}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{139}
+  \item {depth}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{140}
+  \item {deserialize}
+    \subitem {Leap\+::\+Frame}, \hyperpage{70}
+  \item {Device}
+    \subitem {Leap\+::\+Device}, \hyperpage{47}
+  \item {Device\+List}
+    \subitem {Leap\+::\+Device\+List}, \hyperpage{54}
+  \item {devices}
+    \subitem {Leap\+::\+Controller}, \hyperpage{38}
+  \item {direction}
+    \subitem {Leap\+::\+Arm}, \hyperpage{11}
+    \subitem {Leap\+::\+Bone}, \hyperpage{17}
+    \subitem {Leap\+::\+Hand}, \hyperpage{102}
+    \subitem {Leap\+::\+Key\+Tap\+Gesture}, \hyperpage{146}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{177}
+    \subitem {Leap\+::\+Screen\+Tap\+Gesture}, \hyperpage{205}
+    \subitem {Leap\+::\+Swipe\+Gesture}, \hyperpage{209}
+  \item {distance\+To}
+    \subitem {Leap\+::\+Vector}, \hyperpage{228}
+  \item {distance\+To\+Boundary}
+    \subitem {Leap\+::\+Device}, \hyperpage{47}
+  \item {distortion}
+    \subitem {Leap\+::\+Image}, \hyperpage{127}
+  \item {distortion\+Height}
+    \subitem {Leap\+::\+Image}, \hyperpage{127}
+  \item {distortion\+Width}
+    \subitem {Leap\+::\+Image}, \hyperpage{128}
+  \item {dot}
+    \subitem {Leap\+::\+Vector}, \hyperpage{229}
+  \item {down}
+    \subitem {Leap\+::\+Vector}, \hyperpage{229}
+  \item {duration}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{90}
+  \item {duration\+Seconds}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{90}
+
+  \indexspace
+
+  \item {elbow\+Position}
+    \subitem {Leap\+::\+Arm}, \hyperpage{11}
+  \item {enable\+Gesture}
+    \subitem {Leap\+::\+Controller}, \hyperpage{38}
+  \item {end}
+    \subitem {Leap\+::\+Device\+List}, \hyperpage{55}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{63}
+    \subitem {Leap\+::\+Gesture\+List}, \hyperpage{97}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{121}
+    \subitem {Leap\+::\+Image\+List}, \hyperpage{137}
+    \subitem {Leap\+::\+Mask\+List}, \hyperpage{162}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{188}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{216}
+  \item {extended}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{63}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{189}
+
+  \indexspace
+
+  \item {Finger}
+    \subitem {Leap\+::\+Finger}, \hyperpage{58}
+  \item {finger}
+    \subitem {Leap\+::\+Frame}, \hyperpage{71}
+    \subitem {Leap\+::\+Hand}, \hyperpage{103}
+  \item {Finger\+List}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{62}
+  \item {finger\+Type}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{64}
+  \item {fingers}
+    \subitem {Leap\+::\+Frame}, \hyperpage{71}
+    \subitem {Leap\+::\+Hand}, \hyperpage{104}
+  \item {format}
+    \subitem {Leap\+::\+Image}, \hyperpage{128}
+  \item {Format\+Type}
+    \subitem {Leap\+::\+Image}, \hyperpage{126}
+  \item {forward}
+    \subitem {Leap\+::\+Vector}, \hyperpage{229}
+  \item {Frame}
+    \subitem {Leap\+::\+Frame}, \hyperpage{69}
+  \item {frame}
+    \subitem {Leap\+::\+Controller}, \hyperpage{39}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{90}
+    \subitem {Leap\+::\+Hand}, \hyperpage{104}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{177}
+  \item {frontmost}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{64}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{121}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{189}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{216}
+
+  \indexspace
+
+  \item {Gesture}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{89}
+  \item {gesture}
+    \subitem {Leap\+::\+Frame}, \hyperpage{72}
+  \item {Gesture\+List}
+    \subitem {Leap\+::\+Gesture\+List}, \hyperpage{96}
+  \item {gestures}
+    \subitem {Leap\+::\+Frame}, \hyperpage{72, 73}
+  \item {get\+Bool}
+    \subitem {Leap\+::\+Config}, \hyperpage{29}
+  \item {get\+Float}
+    \subitem {Leap\+::\+Config}, \hyperpage{29}
+  \item {get\+Int32}
+    \subitem {Leap\+::\+Config}, \hyperpage{29}
+  \item {get\+String}
+    \subitem {Leap\+::\+Config}, \hyperpage{30}
+  \item {grab\+Strength}
+    \subitem {Leap\+::\+Hand}, \hyperpage{104}
+
+  \indexspace
+
+  \item {Hand}
+    \subitem {Leap\+::\+Hand}, \hyperpage{100}
+  \item {hand}
+    \subitem {Leap\+::\+Frame}, \hyperpage{73}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{178}
+  \item {Hand\+List}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{120}
+  \item {hands}
+    \subitem {Leap\+::\+Frame}, \hyperpage{74}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{91}
+  \item {has\+Focus}
+    \subitem {Leap\+::\+Controller}, \hyperpage{40}
+  \item {height}
+    \subitem {Leap\+::\+Image}, \hyperpage{128}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{140}
+    \subitem {Leap\+::\+Mask}, \hyperpage{157}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{220}
+  \item {horizontal\+View\+Angle}
+    \subitem {Leap\+::\+Device}, \hyperpage{48}
+
+  \indexspace
+
+  \item {id}
+    \subitem {Leap\+::\+Frame}, \hyperpage{74}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{91}
+    \subitem {Leap\+::\+Hand}, \hyperpage{105}
+    \subitem {Leap\+::\+Image}, \hyperpage{129}
+    \subitem {Leap\+::\+Mask}, \hyperpage{157}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{178}
+  \item {identity}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{167}
+  \item {Image}
+    \subitem {Leap\+::\+Image}, \hyperpage{126}
+  \item {Image\+List}
+    \subitem {Leap\+::\+Image\+List}, \hyperpage{136}
+  \item {images}
+    \subitem {Leap\+::\+Controller}, \hyperpage{40}
+    \subitem {Leap\+::\+Frame}, \hyperpage{74}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{220}
+  \item {interaction\+Box}
+    \subitem {Leap\+::\+Frame}, \hyperpage{75}
+  \item {invalid}
+    \subitem {Leap\+::\+Arm}, \hyperpage{11}
+    \subitem {Leap\+::\+Bone}, \hyperpage{18}
+    \subitem {Leap\+::\+Device}, \hyperpage{48}
+    \subitem {Leap\+::\+Finger}, \hyperpage{59}
+    \subitem {Leap\+::\+Frame}, \hyperpage{75}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{92}
+    \subitem {Leap\+::\+Hand}, \hyperpage{105}
+    \subitem {Leap\+::\+Image}, \hyperpage{129}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{140}
+    \subitem {Leap\+::\+Mask}, \hyperpage{157}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{179}
+    \subitem {Leap\+::\+Tool}, \hyperpage{213}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{220}
+  \item {is\+Connected}
+    \subitem {Leap\+::\+Controller}, \hyperpage{41}
+  \item {is\+Embedded}
+    \subitem {Leap\+::\+Device}, \hyperpage{48}
+  \item {is\+Empty}
+    \subitem {Leap\+::\+Device\+List}, \hyperpage{55}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{64}
+    \subitem {Leap\+::\+Gesture\+List}, \hyperpage{98}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{122}
+    \subitem {Leap\+::\+Image\+List}, \hyperpage{137}
+    \subitem {Leap\+::\+Mask\+List}, \hyperpage{162}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{189}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{216}
+  \item {is\+Extended}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{179}
+  \item {is\+Finger}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{180}
+  \item {is\+Flipped}
+    \subitem {Leap\+::\+Device}, \hyperpage{49}
+  \item {is\+Gesture\+Enabled}
+    \subitem {Leap\+::\+Controller}, \hyperpage{41}
+  \item {is\+Left}
+    \subitem {Leap\+::\+Hand}, \hyperpage{106}
+  \item {is\+Policy\+Set}
+    \subitem {Leap\+::\+Controller}, \hyperpage{42}
+  \item {is\+Right}
+    \subitem {Leap\+::\+Hand}, \hyperpage{106}
+  \item {is\+Service\+Connected}
+    \subitem {Leap\+::\+Controller}, \hyperpage{42}
+  \item {is\+Streaming}
+    \subitem {Leap\+::\+Device}, \hyperpage{49}
+  \item {is\+Tool}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{180}
+  \item {is\+Valid}
+    \subitem {Leap\+::\+Arm}, \hyperpage{12}
+    \subitem {Leap\+::\+Bone}, \hyperpage{18}
+    \subitem {Leap\+::\+Device}, \hyperpage{49}
+    \subitem {Leap\+::\+Frame}, \hyperpage{75}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{92}
+    \subitem {Leap\+::\+Hand}, \hyperpage{106}
+    \subitem {Leap\+::\+Image}, \hyperpage{129}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{141}
+    \subitem {Leap\+::\+Mask}, \hyperpage{158}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{180}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{221}
+    \subitem {Leap\+::\+Vector}, \hyperpage{230}
+
+  \indexspace
+
+  \item {Joint}
+    \subitem {Leap\+::\+Finger}, \hyperpage{57}
+  \item {joint\+Position}
+    \subitem {Leap\+::\+Finger}, \hyperpage{60}
+
+  \indexspace
+
+  \item {Key\+Tap\+Gesture}
+    \subitem {Leap\+::\+Key\+Tap\+Gesture}, \hyperpage{145, 146}
+
+  \indexspace
+
+  \item {Leap\+::\+Arm}, \hyperpage{9}
+    \subitem {Arm}, \hyperpage{10}
+    \subitem {basis}, \hyperpage{10}
+    \subitem {center}, \hyperpage{10}
+    \subitem {direction}, \hyperpage{11}
+    \subitem {elbow\+Position}, \hyperpage{11}
+    \subitem {invalid}, \hyperpage{11}
+    \subitem {is\+Valid}, \hyperpage{12}
+    \subitem {operator!=}, \hyperpage{12}
+    \subitem {operator$<$$<$}, \hyperpage{14}
+    \subitem {operator==}, \hyperpage{12}
+    \subitem {to\+String}, \hyperpage{13}
+    \subitem {width}, \hyperpage{13}
+    \subitem {wrist\+Position}, \hyperpage{13}
+  \item {Leap\+::\+Bone}, \hyperpage{14}
+    \subitem {basis}, \hyperpage{16}
+    \subitem {Bone}, \hyperpage{16}
+    \subitem {center}, \hyperpage{17}
+    \subitem {direction}, \hyperpage{17}
+    \subitem {invalid}, \hyperpage{18}
+    \subitem {is\+Valid}, \hyperpage{18}
+    \subitem {length}, \hyperpage{18}
+    \subitem {next\+Joint}, \hyperpage{19}
+    \subitem {operator!=}, \hyperpage{19}
+    \subitem {operator$<$$<$}, \hyperpage{21}
+    \subitem {operator==}, \hyperpage{19}
+    \subitem {prev\+Joint}, \hyperpage{20}
+    \subitem {to\+String}, \hyperpage{20}
+    \subitem {Type}, \hyperpage{16}
+    \subitem {type}, \hyperpage{20}
+    \subitem {width}, \hyperpage{21}
+  \item {Leap\+::\+Bug\+Report}, \hyperpage{22}
+  \item {Leap\+::\+Circle\+Gesture}, \hyperpage{22}
+    \subitem {center}, \hyperpage{24}
+    \subitem {Circle\+Gesture}, \hyperpage{23, 24}
+    \subitem {class\+Type}, \hyperpage{24}
+    \subitem {normal}, \hyperpage{25}
+    \subitem {pointable}, \hyperpage{25}
+    \subitem {progress}, \hyperpage{25}
+    \subitem {radius}, \hyperpage{26}
+  \item {Leap\+::\+Config}, \hyperpage{27}
+    \subitem {Config}, \hyperpage{28}
+    \subitem {get\+Bool}, \hyperpage{29}
+    \subitem {get\+Float}, \hyperpage{29}
+    \subitem {get\+Int32}, \hyperpage{29}
+    \subitem {get\+String}, \hyperpage{30}
+    \subitem {save}, \hyperpage{30}
+    \subitem {set\+Bool}, \hyperpage{30}
+    \subitem {set\+Float}, \hyperpage{31}
+    \subitem {set\+Int32}, \hyperpage{31}
+    \subitem {set\+String}, \hyperpage{31}
+    \subitem {type}, \hyperpage{32}
+    \subitem {Value\+Type}, \hyperpage{28}
+  \item {Leap\+::\+Const\+List\+Iterator$<$ L, T $>$}, \hyperpage{33}
+  \item {Leap\+::\+Controller}, \hyperpage{33}
+    \subitem {add\+Listener}, \hyperpage{37}
+    \subitem {clear\+Policy}, \hyperpage{37}
+    \subitem {config}, \hyperpage{38}
+    \subitem {Controller}, \hyperpage{36}
+    \subitem {devices}, \hyperpage{38}
+    \subitem {enable\+Gesture}, \hyperpage{38}
+    \subitem {frame}, \hyperpage{39}
+    \subitem {has\+Focus}, \hyperpage{40}
+    \subitem {images}, \hyperpage{40}
+    \subitem {is\+Connected}, \hyperpage{41}
+    \subitem {is\+Gesture\+Enabled}, \hyperpage{41}
+    \subitem {is\+Policy\+Set}, \hyperpage{42}
+    \subitem {is\+Service\+Connected}, \hyperpage{42}
+    \subitem {now}, \hyperpage{43}
+    \subitem {Policy\+Flag}, \hyperpage{35}
+    \subitem {policy\+Flags}, \hyperpage{43}
+    \subitem {remove\+Listener}, \hyperpage{43}
+    \subitem {set\+Policy}, \hyperpage{44}
+    \subitem {set\+Policy\+Flags}, \hyperpage{44}
+    \subitem {tracked\+Quad}, \hyperpage{44}
+  \item {Leap\+::\+Device}, \hyperpage{45}
+    \subitem {baseline}, \hyperpage{47}
+    \subitem {Device}, \hyperpage{47}
+    \subitem {distance\+To\+Boundary}, \hyperpage{47}
+    \subitem {horizontal\+View\+Angle}, \hyperpage{48}
+    \subitem {invalid}, \hyperpage{48}
+    \subitem {is\+Embedded}, \hyperpage{48}
+    \subitem {is\+Flipped}, \hyperpage{49}
+    \subitem {is\+Streaming}, \hyperpage{49}
+    \subitem {is\+Valid}, \hyperpage{49}
+    \subitem {operator!=}, \hyperpage{50}
+    \subitem {operator$<$$<$}, \hyperpage{52}
+    \subitem {operator==}, \hyperpage{50}
+    \subitem {range}, \hyperpage{50}
+    \subitem {serial\+Number}, \hyperpage{51}
+    \subitem {to\+String}, \hyperpage{51}
+    \subitem {Type}, \hyperpage{46}
+    \subitem {type}, \hyperpage{51}
+    \subitem {vertical\+View\+Angle}, \hyperpage{52}
+  \item {Leap\+::\+Device\+List}, \hyperpage{53}
+    \subitem {append}, \hyperpage{54}
+    \subitem {begin}, \hyperpage{55}
+    \subitem {const\+\_\+iterator}, \hyperpage{54}
+    \subitem {count}, \hyperpage{55}
+    \subitem {Device\+List}, \hyperpage{54}
+    \subitem {end}, \hyperpage{55}
+    \subitem {is\+Empty}, \hyperpage{55}
+    \subitem {operator[]}, \hyperpage{56}
+  \item {Leap\+::\+Finger}, \hyperpage{56}
+    \subitem {bone}, \hyperpage{59}
+    \subitem {Finger}, \hyperpage{58}
+    \subitem {invalid}, \hyperpage{59}
+    \subitem {Joint}, \hyperpage{57}
+    \subitem {joint\+Position}, \hyperpage{60}
+    \subitem {to\+String}, \hyperpage{60}
+    \subitem {Type}, \hyperpage{58}
+    \subitem {type}, \hyperpage{60}
+  \item {Leap\+::\+Finger\+List}, \hyperpage{61}
+    \subitem {append}, \hyperpage{62}
+    \subitem {begin}, \hyperpage{62}
+    \subitem {const\+\_\+iterator}, \hyperpage{61}
+    \subitem {count}, \hyperpage{63}
+    \subitem {end}, \hyperpage{63}
+    \subitem {extended}, \hyperpage{63}
+    \subitem {Finger\+List}, \hyperpage{62}
+    \subitem {finger\+Type}, \hyperpage{64}
+    \subitem {frontmost}, \hyperpage{64}
+    \subitem {is\+Empty}, \hyperpage{64}
+    \subitem {leftmost}, \hyperpage{65}
+    \subitem {operator[]}, \hyperpage{65}
+    \subitem {rightmost}, \hyperpage{66}
+  \item {Leap\+::\+Float\+Array}, \hyperpage{66}
+    \subitem {m\+\_\+array}, \hyperpage{68}
+    \subitem {operator const float $\ast$}, \hyperpage{67}
+    \subitem {operator float $\ast$}, \hyperpage{67}
+    \subitem {operator[]}, \hyperpage{67}
+  \item {Leap\+::\+Frame}, \hyperpage{68}
+    \subitem {current\+Frames\+Per\+Second}, \hyperpage{70}
+    \subitem {deserialize}, \hyperpage{70}
+    \subitem {finger}, \hyperpage{71}
+    \subitem {fingers}, \hyperpage{71}
+    \subitem {Frame}, \hyperpage{69}
+    \subitem {gesture}, \hyperpage{72}
+    \subitem {gestures}, \hyperpage{72, 73}
+    \subitem {hand}, \hyperpage{73}
+    \subitem {hands}, \hyperpage{74}
+    \subitem {id}, \hyperpage{74}
+    \subitem {images}, \hyperpage{74}
+    \subitem {interaction\+Box}, \hyperpage{75}
+    \subitem {invalid}, \hyperpage{75}
+    \subitem {is\+Valid}, \hyperpage{75}
+    \subitem {operator!=}, \hyperpage{76}
+    \subitem {operator$<$$<$}, \hyperpage{85}
+    \subitem {operator==}, \hyperpage{76}
+    \subitem {pointable}, \hyperpage{77}
+    \subitem {pointables}, \hyperpage{77}
+    \subitem {rotation\+Angle}, \hyperpage{78, 79}
+    \subitem {rotation\+Axis}, \hyperpage{79}
+    \subitem {rotation\+Matrix}, \hyperpage{80}
+    \subitem {rotation\+Probability}, \hyperpage{80}
+    \subitem {scale\+Factor}, \hyperpage{81}
+    \subitem {scale\+Probability}, \hyperpage{82}
+    \subitem {serialize}, \hyperpage{82}
+    \subitem {timestamp}, \hyperpage{82}
+    \subitem {to\+String}, \hyperpage{84}
+    \subitem {tool}, \hyperpage{83}
+    \subitem {tools}, \hyperpage{83}
+    \subitem {tracked\+Quad}, \hyperpage{84}
+    \subitem {translation}, \hyperpage{84}
+    \subitem {translation\+Probability}, \hyperpage{85}
+  \item {Leap\+::\+Gesture}, \hyperpage{86}
+    \subitem {duration}, \hyperpage{90}
+    \subitem {duration\+Seconds}, \hyperpage{90}
+    \subitem {frame}, \hyperpage{90}
+    \subitem {Gesture}, \hyperpage{89}
+    \subitem {hands}, \hyperpage{91}
+    \subitem {id}, \hyperpage{91}
+    \subitem {invalid}, \hyperpage{92}
+    \subitem {is\+Valid}, \hyperpage{92}
+    \subitem {operator!=}, \hyperpage{93}
+    \subitem {operator==}, \hyperpage{93}
+    \subitem {pointables}, \hyperpage{93}
+    \subitem {State}, \hyperpage{88}
+    \subitem {state}, \hyperpage{94}
+    \subitem {to\+String}, \hyperpage{94}
+    \subitem {Type}, \hyperpage{88}
+    \subitem {type}, \hyperpage{94}
+  \item {Leap\+::\+Gesture\+List}, \hyperpage{95}
+    \subitem {append}, \hyperpage{96}
+    \subitem {begin}, \hyperpage{97}
+    \subitem {const\+\_\+iterator}, \hyperpage{96}
+    \subitem {count}, \hyperpage{97}
+    \subitem {end}, \hyperpage{97}
+    \subitem {Gesture\+List}, \hyperpage{96}
+    \subitem {is\+Empty}, \hyperpage{98}
+    \subitem {operator[]}, \hyperpage{98}
+  \item {Leap\+::\+Hand}, \hyperpage{99}
+    \subitem {arm}, \hyperpage{101}
+    \subitem {basis}, \hyperpage{101}
+    \subitem {confidence}, \hyperpage{102}
+    \subitem {direction}, \hyperpage{102}
+    \subitem {finger}, \hyperpage{103}
+    \subitem {fingers}, \hyperpage{104}
+    \subitem {frame}, \hyperpage{104}
+    \subitem {grab\+Strength}, \hyperpage{104}
+    \subitem {Hand}, \hyperpage{100}
+    \subitem {id}, \hyperpage{105}
+    \subitem {invalid}, \hyperpage{105}
+    \subitem {is\+Left}, \hyperpage{106}
+    \subitem {is\+Right}, \hyperpage{106}
+    \subitem {is\+Valid}, \hyperpage{106}
+    \subitem {operator!=}, \hyperpage{107}
+    \subitem {operator$<$$<$}, \hyperpage{119}
+    \subitem {operator==}, \hyperpage{107}
+    \subitem {palm\+Normal}, \hyperpage{107}
+    \subitem {palm\+Position}, \hyperpage{108}
+    \subitem {palm\+Velocity}, \hyperpage{108}
+    \subitem {palm\+Width}, \hyperpage{109}
+    \subitem {pinch\+Strength}, \hyperpage{109}
+    \subitem {pointable}, \hyperpage{109}
+    \subitem {pointables}, \hyperpage{110}
+    \subitem {rotation\+Angle}, \hyperpage{110, 111}
+    \subitem {rotation\+Axis}, \hyperpage{112}
+    \subitem {rotation\+Matrix}, \hyperpage{112}
+    \subitem {rotation\+Probability}, \hyperpage{113}
+    \subitem {scale\+Factor}, \hyperpage{114}
+    \subitem {scale\+Probability}, \hyperpage{114}
+    \subitem {sphere\+Center}, \hyperpage{115}
+    \subitem {sphere\+Radius}, \hyperpage{115}
+    \subitem {stabilized\+Palm\+Position}, \hyperpage{115}
+    \subitem {time\+Visible}, \hyperpage{116}
+    \subitem {to\+String}, \hyperpage{117}
+    \subitem {tool}, \hyperpage{116}
+    \subitem {tools}, \hyperpage{116}
+    \subitem {translation}, \hyperpage{117}
+    \subitem {translation\+Probability}, \hyperpage{118}
+    \subitem {wrist\+Position}, \hyperpage{118}
+  \item {Leap\+::\+Hand\+List}, \hyperpage{119}
+    \subitem {append}, \hyperpage{120}
+    \subitem {begin}, \hyperpage{121}
+    \subitem {const\+\_\+iterator}, \hyperpage{120}
+    \subitem {count}, \hyperpage{121}
+    \subitem {end}, \hyperpage{121}
+    \subitem {frontmost}, \hyperpage{121}
+    \subitem {Hand\+List}, \hyperpage{120}
+    \subitem {is\+Empty}, \hyperpage{122}
+    \subitem {leftmost}, \hyperpage{122}
+    \subitem {operator[]}, \hyperpage{122}
+    \subitem {rightmost}, \hyperpage{124}
+  \item {Leap\+::\+Image}, \hyperpage{124}
+    \subitem {bytes\+Per\+Pixel}, \hyperpage{126}
+    \subitem {data}, \hyperpage{126}
+    \subitem {distortion}, \hyperpage{127}
+    \subitem {distortion\+Height}, \hyperpage{127}
+    \subitem {distortion\+Width}, \hyperpage{128}
+    \subitem {format}, \hyperpage{128}
+    \subitem {Format\+Type}, \hyperpage{126}
+    \subitem {height}, \hyperpage{128}
+    \subitem {id}, \hyperpage{129}
+    \subitem {Image}, \hyperpage{126}
+    \subitem {invalid}, \hyperpage{129}
+    \subitem {is\+Valid}, \hyperpage{129}
+    \subitem {operator!=}, \hyperpage{130}
+    \subitem {operator$<$$<$}, \hyperpage{134}
+    \subitem {operator==}, \hyperpage{130}
+    \subitem {ray\+OffsetX}, \hyperpage{130}
+    \subitem {ray\+OffsetY}, \hyperpage{131}
+    \subitem {ray\+ScaleX}, \hyperpage{131}
+    \subitem {ray\+ScaleY}, \hyperpage{131}
+    \subitem {rectify}, \hyperpage{132}
+    \subitem {sequence\+Id}, \hyperpage{132}
+    \subitem {timestamp}, \hyperpage{133}
+    \subitem {to\+String}, \hyperpage{133}
+    \subitem {warp}, \hyperpage{133}
+    \subitem {width}, \hyperpage{134}
+  \item {Leap\+::\+Image\+List}, \hyperpage{135}
+    \subitem {append}, \hyperpage{136}
+    \subitem {begin}, \hyperpage{136}
+    \subitem {const\+\_\+iterator}, \hyperpage{135}
+    \subitem {count}, \hyperpage{136}
+    \subitem {end}, \hyperpage{137}
+    \subitem {Image\+List}, \hyperpage{136}
+    \subitem {is\+Empty}, \hyperpage{137}
+    \subitem {operator[]}, \hyperpage{137}
+  \item {Leap\+::\+Interaction\+Box}, \hyperpage{138}
+    \subitem {center}, \hyperpage{139}
+    \subitem {denormalize\+Point}, \hyperpage{139}
+    \subitem {depth}, \hyperpage{140}
+    \subitem {height}, \hyperpage{140}
+    \subitem {invalid}, \hyperpage{140}
+    \subitem {is\+Valid}, \hyperpage{141}
+    \subitem {normalize\+Point}, \hyperpage{141}
+    \subitem {operator!=}, \hyperpage{142}
+    \subitem {operator$<$$<$}, \hyperpage{143}
+    \subitem {operator==}, \hyperpage{142}
+    \subitem {to\+String}, \hyperpage{142}
+    \subitem {width}, \hyperpage{143}
+  \item {Leap\+::\+Interface}, \hyperpage{144}
+  \item {Leap\+::\+Interface\+::\+Implementation}, \hyperpage{138}
+  \item {Leap\+::\+Key\+Tap\+Gesture}, \hyperpage{144}
+    \subitem {class\+Type}, \hyperpage{146}
+    \subitem {direction}, \hyperpage{146}
+    \subitem {Key\+Tap\+Gesture}, \hyperpage{145, 146}
+    \subitem {pointable}, \hyperpage{147}
+    \subitem {position}, \hyperpage{147}
+    \subitem {progress}, \hyperpage{147}
+  \item {Leap\+::\+List\+Base\+Implementation$<$ T $>$}, 
+		\hyperpage{148}
+  \item {Leap\+::\+Listener}, \hyperpage{148}
+    \subitem {$\sim$\+Listener}, \hyperpage{149}
+    \subitem {Listener}, \hyperpage{149}
+    \subitem {on\+Connect}, \hyperpage{149}
+    \subitem {on\+Device\+Change}, \hyperpage{150}
+    \subitem {on\+Disconnect}, \hyperpage{150}
+    \subitem {on\+Exit}, \hyperpage{151}
+    \subitem {on\+Focus\+Gained}, \hyperpage{151}
+    \subitem {on\+Focus\+Lost}, \hyperpage{152}
+    \subitem {on\+Frame}, \hyperpage{152}
+    \subitem {on\+Images}, \hyperpage{153}
+    \subitem {on\+Init}, \hyperpage{153}
+    \subitem {on\+Service\+Connect}, \hyperpage{154}
+    \subitem {on\+Service\+Disconnect}, \hyperpage{154}
+  \item {Leap\+::\+Mask}, \hyperpage{155}
+    \subitem {data}, \hyperpage{156}
+    \subitem {height}, \hyperpage{157}
+    \subitem {id}, \hyperpage{157}
+    \subitem {invalid}, \hyperpage{157}
+    \subitem {is\+Valid}, \hyperpage{158}
+    \subitem {Mask}, \hyperpage{156}
+    \subitem {offsetX}, \hyperpage{158}
+    \subitem {offsetY}, \hyperpage{158}
+    \subitem {operator!=}, \hyperpage{158}
+    \subitem {operator$<$$<$}, \hyperpage{160}
+    \subitem {operator==}, \hyperpage{159}
+    \subitem {sequence\+Id}, \hyperpage{159}
+    \subitem {width}, \hyperpage{159}
+  \item {Leap\+::\+Mask\+List}, \hyperpage{160}
+    \subitem {append}, \hyperpage{161}
+    \subitem {begin}, \hyperpage{161}
+    \subitem {count}, \hyperpage{162}
+    \subitem {end}, \hyperpage{162}
+    \subitem {is\+Empty}, \hyperpage{162}
+    \subitem {Mask\+List}, \hyperpage{161}
+    \subitem {operator[]}, \hyperpage{162}
+  \item {Leap\+::\+Matrix}, \hyperpage{163}
+    \subitem {identity}, \hyperpage{167}
+    \subitem {Matrix}, \hyperpage{164--166}
+    \subitem {operator!=}, \hyperpage{167}
+    \subitem {operator$<$$<$}, \hyperpage{173}
+    \subitem {operator$\ast$}, \hyperpage{167}
+    \subitem {operator$\ast$=}, \hyperpage{168}
+    \subitem {operator==}, \hyperpage{168}
+    \subitem {origin}, \hyperpage{173}
+    \subitem {rigid\+Inverse}, \hyperpage{168}
+    \subitem {set\+Rotation}, \hyperpage{169}
+    \subitem {to\+Array3x3}, \hyperpage{169, 170}
+    \subitem {to\+Array4x4}, \hyperpage{170}
+    \subitem {to\+Matrix3x3}, \hyperpage{171}
+    \subitem {to\+Matrix4x4}, \hyperpage{171}
+    \subitem {to\+String}, \hyperpage{171}
+    \subitem {transform\+Direction}, \hyperpage{172}
+    \subitem {transform\+Point}, \hyperpage{172}
+    \subitem {x\+Basis}, \hyperpage{173}
+    \subitem {y\+Basis}, \hyperpage{174}
+    \subitem {z\+Basis}, \hyperpage{174}
+  \item {Leap\+::\+Pointable}, \hyperpage{175}
+    \subitem {direction}, \hyperpage{177}
+    \subitem {frame}, \hyperpage{177}
+    \subitem {hand}, \hyperpage{178}
+    \subitem {id}, \hyperpage{178}
+    \subitem {invalid}, \hyperpage{179}
+    \subitem {is\+Extended}, \hyperpage{179}
+    \subitem {is\+Finger}, \hyperpage{180}
+    \subitem {is\+Tool}, \hyperpage{180}
+    \subitem {is\+Valid}, \hyperpage{180}
+    \subitem {length}, \hyperpage{181}
+    \subitem {operator!=}, \hyperpage{181}
+    \subitem {operator$<$$<$}, \hyperpage{185}
+    \subitem {operator==}, \hyperpage{181}
+    \subitem {Pointable}, \hyperpage{177}
+    \subitem {stabilized\+Tip\+Position}, \hyperpage{182}
+    \subitem {time\+Visible}, \hyperpage{182}
+    \subitem {tip\+Position}, \hyperpage{182}
+    \subitem {tip\+Velocity}, \hyperpage{183}
+    \subitem {to\+String}, \hyperpage{183}
+    \subitem {touch\+Distance}, \hyperpage{183}
+    \subitem {touch\+Zone}, \hyperpage{184}
+    \subitem {width}, \hyperpage{184}
+    \subitem {Zone}, \hyperpage{176}
+  \item {Leap\+::\+Pointable\+List}, \hyperpage{185}
+    \subitem {append}, \hyperpage{187, 188}
+    \subitem {begin}, \hyperpage{188}
+    \subitem {const\+\_\+iterator}, \hyperpage{186}
+    \subitem {count}, \hyperpage{188}
+    \subitem {end}, \hyperpage{188}
+    \subitem {extended}, \hyperpage{189}
+    \subitem {frontmost}, \hyperpage{189}
+    \subitem {is\+Empty}, \hyperpage{189}
+    \subitem {leftmost}, \hyperpage{190}
+    \subitem {operator[]}, \hyperpage{190}
+    \subitem {Pointable\+List}, \hyperpage{187}
+    \subitem {rightmost}, \hyperpage{191}
+  \item {Leap\+::\+Screen}, \hyperpage{202}
+  \item {Leap\+::\+Screen\+List}, \hyperpage{203}
+  \item {Leap\+::\+Screen\+Tap\+Gesture}, \hyperpage{203}
+    \subitem {class\+Type}, \hyperpage{205}
+    \subitem {direction}, \hyperpage{205}
+    \subitem {pointable}, \hyperpage{206}
+    \subitem {position}, \hyperpage{206}
+    \subitem {progress}, \hyperpage{206}
+    \subitem {Screen\+Tap\+Gesture}, \hyperpage{204, 205}
+  \item {Leap\+::\+Swipe\+Gesture}, \hyperpage{207}
+    \subitem {class\+Type}, \hyperpage{209}
+    \subitem {direction}, \hyperpage{209}
+    \subitem {pointable}, \hyperpage{209}
+    \subitem {position}, \hyperpage{210}
+    \subitem {speed}, \hyperpage{210}
+    \subitem {start\+Position}, \hyperpage{210}
+    \subitem {Swipe\+Gesture}, \hyperpage{208}
+  \item {Leap\+::\+Tool}, \hyperpage{211}
+    \subitem {invalid}, \hyperpage{213}
+    \subitem {to\+String}, \hyperpage{213}
+    \subitem {Tool}, \hyperpage{212}
+  \item {Leap\+::\+Tool\+List}, \hyperpage{213}
+    \subitem {append}, \hyperpage{215}
+    \subitem {begin}, \hyperpage{215}
+    \subitem {const\+\_\+iterator}, \hyperpage{214}
+    \subitem {count}, \hyperpage{215}
+    \subitem {end}, \hyperpage{216}
+    \subitem {frontmost}, \hyperpage{216}
+    \subitem {is\+Empty}, \hyperpage{216}
+    \subitem {leftmost}, \hyperpage{217}
+    \subitem {operator[]}, \hyperpage{217}
+    \subitem {rightmost}, \hyperpage{218}
+    \subitem {Tool\+List}, \hyperpage{215}
+  \item {Leap\+::\+Tracked\+Quad}, \hyperpage{218}
+    \subitem {height}, \hyperpage{220}
+    \subitem {images}, \hyperpage{220}
+    \subitem {invalid}, \hyperpage{220}
+    \subitem {is\+Valid}, \hyperpage{221}
+    \subitem {masks}, \hyperpage{221}
+    \subitem {operator!=}, \hyperpage{221}
+    \subitem {operator$<$$<$}, \hyperpage{224}
+    \subitem {operator==}, \hyperpage{222}
+    \subitem {orientation}, \hyperpage{222}
+    \subitem {position}, \hyperpage{222}
+    \subitem {resolutionX}, \hyperpage{222}
+    \subitem {resolutionY}, \hyperpage{223}
+    \subitem {Tracked\+Quad}, \hyperpage{219}
+    \subitem {visible}, \hyperpage{223}
+    \subitem {width}, \hyperpage{223}
+  \item {Leap\+::\+Vector}, \hyperpage{224}
+    \subitem {angle\+To}, \hyperpage{227}
+    \subitem {backward}, \hyperpage{227}
+    \subitem {cross}, \hyperpage{228}
+    \subitem {distance\+To}, \hyperpage{228}
+    \subitem {dot}, \hyperpage{229}
+    \subitem {down}, \hyperpage{229}
+    \subitem {forward}, \hyperpage{229}
+    \subitem {is\+Valid}, \hyperpage{230}
+    \subitem {left}, \hyperpage{230}
+    \subitem {magnitude}, \hyperpage{230}
+    \subitem {magnitude\+Squared}, \hyperpage{231}
+    \subitem {normalized}, \hyperpage{231}
+    \subitem {operator!=}, \hyperpage{231}
+    \subitem {operator$<$$<$}, \hyperpage{240}
+    \subitem {operator$\ast$}, \hyperpage{232}, \hyperpage{239}
+    \subitem {operator$\ast$=}, \hyperpage{232}
+    \subitem {operator+}, \hyperpage{232}
+    \subitem {operator+=}, \hyperpage{233}
+    \subitem {operator-\/}, \hyperpage{233}
+    \subitem {operator-\/=}, \hyperpage{234}
+    \subitem {operator/}, \hyperpage{234}
+    \subitem {operator/=}, \hyperpage{234}
+    \subitem {operator==}, \hyperpage{235}
+    \subitem {operator[]}, \hyperpage{235}
+    \subitem {pitch}, \hyperpage{235}
+    \subitem {right}, \hyperpage{236}
+    \subitem {roll}, \hyperpage{236}
+    \subitem {to\+Float\+Pointer}, \hyperpage{236}
+    \subitem {to\+String}, \hyperpage{237}
+    \subitem {to\+Vector3}, \hyperpage{237}
+    \subitem {to\+Vector4}, \hyperpage{237}
+    \subitem {up}, \hyperpage{237}
+    \subitem {Vector}, \hyperpage{226}
+    \subitem {x}, \hyperpage{240}
+    \subitem {x\+Axis}, \hyperpage{238}
+    \subitem {y}, \hyperpage{240}
+    \subitem {y\+Axis}, \hyperpage{238}
+    \subitem {yaw}, \hyperpage{238}
+    \subitem {z}, \hyperpage{241}
+    \subitem {z\+Axis}, \hyperpage{239}
+    \subitem {zero}, \hyperpage{239}
+  \item {left}
+    \subitem {Leap\+::\+Vector}, \hyperpage{230}
+  \item {leftmost}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{65}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{122}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{190}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{217}
+  \item {length}
+    \subitem {Leap\+::\+Bone}, \hyperpage{18}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{181}
+  \item {Listener}
+    \subitem {Leap\+::\+Listener}, \hyperpage{149}
+
+  \indexspace
+
+  \item {m\+\_\+array}
+    \subitem {Leap\+::\+Float\+Array}, \hyperpage{68}
+  \item {magnitude}
+    \subitem {Leap\+::\+Vector}, \hyperpage{230}
+  \item {magnitude\+Squared}
+    \subitem {Leap\+::\+Vector}, \hyperpage{231}
+  \item {main.\+cpp}, \hyperpage{243}
+  \item {Mask}
+    \subitem {Leap\+::\+Mask}, \hyperpage{156}
+  \item {Mask\+List}
+    \subitem {Leap\+::\+Mask\+List}, \hyperpage{161}
+  \item {masks}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{221}
+  \item {Matrix}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{164--166}
+
+  \indexspace
+
+  \item {next\+Joint}
+    \subitem {Leap\+::\+Bone}, \hyperpage{19}
+  \item {normal}
+    \subitem {Leap\+::\+Circle\+Gesture}, \hyperpage{25}
+  \item {normalize\+Point}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{141}
+  \item {normalized}
+    \subitem {Leap\+::\+Vector}, \hyperpage{231}
+  \item {now}
+    \subitem {Leap\+::\+Controller}, \hyperpage{43}
+
+  \indexspace
+
+  \item {offsetX}
+    \subitem {Leap\+::\+Mask}, \hyperpage{158}
+  \item {offsetY}
+    \subitem {Leap\+::\+Mask}, \hyperpage{158}
+  \item {on\+Connect}
+    \subitem {Leap\+::\+Listener}, \hyperpage{149}
+    \subitem {Sample\+Listener}, \hyperpage{192}
+  \item {on\+Device\+Change}
+    \subitem {Leap\+::\+Listener}, \hyperpage{150}
+    \subitem {Sample\+Listener}, \hyperpage{193}
+  \item {on\+Disconnect}
+    \subitem {Leap\+::\+Listener}, \hyperpage{150}
+    \subitem {Sample\+Listener}, \hyperpage{194}
+  \item {on\+Exit}
+    \subitem {Leap\+::\+Listener}, \hyperpage{151}
+    \subitem {Sample\+Listener}, \hyperpage{195}
+  \item {on\+Focus\+Gained}
+    \subitem {Leap\+::\+Listener}, \hyperpage{151}
+    \subitem {Sample\+Listener}, \hyperpage{196}
+  \item {on\+Focus\+Lost}
+    \subitem {Leap\+::\+Listener}, \hyperpage{152}
+    \subitem {Sample\+Listener}, \hyperpage{197}
+  \item {on\+Frame}
+    \subitem {Leap\+::\+Listener}, \hyperpage{152}
+    \subitem {Sample\+Listener}, \hyperpage{198}
+  \item {on\+Images}
+    \subitem {Leap\+::\+Listener}, \hyperpage{153}
+  \item {on\+Init}
+    \subitem {Leap\+::\+Listener}, \hyperpage{153}
+    \subitem {Sample\+Listener}, \hyperpage{199}
+  \item {on\+Service\+Connect}
+    \subitem {Leap\+::\+Listener}, \hyperpage{154}
+    \subitem {Sample\+Listener}, \hyperpage{200}
+  \item {on\+Service\+Disconnect}
+    \subitem {Leap\+::\+Listener}, \hyperpage{154}
+    \subitem {Sample\+Listener}, \hyperpage{201}
+  \item {operator const float $\ast$}
+    \subitem {Leap\+::\+Float\+Array}, \hyperpage{67}
+  \item {operator float $\ast$}
+    \subitem {Leap\+::\+Float\+Array}, \hyperpage{67}
+  \item {operator!=}
+    \subitem {Leap\+::\+Arm}, \hyperpage{12}
+    \subitem {Leap\+::\+Bone}, \hyperpage{19}
+    \subitem {Leap\+::\+Device}, \hyperpage{50}
+    \subitem {Leap\+::\+Frame}, \hyperpage{76}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{93}
+    \subitem {Leap\+::\+Hand}, \hyperpage{107}
+    \subitem {Leap\+::\+Image}, \hyperpage{130}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{142}
+    \subitem {Leap\+::\+Mask}, \hyperpage{158}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{167}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{181}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{221}
+    \subitem {Leap\+::\+Vector}, \hyperpage{231}
+  \item {operator$<$$<$}
+    \subitem {Leap\+::\+Arm}, \hyperpage{14}
+    \subitem {Leap\+::\+Bone}, \hyperpage{21}
+    \subitem {Leap\+::\+Device}, \hyperpage{52}
+    \subitem {Leap\+::\+Frame}, \hyperpage{85}
+    \subitem {Leap\+::\+Hand}, \hyperpage{119}
+    \subitem {Leap\+::\+Image}, \hyperpage{134}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{143}
+    \subitem {Leap\+::\+Mask}, \hyperpage{160}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{173}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{185}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{224}
+    \subitem {Leap\+::\+Vector}, \hyperpage{240}
+  \item {operator$\ast$}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{167}
+    \subitem {Leap\+::\+Vector}, \hyperpage{232}, \hyperpage{239}
+  \item {operator$\ast$=}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{168}
+    \subitem {Leap\+::\+Vector}, \hyperpage{232}
+  \item {operator+}
+    \subitem {Leap\+::\+Vector}, \hyperpage{232}
+  \item {operator+=}
+    \subitem {Leap\+::\+Vector}, \hyperpage{233}
+  \item {operator-\/}
+    \subitem {Leap\+::\+Vector}, \hyperpage{233}
+  \item {operator-\/=}
+    \subitem {Leap\+::\+Vector}, \hyperpage{234}
+  \item {operator/}
+    \subitem {Leap\+::\+Vector}, \hyperpage{234}
+  \item {operator/=}
+    \subitem {Leap\+::\+Vector}, \hyperpage{234}
+  \item {operator==}
+    \subitem {Leap\+::\+Arm}, \hyperpage{12}
+    \subitem {Leap\+::\+Bone}, \hyperpage{19}
+    \subitem {Leap\+::\+Device}, \hyperpage{50}
+    \subitem {Leap\+::\+Frame}, \hyperpage{76}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{93}
+    \subitem {Leap\+::\+Hand}, \hyperpage{107}
+    \subitem {Leap\+::\+Image}, \hyperpage{130}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{142}
+    \subitem {Leap\+::\+Mask}, \hyperpage{159}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{168}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{181}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{222}
+    \subitem {Leap\+::\+Vector}, \hyperpage{235}
+  \item {operator[]}
+    \subitem {Leap\+::\+Device\+List}, \hyperpage{56}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{65}
+    \subitem {Leap\+::\+Float\+Array}, \hyperpage{67}
+    \subitem {Leap\+::\+Gesture\+List}, \hyperpage{98}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{122}
+    \subitem {Leap\+::\+Image\+List}, \hyperpage{137}
+    \subitem {Leap\+::\+Mask\+List}, \hyperpage{162}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{190}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{217}
+    \subitem {Leap\+::\+Vector}, \hyperpage{235}
+  \item {orientation}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{222}
+  \item {origin}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{173}
+
+  \indexspace
+
+  \item {palm\+Normal}
+    \subitem {Leap\+::\+Hand}, \hyperpage{107}
+  \item {palm\+Position}
+    \subitem {Leap\+::\+Hand}, \hyperpage{108}
+  \item {palm\+Velocity}
+    \subitem {Leap\+::\+Hand}, \hyperpage{108}
+  \item {palm\+Width}
+    \subitem {Leap\+::\+Hand}, \hyperpage{109}
+  \item {pinch\+Strength}
+    \subitem {Leap\+::\+Hand}, \hyperpage{109}
+  \item {pitch}
+    \subitem {Leap\+::\+Vector}, \hyperpage{235}
+  \item {Pointable}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{177}
+  \item {pointable}
+    \subitem {Leap\+::\+Circle\+Gesture}, \hyperpage{25}
+    \subitem {Leap\+::\+Frame}, \hyperpage{77}
+    \subitem {Leap\+::\+Hand}, \hyperpage{109}
+    \subitem {Leap\+::\+Key\+Tap\+Gesture}, \hyperpage{147}
+    \subitem {Leap\+::\+Screen\+Tap\+Gesture}, \hyperpage{206}
+    \subitem {Leap\+::\+Swipe\+Gesture}, \hyperpage{209}
+  \item {Pointable\+List}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{187}
+  \item {pointables}
+    \subitem {Leap\+::\+Frame}, \hyperpage{77}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{93}
+    \subitem {Leap\+::\+Hand}, \hyperpage{110}
+  \item {Policy\+Flag}
+    \subitem {Leap\+::\+Controller}, \hyperpage{35}
+  \item {policy\+Flags}
+    \subitem {Leap\+::\+Controller}, \hyperpage{43}
+  \item {position}
+    \subitem {Leap\+::\+Key\+Tap\+Gesture}, \hyperpage{147}
+    \subitem {Leap\+::\+Screen\+Tap\+Gesture}, \hyperpage{206}
+    \subitem {Leap\+::\+Swipe\+Gesture}, \hyperpage{210}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{222}
+  \item {prev\+Joint}
+    \subitem {Leap\+::\+Bone}, \hyperpage{20}
+  \item {progress}
+    \subitem {Leap\+::\+Circle\+Gesture}, \hyperpage{25}
+    \subitem {Leap\+::\+Key\+Tap\+Gesture}, \hyperpage{147}
+    \subitem {Leap\+::\+Screen\+Tap\+Gesture}, \hyperpage{206}
+
+  \indexspace
+
+  \item {radius}
+    \subitem {Leap\+::\+Circle\+Gesture}, \hyperpage{26}
+  \item {range}
+    \subitem {Leap\+::\+Device}, \hyperpage{50}
+  \item {ray\+OffsetX}
+    \subitem {Leap\+::\+Image}, \hyperpage{130}
+  \item {ray\+OffsetY}
+    \subitem {Leap\+::\+Image}, \hyperpage{131}
+  \item {ray\+ScaleX}
+    \subitem {Leap\+::\+Image}, \hyperpage{131}
+  \item {ray\+ScaleY}
+    \subitem {Leap\+::\+Image}, \hyperpage{131}
+  \item {rectify}
+    \subitem {Leap\+::\+Image}, \hyperpage{132}
+  \item {remove\+Listener}
+    \subitem {Leap\+::\+Controller}, \hyperpage{43}
+  \item {resolutionX}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{222}
+  \item {resolutionY}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{223}
+  \item {right}
+    \subitem {Leap\+::\+Vector}, \hyperpage{236}
+  \item {rightmost}
+    \subitem {Leap\+::\+Finger\+List}, \hyperpage{66}
+    \subitem {Leap\+::\+Hand\+List}, \hyperpage{124}
+    \subitem {Leap\+::\+Pointable\+List}, \hyperpage{191}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{218}
+  \item {rigid\+Inverse}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{168}
+  \item {roll}
+    \subitem {Leap\+::\+Vector}, \hyperpage{236}
+  \item {rotation\+Angle}
+    \subitem {Leap\+::\+Frame}, \hyperpage{78, 79}
+    \subitem {Leap\+::\+Hand}, \hyperpage{110, 111}
+  \item {rotation\+Axis}
+    \subitem {Leap\+::\+Frame}, \hyperpage{79}
+    \subitem {Leap\+::\+Hand}, \hyperpage{112}
+  \item {rotation\+Matrix}
+    \subitem {Leap\+::\+Frame}, \hyperpage{80}
+    \subitem {Leap\+::\+Hand}, \hyperpage{112}
+  \item {rotation\+Probability}
+    \subitem {Leap\+::\+Frame}, \hyperpage{80}
+    \subitem {Leap\+::\+Hand}, \hyperpage{113}
+
+  \indexspace
+
+  \item {sample/\+Comprobar\+Gesto.\+cpp}, \hyperpage{243}
+  \item {Sample\+Listener}, \hyperpage{191}
+    \subitem {on\+Connect}, \hyperpage{192}
+    \subitem {on\+Device\+Change}, \hyperpage{193}
+    \subitem {on\+Disconnect}, \hyperpage{194}
+    \subitem {on\+Exit}, \hyperpage{195}
+    \subitem {on\+Focus\+Gained}, \hyperpage{196}
+    \subitem {on\+Focus\+Lost}, \hyperpage{197}
+    \subitem {on\+Frame}, \hyperpage{198}
+    \subitem {on\+Init}, \hyperpage{199}
+    \subitem {on\+Service\+Connect}, \hyperpage{200}
+    \subitem {on\+Service\+Disconnect}, \hyperpage{201}
+  \item {save}
+    \subitem {Leap\+::\+Config}, \hyperpage{30}
+  \item {scale\+Factor}
+    \subitem {Leap\+::\+Frame}, \hyperpage{81}
+    \subitem {Leap\+::\+Hand}, \hyperpage{114}
+  \item {scale\+Probability}
+    \subitem {Leap\+::\+Frame}, \hyperpage{82}
+    \subitem {Leap\+::\+Hand}, \hyperpage{114}
+  \item {Screen\+Tap\+Gesture}
+    \subitem {Leap\+::\+Screen\+Tap\+Gesture}, \hyperpage{204, 205}
+  \item {sequence\+Id}
+    \subitem {Leap\+::\+Image}, \hyperpage{132}
+    \subitem {Leap\+::\+Mask}, \hyperpage{159}
+  \item {serial\+Number}
+    \subitem {Leap\+::\+Device}, \hyperpage{51}
+  \item {serialize}
+    \subitem {Leap\+::\+Frame}, \hyperpage{82}
+  \item {set\+Bool}
+    \subitem {Leap\+::\+Config}, \hyperpage{30}
+  \item {set\+Float}
+    \subitem {Leap\+::\+Config}, \hyperpage{31}
+  \item {set\+Int32}
+    \subitem {Leap\+::\+Config}, \hyperpage{31}
+  \item {set\+Policy}
+    \subitem {Leap\+::\+Controller}, \hyperpage{44}
+  \item {set\+Policy\+Flags}
+    \subitem {Leap\+::\+Controller}, \hyperpage{44}
+  \item {set\+Rotation}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{169}
+  \item {set\+String}
+    \subitem {Leap\+::\+Config}, \hyperpage{31}
+  \item {sourcecode/tools.\+cpp}, \hyperpage{244}
+  \item {speed}
+    \subitem {Leap\+::\+Swipe\+Gesture}, \hyperpage{210}
+  \item {sphere\+Center}
+    \subitem {Leap\+::\+Hand}, \hyperpage{115}
+  \item {sphere\+Radius}
+    \subitem {Leap\+::\+Hand}, \hyperpage{115}
+  \item {stabilized\+Palm\+Position}
+    \subitem {Leap\+::\+Hand}, \hyperpage{115}
+  \item {stabilized\+Tip\+Position}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{182}
+  \item {start\+Position}
+    \subitem {Leap\+::\+Swipe\+Gesture}, \hyperpage{210}
+  \item {State}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{88}
+  \item {state}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{94}
+  \item {Swipe\+Gesture}
+    \subitem {Leap\+::\+Swipe\+Gesture}, \hyperpage{208}
+
+  \indexspace
+
+  \item {time\+Visible}
+    \subitem {Leap\+::\+Hand}, \hyperpage{116}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{182}
+  \item {timestamp}
+    \subitem {Leap\+::\+Frame}, \hyperpage{82}
+    \subitem {Leap\+::\+Image}, \hyperpage{133}
+  \item {tip\+Position}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{182}
+  \item {tip\+Velocity}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{183}
+  \item {to\+Array3x3}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{169, 170}
+  \item {to\+Array4x4}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{170}
+  \item {to\+Float\+Pointer}
+    \subitem {Leap\+::\+Vector}, \hyperpage{236}
+  \item {to\+Matrix3x3}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{171}
+  \item {to\+Matrix4x4}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{171}
+  \item {to\+String}
+    \subitem {Leap\+::\+Arm}, \hyperpage{13}
+    \subitem {Leap\+::\+Bone}, \hyperpage{20}
+    \subitem {Leap\+::\+Device}, \hyperpage{51}
+    \subitem {Leap\+::\+Finger}, \hyperpage{60}
+    \subitem {Leap\+::\+Frame}, \hyperpage{84}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{94}
+    \subitem {Leap\+::\+Hand}, \hyperpage{117}
+    \subitem {Leap\+::\+Image}, \hyperpage{133}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{142}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{171}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{183}
+    \subitem {Leap\+::\+Tool}, \hyperpage{213}
+    \subitem {Leap\+::\+Vector}, \hyperpage{237}
+  \item {to\+Vector3}
+    \subitem {Leap\+::\+Vector}, \hyperpage{237}
+  \item {to\+Vector4}
+    \subitem {Leap\+::\+Vector}, \hyperpage{237}
+  \item {Tool}
+    \subitem {Leap\+::\+Tool}, \hyperpage{212}
+  \item {tool}
+    \subitem {Leap\+::\+Frame}, \hyperpage{83}
+    \subitem {Leap\+::\+Hand}, \hyperpage{116}
+  \item {Tool\+List}
+    \subitem {Leap\+::\+Tool\+List}, \hyperpage{215}
+  \item {tools}
+    \subitem {Leap\+::\+Frame}, \hyperpage{83}
+    \subitem {Leap\+::\+Hand}, \hyperpage{116}
+  \item {touch\+Distance}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{183}
+  \item {touch\+Zone}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{184}
+  \item {Tracked\+Quad}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{219}
+  \item {tracked\+Quad}
+    \subitem {Leap\+::\+Controller}, \hyperpage{44}
+    \subitem {Leap\+::\+Frame}, \hyperpage{84}
+  \item {transform\+Direction}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{172}
+  \item {transform\+Point}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{172}
+  \item {translation}
+    \subitem {Leap\+::\+Frame}, \hyperpage{84}
+    \subitem {Leap\+::\+Hand}, \hyperpage{117}
+  \item {translation\+Probability}
+    \subitem {Leap\+::\+Frame}, \hyperpage{85}
+    \subitem {Leap\+::\+Hand}, \hyperpage{118}
+  \item {Type}
+    \subitem {Leap\+::\+Bone}, \hyperpage{16}
+    \subitem {Leap\+::\+Device}, \hyperpage{46}
+    \subitem {Leap\+::\+Finger}, \hyperpage{58}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{88}
+  \item {type}
+    \subitem {Leap\+::\+Bone}, \hyperpage{20}
+    \subitem {Leap\+::\+Config}, \hyperpage{32}
+    \subitem {Leap\+::\+Device}, \hyperpage{51}
+    \subitem {Leap\+::\+Finger}, \hyperpage{60}
+    \subitem {Leap\+::\+Gesture}, \hyperpage{94}
+
+  \indexspace
+
+  \item {up}
+    \subitem {Leap\+::\+Vector}, \hyperpage{237}
+
+  \indexspace
+
+  \item {Value\+Type}
+    \subitem {Leap\+::\+Config}, \hyperpage{28}
+  \item {Vector}
+    \subitem {Leap\+::\+Vector}, \hyperpage{226}
+  \item {vertical\+View\+Angle}
+    \subitem {Leap\+::\+Device}, \hyperpage{52}
+  \item {visible}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{223}
+
+  \indexspace
+
+  \item {warp}
+    \subitem {Leap\+::\+Image}, \hyperpage{133}
+  \item {width}
+    \subitem {Leap\+::\+Arm}, \hyperpage{13}
+    \subitem {Leap\+::\+Bone}, \hyperpage{21}
+    \subitem {Leap\+::\+Image}, \hyperpage{134}
+    \subitem {Leap\+::\+Interaction\+Box}, \hyperpage{143}
+    \subitem {Leap\+::\+Mask}, \hyperpage{159}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{184}
+    \subitem {Leap\+::\+Tracked\+Quad}, \hyperpage{223}
+  \item {wrist\+Position}
+    \subitem {Leap\+::\+Arm}, \hyperpage{13}
+    \subitem {Leap\+::\+Hand}, \hyperpage{118}
+
+  \indexspace
+
+  \item {x}
+    \subitem {Leap\+::\+Vector}, \hyperpage{240}
+  \item {x\+Axis}
+    \subitem {Leap\+::\+Vector}, \hyperpage{238}
+  \item {x\+Basis}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{173}
+
+  \indexspace
+
+  \item {y}
+    \subitem {Leap\+::\+Vector}, \hyperpage{240}
+  \item {y\+Axis}
+    \subitem {Leap\+::\+Vector}, \hyperpage{238}
+  \item {y\+Basis}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{174}
+  \item {yaw}
+    \subitem {Leap\+::\+Vector}, \hyperpage{238}
+
+  \indexspace
+
+  \item {z}
+    \subitem {Leap\+::\+Vector}, \hyperpage{241}
+  \item {z\+Axis}
+    \subitem {Leap\+::\+Vector}, \hyperpage{239}
+  \item {z\+Basis}
+    \subitem {Leap\+::\+Matrix}, \hyperpage{174}
+  \item {zero}
+    \subitem {Leap\+::\+Vector}, \hyperpage{239}
+  \item {Zone}
+    \subitem {Leap\+::\+Pointable}, \hyperpage{176}
+
+\end{theindex}

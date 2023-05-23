@@ -1,0 +1,440 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @file tools.cpp}
+\PYG{c+cm}{ * @author Jesus Zuñiga Mendez}
+\PYG{c+cm}{ * @brief Archivo que contiene funciones utiles para el main}
+\PYG{c+cm}{ * @version 1.0}
+\PYG{c+cm}{ * @date 18 de julio de 2019}
+\PYG{c+cm}{ * @copyright Copyleft (l) 2019}
+\PYG{c+cm}{ */}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}../include/Includes.h\PYGZdq{}}
+
+\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+
+
+\PYG{c+cm}{/*@brief Funciones elimina un gesto de la lista de gestos y elimina su carpeta}
+\PYG{c+cm}{ *@param gesto es el nombre del gesto que se desea eliminar}
+\PYG{c+cm}{ *@param nombre eñ npmbre del archivo que contiene la lista}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{EliminarGesto}\PYG{p}{(}\PYG{n}{string} \PYG{n}{gesto}\PYG{p}{,} \PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{ifstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/gestos/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{linea}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{nuevoArchivo} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{comando} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}rm \PYGZhy{}r ./resources/gestos/\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{s} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ruta} 
+        \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} EliminarGesto \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{//recorre el archivo que contiene los nombres de los archivos }
+    \PYG{c+c1}{//que contienen los datos}
+    \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{linea}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{linea}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{linea}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{n}{gesto}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{())} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{nuevoArchivo} \PYG{o}{=} \PYG{n}{nuevoArchivo} \PYG{o}{+} \PYG{n}{linea} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                \PYG{n}{comando} \PYG{o}{=} \PYG{n}{comando} \PYG{o}{+} \PYG{n}{linea}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}  
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{gesto}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{gesto}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{))\PYGZob{}}
+        \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{n}{comando}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{s}\PYG{o}{=}\PYG{n}{s}\PYG{p}{;}
+    \PYG{n}{ActualizarRegistro}\PYG{p}{(}\PYG{n}{nuevoArchivo}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}RegistroGestos\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}  
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que imprime los datos deun archivo}
+\PYG{c+cm}{ *@param nombre es el nombre del archivo ue se quiere imprimir}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{ImprimirRegistro}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{ifstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/gestos/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{linea}\PYG{p}{;}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ruta} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} CalcularGesto \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{//recorre el archivo que contiene los nombres de los archivos que contienen los datos}
+    \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{linea}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{linea}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{linea} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que escriben en un archivo una cadena de caracteres}
+\PYG{c+cm}{ *@param dato es lo que se va a escribir}
+\PYG{c+cm}{ *@param modo es como se debe abrir el archivo}
+\PYG{c+cm}{ *@param nombre es el nombre del archivo}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{EscribirCadena}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{dato}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{modo}\PYG{p}{,}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{ofstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{modo} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{out}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo }
+    \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{app}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo modo añadir}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{nombre}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} escribir cadema\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{archivo} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{dato}\PYG{p}{;}
+
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que actualiza el registro de gestos}
+\PYG{c+cm}{ *@param dato es lo que se va a escribir}
+\PYG{c+cm}{ *@param modo es como se debe abrir el archivo}
+\PYG{c+cm}{ *@param nombre es el nombre del archivo}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{ActualizarRegistro}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{dato}\PYG{p}{,}\PYG{k+kt}{int} \PYG{n}{modo}\PYG{p}{,}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{ofstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/gestos/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{modo} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{out}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo }
+    \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+        \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{app}\PYG{p}{);} \PYG{c+c1}{//abriendo archivo modo añadir}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{nombre}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} Actualizar Registro\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{archivo} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{dato}\PYG{p}{;}
+    \PYG{n}{archivo} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que devuelve el valor de x de la linea string}
+\PYG{c+cm}{ *@param dato es la linea que se analiza}
+\PYG{c+cm}{ *@return devuelve el valor de x}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{double} \PYG{n+nf}{devolverX}\PYG{p}{(}\PYG{n}{string} \PYG{n}{dato}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{contadorParentesis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{contadorComas}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{char} \PYG{n}{caracter}\PYG{p}{;}
+    \PYG{k+kt}{double} \PYG{n}{numero}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{resultado} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{dato}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{caracter} \PYG{o}{=} \PYG{n}{dato}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{contadorParentesis}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{},\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{contadorComas}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{((}\PYG{n}{contadorParentesis} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{contadorComas} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{i} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{))\PYGZob{}}
+            \PYG{n}{resultado} \PYG{o}{=} \PYG{n}{resultado} \PYG{o}{+} \PYG{n}{caracter}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{numero} \PYG{o}{=} \PYG{n}{atof}\PYG{p}{(}\PYG{n}{resultado}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+    \PYG{k}{return} \PYG{n}{numero}\PYG{p}{;}
+
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que devuelve el valor de y de la linea string}
+\PYG{c+cm}{ *@param dato es la linea que se analiza}
+\PYG{c+cm}{ *@return devuelve el valor de y}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{double} \PYG{n+nf}{devolverY}\PYG{p}{(}\PYG{n}{string} \PYG{n}{dato}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{contadorParentesis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{contadorComas}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{char} \PYG{n}{caracter}\PYG{p}{;}
+    \PYG{k+kt}{double} \PYG{n}{numero}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{resultado} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{posicionComa} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{dato}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{caracter} \PYG{o}{=} \PYG{n}{dato}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{contadorParentesis}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{},\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{posicionComa} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+            \PYG{n}{contadorComas}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{((}\PYG{n}{contadorParentesis} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{contadorComas} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{i} \PYG{o}{!=} \PYG{n}{posicionComa}\PYG{p}{))\PYGZob{}}
+            \PYG{n}{resultado} \PYG{o}{=} \PYG{n}{resultado} \PYG{o}{+} \PYG{n}{caracter}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{numero} \PYG{o}{=} \PYG{n}{atof}\PYG{p}{(}\PYG{n}{resultado}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+    \PYG{k}{return} \PYG{n}{numero}\PYG{p}{;}
+
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief Funciones que devuelve el valor de z de la linea string}
+\PYG{c+cm}{ *@param dato es la linea que se analiza}
+\PYG{c+cm}{ *@return devuelve el valor de z}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{double} \PYG{n+nf}{devolverZ}\PYG{p}{(}\PYG{n}{string} \PYG{n}{dato}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{contadorParentesis}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{contadorComas}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{char} \PYG{n}{caracter}\PYG{p}{;}
+    \PYG{k+kt}{float} \PYG{n}{numero}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{resultado} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{posicionComa} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{dato}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}\PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{caracter} \PYG{o}{=} \PYG{n}{dato}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}(\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{contadorParentesis}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{})\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{contadorParentesis}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{},\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{posicionComa} \PYG{o}{=} \PYG{n}{i}\PYG{p}{;}
+            \PYG{n}{contadorComas}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{((}\PYG{n}{contadorParentesis} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{contadorComas} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{i} \PYG{o}{!=} \PYG{n}{posicionComa}\PYG{p}{))\PYGZob{}}
+            \PYG{n}{resultado} \PYG{o}{=} \PYG{n}{resultado} \PYG{o}{+} \PYG{n}{caracter}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{numero} \PYG{o}{=} \PYG{n}{atof}\PYG{p}{(}\PYG{n}{resultado}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+    \PYG{k}{return} \PYG{n}{numero}\PYG{p}{;}
+
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*@brief funcion que calcula los promedios de los datos extraidos del leap }
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{CalcularGesto}\PYG{p}{()\PYGZob{}}
+    \PYG{n}{ifstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/ListaArchivos\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{nombreArchivo}\PYG{p}{;}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ruta} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} CalcularGesto \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{c+c1}{//recorre el archivo que contiene los nombres de los archivos que contienen los datos}
+    \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{nombreArchivo}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{nombreArchivo}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{ifstream} \PYG{n}{archivoDos}\PYG{p}{;}
+            \PYG{n}{string} \PYG{n}{rutaDos} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombreArchivo}\PYG{p}{;}
+            \PYG{n}{string} \PYG{n}{dato}\PYG{p}{;}
+            \PYG{n}{archivoDos}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{rutaDos}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+                \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{rutaDos} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} CalcularGesto \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+                \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{c+c1}{//recorre el archivo que contiene los datos y calcula el promedio}
+            \PYG{k+kt}{double} \PYG{n}{sumatoriaX} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k+kt}{double} \PYG{n}{promedioX} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k+kt}{double} \PYG{n}{sumatoriaY} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k+kt}{double} \PYG{n}{promedioY} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k+kt}{double} \PYG{n}{sumatoriaZ} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k+kt}{double} \PYG{n}{promedioZ} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{k+kt}{double} \PYG{n}{contadorPromedio}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+            \PYG{n}{string} \PYG{n}{lineaFinal}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}                      
+            \PYG{n}{string} \PYG{n}{parentesisAbrir}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}(\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{string} \PYG{n}{parentesisCerrar}\PYG{o}{=}\PYG{l+s}{\PYGZdq{})\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{string} \PYG{n}{coma} \PYG{o}{=} \PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{string} \PYG{n}{espacio} \PYG{o}{=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+            \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}trabajando con \PYGZdq{} \PYGZlt{}\PYGZlt{} rutaDos \PYGZlt{}\PYGZlt{} endl;}
+            \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivoDos}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+                \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivoDos}\PYG{p}{,}\PYG{n}{dato}\PYG{p}{);}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{sumatoriaX} \PYG{o}{=} \PYG{n}{sumatoriaX} \PYG{o}{+} \PYG{n}{devolverX}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{);}
+                    \PYG{n}{sumatoriaY} \PYG{o}{=} \PYG{n}{sumatoriaY} \PYG{o}{+} \PYG{n}{devolverY}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{);}
+                    \PYG{n}{sumatoriaZ} \PYG{o}{=} \PYG{n}{sumatoriaZ} \PYG{o}{+} \PYG{n}{devolverZ}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{);}
+                    \PYG{n}{contadorPromedio}\PYG{o}{++}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{promedioX} \PYG{o}{=} \PYG{n}{sumatoriaX} \PYG{o}{/} \PYG{n}{contadorPromedio}\PYG{p}{;}
+            \PYG{n}{promedioY} \PYG{o}{=} \PYG{n}{sumatoriaY} \PYG{o}{/} \PYG{n}{contadorPromedio}\PYG{p}{;}
+            \PYG{n}{promedioZ} \PYG{o}{=} \PYG{n}{sumatoriaZ} \PYG{o}{/} \PYG{n}{contadorPromedio}\PYG{p}{;}
+            \PYG{n}{lineaFinal} \PYG{o}{=} \PYG{n}{parentesisAbrir} 
+                        \PYG{o}{+} \PYG{p}{(}\PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{promedioX}\PYG{p}{))} \PYG{o}{+} \PYG{n}{coma} \PYG{o}{+} \PYG{n}{espacio} 
+                        \PYG{o}{+} \PYG{p}{(}\PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{promedioY}\PYG{p}{))} \PYG{o}{+} \PYG{n}{coma} \PYG{o}{+} \PYG{n}{espacio} 
+                        \PYG{o}{+} \PYG{p}{(}\PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{promedioZ}\PYG{p}{))} 
+                        \PYG{o}{+} \PYG{n}{parentesisCerrar}\PYG{p}{;} 
+            \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}coordenadas \PYGZdq{} \PYGZlt{}\PYGZlt{} promedioX \PYGZlt{}\PYGZlt{} \PYGZdq{} \PYGZdq{} \PYGZlt{}\PYGZlt{} promedioY \PYGZlt{}\PYGZlt{} \PYGZdq{} \PYGZdq{} \PYGZlt{}\PYGZlt{} promedioZ \PYGZlt{}\PYGZlt{} endl;}
+            \PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} lineaFinal \PYGZlt{}\PYGZlt{} endl;}
+            \PYG{n}{EscribirCadena}\PYG{p}{(}\PYG{n}{lineaFinal}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{nombreArchivo}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief funcion que comprueba si el lector leyo la misma cantidad de manos siempre}
+\PYG{c+cm}{ *@return devuelve el numero de manos}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int}  \PYG{n+nf}{ComprobarGestoManos}\PYG{p}{()\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{respuesta} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{comprueba} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{error} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{ifstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/CtdManos\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{dato}\PYG{p}{;}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ruta} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} CalcularGesto \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{comprueba} \PYG{o}{=} \PYG{n}{respuesta}\PYG{p}{;}
+        \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{dato}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{contador} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{comprueba} \PYG{o}{=} \PYG{n}{atoi}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+                \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{respuesta} \PYG{o}{=} \PYG{n}{atoi}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{comprueba} \PYG{o}{!=} \PYG{n}{respuesta}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{error} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{error} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{respuesta} \PYG{o}{=\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{return} \PYG{n}{respuesta}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief funcion que comprueba si el lector leyo la misma cantidad de dedos siempre}
+\PYG{c+cm}{ *@return devuelve el numero de dedos}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int}  \PYG{n+nf}{ComprobarGestoDedos}\PYG{p}{()\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{respuesta} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{comprueba} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{error} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{ifstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/CtdDedos\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{dato}\PYG{p}{;}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ruta} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} CalcularGesto \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{comprueba} \PYG{o}{=} \PYG{n}{respuesta}\PYG{p}{;}
+        \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{dato}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{contador} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{comprueba} \PYG{o}{=} \PYG{n}{atoi}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+                \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{respuesta} \PYG{o}{=} \PYG{n}{atoi}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{comprueba} \PYG{o}{!=} \PYG{n}{respuesta}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{error} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{error} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{respuesta} \PYG{o}{=\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{return} \PYG{n}{respuesta}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief devuelve la cantidad de lecturas que se realizaron}
+\PYG{c+cm}{ *@return devuelve la cantidad de lineas no nulas de un archivo}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int}  \PYG{n+nf}{ComprobarGestoCantidad}\PYG{p}{()\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{ifstream} \PYG{n}{archivo}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta}\PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/FrameID\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{dato}\PYG{p}{;}
+    \PYG{n}{archivo}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{in}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{fail}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}No se pudo abrir el archivo \PYGZdq{}}  \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{ruta} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} CalcularGesto \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+        \PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{archivo}\PYG{p}{.}\PYG{n}{eof}\PYG{p}{())\PYGZob{}}
+        \PYG{n}{getline}\PYG{p}{(}\PYG{n}{archivo}\PYG{p}{,}\PYG{n}{dato}\PYG{p}{);}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{dato}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{(),} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{contador}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief crea una carpeta con el nombre del gesto que el usuario seleccionó y crea el directorio}
+\PYG{c+cm}{ *@return devuelve el resultado devuelto por el comando system}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int}  \PYG{n+nf}{GuardarGesto}\PYG{p}{(}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{respuesta} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{s} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{comando} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}mkdir \PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/gestos/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{n}{comando} \PYG{o}{=} \PYG{n}{comando} \PYG{o}{+} \PYG{n}{ruta}\PYG{p}{;}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{n}{comando}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+    \PYG{n}{respuesta}\PYG{o}{=}\PYG{n}{s}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{respuesta}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief borra una carpeta con el nombre del gesto que el usuario seleccionó y elimina los archivos a dicha carpeta}
+\PYG{c+cm}{ *@return devuelve el resultado devuelto por el comando system }
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int}  \PYG{n+nf}{BorrarGesto}\PYG{p}{(}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{respuesta} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{s} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{comando} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}rmdir \PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/gestos/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{n}{comando} \PYG{o}{=} \PYG{n}{comando} \PYG{o}{+} \PYG{n}{ruta}\PYG{p}{;}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{n}{comando}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+    \PYG{n}{respuesta}\PYG{o}{=}\PYG{n}{s}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{respuesta}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief mueve los archivos de temp a la carpeta del gesto correspondiente}
+\PYG{c+cm}{ *@return devuelve el resultado devuelto por el comando system }
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int}  \PYG{n+nf}{MoverArchivos}\PYG{p}{(}\PYG{n}{string} \PYG{n}{nombre}\PYG{p}{)\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{respuesta} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{s} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{comando} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}mv \PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{ruta} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}./resources/temp/* ./resources/gestos/\PYGZdq{}} \PYG{o}{+} \PYG{n}{nombre}\PYG{p}{;}
+    \PYG{n}{comando} \PYG{o}{=} \PYG{n}{comando} \PYG{o}{+} \PYG{n}{ruta}\PYG{p}{;}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{system}\PYG{p}{(}\PYG{n}{comando}\PYG{p}{.}\PYG{n}{c\PYGZus{}str}\PYG{p}{());}
+    \PYG{n}{respuesta}\PYG{o}{=}\PYG{n}{s}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{respuesta}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief quita los espacios de una cadena}
+\PYG{c+cm}{ *@return devuelve la cadena con los espacios sustituidos por |}
+\PYG{c+cm}{ */}
+\PYG{n}{string} \PYG{n+nf}{QuitarEspacios}\PYG{p}{(}\PYG{n}{string} \PYG{n}{cadena}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{string} \PYG{n}{cadenaNueva} \PYG{o}{=} \PYG{n}{cadena}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cadenaNueva}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{cadena}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{cadena}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{cadenaNueva}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}|\PYGZsq{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{cadenaNueva}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ *@brief pone espacios en una cadena}
+\PYG{c+cm}{ *@return devuelve la cadena con los | sustituidos por espacios}
+\PYG{c+cm}{ */}
+\PYG{n}{string} \PYG{n+nf}{PonerEspacios}\PYG{p}{(}\PYG{n}{string} \PYG{n}{cadena}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{string} \PYG{n}{cadenaNueva} \PYG{o}{=} \PYG{n}{cadena}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cadenaNueva}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{cadena}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{cadena}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}|\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{cadenaNueva}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{cadenaNueva}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,276 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}./Includes/Includes.h\PYGZdq{}}
+
+
+\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+\PYG{c+cp}{\PYGZsh{}define Data Element\PYGZlt{}string\PYGZgt{} }\PYG{c+c1}{// vagancia}
+\PYG{c+cp}{\PYGZsh{}define DataEntero Element\PYGZlt{}int\PYGZgt{} }\PYG{c+c1}{// vagancia}
+
+
+
+\PYG{k+kt}{int} \PYG{n+nf}{numeroRandom}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{minimo}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{tope}\PYG{p}{)\PYGZob{}}
+    \PYG{c+c1}{//codigo tomado de https://es.stackoverflow.com/questions/148661/por\PYGZhy{}qu\PYGZpc{}C3\PYGZpc{}A9\PYGZhy{}el\PYGZhy{}n\PYGZpc{}C3\PYGZpc{}BAmero\PYGZhy{}que\PYGZhy{}me\PYGZhy{}genera\PYGZhy{}el\PYGZhy{}rand\PYGZhy{}siempre\PYGZhy{}es\PYGZhy{}el\PYGZhy{}mismo}
+    \PYG{c+c1}{// Tenemos control sobre el algoritmo y distribución a usar.}
+    \PYG{n}{random\PYGZus{}device} \PYG{n}{device}\PYG{p}{;}
+    \PYG{c+c1}{// Se usa el algoritmo Mersenne twister}
+    \PYG{c+c1}{// https://es.wikipedia.org/wiki/Mersenne\PYGZus{}twister}
+    \PYG{n}{mt19937} \PYG{n}{generador}\PYG{p}{(}\PYG{n}{device}\PYG{p}{());}
+    \PYG{c+c1}{// Escogemos una distribucion uniforme entre 0 y 100}
+    \PYG{n}{uniform\PYGZus{}int\PYGZus{}distribution}\PYG{o}{\PYGZlt{}\PYGZgt{}} \PYG{n}{distribucion}\PYG{p}{(}\PYG{n}{minimo}\PYG{p}{,} \PYG{n}{tope}\PYG{p}{);}
+    \PYG{c+cm}{/* Generamos un número pseudo\PYGZhy{}aleatorio con el algoritmo}
+\PYG{c+cm}{    mt19937 distribuido uniformemente entre 0 y 100 */}
+    \PYG{k+kt}{int} \PYG{n}{a} \PYG{o}{=} \PYG{n}{distribucion}\PYG{p}{(}\PYG{n}{generador}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{a}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief funcion que imprime un menu}
+\PYG{c+cm}{ * @return devuelve la seleccion del usuario}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{int} \PYG{n+nf}{Menu}\PYG{p}{()\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{respuesta}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Digite la opcion que quiere probar\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}1: Parentesis\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}2: Prioridad\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}0: Salir\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{cin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{respuesta}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{respuesta}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief Funcion que revisa que los parentesis esten valanceados}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{Balanceo}\PYG{p}{(}\PYG{n}{string} \PYG{n}{cadena}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{Stack}\PYG{o}{\PYGZlt{}}\PYG{n}{Data}\PYG{o}{\PYGZgt{}} \PYG{n}{laPila}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{laCadena} \PYG{o}{=} \PYG{n}{cadena}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{elCaracter} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Revisando: \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{laCadena} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{tamanioArregloValidos} \PYG{o}{=} \PYG{l+m+mi}{3}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{arregloValidosApertura}\PYG{p}{[}\PYG{n}{tamanioArregloValidos}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}\PYGZob{}\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}[\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}(\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+    \PYG{n}{string} \PYG{n}{arregloValidosCerradura}\PYG{p}{[}\PYG{n}{tamanioArregloValidos}\PYG{p}{]} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}\PYGZcb{}\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}]\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{})\PYGZdq{}}\PYG{p}{\PYGZcb{};}
+    \PYG{k+kt}{int} \PYG{n}{estaBalanceado} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{c+c1}{//en este for se gusrda en una pila solo los parentesis de la cadena}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{laCadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{k+kt}{int} \PYG{n}{esParentesisApertura}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{esParentesisCerradura}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{indexParentesis} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{n}{elCaracter} \PYG{o}{=} \PYG{n}{laCadena}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{tamanioArregloValidos}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{arregloValidosApertura}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{o}{==} \PYG{n}{elCaracter}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{esParentesisApertura} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{arregloValidosCerradura}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]} \PYG{o}{==} \PYG{n}{elCaracter}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{esParentesisCerradura} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                \PYG{n}{indexParentesis} \PYG{o}{=} \PYG{n}{j}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{esParentesisApertura} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}es apertura\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{n}{laPila}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{Data}\PYG{p}{(}\PYG{n}{elCaracter}\PYG{p}{));}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{esParentesisCerradura} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}es cerradura\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{n}{Data} \PYG{n}{e} \PYG{o}{=} \PYG{n}{laPila}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{isValid}\PYG{p}{())}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}comparo\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{e}\PYG{p}{.}\PYG{n}{get}\PYG{p}{()} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} con \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{arregloValidosApertura}\PYG{p}{[}\PYG{n}{indexParentesis}\PYG{p}{]} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{get}\PYG{p}{()} \PYG{o}{!=} \PYG{n}{arregloValidosApertura}\PYG{p}{[}\PYG{n}{indexParentesis}\PYG{p}{])\PYGZob{}}
+                    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}entre\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+                    \PYG{n}{estaBalanceado} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}      
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{estaBalanceado} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Hilera no valida\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Hilera valida\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * @brief funcion que hace cola de prioridades}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void} \PYG{n+nf}{Prioridad}\PYG{p}{(}\PYG{n}{string} \PYG{n}{cadena}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{string} \PYG{n}{laCadena} \PYG{o}{=} \PYG{n}{cadena}\PYG{p}{;}
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Voy a proccesar \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{laCadena} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{prioridad} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{espacio} \PYG{o}{=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{caracter} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{numeros} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}1234567890\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{numero} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{cantidadColasCadena} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{cantidadColas} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{yaEmpezeCadenaColas} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+    \PYG{c+c1}{//sacamos el numero de colas}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{laCadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{caracter} \PYG{o}{=} \PYG{n}{laCadena}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{!=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)\PYGZob{}}
+            \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{numeros}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                \PYG{n}{numero} \PYG{o}{=} \PYG{n}{numeros}\PYG{p}{[}\PYG{n}{j}\PYG{p}{];}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{caracter} \PYG{o}{==} \PYG{n}{numero}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{cantidadColasCadena} \PYG{o}{=} \PYG{n}{cantidadColasCadena} \PYG{o}{+} \PYG{n}{numero}\PYG{p}{;}
+                    \PYG{n}{yaEmpezeCadenaColas} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{yaEmpezeCadenaColas} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{i} \PYG{o}{=} \PYG{n}{laCadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+            \PYG{n}{cantidadColas} \PYG{o}{=} \PYG{n}{stoi}\PYG{p}{(}\PYG{n}{cantidadColasCadena}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    
+
+    \PYG{c+c1}{//llenamos el arreglo con la cantidad de colas}
+    \PYG{n}{Queue}\PYG{o}{\PYGZlt{}}\PYG{n}{DataEntero}\PYG{o}{\PYGZgt{}} \PYG{o}{*}\PYG{n}{ArregloColas}\PYG{p}{[}\PYG{n}{cantidadColas}\PYG{p}{];}
+    \PYG{n}{Queue}\PYG{o}{\PYGZlt{}}\PYG{n}{DataEntero}\PYG{o}{\PYGZgt{}} \PYG{o}{*}\PYG{n}{ArregloColasRespaldo}\PYG{p}{[}\PYG{n}{cantidadColas}\PYG{p}{];}
+    \PYG{k+kt}{int} \PYG{n}{generadoAlestorio} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cantidadColas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{k+kt}{int} \PYG{n}{cantidadNumerosEnLaCola} \PYG{o}{=} \PYG{n}{numeroRandom}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{);}
+        \PYG{n}{Queue}\PYG{o}{\PYGZlt{}}\PYG{n}{DataEntero}\PYG{o}{\PYGZgt{}} \PYG{o}{*}\PYG{n}{cola} \PYG{o}{=} \PYG{k}{new} \PYG{p}{(}\PYG{n}{Queue}\PYG{o}{\PYGZlt{}}\PYG{n}{DataEntero}\PYG{o}{\PYGZgt{}}\PYG{p}{);}
+        \PYG{n}{Queue}\PYG{o}{\PYGZlt{}}\PYG{n}{DataEntero}\PYG{o}{\PYGZgt{}} \PYG{o}{*}\PYG{n}{colaRespaldo} \PYG{o}{=} \PYG{k}{new} \PYG{p}{(}\PYG{n}{Queue}\PYG{o}{\PYGZlt{}}\PYG{n}{DataEntero}\PYG{o}{\PYGZgt{}}\PYG{p}{);}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{cantidadNumerosEnLaCola}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{generadoAlestorio} \PYG{o}{=} \PYG{n}{numeroRandom}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{);}
+            \PYG{n}{cola}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{enqueue}\PYG{p}{(}\PYG{n}{DataEntero}\PYG{p}{(}\PYG{n}{generadoAlestorio}\PYG{p}{));}
+            \PYG{n}{colaRespaldo}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{enqueue}\PYG{p}{(}\PYG{n}{DataEntero}\PYG{p}{(}\PYG{n}{generadoAlestorio}\PYG{p}{));}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{n}{ArregloColas}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{cola}\PYG{p}{;}
+        \PYG{n}{ArregloColasRespaldo}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{colaRespaldo}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+c1}{//se imprimen las colas hechas}
+    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cantidadColas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)}
+    \PYG{p}{\PYGZob{}}
+        \PYG{n}{Queue}\PYG{o}{\PYGZlt{}}\PYG{n}{DataEntero}\PYG{o}{\PYGZgt{}} \PYG{o}{*}\PYG{n}{cola} \PYG{o}{=} \PYG{n}{ArregloColas}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{n}{string} \PYG{n}{impresion} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Cola \PYGZdq{}} \PYG{o}{+} \PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} : \PYGZdq{}}\PYG{p}{;}
+        \PYG{k+kt}{int} \PYG{n}{seguir} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{k}{while} \PYG{p}{(}\PYG{n}{seguir} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{DataEntero} \PYG{n}{e} \PYG{o}{=} \PYG{n}{cola}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{dequeue}\PYG{p}{();}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{isValid}\PYG{p}{())}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{impresion} \PYG{o}{=} \PYG{n}{impresion} \PYG{o}{+}  \PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{get}\PYG{p}{())} \PYG{o}{+} \PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                \PYG{n}{seguir} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{impresion} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}  
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+c1}{//hacemos un arreglo con las prioridades}
+    \PYG{k+kt}{int} \PYG{n}{arregloPrioridades}\PYG{p}{[}\PYG{n}{cantidadColas}\PYG{p}{];}
+    \PYG{k+kt}{int} \PYG{n}{contadorEspacios} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{cantidadPrioridad} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+    \PYG{k+kt}{int} \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{for} \PYG{p}{(}\PYG{n}{uint} \PYG{n}{i} \PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{laCadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+        \PYG{n}{caracter} \PYG{o}{=} \PYG{n}{laCadena}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+        \PYG{k}{if} \PYG{p}{((}\PYG{n}{caracter} \PYG{o}{!=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{contadorEspacios} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{))\PYGZob{}}
+            \PYG{n}{contadorEspacios} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}\PYG{k}{else} \PYG{k}{if} \PYG{p}{((}\PYG{n}{caracter} \PYG{o}{!=} \PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{contadorEspacios} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{))\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{((}\PYG{n}{caracter} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}:\PYGZdq{}}\PYG{p}{)} \PYG{o}{||} \PYG{p}{(}\PYG{n}{i} \PYG{o}{==} \PYG{p}{(}\PYG{n}{laCadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)))\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{i} \PYG{o}{==} \PYG{p}{(}\PYG{n}{laCadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{))\PYGZob{}}
+                    \PYG{n}{cantidadPrioridad} \PYG{o}{=} \PYG{n}{cantidadPrioridad} \PYG{o}{+} \PYG{n}{caracter}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{contador} \PYG{o}{\PYGZlt{}} \PYG{n}{cantidadColas}\PYG{p}{)\PYGZob{}}
+                    \PYG{n}{arregloPrioridades}\PYG{p}{[}\PYG{n}{contador}\PYG{p}{]} \PYG{o}{=} \PYG{n}{stoi}\PYG{p}{(}\PYG{n}{cantidadPrioridad}\PYG{p}{);}
+                    \PYG{n}{contador}\PYG{o}{++}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                    \PYG{n}{i} \PYG{o}{=} \PYG{n}{laCadena}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{cantidadPrioridad} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                \PYG{n}{cantidadPrioridad} \PYG{o}{=} \PYG{n}{cantidadPrioridad} \PYG{o}{+} \PYG{n}{caracter}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+
+    \PYG{c+c1}{//calculamos el resultado}
+    \PYG{k+kt}{int} \PYG{n}{seguir} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{resultado} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Salidas: \PYGZdq{}}\PYG{p}{;}
+    \PYG{k}{while} \PYG{p}{(}\PYG{n}{seguir} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+        \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{cantidadColas}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+            \PYG{k+kt}{int} \PYG{n}{cantidad} \PYG{o}{=} \PYG{n}{arregloPrioridades}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{n}{Queue}\PYG{o}{\PYGZlt{}}\PYG{n}{DataEntero}\PYG{o}{\PYGZgt{}} \PYG{o}{*}\PYG{n}{cola} \PYG{o}{=} \PYG{n}{ArregloColasRespaldo}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{j} \PYG{o}{\PYGZlt{}} \PYG{n}{cantidad}\PYG{p}{;} \PYG{n}{j}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{ArregloColasRespaldo}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mh}{0x0}\PYG{p}{)\PYGZob{}}
+                    \PYG{k+kt}{int} \PYG{n}{contador} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+                    \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{cantidadColas}\PYG{p}{;} \PYG{n}{k}\PYG{o}{++}\PYG{p}{)\PYGZob{}}
+                        \PYG{k}{if} \PYG{p}{(}\PYG{n}{ArregloColasRespaldo}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]} \PYG{o}{==} \PYG{l+m+mh}{0x0}\PYG{p}{)\PYGZob{}}
+                            \PYG{n}{contador} \PYG{o}{++}\PYG{p}{;}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{contador} \PYG{o}{==} \PYG{n}{cantidadColas}\PYG{p}{)\PYGZob{}}
+                        \PYG{n}{seguir} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                    \PYG{n}{DataEntero} \PYG{n}{e} \PYG{o}{=} \PYG{n}{cola}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{dequeue}\PYG{p}{();}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{isValid}\PYG{p}{())}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{resultado} \PYG{o}{=} \PYG{n}{resultado} \PYG{o}{+}  \PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{get}\PYG{p}{())} \PYG{o}{+} \PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+                        \PYG{n}{ArregloColasRespaldo}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mh}{0x0}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+
+        \PYG{p}{\PYGZcb{}}
+
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{resultado} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+
+\PYG{c+c1}{//Queue\PYGZlt{}Data\PYGZgt{} laCola;}
+
+\PYG{c+c1}{//laCola.enqueue(Data(elCaracter));}
+
+\PYG{c+c1}{//Data e = laCola.dequeue();}
+        \PYG{c+cm}{/*for (uint i = 0; i \PYGZlt{} laCadena.size(); i++)}
+\PYG{c+cm}{    \PYGZob{}}
+\PYG{c+cm}{        Data e = laCola.dequeue();}
+\PYG{c+cm}{        if (e.isValid())}
+\PYG{c+cm}{        \PYGZob{}}
+\PYG{c+cm}{            cout \PYGZlt{}\PYGZlt{} e.get() \PYGZlt{}\PYGZlt{} endl;}
+\PYG{c+cm}{        \PYGZcb{}}
+\PYG{c+cm}{    \PYGZcb{}*/}
+
+    \PYG{c+c1}{//Stack\PYGZlt{}Data\PYGZgt{} laPila;}
+    \PYG{c+c1}{//laPila.push(elCaracter);}
+    \PYG{c+c1}{// Data e = laPila.peek();}
+    \PYG{c+c1}{// if (e.isValid())}
+    \PYG{c+c1}{//     cout \PYGZlt{}\PYGZlt{} \PYGZdq{}peeking: \PYGZdq{} \PYGZlt{}\PYGZlt{} e.get() \PYGZlt{}\PYGZlt{} endl;}
+
+    \PYG{c+c1}{// for (uint i = 0; i \PYGZlt{} laCadena.size(); i++)}
+    \PYG{c+c1}{// \PYGZob{}}
+    \PYG{c+c1}{//     Data e = laPila.pop();}
+    \PYG{c+c1}{//     if (e.isValid())}
+    \PYG{c+c1}{//     \PYGZob{}}
+    \PYG{c+c1}{//         cout \PYGZlt{}\PYGZlt{} e.get() \PYGZlt{}\PYGZlt{} endl;}
+    \PYG{c+c1}{//     \PYGZcb{}}
+    \PYG{c+c1}{// \PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k+kt}{int} \PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{argc}\PYG{p}{,} \PYG{k+kt}{char}\PYG{o}{**} \PYG{n}{argv}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+    \PYG{k+kt}{int} \PYG{n}{seleccion} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{n}{string} \PYG{n}{laCadena} \PYG{o}{=} \PYG{n}{argv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{];}
+    \PYG{k}{do}\PYG{p}{\PYGZob{}}
+        \PYG{n}{seleccion} \PYG{o}{=} \PYG{n}{Menu}\PYG{p}{();}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Balanceo\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{n}{Balanceo}\PYG{p}{(}\PYG{n}{laCadena}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{)\PYGZob{}}
+            \PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Prioridad\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{endl}\PYG{p}{;}
+            \PYG{n}{Prioridad}\PYG{p}{(}\PYG{n}{laCadena}\PYG{p}{);}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}\PYG{k}{while} \PYG{p}{(}\PYG{n}{seleccion} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

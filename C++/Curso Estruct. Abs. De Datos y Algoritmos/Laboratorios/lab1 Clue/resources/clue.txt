@@ -1,0 +1,31 @@
+#######################################
+#HHHHHHHH## ##IIIIIIIIIIII##2##AAAAAAA#
+#HHHHHHHH#   #IIIIIIIIIIII#   #AAAAAAA#
+#HHHHHHHH#   #IIIIIIIIIIII#   #AAAAAAA#
+#HHHHHHHH#   #IIIIIIIIIIII#   #AAAAAAA#
+#######//#   #IIIIIIIIIIII#   #AAAAAAA#
+##           #IIIIIIIIIIII#   #AAAAAAA#
+#1           #IIIIIIIIIIII#   ###//####
+##           #IIIIIIIIIIII#          ##
+#########    #####////#####          3#
+#GGGGGGG##                           ##
+#GGGGGGGG#             #//#############
+#GGGGGGGG/             #BBBBBBBBBBBBBB#
+#GGGGGGGG#             #BBBBBBBBBBBBBB#
+#GGGGGGG##             #BBBBBBBBBBBBBB#
+####//###              /BBBBBBBBBBBBBB#
+#                      #BBBBBBBBBBBBBB#
+###########            ########BBBBBBB#
+#FFFFFFFFF#                   #########
+#FFFFFFFFF/                          ##
+#FFFFFFFFF#                           #
+###########      #//######//#        ##
+##               #DDDDDDDDDD#   ##//###
+#6               #DDDDDDDDDD#   #CCCCC#
+##               #DDDDDDDDDD#   #CCCCC#
+############/#   #DDDDDDDDDD#   #CCCCC#
+#EEEEEEEEEEEE#   #DDDDDDDDDD#   #CCCCC#
+#EEEEEEEEEEEE#   #DDDDDDDDDD#   #CCCCC#
+#EEEEEEEEEEEE#   #DDDDDDDDDD#   #CCCCC#
+#EEEEEEEEEEEE##5##DDDDDDDDDD##4##CCCCC#
+#######################################

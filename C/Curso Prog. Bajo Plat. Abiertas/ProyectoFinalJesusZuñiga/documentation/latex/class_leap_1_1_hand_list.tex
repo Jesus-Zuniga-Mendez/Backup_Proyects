@@ -1,0 +1,264 @@
+\hypertarget{class_leap_1_1_hand_list}{}\section{Leap\+:\+:Hand\+List Class Reference}
+\label{class_leap_1_1_hand_list}\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Hand\+List\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Hand\+List\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$ \hyperlink{class_leap_1_1_hand_list}{Hand\+List}, \hyperlink{class_leap_1_1_hand}{Hand} $>$ \hyperlink{class_leap_1_1_hand_list_a9c35a4db8fd94a3b1a029efecbd13668}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a5f0e45c94fcbb0e43395732142bd7bb1}\label{class_leap_1_1_hand_list_a5f0e45c94fcbb0e43395732142bd7bb1}} 
+{\bfseries Hand\+List} (const \hyperlink{class_leap_1_1_list_base_implementation}{List\+Base\+Implementation}$<$ \hyperlink{class_leap_1_1_hand}{Hand} $>$ \&)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand_list_a98b159b1e306e8ae0da3d99ae1eba8d3}{Hand\+List} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_hand_list_a91ac67ed01b575c7b3ef76486505105f}{count} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_hand_list_a219e6515714fd2466d895a0071894d51}{is\+Empty} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} \hyperlink{class_leap_1_1_hand_list_a83ae24fb8d7f7e7acfa5edbcfdd2c87c}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand_list}{Hand\+List} \& \hyperlink{class_leap_1_1_hand_list_a7715a0e0df3e513c6cb1869691ef982d}{append} (const \hyperlink{class_leap_1_1_hand_list}{Hand\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} \hyperlink{class_leap_1_1_hand_list_a8b2fc4b411614212be1ea71f3844e8c5}{leftmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} \hyperlink{class_leap_1_1_hand_list_a6094a73553380e84693b2cd96ce720dd}{rightmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} \hyperlink{class_leap_1_1_hand_list_a25714b1732a5075c51e1acaf202cbe1f}{frontmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand_list_a9c35a4db8fd94a3b1a029efecbd13668}{const\+\_\+iterator} \hyperlink{class_leap_1_1_hand_list_a134157c3f6bb1521b97a8194801788fc}{begin} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand_list_a9c35a4db8fd94a3b1a029efecbd13668}{const\+\_\+iterator} \hyperlink{class_leap_1_1_hand_list_a9a975bb7abeb64e1bccb3d2ce32bc07b}{end} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_hand_list}{Hand\+List} class represents a list of \hyperlink{class_leap_1_1_hand}{Hand} objects.
+
+Get a \hyperlink{class_leap_1_1_hand_list}{Hand\+List} object by calling \hyperlink{class_leap_1_1_frame_ad1c4ed839718ce803f8fb884046ff2ca}{Frame\+::hands()}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a9c35a4db8fd94a3b1a029efecbd13668}\label{class_leap_1_1_hand_list_a9c35a4db8fd94a3b1a029efecbd13668}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$\hyperlink{class_leap_1_1_hand_list}{Hand\+List}, \hyperlink{class_leap_1_1_hand}{Hand}$>$ \hyperlink{class_leap_1_1_hand_list_a9c35a4db8fd94a3b1a029efecbd13668}{Leap\+::\+Hand\+List\+::const\+\_\+iterator}}
+
+A C++ iterator type for this \hyperlink{class_leap_1_1_hand_list}{Hand\+List} objects.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a98b159b1e306e8ae0da3d99ae1eba8d3}\label{class_leap_1_1_hand_list_a98b159b1e306e8ae0da3d99ae1eba8d3}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!Hand\+List@{Hand\+List}}
+\index{Hand\+List@{Hand\+List}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{Hand\+List()}{HandList()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Hand\+List\+::\+Hand\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty list of hands. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a7715a0e0df3e513c6cb1869691ef982d}\label{class_leap_1_1_hand_list_a7715a0e0df3e513c6cb1869691ef982d}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand_list}{Hand\+List}\& Leap\+::\+Hand\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_hand_list}{Hand\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the members of the specified \hyperlink{class_leap_1_1_hand_list}{Hand\+List} to this \hyperlink{class_leap_1_1_hand_list}{Hand\+List}. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{class_leap_1_1_hand_list}{Hand\+List} object containing \hyperlink{class_leap_1_1_hand}{Hand} objects to append to the end of this \hyperlink{class_leap_1_1_hand_list}{Hand\+List}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a134157c3f6bb1521b97a8194801788fc}\label{class_leap_1_1_hand_list_a134157c3f6bb1521b97a8194801788fc}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!begin@{begin}}
+\index{begin@{begin}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand_list_a9c35a4db8fd94a3b1a029efecbd13668}{const\+\_\+iterator} Leap\+::\+Hand\+List\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the beginning of this \hyperlink{class_leap_1_1_hand_list}{Hand\+List}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a91ac67ed01b575c7b3ef76486505105f}\label{class_leap_1_1_hand_list_a91ac67ed01b575c7b3ef76486505105f}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!count@{count}}
+\index{count@{count}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Hand\+List\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of hands in this list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxyReturn}{Returns}
+The number of hands in this list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a9a975bb7abeb64e1bccb3d2ce32bc07b}\label{class_leap_1_1_hand_list_a9a975bb7abeb64e1bccb3d2ce32bc07b}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!end@{end}}
+\index{end@{end}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand_list_a9c35a4db8fd94a3b1a029efecbd13668}{const\+\_\+iterator} Leap\+::\+Hand\+List\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the end of this \hyperlink{class_leap_1_1_hand_list}{Hand\+List}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a25714b1732a5075c51e1acaf202cbe1f}\label{class_leap_1_1_hand_list_a25714b1732a5075c51e1acaf202cbe1f}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!frontmost@{frontmost}}
+\index{frontmost@{frontmost}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{frontmost()}{frontmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} Leap\+::\+Hand\+List\+::frontmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the front within the standard Leap Motion frame of reference (i.\+e has the smallest Z coordinate).
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The frontmost hand, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a219e6515714fd2466d895a0071894d51}\label{class_leap_1_1_hand_list_a219e6515714fd2466d895a0071894d51}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Hand\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether the list is empty.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if the list has no members. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a8b2fc4b411614212be1ea71f3844e8c5}\label{class_leap_1_1_hand_list_a8b2fc4b411614212be1ea71f3844e8c5}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!leftmost@{leftmost}}
+\index{leftmost@{leftmost}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{leftmost()}{leftmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} Leap\+::\+Hand\+List\+::leftmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the left within the standard Leap Motion frame of reference (i.\+e has the smallest X coordinate).
+
+Note\+: to determine whether a hand is the left hand, use the \hyperlink{class_leap_1_1_hand_a97a82aa4c1ca8ef138fc8d9939b017d8}{Hand\+::is\+Left()} function.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The leftmost hand, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a83ae24fb8d7f7e7acfa5edbcfdd2c87c}\label{class_leap_1_1_hand_list_a83ae24fb8d7f7e7acfa5edbcfdd2c87c}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} Leap\+::\+Hand\+List\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Access a list member by its position in the list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The zero-\/based list position index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_hand}{Hand} object at the specified index. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_hand_list_a6094a73553380e84693b2cd96ce720dd}\label{class_leap_1_1_hand_list_a6094a73553380e84693b2cd96ce720dd}} 
+\index{Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}!rightmost@{rightmost}}
+\index{rightmost@{rightmost}!Leap\+::\+Hand\+List@{Leap\+::\+Hand\+List}}
+\subsubsection{\texorpdfstring{rightmost()}{rightmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} Leap\+::\+Hand\+List\+::rightmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the right within the standard Leap Motion frame of reference (i.\+e has the largest X coordinate).
+
+Note\+: to determine whether a hand is the right hand, use the \hyperlink{class_leap_1_1_hand_aeff477c4cb80ac3fd7e76db4911c300a}{Hand\+::is\+Right()} function.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The rightmost hand, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

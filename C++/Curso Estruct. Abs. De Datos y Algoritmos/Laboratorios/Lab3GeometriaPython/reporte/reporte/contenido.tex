@@ -1,0 +1,68 @@
+\tableofcontents
+\listoffigures
+\newpage
+
+\section{Introduccion.}
+	En este laboratorio, el objetivo fue que los estudiantes aplicaran los conocimientos
+de memoria dinámica, punteros y, en general, el conocimiento previo de los cursos anteriores
+de programación, con la finalidad de desarrollar el juego de mesa Clue, también conocido como
+Cluedo, pero en su versión para computadora. El laboratorio implica que los estudiantes apliquen
+programación orientada a objetos, así como la implementación de las mecánicas básicas del juego
+de mesa original.
+
+Para desarrollar ambas versiones, se tomó como punto de partida la idea de utilizar
+una base de datos que contiene toda la información necesaria, de este modo, el programa
+podría ser más compacto y eficiente, pues, no tendría que desarrollarse una gran cantidad de
+condicionales ni analizar múltiples patrones, sino, simplemente, dejar que el proceso de
+automatización se encargue de analizar la información proporcionada.
+\section{Funcionamiento del programa.}
+
+	Este programa requiere la implementación de múltiples objetos, básicamente dos clases,
+una llamada jugador que incluye los atributos: name, para almacenar el nombre del jugador una 
+vez que se instancia; location, para proporcionar un identificador que indique dónde se encuentra
+en el tablero del juego; active es una variable que se debe utilizar para indicar si se instació
+la clase; deck, es un arreglo de string que permite almacenar las cartas que el método Sr Vladimir
+proporciona de forma aleatoria; Además, contiene el método call_me, utilizado para darle el 
+nombre a los jugadores.
+
+\subsection{Repartición y números pseudoaleatorios}
+
+	Para la repartición de cartas se utiliza el método Sr. Vladimir, este debe recibir la
+longitud del arreglo así como un arreglo del cual tomará cartas. Básicamente esta función toma
+el arreglo del parámetro, y lo copia en otros dos arreglos para así verificar, de uno si las 
+cartas ya fueron asignadas, y de otro las distribuye. Esto es logrado mediante dos ciclos que
+iteran en las posiciones de los arreglos ingresados y luego en la posición de la baraja del 
+jugador. Este método es fundamental, pues, sin él, no se podría dar inicio de forma automática
+al juego.
+	
+	Otra función fundamental del juego es rand_gen, que se utiliza en múltiples partes del
+código para generar un número pseudoaleatorio a partir de la fecha y hora del computador. Es 
+utilizada para tirar dados, y cualquier procedimiento que requiera obtener algún número al azar.
+
+\subsection{Tablero de juego}
+
+	Uno de los requisitos básicos del juego es proporcionar la posibilidad del imprimir las
+posiciones de los jugadores en el tablero, por lo tanto, se utilizó una serie de funciones y 
+variables especiales para imprimir el tablero con colores, mejorando así la presentación del mismo
+y la facilidad para diferenciar los diferentes lugares por los cuales los jugadores se movilizan.
+Con ello, se creó la clase Tablero, que cuenta con el método que permite mover las fichas. Esta
+clase cuenta con atributos tales como las dimensiones del tablero de juego, esto a partir de una
+matriz, además, esta se debe crear de forma dinámica, reservando así, un espacio de memoria no 
+fijo.
+	El tablero cuenta con un método que permite imprimir el estado actual del juego, esto
+gracias a dos ciclos que iteran entre columnas y filas, además de identificar si ya se llegó a 
+la posición límite (El borde) del mismo, con el propósito de imprimir un salto de línea.
+	En el respectivo archivo que contiene todo lo referente a tablero.h, se encuentra el 
+constructor y el destructor del objeto. Además, contiene el método que permite asignar las
+dimensiones del tablero, llamado "ObtenerDimensiones" que, abre el archivo que contiene el
+de referencia, para luego recorrerlo y contar el tamaño; de esta forma, establece las 
+dimensiones de forma dinámica y efectiva
+
+ 
+\section{Conclusiones.}
+Después de desarrollar la primera version de este programa se pueden obtener las siguientes conclusiones.
+\begin{itemize}
+	\item Fue posible implementar un programa en los lenguajes de programación, Python y C++,para determinar el nombre de los codones constituyentes de una cadena de ARN.
+	\item Se logró, de manera satisfactoria, utilizar los conocimientos fundamentales de los cursos anteriores de programación, para desarrollar los algoritmos solicitados para la práctica de laboratorio.
+	\item Los programas fueron desarrollados de la forma propuesta en grupo, mediante el uso de una base de datos, permitiendo, así, reducir la extensión del código.
+\end{itemize}

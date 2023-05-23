@@ -1,0 +1,355 @@
+
+\documentclass[11pt]{article}
+
+% Document config
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{tcolorbox}
+\usepackage[nottoc]{tocbibind}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{lineno}
+\usepackage{fancyvrb}
+\usepackage[utf8]{inputenc}
+\graphicspath{ {./Documents/Tarea2/} }
+
+\bibliographystyle{plain}
+
+% Color definitions
+\definecolor{darkblue}{rgb}{0 , 0.054 , 0.196}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.8,0.8,0.8}
+\definecolor{codeBG}{rgb}{0.9, 0.97, 0.9}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{miestilo}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{red},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{black},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false, 
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=miestilo}
+
+
+
+\addto\captionsspanish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Tabla de contenidos}%
+}
+
+
+
+\title{
+{
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west, %anchor is upper left corner of the graphic
+            xshift=2cm, %shifting around
+            yshift=-4cm] 
+            at (current page.north west) %left upper corner of the page
+        {\includegraphics[height=1.4cm]{logoEIE.png}}; 
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north east, %anchor is upper left corner of the graphic
+            xshift=-1.7cm, %shifting around
+            yshift=-4cm] 
+            at (current page.north east) %left upper corner of the page
+        {\includegraphics[height=1.5cm]{logoUCR.png}}; 
+    \end{tikzpicture}
+    ~\\~\\
+    ~\\~\\
+    \Large 
+        \textbf{Universidad de Costa Rica}\\
+        Facultad de Ingeniería\\
+        Escuela de Ingeniería Eléctrica\\~\\
+        \texttt Estructuras Abstractas de Datos y Algoritmos para Ingeniería
+    }
+    ~\\~\\    ~\\~\\
+    {\LARGE Laboratorio 2}\\
+    Herencia y Polimorfismo
+}
+\author{Dennis Chavarría Soto\\Jesus Zuñiga Méndez}
+
+\date{II ciclo 2019}
+
+
+
+
+\begin{document}
+\maketitle 
+
+
+
+
+\newpage
+\section{Introduccion}
+	La herencia, en la programación orientada a objetos, es un mecanismo fundamental
+que es meritorio de atención, debido a las posibilidades que ofrece respecto la reutilización
+de código, además de simplificar y aumentar la comprensión del código. Es así, como este 
+laboratorio tiene como eje aplicar los conocimientos adquiridos durante la clase magistral
+y ponerlos en práctica al resolver un problema dado, en este caso, un sistema que cree polígonos
+los cuales pueden tener caracteristicas similares tales como el perímetro, o el área.
+
+
+\section{Funcionamiento del programa}
+
+\subsection{Archivo de includes}
+
+	Este archivo contiene todas las instrucciones para incluir los archivos de cabecera que contienen definiciones de las clases, así como la del número PI. Su importancia radica en que permite asociar los archivos de cabecera que dependen de los .cpp del código.
+
+\subsection{Clase Principal}
+
+	Todo lo referente a esta clase se encuentra en el archivo Tools.hpp. Esta clase es la que sirve para instanciar al objeto principal que se encarga de dar funcionamiento al programa. Consta de bastantes métodos fundamentales. Sin embargo, solo el constructor Principal() y el destructor carecen de gran lógica. En sí, no tienen lineas de código. Esta clase está contenida en el archivo Tools.hpp
+
+\subsubsection{Bienvenido()}
+	
+	Método genérico que tiene un grupo de "cout" para imprimir una serie de lineas de texto al inicio de código. Es meramente decorativo. Destaca el uso de "FORMATO\_ANSI\_COLOR\_X" para proporcionar detalles de color al texto mostrado en pantalla.
+
+\subsubsection{Menú()}
+
+	Es genérico y se encarga de imprimir varias lineas de texto mediante "cout", estas indican las instrucciones de operación del programa. En realidad no tiene una entrada de datos, pues, de ello se encargará la función 
+main del código.
+
+\subsubsection{HacerArregloVertices(int cantidad, Vertice* arreglo)}
+
+	HacerArregloVertices es un método genérico, tiene el propósito de preparar el arreglo de puntos que los polígonos usarán. Recibe un valor para la variable int cantidad, así como el puntero de tipo Vertice, arreglo.
+	Tiene dos variables locales, x, y; estas guardarán los valores de la coordenada en la cuál se encontrarán localizados los vertices que el usuario ingresa. Se almacenarán los datos con "cin". Finalmente, con el arreglo recibido, se itera entre un grupo de espacios para guardar lo que el usuario ingresó según corresponde. Nótese, los espacios son vertices, en realidad.
+
+\subsubsection{Color()}
+	
+	Método de tipo string que se encarga de cambiar la apariencia de determinado texto de la pantalla. Utiliza la variable respuesta, con un determinador color, luego nombre y color, a quienes asigna un identificador asociado al color, luego con un ciclo "for", imprime el texto con el nuevo formato.
+	El resultado de la respuesta de texto creada se retorna finalmente.
+
+\subsubsection{Instancias de diferentes tipos de polígonos}
+	A continuación se explicará en qué consisten las instancias de cada polígono. Debe considerarse que el programa solicita, en la función main. Como consideración, existe una superclase base llamada figura, 3 subclases: triangulo, circulo, rectangulo; y tres especializaciones en forma de clases para el triangulo, dadas como isosceles, equilatero y escaleno.
+	\begin{itemize}
+		\item MtdCirculo: Define un arreglo de dos vertices. Luego se pasa como parámetro el arreglo al método apropiado para solicitar las coordenadas. Posteriormente se instancia un poligono de tipo circulo. Se tiene una variable local de tipo string llamada lectura, esta guadara el dato que se solicita a continuación (el nombre), así, se establece el nombre del círculo y se invoca el color que se estableció en el método color.
+
+		\item MtdRectangulo: Define un arreglo de cuatro vertices. Luego se pasa como parámetro el arreglo al método apropiado para solicitar las coordenadas. Posteriormente se instancia un poligono de tipo rectangulo. Se tiene una variable local de tipo string llamada lectura, esta guadara el dato que se solicita a continuación (el nombre), así, se establece el nombre del rectangulo y se invoca el color que se estableció en el método color.
+
+		\item MtdTriangulo; Define un arreglo de tres vertices. Luego se pasa como parámetro el arreglo al método apropiado para solicitar las coordenadas. Se tiene una variable local de tipo string llamada lectura, esta guadara el dato que se solicita a continuación (el nombre), así, se establece el nombre del triangulo y se invoca el color que se estableció en el método color. Ademas se comparan las distancias entre los vertices ingresados con el proposito de saber si se trata de un triangulo escaleno, equilatero o isosceles. Una vez obtenido el resultado determinante, se instancia un poligono de la subclase triangulo apropiada.
+
+		\item MtdCualquierFigura: Igual que las instancias anteriores, se definirá un conjunto de vértices, no obstante, para este caso se solicitará la cantidad de ellos de forma específica al usuario, luego se instanciará de la misma forma que los otros casos, pero solo se usarán los métodos y atributos que contiene la clase Figura
+	\end{itemize}
+	
+\subsection{Clase Vertice}
+
+	La clase Vértice consiste, una vez instanciada, en un punto en el plano 2D, con atributos que indican su posición en el eje x, así como en el eje y. Estos consisten en variables de tipo float que permiten, además, calcular distancias entre otros vértices en el plano de dos dimensiones. 
+	Esta clase consta, también de un identificador que puede ser utilizado para iterar dentro de un arreglo de estos objetos, como se verá más adelante. Así mismo, esta cuenta con varios métodos, entre ellos: Vértice() como el constructor, ~Vertice() como el destructor; string operator~() que permite mostrar una descripción del punto, sea sus coordenadas; double operator\>\> (const Vertice\& rhs), este consiste, en realidad, en la sobrecarga del operador \>\> y permite obtener la distancia entre el vértice que está antes del operador y el que está inmediatamente después. Como se puede observar, recibe de parámetro una referencia a un objeto de tipo Vertice. 
+	Los archivos que contienen todo lo referente a esta clase son Vertice.cpp y Vertice.hpp. En ellos se encuentra la definición de la clase con sus miembros, y la definición de los métodos; respectivamente.
+
+\subsubsection{Funcionamiento del operador~}
+	Este operador está programado de forma que establece una variable local llamada respuesta, de tipo string, la cual será utilizada para almacenar el texto que será impreso para mostrar una descripción del vértice, sin embargo, requiere de las variables locales strX y strY y estas últimas de la función to\_string(x), to\_string(y) respectivamente, con el propósito de cambiar el tipo de los valores que esas variables, contenidas en la función, tienen a un string. luego se añaden a respuesta y el resultado se retorna.
+
+\subsubsection{Funcionamiento del operador\>\>}
+	Este operador recibe otro objeto de tipo vertice como parámetro; inicialmente se establece una variable local "distancia" con el valor de 0, luego se calculan xcuadrado y su homólogo en y, mediante la diferencia entre el valor contenido en el atributo de la coordenada correspondiente y el del punto obtenido por referencia. posteriormente se elevan ambas variables al cuadrado mediante la función pow() de la librería cmath.
+	Cuando se obtienen  los valores de xcuadrado y ycuadrado, se suman y se obtiene la raíz cuadrada de 
+estos mediante la función sqrt(), lo cual equivale a la distancia entre los puntos. Este valor se retorna.
+
+\subsection{Clase Figura}
+	Esta es la clase base utilizada para los polígonos y define sus atributos básicos como el perímetrofig de tipo float, así como el área, de igual tipo. También tiene un string nombre y color. Incluye un identificador que se asigna con base en un identificarEstático que aumenta conforme se instancia una nueva figura. Se separa en un archivo .hpp con la definición de sus métodos y atributos y un .cpp con el respectivo código que permite funcionar lo anterior.
+
+\subsubsection{Metodo constructor y método destructor}
+	Estos métodos no tienen lógica programada, actúan por defecto.
+
+\subsubsection{Metodo Virtual superficie}
+	Define una superficie de un polígono a partir de la multiplicación de las coordenadas x, y que posee. Devuelve este resultado.
+
+\subsubsection{Metodo Virtual perimetro}
+	Define un valor de perimetro dado al multiplicar por cuatro la coordenada x que posee. Devuelve este resultado.
+
+\subsubsection{Sobrecarga de operador ~}
+	El operador no esperará nada más que la figura que está antes que el. Al invocársele, devuelve el nombre, color, superficie, perimétro.
+
+
+\subsection{Clase Circulo}
+	
+	Separada en dos archivos, un .hpp que contiene la definición de la clase con su atributo especial "radio" y los métodos provenientes de los metodos virtuales de figura, double perimetro y double superficie; para calcular el perimetro y el area respecticamente, luego, cuenta con el operador sobrecargado "~", utilizado para mostrar todas las características de este polígono. Hereda de Figura sus atributos y métodos.
+
+\subsubsection{Metodo constructor}
+	Establece un puntero de tipo vertice que apunte al arreglo de puntos que recibe; una vez hecho lo anterior, obtiene la distancia y la asigna como el valor del radio.
+
+\subsubsection{Metodo perimetro}
+	Asigna al atributo perimetrofig el valor del perimetro obtenido al multiplicar por dos el numero PI por el radio. Este valor es devuelto.
+
+\subsubsection{Metodo superficie}
+	Asigna al atributo area el valor de la superfice obtenido al multiplicar el numero PI por el radio elevado al cuadrado.
+
+\subsubsection{Sobrecarga de operador ~}
+	El operador no esperará nada más que el circulo que está antes que el. Al invocársele, devuelve el nombre, color, superficie, perimétro y radio del círculo.
+
+\subsubsection{Metodo destructor}
+	Como su nombre lo indica, unicamente actua como el destructor del objeto.
+
+\subsection{Clase Rectangulo}
+	Esta clase tiene entre sus atributos básicos la base y la altura, ambos de tipo float. Se separa en un archivo .hpp con la definición de sus métodos y atributos y un .cpp con el respectivo código que permite funcionar lo anterior.  Hereda de Figura sus atributos y métodos.
+
+\subsubsection{Metodo constructor}
+	Establece un puntero de tipo vertice que apunte al arreglo de puntos que recibe; una vez hecho lo anterior, obtiene la distancia entre ellos y debe compararla en un ciclo, que, a base de condicionales, discrimina el lado de mayor extensión, y se centra en los dos restantes, comparando y determinando cual es el mayor y el menor para asignarlos como base o altura.
+
+\subsubsection{Metodo perimetro}
+	Asigna al atributo perimetrofig el valor del perimetro obtenido al multiplicar por dos la base y sumarlo a la altura, también multiplicada por dos. Este valor es devuelto.
+
+\subsubsection{Metodo superficie}
+	Asigna al atributo area el valor de la superfice obtenido al multiplicar la altura por la base. Este valor es retornado.
+
+\subsubsection{Sobrecarga de operador ~}
+	El operador no esperará nada más que el rectangulo que está antes que el. Al invocársele, devuelve el nombre, color, superficie, perimétro, base y altura del rectangulo.
+
+\subsection{Clase Triangulo}
+	Esta clase tiene entre sus atributos básicos lado1, lado2, lado3, todos de tipo float. Se separa en un archivo .hpp con la definición de sus métodos y atributos y un .cpp con el respectivo código que permite funcionar lo anterior. Hereda de Figura sus atributos y métodos.
+
+\subsubsection{Metodo constructor y destructor}
+	Estos métodos no tienen lógica programada, actúan por defecto.
+
+\subsubsection{Sobrecarga de operador ~}
+	El operador no esperará nada más que el triangulo que está antes que el. Al invocársele, devuelve el nombre, color, superficie, perimétro, base y altura del triangulo.
+
+\subsection{Especializaciones de triangulo}
+
+Los siguientes archivos están contenidos en un mismo archivo .cpp y .hpp que reciben el nombre de Triangulo.cpp y Triangulo.hpp
+
+\begin{itemize}
+		\item Equilatero: Se separa en un archivo .hpp con la definición de sus métodos y atributos y un .cpp con el respectivo código que permite funcionar lo anterior.  Hereda de Figura y triangulo sus atributos y métodos; del último la longitud de los lados.
+
+		\item Isosceles: Se separa en un archivo .hpp con la definición de sus métodos y atributos y un .cpp con el respectivo código que permite funcionar lo anterior.  Hereda de Figura y triangulo sus atributos y métodos; del último la longitud de los lados.
+
+		\item Escaleno: Esta clase tiene entre sus atributos básicos el semiperimetro s. Se separa en un archivo .hpp con la definición de sus métodos y atributos y un .cpp con el respectivo código que permite funcionar lo anterior.  Hereda de Figura y triangulo sus atributos y métodos; del último la longitud de los lados.
+	end{itemize}
+
+\subsubsection{Sobrecarga de operador ~}
+	Las tres especializaciones anteriores tienen este mismo operador; no esperará nada más que la especialización que está antes que el. Al invocársele, devuelve el nombre, color, superficie, perimétro, base y altura del triangulo.
+
+\subsubsection{Metodo constructor y destructor}
+	El método constructor recibe como parámetro un puntero de tipo vertice que apunta a los vertices especificados por él, con sus coordenadas establecidas en el respectivo método. para las tres especializaciones anteriores, se se asignan de igual forma a los lados los valores de la distancia entre cada punto. Para el caso del isosceles, se usa un algoritmo muy similar al del rectangulo, para utilizar los lados adecuados para la base y la altura, solo que, en este caso se debe asignar un tercer valor que corresponde a la hipotenusa.
+
+\subsubsection{Sobrecarga de operador ~}
+	Las tres especializaciones anteriores tienen este mismo operador; no esperará nada más que la especialización que está antes que el. Al invocársele, devuelve el nombre, color, superficie, perimétro, base y altura del triangulo.
+
+\subsubsection{Superficie de Isosceles}
+	Se multiplica la base (lado1) por la altura (lado2) y se devuelve el resultado.
+
+\subsubsection{Superficie de Escaleno}
+	  Se utiliza la formula (sqrt(abs( semiperimetro * (s-lado1) * (s-lado2) * (s->lado3))) para calcular el area, donde "s" corresponde al semiperimetro.
+
+\subsubsection{Superficie de Escaleno}
+	Se utiliza la formula sqrt(3)/2) * pow(this->lado1,2) y se devuelve el resultado
+
+\subsubsection{Perimetro de los triangulos}
+	Las especializaciones recurren al metodo que tiene la clase triangulo para calcular su perimetro, la formula consiste en lado1+lado2+lado3. El resultado debe retornarse.
+
+\subsection{Clase impresora}
+	Consta solo de un archivo .cpp, y uno .hpp Tiene un método constructor que obtiene las variables para asignar colores e imprimir en la pantalla, También tiene su método destructor
+
+\subsubsection{Metodo constructor y método destructor}
+	Estos métodos no tienen lógica programada, actúan por defecto.
+
+\subsubsection{ObtenerColor(string nomColor)}
+	Método de tipo string, tiene como variables locales tamanio, de tipo entero, con un valor inicial igual que 6; luego dos arreglos y una variable, todos de tipo string. Un arreglo es llamado tamanio y contiene los colores; por otra parte, color contiene las "fórmulas" que permiten que los colores funcionen.
+	Por medio de un ciclo "for" se imprime el contenido de respuesta, basado en las características de color que se implementaron. Este resultado se devuelve
+
+\subsubsection{imprimirArchivo(const T\& objeto, string rutaArchivo)}
+	Método genérico que se encarga de manejar un archivo, consta de un condicional que avisa en caso de no encontrarlo. Su propósito es obtener los parámetros de este para poder imprimir lo que se solicita con el formato establecido, colores, alineación. SUs parámetros son una referencia de un objeto cualquiera, así como un string que especifica una ruta a un archivo.
+
+\section{Conclusiones}
+
+\begin{itemize}
+		\item Desarrollo de un programa con la capacidad de trabajar con polígonos de dos dimensiones, calcular su perímetro, superficie y manejar otros parámetros relacionados.
+		\item Aplicación satisfactoria de la herencia para la reutilización de código y simplificación del programa
+		\item De forma satisfactoria, se implementaron los conocimientos de herencia y polimorfismo para completar los objetivos requeridos en el enunciado del laboratorio.
+		\item Para la clase impresora se envía la impresión como parámetro, pues, al utilizar el operador sobrecargado  ~, el programa no funcionaba, así pues, se utiliza esto como un método.
+		
+	\end{itemize}
+
+\newpage
+\section{Anexos}
+
+\subsection{Vertice.cpp}
+\lstinputlisting[language=C++]{Vertice.cpp}
+\newpage
+
+\subsection{Vertice.hpp}
+\lstinputlisting[language=C++]{Vertice.hpp}
+\newpage
+
+
+\subsection{Figura.cpp}
+\lstinputlisting[language=C++]{Figura.cpp}
+\newpage
+
+\subsection{Figura.hpp}
+\lstinputlisting[language=C++]{Figura.hpp}
+\newpage
+
+
+\subsection{Circulo.cpp}
+\lstinputlisting[language=C++]{Circulo.cpp}
+\newpage
+
+\subsection{Circulo.hpp}
+\lstinputlisting[language=C++]{Circulo.hpp}
+\newpage
+
+
+\subsection{Rectangulo.cpp}
+\lstinputlisting[language=C++]{Rectangulo.cpp}
+\newpage
+
+\subsection{Rectangulo.hpp}
+\lstinputlisting[language=C++]{Rectangulo.hpp}
+\newpage
+
+
+\subsection{Triangulo.cpp}
+\lstinputlisting[language=C++]{Triangulo.cpp}
+\newpage
+
+\subsection{Triangulo.hpp}
+\lstinputlisting[language=C++]{Triangulo.hpp}
+\newpage
+
+\subsection{Impresora.cpp}
+\lstinputlisting[language=C++]{Impresora.cpp}
+\newpage
+
+\subsection{Impresora.hpp}
+\lstinputlisting[language=C++]{Impresora.hpp}
+\newpage
+
+
+\subsection{main.cpp}
+\lstinputlisting[language=C++]{main.cpp}
+
+\subsection{Includes.hpp}
+\lstinputlisting[language=C++]{Includes.hpp}
+\newpage
+
+\subsection{Tools.hpp}
+\lstinputlisting[language=C++]{Tools.hpp}
+\newpage
+
+\end{document}

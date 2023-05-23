@@ -1,0 +1,307 @@
+\hypertarget{class_leap_1_1_finger_list}{}\section{Leap\+:\+:Finger\+List Class Reference}
+\label{class_leap_1_1_finger_list}\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Finger\+List\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Finger\+List\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$ \hyperlink{class_leap_1_1_finger_list}{Finger\+List}, \hyperlink{class_leap_1_1_finger}{Finger} $>$ \hyperlink{class_leap_1_1_finger_list_a9ecff6e555096064a09bb66a8cb5e567}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_finger_list_a730629d5b27f07888ddb574bf06a85ef}\label{class_leap_1_1_finger_list_a730629d5b27f07888ddb574bf06a85ef}} 
+{\bfseries Finger\+List} (const \hyperlink{class_leap_1_1_list_base_implementation}{List\+Base\+Implementation}$<$ \hyperlink{class_leap_1_1_finger}{Finger} $>$ \&)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list_aa04009715ecbb8b2417a1459ed3bb7fd}{Finger\+List} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_finger_list_a5a542e9e6c894f1856997f0fb605e8b7}{count} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_finger_list_ae1c9c29066daa1e98cc9947799da3802}{is\+Empty} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} \hyperlink{class_leap_1_1_finger_list_a64a8580ef7401081c1d18f11cd285764}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list}{Finger\+List} \& \hyperlink{class_leap_1_1_finger_list_ab032377473c269651a1110f3a5de3263}{append} (const \hyperlink{class_leap_1_1_finger_list}{Finger\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} \hyperlink{class_leap_1_1_finger_list_ace261bf243a6655c1402ddb3f8f97494}{leftmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} \hyperlink{class_leap_1_1_finger_list_acb8b16de09fd0751d395ce7580fc28ff}{rightmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} \hyperlink{class_leap_1_1_finger_list_ac3f85628d7815422b6b61c3d5d61fe4a}{frontmost} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list}{Finger\+List} \hyperlink{class_leap_1_1_finger_list_a32fb005494e5a3a433de76992ac07895}{extended} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list}{Finger\+List} \hyperlink{class_leap_1_1_finger_list_a2fbb5276be9f22c9f35589b0a0b5d8eb}{finger\+Type} (\hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}{Finger\+::\+Type} type) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list_a9ecff6e555096064a09bb66a8cb5e567}{const\+\_\+iterator} \hyperlink{class_leap_1_1_finger_list_aaa68dfcacf93dd09271a746fb90c7523}{begin} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list_a9ecff6e555096064a09bb66a8cb5e567}{const\+\_\+iterator} \hyperlink{class_leap_1_1_finger_list_a75479dbb992e84540e66179c90bd67bd}{end} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_finger_list}{Finger\+List} class represents a list of \hyperlink{class_leap_1_1_finger}{Finger} objects.
+
+Get a \hyperlink{class_leap_1_1_finger_list}{Finger\+List} object by calling \hyperlink{class_leap_1_1_frame_ad26c14d07eae913a7ff17e0ce1f2be12}{Frame\+::fingers()}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_a9ecff6e555096064a09bb66a8cb5e567}\label{class_leap_1_1_finger_list_a9ecff6e555096064a09bb66a8cb5e567}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$\hyperlink{class_leap_1_1_finger_list}{Finger\+List}, \hyperlink{class_leap_1_1_finger}{Finger}$>$ \hyperlink{class_leap_1_1_finger_list_a9ecff6e555096064a09bb66a8cb5e567}{Leap\+::\+Finger\+List\+::const\+\_\+iterator}}
+
+A C++ iterator type for \hyperlink{class_leap_1_1_finger_list}{Finger\+List} objects.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_aa04009715ecbb8b2417a1459ed3bb7fd}\label{class_leap_1_1_finger_list_aa04009715ecbb8b2417a1459ed3bb7fd}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!Finger\+List@{Finger\+List}}
+\index{Finger\+List@{Finger\+List}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{Finger\+List()}{FingerList()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Finger\+List\+::\+Finger\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty list of fingers. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_ab032377473c269651a1110f3a5de3263}\label{class_leap_1_1_finger_list_ab032377473c269651a1110f3a5de3263}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list}{Finger\+List}\& Leap\+::\+Finger\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_finger_list}{Finger\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the members of the specified \hyperlink{class_leap_1_1_finger_list}{Finger\+List} to this \hyperlink{class_leap_1_1_finger_list}{Finger\+List}. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{class_leap_1_1_finger_list}{Finger\+List} object containing \hyperlink{class_leap_1_1_finger}{Finger} objects to append to the end of this \hyperlink{class_leap_1_1_finger_list}{Finger\+List}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_aaa68dfcacf93dd09271a746fb90c7523}\label{class_leap_1_1_finger_list_aaa68dfcacf93dd09271a746fb90c7523}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!begin@{begin}}
+\index{begin@{begin}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list_a9ecff6e555096064a09bb66a8cb5e567}{const\+\_\+iterator} Leap\+::\+Finger\+List\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the beginning of this \hyperlink{class_leap_1_1_finger_list}{Finger\+List}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_a5a542e9e6c894f1856997f0fb605e8b7}\label{class_leap_1_1_finger_list_a5a542e9e6c894f1856997f0fb605e8b7}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!count@{count}}
+\index{count@{count}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Finger\+List\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of fingers in this list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The number of fingers in this list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_a75479dbb992e84540e66179c90bd67bd}\label{class_leap_1_1_finger_list_a75479dbb992e84540e66179c90bd67bd}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!end@{end}}
+\index{end@{end}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list_a9ecff6e555096064a09bb66a8cb5e567}{const\+\_\+iterator} Leap\+::\+Finger\+List\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the end of this \hyperlink{class_leap_1_1_finger_list}{Finger\+List}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_a32fb005494e5a3a433de76992ac07895}\label{class_leap_1_1_finger_list_a32fb005494e5a3a433de76992ac07895}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!extended@{extended}}
+\index{extended@{extended}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{extended()}{extended()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list}{Finger\+List} Leap\+::\+Finger\+List\+::extended (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a new list containing those fingers in the current list that are extended.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The list of extended fingers from the current list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_a2fbb5276be9f22c9f35589b0a0b5d8eb}\label{class_leap_1_1_finger_list_a2fbb5276be9f22c9f35589b0a0b5d8eb}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!finger\+Type@{finger\+Type}}
+\index{finger\+Type@{finger\+Type}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{finger\+Type()}{fingerType()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger_list}{Finger\+List} Leap\+::\+Finger\+List\+::finger\+Type (\begin{DoxyParamCaption}\item[{\hyperlink{class_leap_1_1_finger_a1e94681e6d2168b2f854fcad7c8ac483}{Finger\+::\+Type}}]{type }\end{DoxyParamCaption}) const}
+
+Returns a list containing fingers from the current list of a given finger type by modifying the existing list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The list of matching fingers from the current list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_ac3f85628d7815422b6b61c3d5d61fe4a}\label{class_leap_1_1_finger_list_ac3f85628d7815422b6b61c3d5d61fe4a}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!frontmost@{frontmost}}
+\index{frontmost@{frontmost}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{frontmost()}{frontmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} Leap\+::\+Finger\+List\+::frontmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the front within the standard Leap Motion frame of reference (i.\+e has the smallest Z coordinate).
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The frontmost finger, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_ae1c9c29066daa1e98cc9947799da3802}\label{class_leap_1_1_finger_list_ae1c9c29066daa1e98cc9947799da3802}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Finger\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether the list is empty.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if the list has no members. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_ace261bf243a6655c1402ddb3f8f97494}\label{class_leap_1_1_finger_list_ace261bf243a6655c1402ddb3f8f97494}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!leftmost@{leftmost}}
+\index{leftmost@{leftmost}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{leftmost()}{leftmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} Leap\+::\+Finger\+List\+::leftmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the left within the standard Leap Motion frame of reference (i.\+e has the smallest X coordinate).
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The leftmost finger, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_a64a8580ef7401081c1d18f11cd285764}\label{class_leap_1_1_finger_list_a64a8580ef7401081c1d18f11cd285764}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} Leap\+::\+Finger\+List\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Access a list member by its position in the list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The zero-\/based list position index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_finger}{Finger} object at the specified index. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_finger_list_acb8b16de09fd0751d395ce7580fc28ff}\label{class_leap_1_1_finger_list_acb8b16de09fd0751d395ce7580fc28ff}} 
+\index{Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}!rightmost@{rightmost}}
+\index{rightmost@{rightmost}!Leap\+::\+Finger\+List@{Leap\+::\+Finger\+List}}
+\subsubsection{\texorpdfstring{rightmost()}{rightmost()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_finger}{Finger} Leap\+::\+Finger\+List\+::rightmost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The member of the list that is farthest to the right within the standard Leap Motion frame of reference (i.\+e has the largest X coordinate).
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The rightmost finger, or invalid if list is empty. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

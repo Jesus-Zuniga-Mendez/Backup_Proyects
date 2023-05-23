@@ -1,0 +1,74 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+
+
+Archivo pricipal, laboratorio que trata sobre listas enlazadas.  
+
+
+{\ttfamily \#include \char`\"{}./include/includes.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a3b7304a2c94d4d09e6929e5a98d3d85b}\label{main_8c_a3b7304a2c94d4d09e6929e5a98d3d85b}} 
+void \hyperlink{main_8c_a3b7304a2c94d4d09e6929e5a98d3d85b}{Bienvenida} ()
+\begin{DoxyCompactList}\small\item\em Función que imprime una bienvenida para el usuario. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a6b0067666ba7d74453f3a3c2c61d84a6}{Menu} ()
+\begin{DoxyCompactList}\small\item\em Funcion que imprime el menu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a89ea0166dc21547700b33f2c0e33e8a1}\label{main_8c_a89ea0166dc21547700b33f2c0e33e8a1}} 
+void \hyperlink{main_8c_a89ea0166dc21547700b33f2c0e33e8a1}{Opcion\+Uno} ()
+\begin{DoxyCompactList}\small\item\em Funcion que se encarga de ejecurar los comandos para crear laberinto nuevo. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ae9083d301429261da870290c51bd22c7}{Opcion\+Tres} (char $\ast$$\ast$Archivo)
+\begin{DoxyCompactList}\small\item\em Funcion que se encarga de ejecurar los comandos para recorrer un laberinto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Funcion Principal, contiene el codigo que ejecuta las demas acciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo pricipal, laboratorio que trata sobre listas enlazadas. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20 de junio de 2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyleft (l) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a6b0067666ba7d74453f3a3c2c61d84a6}\label{main_8c_a6b0067666ba7d74453f3a3c2c61d84a6}} 
+\index{main.\+c@{main.\+c}!Menu@{Menu}}
+\index{Menu@{Menu}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily int Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funcion que imprime el menu. 
+
+\begin{DoxyReturn}{Returns}
+seleccion Es la opcion escogida por el usuario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8c_ae9083d301429261da870290c51bd22c7}\label{main_8c_ae9083d301429261da870290c51bd22c7}} 
+\index{main.\+c@{main.\+c}!Opcion\+Tres@{Opcion\+Tres}}
+\index{Opcion\+Tres@{Opcion\+Tres}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Opcion\+Tres()}{OpcionTres()}}
+{\footnotesize\ttfamily void Opcion\+Tres (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{Archivo }\end{DoxyParamCaption})}
+
+
+
+Funcion que se encarga de ejecurar los comandos para recorrer un laberinto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Archivo} & es la ubicacion del archivo \\
+\hline
+\end{DoxyParams}

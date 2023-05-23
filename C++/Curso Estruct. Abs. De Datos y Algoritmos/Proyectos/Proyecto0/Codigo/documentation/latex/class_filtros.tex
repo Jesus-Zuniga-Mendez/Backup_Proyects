@@ -1,0 +1,239 @@
+\hypertarget{class_filtros}{}\section{Filtros Class Reference}
+\label{class_filtros}\index{Filtros@{Filtros}}
+
+
+Clase que controla todos los filtros.  
+
+
+
+
+{\ttfamily \#include $<$Filtros.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_filtros_ada24dd279d9c0e4c95738162866bd261}{Filtros} (string imagen)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{class_filtros_a5d4383dece49dcc80b3ce18da579a338}{Filtros} ()
+\begin{DoxyCompactList}\small\item\em constructor por defecto \end{DoxyCompactList}\item 
+\hyperlink{class_filtros_ae0486e405aaac60c6f19eaef6b3b01df}{$\sim$\+Filtros} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a176534ec297bdde49cb959602eea0d29}{Filtro\+Gaussiano} ()
+\begin{DoxyCompactList}\small\item\em Genera un filtro gausiano. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a63c1da79fb2190ae07b354ee4ee67819}{Filtro\+Gaussiano\+Un\+Canal} ()
+\begin{DoxyCompactList}\small\item\em Genera un filtro gausiano para imagenes de un canal. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a81e2f015d497d80032af22f471b360eb}{Filtro\+Desviacion\+Estandar} ()
+\begin{DoxyCompactList}\small\item\em Funcion que realiza el filtro de desviavion estandar. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a9bed709d7363047dc9ec1449c4dd00b4}{Deteccion\+Bordes} ()
+\begin{DoxyCompactList}\small\item\em calcula los bordes de una imagen \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a5826f19a9932e321c29fd1efa9c70e4d}{Difuminado\+Movimiento} ()
+\begin{DoxyCompactList}\small\item\em Filtro de movimiento. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a2ad4f5b18c537599bc171b9799683b1a}{Ruido\+Sal\+Pimienta} (float)
+\begin{DoxyCompactList}\small\item\em Creal el filtro sal y pimienta. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a8f604a50556e0e06e707cee8055522d1}{Erosion} ()
+\begin{DoxyCompactList}\small\item\em Crea el filtro de erosion. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a6b296610ee0b6f782d9be9f8c4ad25c2}{Dilatacion} ()
+\begin{DoxyCompactList}\small\item\em Crea el filtro de dilatacion. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a729e3fca9fd6ab3d39c3ae579ab26737}{Inversion\+Color} ()
+\begin{DoxyCompactList}\small\item\em Genera un filtro negativo. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a19ec703cb72322ef5cb7a38aa7de5c7b}{Transformacion\+Escala\+Grises} ()
+\begin{DoxyCompactList}\small\item\em Genera un filtro en escala de grises. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a85e035d3ce1a721331aba30535487a57}{Binario} ()
+\begin{DoxyCompactList}\small\item\em Crea el filtro de imagen binaria. \end{DoxyCompactList}\item 
+void \hyperlink{class_filtros_a69d9e93f385d769a769b25033472bd67}{Escribir\+Imagen} (string, string, string)
+\begin{DoxyCompactList}\small\item\em Funcion que escribe una imagen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Mat \hyperlink{class_filtros_a7bb45c07cea0bed3d4a4b8a7cca38fe9}{matriz\+Imagen}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase que controla todos los filtros. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_filtros_ada24dd279d9c0e4c95738162866bd261}\label{class_filtros_ada24dd279d9c0e4c95738162866bd261}} 
+\index{Filtros@{Filtros}!Filtros@{Filtros}}
+\index{Filtros@{Filtros}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Filtros()}{Filtros()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Filtros\+::\+Filtros (\begin{DoxyParamCaption}\item[{string}]{imagen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor 
+
+\mbox{\Hypertarget{class_filtros_a5d4383dece49dcc80b3ce18da579a338}\label{class_filtros_a5d4383dece49dcc80b3ce18da579a338}} 
+\index{Filtros@{Filtros}!Filtros@{Filtros}}
+\index{Filtros@{Filtros}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Filtros()}{Filtros()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Filtros\+::\+Filtros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor por defecto 
+
+\mbox{\Hypertarget{class_filtros_ae0486e405aaac60c6f19eaef6b3b01df}\label{class_filtros_ae0486e405aaac60c6f19eaef6b3b01df}} 
+\index{Filtros@{Filtros}!````~Filtros@{$\sim$\+Filtros}}
+\index{````~Filtros@{$\sim$\+Filtros}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{$\sim$\+Filtros()}{~Filtros()}}
+{\footnotesize\ttfamily Filtros\+::$\sim$\+Filtros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+destructor 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_filtros_a85e035d3ce1a721331aba30535487a57}\label{class_filtros_a85e035d3ce1a721331aba30535487a57}} 
+\index{Filtros@{Filtros}!Binario@{Binario}}
+\index{Binario@{Binario}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Binario()}{Binario()}}
+{\footnotesize\ttfamily void Filtros\+::\+Binario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crea el filtro de imagen binaria. 
+
+\mbox{\Hypertarget{class_filtros_a9bed709d7363047dc9ec1449c4dd00b4}\label{class_filtros_a9bed709d7363047dc9ec1449c4dd00b4}} 
+\index{Filtros@{Filtros}!Deteccion\+Bordes@{Deteccion\+Bordes}}
+\index{Deteccion\+Bordes@{Deteccion\+Bordes}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Deteccion\+Bordes()}{DeteccionBordes()}}
+{\footnotesize\ttfamily void Filtros\+::\+Deteccion\+Bordes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+calcula los bordes de una imagen 
+
+\mbox{\Hypertarget{class_filtros_a5826f19a9932e321c29fd1efa9c70e4d}\label{class_filtros_a5826f19a9932e321c29fd1efa9c70e4d}} 
+\index{Filtros@{Filtros}!Difuminado\+Movimiento@{Difuminado\+Movimiento}}
+\index{Difuminado\+Movimiento@{Difuminado\+Movimiento}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Difuminado\+Movimiento()}{DifuminadoMovimiento()}}
+{\footnotesize\ttfamily void Filtros\+::\+Difuminado\+Movimiento (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Filtro de movimiento. 
+
+\mbox{\Hypertarget{class_filtros_a6b296610ee0b6f782d9be9f8c4ad25c2}\label{class_filtros_a6b296610ee0b6f782d9be9f8c4ad25c2}} 
+\index{Filtros@{Filtros}!Dilatacion@{Dilatacion}}
+\index{Dilatacion@{Dilatacion}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Dilatacion()}{Dilatacion()}}
+{\footnotesize\ttfamily void Filtros\+::\+Dilatacion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crea el filtro de dilatacion. 
+
+brief Crea el filtro de dilatacion
+
+void \hyperlink{class_filtros_a6b296610ee0b6f782d9be9f8c4ad25c2}{Filtros\+::\+Dilatacion()}\{ Mat imagen = matriz\+Imagen; Mat nueva(imagen.\+rows, imagen.\+cols, C\+V\+\_\+8\+U\+C3); Vec3b pixel; Vec3b blanco = \{255,255,255\}; Vec3b negro = \{0,0,0\}; for (int i=0; i$<$imagen.\+rows; i++)\{ for (int j=0; j$<$imagen.\+cols; j++)\{ pixel=imagen.\+at$<$\+Vec3b$>$(i, j); double gris = pixel\mbox{[}0\mbox{]}$\ast$0.3 + pixel\mbox{[}1\mbox{]}$\ast$0.59+pixel\mbox{[}2\mbox{]}$\ast$0.11; if (gris $>$127)\{ nueva.\+at$<$\+Vec3b$>$(i, j)=blanco; \}else\{ nueva.\+at$<$\+Vec3b$>$(i, j)=negro; \} \} \} \mbox{\Hypertarget{class_filtros_a8f604a50556e0e06e707cee8055522d1}\label{class_filtros_a8f604a50556e0e06e707cee8055522d1}} 
+\index{Filtros@{Filtros}!Erosion@{Erosion}}
+\index{Erosion@{Erosion}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Erosion()}{Erosion()}}
+{\footnotesize\ttfamily void Filtros\+::\+Erosion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crea el filtro de erosion. 
+
+\mbox{\Hypertarget{class_filtros_a69d9e93f385d769a769b25033472bd67}\label{class_filtros_a69d9e93f385d769a769b25033472bd67}} 
+\index{Filtros@{Filtros}!Escribir\+Imagen@{Escribir\+Imagen}}
+\index{Escribir\+Imagen@{Escribir\+Imagen}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Escribir\+Imagen()}{EscribirImagen()}}
+{\footnotesize\ttfamily void Filtros\+::\+Escribir\+Imagen (\begin{DoxyParamCaption}\item[{string}]{imagen,  }\item[{string}]{filtro,  }\item[{string}]{formato }\end{DoxyParamCaption})}
+
+
+
+Funcion que escribe una imagen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imagen} & es la imagen original \\
+\hline
+{\em filtro} & es el filtro aplocado \\
+\hline
+{\em formato} & es el formato de salida \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_filtros_a81e2f015d497d80032af22f471b360eb}\label{class_filtros_a81e2f015d497d80032af22f471b360eb}} 
+\index{Filtros@{Filtros}!Filtro\+Desviacion\+Estandar@{Filtro\+Desviacion\+Estandar}}
+\index{Filtro\+Desviacion\+Estandar@{Filtro\+Desviacion\+Estandar}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Filtro\+Desviacion\+Estandar()}{FiltroDesviacionEstandar()}}
+{\footnotesize\ttfamily void Filtros\+::\+Filtro\+Desviacion\+Estandar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funcion que realiza el filtro de desviavion estandar. 
+
+\mbox{\Hypertarget{class_filtros_a176534ec297bdde49cb959602eea0d29}\label{class_filtros_a176534ec297bdde49cb959602eea0d29}} 
+\index{Filtros@{Filtros}!Filtro\+Gaussiano@{Filtro\+Gaussiano}}
+\index{Filtro\+Gaussiano@{Filtro\+Gaussiano}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Filtro\+Gaussiano()}{FiltroGaussiano()}}
+{\footnotesize\ttfamily void Filtros\+::\+Filtro\+Gaussiano (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Genera un filtro gausiano. 
+
+\mbox{\Hypertarget{class_filtros_a63c1da79fb2190ae07b354ee4ee67819}\label{class_filtros_a63c1da79fb2190ae07b354ee4ee67819}} 
+\index{Filtros@{Filtros}!Filtro\+Gaussiano\+Un\+Canal@{Filtro\+Gaussiano\+Un\+Canal}}
+\index{Filtro\+Gaussiano\+Un\+Canal@{Filtro\+Gaussiano\+Un\+Canal}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Filtro\+Gaussiano\+Un\+Canal()}{FiltroGaussianoUnCanal()}}
+{\footnotesize\ttfamily void Filtros\+::\+Filtro\+Gaussiano\+Un\+Canal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Genera un filtro gausiano para imagenes de un canal. 
+
+\mbox{\Hypertarget{class_filtros_a729e3fca9fd6ab3d39c3ae579ab26737}\label{class_filtros_a729e3fca9fd6ab3d39c3ae579ab26737}} 
+\index{Filtros@{Filtros}!Inversion\+Color@{Inversion\+Color}}
+\index{Inversion\+Color@{Inversion\+Color}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Inversion\+Color()}{InversionColor()}}
+{\footnotesize\ttfamily void Filtros\+::\+Inversion\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Genera un filtro negativo. 
+
+\mbox{\Hypertarget{class_filtros_a2ad4f5b18c537599bc171b9799683b1a}\label{class_filtros_a2ad4f5b18c537599bc171b9799683b1a}} 
+\index{Filtros@{Filtros}!Ruido\+Sal\+Pimienta@{Ruido\+Sal\+Pimienta}}
+\index{Ruido\+Sal\+Pimienta@{Ruido\+Sal\+Pimienta}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Ruido\+Sal\+Pimienta()}{RuidoSalPimienta()}}
+{\footnotesize\ttfamily void Filtros\+::\+Ruido\+Sal\+Pimienta (\begin{DoxyParamCaption}\item[{float}]{porciento }\end{DoxyParamCaption})}
+
+
+
+Creal el filtro sal y pimienta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em porciento} & es el porcentaje de aleatoriedad del filtro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_filtros_a19ec703cb72322ef5cb7a38aa7de5c7b}\label{class_filtros_a19ec703cb72322ef5cb7a38aa7de5c7b}} 
+\index{Filtros@{Filtros}!Transformacion\+Escala\+Grises@{Transformacion\+Escala\+Grises}}
+\index{Transformacion\+Escala\+Grises@{Transformacion\+Escala\+Grises}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{Transformacion\+Escala\+Grises()}{TransformacionEscalaGrises()}}
+{\footnotesize\ttfamily void Filtros\+::\+Transformacion\+Escala\+Grises (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Genera un filtro en escala de grises. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_filtros_a7bb45c07cea0bed3d4a4b8a7cca38fe9}\label{class_filtros_a7bb45c07cea0bed3d4a4b8a7cca38fe9}} 
+\index{Filtros@{Filtros}!matriz\+Imagen@{matriz\+Imagen}}
+\index{matriz\+Imagen@{matriz\+Imagen}!Filtros@{Filtros}}
+\subsubsection{\texorpdfstring{matriz\+Imagen}{matrizImagen}}
+{\footnotesize\ttfamily Mat Filtros\+::matriz\+Imagen}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_filtros_8hpp}{Filtros.\+hpp}\item 
+sourcecode/\hyperlink{_filtros_8cpp}{Filtros.\+cpp}\end{DoxyCompactItemize}

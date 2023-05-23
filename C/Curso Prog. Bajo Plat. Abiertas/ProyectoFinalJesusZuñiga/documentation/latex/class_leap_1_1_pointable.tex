@@ -1,0 +1,590 @@
+\hypertarget{class_leap_1_1_pointable}{}\section{Leap\+:\+:Pointable Class Reference}
+\label{class_leap_1_1_pointable}\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Pointable\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Pointable\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deef}{Zone} \{ \hyperlink{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefa4c1e87f878b5a0a3d1ac4903f92e29fe}{Z\+O\+N\+E\+\_\+\+N\+O\+NE} = 0, 
+\hyperlink{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefad8f42b8833b8233e2b196863b5937f3c}{Z\+O\+N\+E\+\_\+\+H\+O\+V\+E\+R\+I\+NG} = 1, 
+\hyperlink{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefa9ccf7859ad8c4f411779d04fbdb23e23}{Z\+O\+N\+E\+\_\+\+T\+O\+U\+C\+H\+I\+NG} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_pointable_a508745ae2e3402b4f754028197575457}\label{class_leap_1_1_pointable_a508745ae2e3402b4f754028197575457}} 
+{\bfseries Pointable} (Pointable\+Implementation $\ast$)
+\item 
+\mbox{\Hypertarget{class_leap_1_1_pointable_a20653c8953646cef96d78684f7e2c349}\label{class_leap_1_1_pointable_a20653c8953646cef96d78684f7e2c349}} 
+{\bfseries Pointable} (Finger\+Implementation $\ast$)
+\item 
+\mbox{\Hypertarget{class_leap_1_1_pointable_afa744fc2a9d312958a06d0d0a93f6799}\label{class_leap_1_1_pointable_afa744fc2a9d312958a06d0d0a93f6799}} 
+{\bfseries Pointable} (Tool\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_a5b42d880b673daa25c938d9fcf8d93eb}{Pointable} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t \hyperlink{class_leap_1_1_pointable_a4946a6fe0e478488a3d3ab3c3dbf390f}{id} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_frame}{Frame} \hyperlink{class_leap_1_1_pointable_a3519d0129ec49ea005d047bc8805c27f}{frame} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} \hyperlink{class_leap_1_1_pointable_a89be2f42b609738fc1869e23be4a0374}{hand} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_pointable_a5f0fcdb12d86567f1c1770d8c8941b17}{tip\+Position} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_pointable_a20994b306714ee014523136e0c551b9e}{tip\+Velocity} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_pointable_ada6f5dd7959f4bc437667065cd18e03e}{direction} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_pointable_ae5c75d491542529cfb61a91fe3865522}{width} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_pointable_a07add87cda32c2ba106ab271416d26aa}{length} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_pointable_a4631ae19c9389e638c69f462b5bae35a}{is\+Finger} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_pointable_a3ad1f5ced8d852a0f35de68c4c559ef3}{is\+Tool} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_pointable_aa59171cfd2c364bc9edc95e51ec1ffc1}{is\+Extended} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}{is\+Valid} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deef}{Zone} \hyperlink{class_leap_1_1_pointable_acc5165280316d69ed18dd9ea99c410a7}{touch\+Zone} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_pointable_acf8554de21f3c475a39d12f8b2931e89}{touch\+Distance} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_pointable_a15bab44633dbee0ec54af03604e2b58b}{stabilized\+Tip\+Position} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_pointable_a306431a33ff18a40288c156f52d6f3c4}{time\+Visible} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_pointable_a62b124c14981bbe4cff9961b0367feed}{operator==} (const \hyperlink{class_leap_1_1_pointable}{Pointable} \&) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_pointable_a8c5f5867979827b4649259a687c564c4}{operator!=} (const \hyperlink{class_leap_1_1_pointable}{Pointable} \&) const
+\item 
+std\+::string \hyperlink{class_leap_1_1_pointable_a846ad477711845f10853e7f3878a0c88}{to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_pointable}{Pointable} \& \hyperlink{class_leap_1_1_pointable_a2d66e938c10bf54778fdfe5abf7dd77d}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream \& \hyperlink{class_leap_1_1_pointable_a3e0fe2f963f09cfaf2d4dc9b93c85b4d}{operator$<$$<$} (std\+::ostream \&, const \hyperlink{class_leap_1_1_pointable}{Pointable} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_pointable}{Pointable} class reports the physical characteristics of a detected finger or tool.
+
+Both fingers and tools are classified as \hyperlink{class_leap_1_1_pointable}{Pointable} objects. Use the \hyperlink{class_leap_1_1_pointable_a4631ae19c9389e638c69f462b5bae35a}{Pointable\+::is\+Finger()} function to determine whether a \hyperlink{class_leap_1_1_pointable}{Pointable} object represents a finger. Use the \hyperlink{class_leap_1_1_pointable_a3ad1f5ced8d852a0f35de68c4c559ef3}{Pointable\+::is\+Tool()} function to determine whether a \hyperlink{class_leap_1_1_pointable}{Pointable} object represents a tool. The Leap Motion software classifies a detected entity as a tool when it is thinner, straighter, and longer than a typical finger.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+To provide touch emulation, the Leap Motion software associates a floating touch plane that adapts to the user\textquotesingle{}s finger movement and hand posture. The Leap Motion interprets purposeful movements toward this plane as potential touch points. The \hyperlink{class_leap_1_1_pointable}{Pointable} class reports touch state with the touch\+Zone and touch\+Distance values.
+
+Note that \hyperlink{class_leap_1_1_pointable}{Pointable} objects can be invalid, which means that they do not contain valid tracking data and do not correspond to a physical entity. Invalid \hyperlink{class_leap_1_1_pointable}{Pointable} objects can be the result of asking for a \hyperlink{class_leap_1_1_pointable}{Pointable} object using an ID from an earlier frame when no \hyperlink{class_leap_1_1_pointable}{Pointable} objects with that ID exist in the current frame. A \hyperlink{class_leap_1_1_pointable}{Pointable} object created from the \hyperlink{class_leap_1_1_pointable}{Pointable} constructor is also invalid. Test for validity with the \hyperlink{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}{Pointable\+::is\+Valid()} function.
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deef}\label{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deef}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!Zone@{Zone}}
+\index{Zone@{Zone}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{Zone}{Zone}}
+{\footnotesize\ttfamily enum \hyperlink{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deef}{Leap\+::\+Pointable\+::\+Zone}}
+
+Defines the values for reporting the state of a \hyperlink{class_leap_1_1_pointable}{Pointable} object in relation to an adaptive touch plane. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z\+O\+N\+E\+\_\+\+N\+O\+NE@{Z\+O\+N\+E\+\_\+\+N\+O\+NE}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!Z\+O\+N\+E\+\_\+\+N\+O\+NE@{Z\+O\+N\+E\+\_\+\+N\+O\+NE}}}\mbox{\Hypertarget{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefa4c1e87f878b5a0a3d1ac4903f92e29fe}\label{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefa4c1e87f878b5a0a3d1ac4903f92e29fe}} 
+Z\+O\+N\+E\+\_\+\+N\+O\+NE&The \hyperlink{class_leap_1_1_pointable}{Pointable} object is too far from the plane to be considered hovering or touching. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z\+O\+N\+E\+\_\+\+H\+O\+V\+E\+R\+I\+NG@{Z\+O\+N\+E\+\_\+\+H\+O\+V\+E\+R\+I\+NG}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!Z\+O\+N\+E\+\_\+\+H\+O\+V\+E\+R\+I\+NG@{Z\+O\+N\+E\+\_\+\+H\+O\+V\+E\+R\+I\+NG}}}\mbox{\Hypertarget{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefad8f42b8833b8233e2b196863b5937f3c}\label{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefad8f42b8833b8233e2b196863b5937f3c}} 
+Z\+O\+N\+E\+\_\+\+H\+O\+V\+E\+R\+I\+NG&The \hyperlink{class_leap_1_1_pointable}{Pointable} object is close to, but not touching the plane. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z\+O\+N\+E\+\_\+\+T\+O\+U\+C\+H\+I\+NG@{Z\+O\+N\+E\+\_\+\+T\+O\+U\+C\+H\+I\+NG}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!Z\+O\+N\+E\+\_\+\+T\+O\+U\+C\+H\+I\+NG@{Z\+O\+N\+E\+\_\+\+T\+O\+U\+C\+H\+I\+NG}}}\mbox{\Hypertarget{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefa9ccf7859ad8c4f411779d04fbdb23e23}\label{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deefa9ccf7859ad8c4f411779d04fbdb23e23}} 
+Z\+O\+N\+E\+\_\+\+T\+O\+U\+C\+H\+I\+NG&The \hyperlink{class_leap_1_1_pointable}{Pointable} has penetrated the plane. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a5b42d880b673daa25c938d9fcf8d93eb}\label{class_leap_1_1_pointable_a5b42d880b673daa25c938d9fcf8d93eb}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!Pointable@{Pointable}}
+\index{Pointable@{Pointable}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{Pointable()}{Pointable()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Pointable\+::\+Pointable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a \hyperlink{class_leap_1_1_pointable}{Pointable} object.
+
+An uninitialized pointable is considered invalid. Get valid \hyperlink{class_leap_1_1_pointable}{Pointable} objects from a \hyperlink{class_leap_1_1_frame}{Frame} or a \hyperlink{class_leap_1_1_hand}{Hand} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_pointable_ada6f5dd7959f4bc437667065cd18e03e}\label{class_leap_1_1_pointable_ada6f5dd7959f4bc437667065cd18e03e}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!direction@{direction}}
+\index{direction@{direction}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{direction()}{direction()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Pointable\+::direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The direction in which this finger or tool is pointing.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+The direction is expressed as a unit vector pointing in the same direction as the tip.
+
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} pointing in the same direction as the tip of this \hyperlink{class_leap_1_1_pointable}{Pointable} object. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a3519d0129ec49ea005d047bc8805c27f}\label{class_leap_1_1_pointable_a3519d0129ec49ea005d047bc8805c27f}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!frame@{frame}}
+\index{frame@{frame}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{frame()}{frame()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_frame}{Frame} Leap\+::\+Pointable\+::frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The \hyperlink{class_leap_1_1_frame}{Frame} associated with this \hyperlink{class_leap_1_1_pointable}{Pointable} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The associated \hyperlink{class_leap_1_1_frame}{Frame} object, if available; otherwise, an invalid \hyperlink{class_leap_1_1_frame}{Frame} object is returned. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a89be2f42b609738fc1869e23be4a0374}\label{class_leap_1_1_pointable_a89be2f42b609738fc1869e23be4a0374}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!hand@{hand}}
+\index{hand@{hand}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{hand()}{hand()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_hand}{Hand} Leap\+::\+Pointable\+::hand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The \hyperlink{class_leap_1_1_hand}{Hand} associated with a finger.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Not that in version 2+, tools are not associated with hands. For tools, this function always returns an invalid \hyperlink{class_leap_1_1_hand}{Hand} object.
+
+\begin{DoxyReturn}{Returns}
+The associated \hyperlink{class_leap_1_1_hand}{Hand} object, if available; otherwise, an invalid \hyperlink{class_leap_1_1_hand}{Hand} object is returned. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a4946a6fe0e478488a3d3ab3c3dbf390f}\label{class_leap_1_1_pointable_a4946a6fe0e478488a3d3ab3c3dbf390f}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!id@{id}}
+\index{id@{id}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t Leap\+::\+Pointable\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+A unique ID assigned to this \hyperlink{class_leap_1_1_pointable}{Pointable} object, whose value remains the same across consecutive frames while the tracked finger or tool remains visible. If tracking is lost (for example, when a finger is occluded by another finger or when it is withdrawn from the Leap Motion \hyperlink{class_leap_1_1_controller}{Controller} field of view), the Leap Motion software may assign a new ID when it detects the entity in a future frame.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Use the ID value with the \hyperlink{class_leap_1_1_frame_aa60a6824c815e54fcab21c549c2f77ac}{Frame\+::pointable()} function to find this \hyperlink{class_leap_1_1_pointable}{Pointable} object in future frames.
+
+I\+Ds should be from 1 to 100 (inclusive). If more than 100 objects are tracked an I\+Ds of -\/1 will be used until an ID in the defined range is available.
+
+\begin{DoxyReturn}{Returns}
+The ID assigned to this \hyperlink{class_leap_1_1_pointable}{Pointable} object. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a2d66e938c10bf54778fdfe5abf7dd77d}\label{class_leap_1_1_pointable_a2d66e938c10bf54778fdfe5abf7dd77d}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_pointable}{Pointable}\& Leap\+::\+Pointable\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an invalid \hyperlink{class_leap_1_1_pointable}{Pointable} object.
+
+You can use the instance returned by this function in comparisons testing whether a given \hyperlink{class_leap_1_1_pointable}{Pointable} instance is valid or invalid. (You can also use the \hyperlink{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}{Pointable\+::is\+Valid()} function.)
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The invalid \hyperlink{class_leap_1_1_pointable}{Pointable} instance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_aa59171cfd2c364bc9edc95e51ec1ffc1}\label{class_leap_1_1_pointable_aa59171cfd2c364bc9edc95e51ec1ffc1}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!is\+Extended@{is\+Extended}}
+\index{is\+Extended@{is\+Extended}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{is\+Extended()}{isExtended()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Pointable\+::is\+Extended (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Whether or not this \hyperlink{class_leap_1_1_pointable}{Pointable} is in an extended posture.
+
+A finger is considered extended if it is extended straight from the hand as if pointing. A finger is not extended when it is bent down and curled towards the palm. Tools are always extended.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if the pointable is extended. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a4631ae19c9389e638c69f462b5bae35a}\label{class_leap_1_1_pointable_a4631ae19c9389e638c69f462b5bae35a}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!is\+Finger@{is\+Finger}}
+\index{is\+Finger@{is\+Finger}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{is\+Finger()}{isFinger()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Pointable\+::is\+Finger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Whether or not this \hyperlink{class_leap_1_1_pointable}{Pointable} is classified as a finger.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if this \hyperlink{class_leap_1_1_pointable}{Pointable} is classified as a finger. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a3ad1f5ced8d852a0f35de68c4c559ef3}\label{class_leap_1_1_pointable_a3ad1f5ced8d852a0f35de68c4c559ef3}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!is\+Tool@{is\+Tool}}
+\index{is\+Tool@{is\+Tool}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{is\+Tool()}{isTool()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Pointable\+::is\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Whether or not this \hyperlink{class_leap_1_1_pointable}{Pointable} is classified as a tool.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if this \hyperlink{class_leap_1_1_pointable}{Pointable} is classified as a tool. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}\label{class_leap_1_1_pointable_afe50d02eb1b4f554a4089c329fda1a45}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Pointable\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this is a valid \hyperlink{class_leap_1_1_pointable}{Pointable} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if this \hyperlink{class_leap_1_1_pointable}{Pointable} object contains valid tracking data. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a07add87cda32c2ba106ab271416d26aa}\label{class_leap_1_1_pointable_a07add87cda32c2ba106ab271416d26aa}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!length@{length}}
+\index{length@{length}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Pointable\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The estimated length of the finger or tool in millimeters.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The estimated length of this \hyperlink{class_leap_1_1_pointable}{Pointable} object. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a8c5f5867979827b4649259a687c564c4}\label{class_leap_1_1_pointable_a8c5f5867979827b4649259a687c564c4}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Pointable\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_pointable}{Pointable} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_pointable}{Pointable} object inequality.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Two \hyperlink{class_leap_1_1_pointable}{Pointable} objects are equal if and only if both \hyperlink{class_leap_1_1_pointable}{Pointable} objects represent the exact same physical entities in the same frame and both \hyperlink{class_leap_1_1_pointable}{Pointable} objects are valid. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a62b124c14981bbe4cff9961b0367feed}\label{class_leap_1_1_pointable_a62b124c14981bbe4cff9961b0367feed}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!operator==@{operator==}}
+\index{operator==@{operator==}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Pointable\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_pointable}{Pointable} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_pointable}{Pointable} object equality.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Two \hyperlink{class_leap_1_1_pointable}{Pointable} objects are equal if and only if both \hyperlink{class_leap_1_1_pointable}{Pointable} objects represent the exact same physical entities in the same frame and both \hyperlink{class_leap_1_1_pointable}{Pointable} objects are valid. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a15bab44633dbee0ec54af03604e2b58b}\label{class_leap_1_1_pointable_a15bab44633dbee0ec54af03604e2b58b}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!stabilized\+Tip\+Position@{stabilized\+Tip\+Position}}
+\index{stabilized\+Tip\+Position@{stabilized\+Tip\+Position}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{stabilized\+Tip\+Position()}{stabilizedTipPosition()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Pointable\+::stabilized\+Tip\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The stabilized tip position of this \hyperlink{class_leap_1_1_pointable}{Pointable}.
+
+Smoothing and stabilization is performed in order to make this value more suitable for interaction with 2D content. The stabilized position lags behind the tip position by a variable amount, depending primarily on the speed of movement.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+A modified tip position of this \hyperlink{class_leap_1_1_pointable}{Pointable} object with some additional smoothing and stabilization applied. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a306431a33ff18a40288c156f52d6f3c4}\label{class_leap_1_1_pointable_a306431a33ff18a40288c156f52d6f3c4}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!time\+Visible@{time\+Visible}}
+\index{time\+Visible@{time\+Visible}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{time\+Visible()}{timeVisible()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Pointable\+::time\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The duration of time this \hyperlink{class_leap_1_1_pointable}{Pointable} has been visible to the Leap Motion \hyperlink{class_leap_1_1_controller}{Controller}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The duration (in seconds) that this \hyperlink{class_leap_1_1_pointable}{Pointable} has been tracked. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a5f0fcdb12d86567f1c1770d8c8941b17}\label{class_leap_1_1_pointable_a5f0fcdb12d86567f1c1770d8c8941b17}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!tip\+Position@{tip\+Position}}
+\index{tip\+Position@{tip\+Position}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{tip\+Position()}{tipPosition()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Pointable\+::tip\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The tip position in millimeters from the Leap Motion origin.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} containing the coordinates of the tip position. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a20994b306714ee014523136e0c551b9e}\label{class_leap_1_1_pointable_a20994b306714ee014523136e0c551b9e}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!tip\+Velocity@{tip\+Velocity}}
+\index{tip\+Velocity@{tip\+Velocity}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{tip\+Velocity()}{tipVelocity()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Pointable\+::tip\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The rate of change of the tip position in millimeters/second.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_leap_1_1_vector}{Vector} containing the coordinates of the tip velocity. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a846ad477711845f10853e7f3878a0c88}\label{class_leap_1_1_pointable_a846ad477711845f10853e7f3878a0c88}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Pointable\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A string containing a brief, human readable description of the \hyperlink{class_leap_1_1_pointable}{Pointable} object.
+
+\begin{DoxyReturn}{Returns}
+A description of the \hyperlink{class_leap_1_1_pointable}{Pointable} object as a string. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_acf8554de21f3c475a39d12f8b2931e89}\label{class_leap_1_1_pointable_acf8554de21f3c475a39d12f8b2931e89}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!touch\+Distance@{touch\+Distance}}
+\index{touch\+Distance@{touch\+Distance}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{touch\+Distance()}{touchDistance()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Pointable\+::touch\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+A value proportional to the distance between this \hyperlink{class_leap_1_1_pointable}{Pointable} object and the adaptive touch plane.
+
+
+
+The touch distance is a value in the range \mbox{[}-\/1, 1\mbox{]}. The value 1.\+0 indicates the \hyperlink{class_leap_1_1_pointable}{Pointable} is at the far edge of the hovering zone. The value 0 indicates the \hyperlink{class_leap_1_1_pointable}{Pointable} is just entering the touching zone. A value of -\/1.\+0 indicates the \hyperlink{class_leap_1_1_pointable}{Pointable} is firmly within the touching zone. Values in between are proportional to the distance from the plane. Thus, the touch\+Distance of 0.\+5 indicates that the \hyperlink{class_leap_1_1_pointable}{Pointable} is halfway into the hovering zone.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+You can use the touch\+Distance value to modulate visual feedback given to the user as their fingers close in on a touch target, such as a button.
+
+\begin{DoxyReturn}{Returns}
+The normalized touch distance of this \hyperlink{class_leap_1_1_pointable}{Pointable} object. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_acc5165280316d69ed18dd9ea99c410a7}\label{class_leap_1_1_pointable_acc5165280316d69ed18dd9ea99c410a7}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!touch\+Zone@{touch\+Zone}}
+\index{touch\+Zone@{touch\+Zone}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{touch\+Zone()}{touchZone()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_pointable_ad6e50b9878b8c1fdf899b5e09721deef}{Zone} Leap\+::\+Pointable\+::touch\+Zone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The current touch zone of this \hyperlink{class_leap_1_1_pointable}{Pointable} object.
+
+The Leap Motion software computes the touch zone based on a floating touch plane that adapts to the user\textquotesingle{}s finger movement and hand posture. The Leap Motion software interprets purposeful movements toward this plane as potential touch points. When a \hyperlink{class_leap_1_1_pointable}{Pointable} moves close to the adaptive touch plane, it enters the \char`\"{}hovering\char`\"{} zone. When a \hyperlink{class_leap_1_1_pointable}{Pointable} reaches or passes through the plane, it enters the \char`\"{}touching\char`\"{} zone.
+
+The possible states are present in the Zone enum of this class\+:
+
+{\bfseries Zone.\+N\+O\+NE} -- The \hyperlink{class_leap_1_1_pointable}{Pointable} is outside the hovering zone.
+
+{\bfseries Zone.\+H\+O\+V\+E\+R\+I\+NG} -- The \hyperlink{class_leap_1_1_pointable}{Pointable} is close to, but not touching the touch plane.
+
+{\bfseries Zone.\+T\+O\+U\+C\+H\+I\+NG} -- The \hyperlink{class_leap_1_1_pointable}{Pointable} has penetrated the touch plane.
+
+The touch\+Distance value provides a normalized indication of the distance to the touch plane when the \hyperlink{class_leap_1_1_pointable}{Pointable} is in the hovering or touching zones.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The touch zone of this \hyperlink{class_leap_1_1_pointable}{Pointable} 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_pointable_ae5c75d491542529cfb61a91fe3865522}\label{class_leap_1_1_pointable_ae5c75d491542529cfb61a91fe3865522}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!width@{width}}
+\index{width@{width}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Pointable\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The estimated width of the finger or tool in millimeters.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The estimated width of this \hyperlink{class_leap_1_1_pointable}{Pointable} object. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_pointable_a3e0fe2f963f09cfaf2d4dc9b93c85b4d}\label{class_leap_1_1_pointable_a3e0fe2f963f09cfaf2d4dc9b93c85b4d}} 
+\index{Leap\+::\+Pointable@{Leap\+::\+Pointable}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Leap\+::\+Pointable@{Leap\+::\+Pointable}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \hyperlink{class_leap_1_1_pointable}{Pointable} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Writes a brief, human readable description of the \hyperlink{class_leap_1_1_pointable}{Pointable} object to an output stream.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

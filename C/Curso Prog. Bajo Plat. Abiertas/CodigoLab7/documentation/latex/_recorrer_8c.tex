@@ -1,0 +1,118 @@
+\hypertarget{_recorrer_8c}{}\section{sourcecode/\+Recorrer.c File Reference}
+\label{_recorrer_8c}\index{sourcecode/\+Recorrer.\+c@{sourcecode/\+Recorrer.\+c}}
+
+
+Archivo que contiene las funciones para Recorrer un laberinto.  
+
+
+{\ttfamily \#include \char`\"{}../include/includes.\+h\char`\"{}}\newline
+Include dependency graph for Recorrer.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_recorrer_8c_abb66caa15f2b483f354520243b8a1a16}{L\+Lenar\+Laberinto} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto, char $\ast$$\ast$Archivo)
+\begin{DoxyCompactList}\small\item\em Funcion que llena un laberinto con los datos del archivo sellecionado por el usuario. \end{DoxyCompactList}\item 
+void \hyperlink{_recorrer_8c_a0ea79fa9a1e016d69e230efd24c04624}{Ubicar\+Raton} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto)
+\begin{DoxyCompactList}\small\item\em Funcion que ubica la posicion inicial del raton. \end{DoxyCompactList}\item 
+void \hyperlink{_recorrer_8c_a476a5d757f4382057de0a29868848cd6}{buscar\+Queso} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto, int fila, int columna)
+\begin{DoxyCompactList}\small\item\em Funcion que ubica la posicion inicial del raton. \end{DoxyCompactList}\item 
+void \hyperlink{_recorrer_8c_a7b74cd3e309bad3d0c114feef6371cd3}{Llenar\+Tablero} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto, char $\ast$$\ast$Archivo)
+\begin{DoxyCompactList}\small\item\em Funcion que llena el tablero con los datos del laberinto. \end{DoxyCompactList}\item 
+int \hyperlink{_recorrer_8c_ac02cf93525480d325cac577f2c6d5e20}{Verificar\+Laberinto} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto, char $\ast$$\ast$Archivo)
+\begin{DoxyCompactList}\small\item\em Funcion que revisa que el laberinto este escrito de forma correcta, ademas modifica el puntero del laberinto incluyendole las filas y columnas correcpondientes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo que contiene las funciones para Recorrer un laberinto. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_recorrer_8c_a476a5d757f4382057de0a29868848cd6}\label{_recorrer_8c_a476a5d757f4382057de0a29868848cd6}} 
+\index{Recorrer.\+c@{Recorrer.\+c}!buscar\+Queso@{buscar\+Queso}}
+\index{buscar\+Queso@{buscar\+Queso}!Recorrer.\+c@{Recorrer.\+c}}
+\subsubsection{\texorpdfstring{buscar\+Queso()}{buscarQueso()}}
+{\footnotesize\ttfamily void buscar\+Queso (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto,  }\item[{int}]{fila,  }\item[{int}]{columna }\end{DoxyParamCaption})}
+
+
+
+Funcion que ubica la posicion inicial del raton. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura que contiene todos los datoss \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_recorrer_8c_abb66caa15f2b483f354520243b8a1a16}\label{_recorrer_8c_abb66caa15f2b483f354520243b8a1a16}} 
+\index{Recorrer.\+c@{Recorrer.\+c}!L\+Lenar\+Laberinto@{L\+Lenar\+Laberinto}}
+\index{L\+Lenar\+Laberinto@{L\+Lenar\+Laberinto}!Recorrer.\+c@{Recorrer.\+c}}
+\subsubsection{\texorpdfstring{L\+Lenar\+Laberinto()}{LLenarLaberinto()}}
+{\footnotesize\ttfamily void L\+Lenar\+Laberinto (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto,  }\item[{char $\ast$$\ast$}]{Archivo }\end{DoxyParamCaption})}
+
+
+
+Funcion que llena un laberinto con los datos del archivo sellecionado por el usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura que contiene todos los datos \\
+\hline
+{\em archivo} & es la direccion donde esta el archivo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_recorrer_8c_a7b74cd3e309bad3d0c114feef6371cd3}\label{_recorrer_8c_a7b74cd3e309bad3d0c114feef6371cd3}} 
+\index{Recorrer.\+c@{Recorrer.\+c}!Llenar\+Tablero@{Llenar\+Tablero}}
+\index{Llenar\+Tablero@{Llenar\+Tablero}!Recorrer.\+c@{Recorrer.\+c}}
+\subsubsection{\texorpdfstring{Llenar\+Tablero()}{LlenarTablero()}}
+{\footnotesize\ttfamily void Llenar\+Tablero (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto,  }\item[{char $\ast$$\ast$}]{Archivo }\end{DoxyParamCaption})}
+
+
+
+Funcion que llena el tablero con los datos del laberinto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura que contiene todos los datos \\
+\hline
+{\em Archivo} & es el arreglo que contien la ruta del archivo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_recorrer_8c_a0ea79fa9a1e016d69e230efd24c04624}\label{_recorrer_8c_a0ea79fa9a1e016d69e230efd24c04624}} 
+\index{Recorrer.\+c@{Recorrer.\+c}!Ubicar\+Raton@{Ubicar\+Raton}}
+\index{Ubicar\+Raton@{Ubicar\+Raton}!Recorrer.\+c@{Recorrer.\+c}}
+\subsubsection{\texorpdfstring{Ubicar\+Raton()}{UbicarRaton()}}
+{\footnotesize\ttfamily void Ubicar\+Raton (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto }\end{DoxyParamCaption})}
+
+
+
+Funcion que ubica la posicion inicial del raton. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura que contiene todos los datoss \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_recorrer_8c_ac02cf93525480d325cac577f2c6d5e20}\label{_recorrer_8c_ac02cf93525480d325cac577f2c6d5e20}} 
+\index{Recorrer.\+c@{Recorrer.\+c}!Verificar\+Laberinto@{Verificar\+Laberinto}}
+\index{Verificar\+Laberinto@{Verificar\+Laberinto}!Recorrer.\+c@{Recorrer.\+c}}
+\subsubsection{\texorpdfstring{Verificar\+Laberinto()}{VerificarLaberinto()}}
+{\footnotesize\ttfamily int Verificar\+Laberinto (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto,  }\item[{char $\ast$$\ast$}]{Archivo }\end{DoxyParamCaption})}
+
+
+
+Funcion que revisa que el laberinto este escrito de forma correcta, ademas modifica el puntero del laberinto incluyendole las filas y columnas correcpondientes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura que contiene todos los datos \\
+\hline
+{\em Archivo} & es el arreglo que contien la ruta del archivo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rspuesta es un indicador si el laberinto es correcto o no 
+\end{DoxyReturn}

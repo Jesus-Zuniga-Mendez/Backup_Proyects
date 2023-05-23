@@ -1,0 +1,61 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}@file ARN\PYGZus{}Comparator.c}
+\PYG{c+c1}{\PYGZsh{}@Author Dennis Chavarria}
+\PYG{c+c1}{\PYGZsh{}@date 22/8/2019}
+\PYG{c+c1}{\PYGZsh{}@brief Programa con capacidad de comparar una cadena de ARN introducida, }
+\PYG{c+c1}{\PYGZsh{} con una base de datos, para asi, devolver el nombre de las tripletas que la componen}
+
+
+\PYG{k+kn}{from} \PYG{n+nn}{numpy} \PYG{k+kn}{import} \PYG{n}{array}
+\PYG{c+c1}{\PYGZsh{}Print(\PYGZdq{}Dasio Software Solutions (C)\PYGZbs{}n\PYGZdq{})}
+
+\PYG{c+c1}{\PYGZsh{}@brief Comparator: Esta funcion debe comparar el codon con el elemento de la primera}
+\PYG{c+c1}{\PYGZsh{}  columna de el archivo ARN\PYGZus{}TABLE y devolver un resultado sobre si corresponde a una }
+\PYG{c+c1}{\PYGZsh{} proteina conocida o no}
+\PYG{c+c1}{\PYGZsh{}@param Codon corresponde a tres letras, de la linea introducida al inicio.}
+\PYG{c+c1}{\PYGZsh{}  Este parametro es el que se compara con los datos de la tabla}
+\PYG{c+c1}{\PYGZsh{}@return 0 De este modo sale de la funcion sin tener que anadir mas logica al programa}
+
+\PYG{k}{def} \PYG{n+nf}{comparator}\PYG{p}{(}\PYG{n}{codon}\PYG{p}{):}
+    \PYG{n+nb}{file}\PYG{o}{=}\PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ARN\PYGZus{}TABLE.txt\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{counter}\PYG{o}{=}\PYG{l+m+mi}{0}
+    \PYG{k}{print}\PYG{p}{(}\PYG{n}{codon}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{64}\PYG{p}{):}
+        \PYG{n}{file\PYGZus{}row}\PYG{o}{=}\PYG{n+nb}{file}\PYG{o}{.}\PYG{n}{readline}\PYG{p}{()}
+        \PYG{n}{line\PYGZus{}elements}\PYG{o}{=}\PYG{n}{file\PYGZus{}row}\PYG{o}{.}\PYG{n}{split}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{};\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{):}
+            \PYG{k}{if} \PYG{n}{codon}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{==}\PYG{n}{line\PYGZus{}elements}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{n}{i}\PYG{p}{]:}
+                \PYG{n}{counter}\PYG{o}{+=}\PYG{l+m+mi}{1}
+        \PYG{k}{if} \PYG{n}{counter}\PYG{o}{==}\PYG{l+m+mi}{3}\PYG{p}{:}
+            \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}El codon anterior corresponde a: }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{n}{line\PYGZus{}elements}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}
+            \PYG{k}{return}\PYG{p}{(}\PYG{n}{line\PYGZus{}elements}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])}  \PYG{c+c1}{\PYGZsh{}This return is required because, by this, we dont }
+        \PYG{n}{need} \PYG{n}{to} \PYG{n}{add} \PYG{n}{extra} \PYG{n}{lines} \PYG{k}{if} \PYG{n}{the} \PYG{n}{codon} \PYG{n}{matches} \PYG{k}{with} \PYG{n+nb}{any} \PYG{n}{of} \PYG{n}{the} \PYG{n+nb}{list}\PYG{o}{.} 
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{counter}\PYG{o}{=}\PYG{l+m+mi}{0}
+    \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}El codon }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{ no corresponde a ningun aminoacido\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{n}{codon}\PYG{p}{)}
+    \PYG{n+nb}{file}\PYG{o}{.}\PYG{n}{close}\PYG{p}{()}
+\PYG{c+c1}{\PYGZsh{}@brief Main: Esta parte de el codigo constituye el eje central y se encarga de solicitar}
+\PYG{c+c1}{\PYGZsh{}  la cadena de ARN e invocar la foo Comparator. Ademas, determina si la cadena es analizable o no }
+
+
+
+\PYG{n}{arn}\PYG{o}{=}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Introduzca la cadena de ARN}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{arn\PYGZus{}row}\PYG{o}{=}\PYG{n}{arn}\PYG{o}{.}\PYG{n}{upper}\PYG{p}{()}
+\PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{arn\PYGZus{}verifier}\PYG{o}{=}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arn\PYGZus{}row}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{3}
+\PYG{n}{codon}\PYG{o}{=}\PYG{p}{[]}
+\PYG{n}{codon\PYGZus{}translate}\PYG{o}{=}\PYG{p}{[]}
+
+\PYG{k}{if} \PYG{p}{(}\PYG{n}{arn\PYGZus{}verifier} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{):}
+    \PYG{n}{ordenador}\PYG{o}{=}\PYG{l+m+mi}{0}
+    \PYG{n}{repeater}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{arn\PYGZus{}row}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}remember, it starts at zero      }
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{repeater}\PYG{p}{):} \PYG{c+c1}{\PYGZsh{}Ciclo para estudiar toda la fila}
+        \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range} \PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{):} \PYG{c+c1}{\PYGZsh{}Ciclo para crear el codon por analizar}
+            \PYG{n}{codon}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{arn\PYGZus{}row}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{p}{(}\PYG{n}{ordenador}\PYG{o}{*}\PYG{l+m+mi}{3}\PYG{p}{)])}
+        \PYG{n}{ordenador}\PYG{o}{+=}\PYG{l+m+mi}{1}
+        \PYG{n}{codon\PYGZus{}translate}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{comparator}\PYG{p}{(}\PYG{n}{codon}\PYG{p}{))}
+        \PYG{n}{codon}\PYG{o}{=}\PYG{p}{[]}
+    \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Entonces, la cadena es }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s2}{\PYGZdq{}} \PYG{o}{\PYGZpc{}}\PYG{n}{codon\PYGZus{}translate}\PYG{p}{)}
+\PYG{k}{else}\PYG{p}{:}
+    \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Debe introducir una cadena con una cantidad de letras que sea multiplo de 3\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

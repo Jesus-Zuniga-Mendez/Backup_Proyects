@@ -1,0 +1,64 @@
+UUU,f,Fenilalanina
+UUC,f,Fenilalanina
+UUA,L,Leucina
+UUG,L,Leucina
+CUU,L,Leucina
+CUC,L,Leucina
+CUA,L,Leucina
+CUG,L,Leucina
+AUU,I,Isoleucina
+AUC,I,Isoleucina
+AUA,I,Isoleucina
+AUG,M,Metionina
+GUU,V,Valina
+GUC,V,Valina
+GUA,V,Valina
+GUG,V,Valina
+GCU,A,Alanina
+GCC,A,Alanina
+GCA,A,Alanina
+GCG,A,Alanina
+ACU,T,Treonina
+ACC,T,Treonina
+ACA,T,Treonina
+ACG,T,Treonina
+CCU,P,Prolina
+CCC,P,Prolina
+CCA,P,Prolina
+CCG,P,Prolina
+UCU,S,Serina
+UCC,S,Serina
+UCA,S,Serina
+UCG,S,Serina
+AGU,S,Serina
+AGC,S,Serina
+UAU,Y,Tirosina
+UAC,Y,Tirosina
+CAU,H,Histidina
+CAC,H,Histidina
+CAA,Q,Glutamina
+CAG,Q,Glutamina
+AAU,N,Asparagina
+AAC,N,Asparagina
+AAA,K,Lisina
+AAG,K,Lisina
+GAU,D,ácido aspártico
+GAC,D,ácido aspártico
+GAA,E,ácido glutámico
+GAG,E,ácido glutámico
+GGU,G,Glicina
+GGC,G,Glicina
+GGA,G,Glicina
+GGG,G,Glicina
+AGA,R,Arginina
+AGG,R,Arginina
+CGU,R,Arginina
+CGC,R,Arginina
+CGA,R,Arginina
+CGG,R,Arginina
+UGU,C,Cisteína
+UGC,C,Cisteína
+UGG,W,Triptófano
+UAA,|,Codón de terminación Ocre
+UAG,|,Codón de terminación Ámbar
+UGA,|, Codón de terminación Ópalo

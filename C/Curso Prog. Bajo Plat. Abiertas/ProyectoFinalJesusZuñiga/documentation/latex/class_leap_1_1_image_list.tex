@@ -1,0 +1,164 @@
+\hypertarget{class_leap_1_1_image_list}{}\section{Leap\+:\+:Image\+List Class Reference}
+\label{class_leap_1_1_image_list}\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Image\+List\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Image\+List\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$ \hyperlink{class_leap_1_1_image_list}{Image\+List}, \hyperlink{class_leap_1_1_image}{Image} $>$ \hyperlink{class_leap_1_1_image_list_ae3c17a6b8ac23853649ba93abd5a1dbe}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_image_list_ab47e93e917deecc9bbba3086bff2968d}\label{class_leap_1_1_image_list_ab47e93e917deecc9bbba3086bff2968d}} 
+{\bfseries Image\+List} (const \hyperlink{class_leap_1_1_list_base_implementation}{List\+Base\+Implementation}$<$ \hyperlink{class_leap_1_1_image}{Image} $>$ \&)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list_a16614e13ece92455a024fd2409462753}{Image\+List} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_image_list_ab529e2c3b3381d1195c98379828dce7c}{count} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_image_list_a0dd50c8397d6e927c6e80fa5f197b1b3}{is\+Empty} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image}{Image} \hyperlink{class_leap_1_1_image_list_af1b9a66c27379ec4fd6b7bc0e5936b51}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list}{Image\+List} \& \hyperlink{class_leap_1_1_image_list_abb73a8ec8bf55019accfd092029e4513}{append} (const \hyperlink{class_leap_1_1_image_list}{Image\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list_ae3c17a6b8ac23853649ba93abd5a1dbe}{const\+\_\+iterator} \hyperlink{class_leap_1_1_image_list_a2cb2ff33ca9f5adbb33adc9064decf34}{begin} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list_ae3c17a6b8ac23853649ba93abd5a1dbe}{const\+\_\+iterator} \hyperlink{class_leap_1_1_image_list_ae4dac1f27bbc44e654998366c2cb5ff2}{end} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_image_list}{Image\+List} class represents a list of \hyperlink{class_leap_1_1_image}{Image} objects.
+
+Get the \hyperlink{class_leap_1_1_image_list}{Image\+List} object associated with the a \hyperlink{class_leap_1_1_frame}{Frame} of tracking data by calling \hyperlink{class_leap_1_1_frame_a64839985307492bf124b72ea13b1f2cf}{Frame\+::images()}. Get the most recent set of images, which can be newer than the images used to create the current frame, by calling \hyperlink{class_leap_1_1_controller_ac6fe10acc42b6c830e26fb8fbb88b895}{Controller\+::images()}.
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_leap_1_1_image_list_ae3c17a6b8ac23853649ba93abd5a1dbe}\label{class_leap_1_1_image_list_ae3c17a6b8ac23853649ba93abd5a1dbe}} 
+\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$\hyperlink{class_leap_1_1_image_list}{Image\+List}, \hyperlink{class_leap_1_1_image}{Image}$>$ \hyperlink{class_leap_1_1_image_list_ae3c17a6b8ac23853649ba93abd5a1dbe}{Leap\+::\+Image\+List\+::const\+\_\+iterator}}
+
+A C++ iterator type for this \hyperlink{class_leap_1_1_image_list}{Image\+List} objects. \begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_image_list_a16614e13ece92455a024fd2409462753}\label{class_leap_1_1_image_list_a16614e13ece92455a024fd2409462753}} 
+\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}!Image\+List@{Image\+List}}
+\index{Image\+List@{Image\+List}!Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+\subsubsection{\texorpdfstring{Image\+List()}{ImageList()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Image\+List\+::\+Image\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty list of images. \begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_image_list_abb73a8ec8bf55019accfd092029e4513}\label{class_leap_1_1_image_list_abb73a8ec8bf55019accfd092029e4513}} 
+\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list}{Image\+List}\& Leap\+::\+Image\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_image_list}{Image\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the members of the specified \hyperlink{class_leap_1_1_image_list}{Image\+List} to this \hyperlink{class_leap_1_1_image_list}{Image\+List}. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{class_leap_1_1_image_list}{Image\+List} object containing \hyperlink{class_leap_1_1_image}{Image} objects to append to the end of this \hyperlink{class_leap_1_1_image_list}{Image\+List}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_list_a2cb2ff33ca9f5adbb33adc9064decf34}\label{class_leap_1_1_image_list_a2cb2ff33ca9f5adbb33adc9064decf34}} 
+\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}!begin@{begin}}
+\index{begin@{begin}!Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list_ae3c17a6b8ac23853649ba93abd5a1dbe}{const\+\_\+iterator} Leap\+::\+Image\+List\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the beginning of this \hyperlink{class_leap_1_1_image_list}{Image\+List}. \begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_list_ab529e2c3b3381d1195c98379828dce7c}\label{class_leap_1_1_image_list_ab529e2c3b3381d1195c98379828dce7c}} 
+\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}!count@{count}}
+\index{count@{count}!Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Image\+List\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The number of images in this list.
+
+\begin{DoxyReturn}{Returns}
+The number of images in this list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_list_ae4dac1f27bbc44e654998366c2cb5ff2}\label{class_leap_1_1_image_list_ae4dac1f27bbc44e654998366c2cb5ff2}} 
+\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}!end@{end}}
+\index{end@{end}!Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_list_ae3c17a6b8ac23853649ba93abd5a1dbe}{const\+\_\+iterator} Leap\+::\+Image\+List\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the end of this \hyperlink{class_leap_1_1_image_list}{Image\+List}. \begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_list_a0dd50c8397d6e927c6e80fa5f197b1b3}\label{class_leap_1_1_image_list_a0dd50c8397d6e927c6e80fa5f197b1b3}} 
+\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Image\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether the list is empty.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if the list has no members. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_list_af1b9a66c27379ec4fd6b7bc0e5936b51}\label{class_leap_1_1_image_list_af1b9a66c27379ec4fd6b7bc0e5936b51}} 
+\index{Leap\+::\+Image\+List@{Leap\+::\+Image\+List}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Leap\+::\+Image\+List@{Leap\+::\+Image\+List}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image}{Image} Leap\+::\+Image\+List\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Access a list member by its position in the list. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The zero-\/based list position index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_image}{Image} object at the specified index. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

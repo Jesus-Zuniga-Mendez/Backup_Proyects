@@ -1,0 +1,4 @@
+Considere hacer el make y luego correrlo como el profesor lo recomienda en el enunciado de la tarea, sino se obtiene segfault, pues los rangos
+de los arreglos dependen de la entrada del usuario.
+
+./main 3 3:2:1

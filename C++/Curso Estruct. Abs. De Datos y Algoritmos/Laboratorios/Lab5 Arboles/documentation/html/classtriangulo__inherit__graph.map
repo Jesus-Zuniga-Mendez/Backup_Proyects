@@ -1,0 +1,7 @@
+<map id="triangulo" name="triangulo">
+<area shape="rect" id="node4" href="$class_equilatero.html" title="calse equilatero " alt="" coords="5,229,85,256"/>
+<area shape="rect" id="node5" href="$class_escaleno.html" title="calse Escaleno " alt="" coords="110,229,186,256"/>
+<area shape="rect" id="node6" href="$class_isosceles.html" title="calse Isosceles " alt="" coords="210,229,289,256"/>
+<area shape="rect" id="node2" href="$class_figura.html" title="clase que se encarga de crear una figura en 2D " alt="" coords="119,80,177,107"/>
+<area shape="rect" id="node3" href="$class_vertice.html" title="clase que modela un punto en el espacio " alt="" coords="117,5,179,32"/>
+</map>

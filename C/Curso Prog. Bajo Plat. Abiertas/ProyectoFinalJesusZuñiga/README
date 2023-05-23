@@ -1,0 +1,40 @@
+Configuración
+    En caso de querer compilar ocupa tener instalado el compilador g++}
+    debe tener instalado el sdk de LeapMotion
+    antes de ejecutar el binario debe ejecutar <sudo leapd> en una terminal para que el servicio inicie
+
+Instalación
+    Ejecutar el archivo make para ejecutar el programa
+    make build compila
+    make run corre
+    make clean limpia
+
+Operación
+
+
+Archivos
+    el binario se guarda en la carpeta bnaries
+
+
+Licencia
+    copyleft(l)
+
+
+Desarrollador
+    Jesus Zuñiga Mendez
+    jzunigame.ucr@gmail.com
+
+
+Bugs
+
+
+Solución de problemas​
+
+
+Créditos y agradecimientos
+
+
+Registro de cambios
+
+
+Noticias

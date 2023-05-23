@@ -1,0 +1,555 @@
+\hypertarget{class_leap_1_1_image}{}\section{Leap\+:\+:Image Class Reference}
+\label{class_leap_1_1_image}\index{Leap\+::\+Image@{Leap\+::\+Image}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Image\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Image\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_leap_1_1_image_acefbe5d3803afc9f433a6e3856d242d1}{Format\+Type} \{ {\bfseries I\+N\+F\+R\+A\+R\+ED} = 0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_image_a6b549d1e77043cf9fc206257fc33d434}\label{class_leap_1_1_image_a6b549d1e77043cf9fc206257fc33d434}} 
+{\bfseries Image} (Image\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_a7d92772968c52fd77332d2390533d6e5}{Image} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int64\+\_\+t \hyperlink{class_leap_1_1_image_a21a29c8d7006c741c72c496c673f90d5}{sequence\+Id} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t \hyperlink{class_leap_1_1_image_ab8a7baeb737b6f779d1ea47e0efaeb1d}{id} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const unsigned char $\ast$ \hyperlink{class_leap_1_1_image_ab5226d1ec47ce8a4bcebee7783112d22}{data} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const float $\ast$ \hyperlink{class_leap_1_1_image_ab36f9b712f7680c8fd8ae480655140bb}{distortion} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_image_a559c3ea338e8312817ce3c54944d769f}\label{class_leap_1_1_image_a559c3ea338e8312817ce3c54944d769f}} 
+void {\bfseries data} (unsigned char $\ast$dst) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_image_ae1b0315825d8d9b5346d69af4e86ce3b}\label{class_leap_1_1_image_ae1b0315825d8d9b5346d69af4e86ce3b}} 
+void {\bfseries distortion} (float $\ast$dst) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_image_a81f59c83b265d635d33fd515661374a3}\label{class_leap_1_1_image_a81f59c83b265d635d33fd515661374a3}} 
+void $\ast$ {\bfseries data\+Pointer} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_image_a64904f5dea3af4c42882721a11c39372}\label{class_leap_1_1_image_a64904f5dea3af4c42882721a11c39372}} 
+void $\ast$ {\bfseries distortion\+Pointer} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_image_adfca7fee0ab396da733d084946e1de0f}{width} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_image_aa0715444f45580442c65f707eacc77a9}{height} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_image_aa4a51ac912a8f4676b8b60c3119f0dba}{bytes\+Per\+Pixel} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_acefbe5d3803afc9f433a6e3856d242d1}{Format\+Type} \hyperlink{class_leap_1_1_image_a50d3952ed622312536c9f935987156c1}{format} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_image_a8199bd54d44ad2f47f87c1672fae6fbc}{distortion\+Width} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_image_a151e6f3bf58e7b7e2f54d8620c440c1c}{distortion\+Height} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_image_ae07452257740b6050bf74cb835dc7f9a}{ray\+OffsetX} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_image_a7ae5ea2e7bcb151d50ad5ca03b1c3a37}{ray\+OffsetY} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_image_a250f1d16a456cc7887bb8a2ca3958bb0}{ray\+ScaleX} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_image_a2a234dbcb6818b0d7cf1527682c1fdf6}{ray\+ScaleY} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_image_a76443f4064feb15dad132be15f9fa444}{rectify} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&uv) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} \hyperlink{class_leap_1_1_image_a8bb3e9747ecaba23b2a47043d823ee24}{warp} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&xy) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int64\+\_\+t \hyperlink{class_leap_1_1_image_ae6cce7f3c7ebc323543a73f1b9c77dc3}{timestamp} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_image_a536cc04b3a40a5e3527ca45d894d57fd}{is\+Valid} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_image_a3418f0859f414d56bdfa19704020851c}{operator==} (const \hyperlink{class_leap_1_1_image}{Image} \&) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_image_a4ae4bb6f8dc39f0733f13de8f5ffbcf1}{operator!=} (const \hyperlink{class_leap_1_1_image}{Image} \&) const
+\item 
+std\+::string \hyperlink{class_leap_1_1_image_ae46e17c86b9975e29f6cd1a77d7722bd}{to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_image}{Image} \& \hyperlink{class_leap_1_1_image_ab75d5df98401a07078e22916c828c0b5}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream \& \hyperlink{class_leap_1_1_image_acb3061d938151f14c3f2b35c2089f730}{operator$<$$<$} (std\+::ostream \&, const \hyperlink{class_leap_1_1_image}{Image} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_image}{Image} class represents a single image from one of the Leap Motion cameras.
+
+In addition to image data, the \hyperlink{class_leap_1_1_image}{Image} object provides a distortion map for correcting lens distortion.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Note that \hyperlink{class_leap_1_1_image}{Image} objects can be invalid, which means that they do not contain valid image data. Get valid \hyperlink{class_leap_1_1_image}{Image} objects from Frame\+::frames(). Test for validity with the \hyperlink{class_leap_1_1_image_a536cc04b3a40a5e3527ca45d894d57fd}{Image\+::is\+Valid()} function. \begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_leap_1_1_image_acefbe5d3803afc9f433a6e3856d242d1}\label{class_leap_1_1_image_acefbe5d3803afc9f433a6e3856d242d1}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!Format\+Type@{Format\+Type}}
+\index{Format\+Type@{Format\+Type}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{Format\+Type}{FormatType}}
+{\footnotesize\ttfamily enum \hyperlink{class_leap_1_1_image_acefbe5d3803afc9f433a6e3856d242d1}{Leap\+::\+Image\+::\+Format\+Type}}
+
+Enumerates the possible image formats.
+
+The \hyperlink{class_leap_1_1_image_a50d3952ed622312536c9f935987156c1}{Image\+::format()} function returns an item from the Format\+Type enumeration. \begin{DoxySince}{Since}
+2.\+2.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_image_a7d92772968c52fd77332d2390533d6e5}\label{class_leap_1_1_image_a7d92772968c52fd77332d2390533d6e5}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!Image@{Image}}
+\index{Image@{Image}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Image\+::\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a \hyperlink{class_leap_1_1_image}{Image} object.
+
+An uninitialized image is considered invalid. Get valid \hyperlink{class_leap_1_1_image}{Image} objects from a \hyperlink{class_leap_1_1_image_list}{Image\+List} object obtained from the \hyperlink{class_leap_1_1_frame_a64839985307492bf124b72ea13b1f2cf}{Frame\+::images()} method.
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_image_aa4a51ac912a8f4676b8b60c3119f0dba}\label{class_leap_1_1_image_aa4a51ac912a8f4676b8b60c3119f0dba}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!bytes\+Per\+Pixel@{bytes\+Per\+Pixel}}
+\index{bytes\+Per\+Pixel@{bytes\+Per\+Pixel}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{bytes\+Per\+Pixel()}{bytesPerPixel()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Image\+::bytes\+Per\+Pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The number of bytes per pixel.
+
+Use this value along with {\ttfamily \hyperlink{class_leap_1_1_image_adfca7fee0ab396da733d084946e1de0f}{Image\+::width()}} and {\ttfamily \hyperlink{class_leap_1_1_image}{Image}\+:\+::height()} to calculate the size of the data buffer.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_ab5226d1ec47ce8a4bcebee7783112d22}\label{class_leap_1_1_image_ab5226d1ec47ce8a4bcebee7783112d22}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!data@{data}}
+\index{data@{data}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const unsigned char$\ast$ Leap\+::\+Image\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The image data.
+
+The image data is a set of 8-\/bit intensity values. The buffer is {\ttfamily \hyperlink{class_leap_1_1_image_adfca7fee0ab396da733d084946e1de0f}{Image\+::width()} $\ast$ \hyperlink{class_leap_1_1_image_aa0715444f45580442c65f707eacc77a9}{Image\+::height()} $\ast$ \hyperlink{class_leap_1_1_image_aa4a51ac912a8f4676b8b60c3119f0dba}{Image\+::bytes\+Per\+Pixel()}} bytes long.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The array of unsigned char containing the sensor brightness values. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_ab36f9b712f7680c8fd8ae480655140bb}\label{class_leap_1_1_image_ab36f9b712f7680c8fd8ae480655140bb}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!distortion@{distortion}}
+\index{distortion@{distortion}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{distortion()}{distortion()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const float$\ast$ Leap\+::\+Image\+::distortion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The distortion calibration map for this image.
+
+The calibration map is a 64x64 grid of points. Each point is defined by a pair of 32-\/bit floating point values. Each point in the map represents a ray projected into the camera. The value of a grid point defines the pixel in the image data containing the brightness value produced by the light entering along the corresponding ray. By interpolating between grid data points, you can find the brightness value for any projected ray. Grid values that fall outside the range \mbox{[}0..1\mbox{]} do not correspond to a value in the image data and those points should be ignored.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+The calibration map can be used to render an undistorted image as well as to find the true angle from the camera to a feature in the raw image. The distortion map itself is designed to be used with G\+L\+SL shader programs. In non-\/realtime contexts, it may be more convenient to use the \hyperlink{class_leap_1_1_image_a76443f4064feb15dad132be15f9fa444}{Image\+::rectify()} and \hyperlink{class_leap_1_1_image_a8bb3e9747ecaba23b2a47043d823ee24}{Image\+::warp()} functions.
+
+If using shaders is not possible, you can use the distortion map directly. This can be faster than using the {\ttfamily \hyperlink{class_leap_1_1_image_a8bb3e9747ecaba23b2a47043d823ee24}{warp()}} function, if carefully optimized\+:
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Distortion is caused by the lens geometry as well as imperfections in the lens and sensor window. The calibration map is created by the calibration process run for each device at the factory (and which can be rerun by the user).
+
+Note, in a future release, there may be two distortion maps per image; one containing the horizontal values and the other containing the vertical values.
+
+\begin{DoxyReturn}{Returns}
+The float array containing the camera lens distortion map. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a151e6f3bf58e7b7e2f54d8620c440c1c}\label{class_leap_1_1_image_a151e6f3bf58e7b7e2f54d8620c440c1c}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!distortion\+Height@{distortion\+Height}}
+\index{distortion\+Height@{distortion\+Height}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{distortion\+Height()}{distortionHeight()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Image\+::distortion\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The distortion map height.
+
+Currently fixed at 64.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a8199bd54d44ad2f47f87c1672fae6fbc}\label{class_leap_1_1_image_a8199bd54d44ad2f47f87c1672fae6fbc}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!distortion\+Width@{distortion\+Width}}
+\index{distortion\+Width@{distortion\+Width}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{distortion\+Width()}{distortionWidth()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Image\+::distortion\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The stride of the distortion map.
+
+Since each point on the 64x64 element distortion map has two values in the buffer, the stride is 2 times the size of the grid. (Stride is currently fixed at 2 $\ast$ 64 = 128).
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a50d3952ed622312536c9f935987156c1}\label{class_leap_1_1_image_a50d3952ed622312536c9f935987156c1}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!format@{format}}
+\index{format@{format}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_image_acefbe5d3803afc9f433a6e3856d242d1}{Format\+Type} Leap\+::\+Image\+::format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The image format.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+2.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_aa0715444f45580442c65f707eacc77a9}\label{class_leap_1_1_image_aa0715444f45580442c65f707eacc77a9}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!height@{height}}
+\index{height@{height}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Image\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The image height.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_ab8a7baeb737b6f779d1ea47e0efaeb1d}\label{class_leap_1_1_image_ab8a7baeb737b6f779d1ea47e0efaeb1d}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!id@{id}}
+\index{id@{id}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t Leap\+::\+Image\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The image ID.
+
+Images with ID of 0 are from the left camera; those with an ID of 1 are from the right camera (with the device in its standard operating position with the green L\+ED facing the operator).
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_ab75d5df98401a07078e22916c828c0b5}\label{class_leap_1_1_image_ab75d5df98401a07078e22916c828c0b5}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_image}{Image}\& Leap\+::\+Image\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an invalid \hyperlink{class_leap_1_1_image}{Image} object.
+
+You can use the instance returned by this function in comparisons testing whether a given \hyperlink{class_leap_1_1_image}{Image} instance is valid or invalid. (You can also use the \hyperlink{class_leap_1_1_image_a536cc04b3a40a5e3527ca45d894d57fd}{Image\+::is\+Valid()} function.)
+
+\begin{DoxyReturn}{Returns}
+The invalid \hyperlink{class_leap_1_1_image}{Image} instance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a536cc04b3a40a5e3527ca45d894d57fd}\label{class_leap_1_1_image_a536cc04b3a40a5e3527ca45d894d57fd}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Image\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this \hyperlink{class_leap_1_1_image}{Image} instance contains valid data.
+
+\begin{DoxyReturn}{Returns}
+true, if and only if the image is valid. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a4ae4bb6f8dc39f0733f13de8f5ffbcf1}\label{class_leap_1_1_image_a4ae4bb6f8dc39f0733f13de8f5ffbcf1}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Image\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_image}{Image} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_image}{Image} object inequality.
+
+Two \hyperlink{class_leap_1_1_image}{Image} objects are equal if and only if both \hyperlink{class_leap_1_1_image}{Image} objects represent the exact same \hyperlink{class_leap_1_1_image}{Image} and both Images are valid. \begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a3418f0859f414d56bdfa19704020851c}\label{class_leap_1_1_image_a3418f0859f414d56bdfa19704020851c}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!operator==@{operator==}}
+\index{operator==@{operator==}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Image\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_image}{Image} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_image}{Image} object equality.
+
+Two \hyperlink{class_leap_1_1_image}{Image} objects are equal if and only if both \hyperlink{class_leap_1_1_image}{Image} objects represent the exact same \hyperlink{class_leap_1_1_image}{Image} and both Images are valid. \begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_ae07452257740b6050bf74cb835dc7f9a}\label{class_leap_1_1_image_ae07452257740b6050bf74cb835dc7f9a}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!ray\+OffsetX@{ray\+OffsetX}}
+\index{ray\+OffsetX@{ray\+OffsetX}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{ray\+Offset\+X()}{rayOffsetX()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Image\+::ray\+OffsetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The horizontal ray offset.
+
+Used to convert between normalized coordinates in the range \mbox{[}0..1\mbox{]} and the ray slope range \mbox{[}-\/4..4\mbox{]}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a7ae5ea2e7bcb151d50ad5ca03b1c3a37}\label{class_leap_1_1_image_a7ae5ea2e7bcb151d50ad5ca03b1c3a37}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!ray\+OffsetY@{ray\+OffsetY}}
+\index{ray\+OffsetY@{ray\+OffsetY}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{ray\+Offset\+Y()}{rayOffsetY()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Image\+::ray\+OffsetY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The vertical ray offset.
+
+Used to convert between normalized coordinates in the range \mbox{[}0..1\mbox{]} and the ray slope range \mbox{[}-\/4..4\mbox{]}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a250f1d16a456cc7887bb8a2ca3958bb0}\label{class_leap_1_1_image_a250f1d16a456cc7887bb8a2ca3958bb0}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!ray\+ScaleX@{ray\+ScaleX}}
+\index{ray\+ScaleX@{ray\+ScaleX}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{ray\+Scale\+X()}{rayScaleX()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Image\+::ray\+ScaleX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The horizontal ray scale factor.
+
+Used to convert between normalized coordinates in the range \mbox{[}0..1\mbox{]} and the ray slope range \mbox{[}-\/4..4\mbox{]}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a2a234dbcb6818b0d7cf1527682c1fdf6}\label{class_leap_1_1_image_a2a234dbcb6818b0d7cf1527682c1fdf6}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!ray\+ScaleY@{ray\+ScaleY}}
+\index{ray\+ScaleY@{ray\+ScaleY}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{ray\+Scale\+Y()}{rayScaleY()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Image\+::ray\+ScaleY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The vertical ray scale factor.
+
+Used to convert between normalized coordinates in the range \mbox{[}0..1\mbox{]} and the ray slope range \mbox{[}-\/4..4\mbox{]}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a76443f4064feb15dad132be15f9fa444}\label{class_leap_1_1_image_a76443f4064feb15dad132be15f9fa444}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!rectify@{rectify}}
+\index{rectify@{rectify}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{rectify()}{rectify()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Image\+::rectify (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{uv }\end{DoxyParamCaption}) const}
+
+Provides the corrected camera ray intercepting the specified point on the image.
+
+Given a point on the image, {\ttfamily \hyperlink{class_leap_1_1_image_a76443f4064feb15dad132be15f9fa444}{rectify()}} corrects for camera distortion and returns the true direction from the camera to the source of that image point within the Leap Motion field of view.
+
+This direction vector has an x and y component \mbox{[}x, y, 0\mbox{]}, with the third element always zero. Note that this vector uses the 2D camera coordinate system where the x-\/axis parallels the longer (typically horizontal) dimension and the y-\/axis parallels the shorter (vertical) dimension. The camera coordinate system does not correlate to the 3D Leap Motion coordinate system.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em uv} & A \hyperlink{struct_leap_1_1_vector}{Vector} containing the position of a pixel in the image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{struct_leap_1_1_vector}{Vector} containing the ray direction (the z-\/component of the vector is always 0). 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a21a29c8d7006c741c72c496c673f90d5}\label{class_leap_1_1_image_a21a29c8d7006c741c72c496c673f90d5}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!sequence\+Id@{sequence\+Id}}
+\index{sequence\+Id@{sequence\+Id}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{sequence\+Id()}{sequenceId()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int64\+\_\+t Leap\+::\+Image\+::sequence\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The image sequence ID.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+2.\+1 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_ae6cce7f3c7ebc323543a73f1b9c77dc3}\label{class_leap_1_1_image_ae6cce7f3c7ebc323543a73f1b9c77dc3}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{timestamp()}{timestamp()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int64\+\_\+t Leap\+::\+Image\+::timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a timestamp indicating when this frame began being captured on the device.
+
+\begin{DoxySince}{Since}
+2.\+2.\+7 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_ae46e17c86b9975e29f6cd1a77d7722bd}\label{class_leap_1_1_image_ae46e17c86b9975e29f6cd1a77d7722bd}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Image\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A string containing a brief, human readable description of the \hyperlink{class_leap_1_1_image}{Image} object.
+
+\begin{DoxyReturn}{Returns}
+A description of the \hyperlink{class_leap_1_1_image}{Image} as a string. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_a8bb3e9747ecaba23b2a47043d823ee24}\label{class_leap_1_1_image_a8bb3e9747ecaba23b2a47043d823ee24}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!warp@{warp}}
+\index{warp@{warp}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{warp()}{warp()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} Leap\+::\+Image\+::warp (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{xy }\end{DoxyParamCaption}) const}
+
+Provides the point in the image corresponding to a ray projecting from the camera.
+
+Given a ray projected from the camera in the specified direction, {\ttfamily \hyperlink{class_leap_1_1_image_a8bb3e9747ecaba23b2a47043d823ee24}{warp()}} corrects for camera distortion and returns the corresponding pixel coordinates in the image.
+
+The ray direction is specified in relationship to the camera. The first vector element corresponds to the \char`\"{}horizontal\char`\"{} view angle; the second corresponds to the \char`\"{}vertical\char`\"{} view angle.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+The {\ttfamily \hyperlink{class_leap_1_1_image_a8bb3e9747ecaba23b2a47043d823ee24}{warp()}} function returns pixel coordinates outside of the image bounds if you project a ray toward a point for which there is no recorded data.
+
+{\ttfamily \hyperlink{class_leap_1_1_image_a8bb3e9747ecaba23b2a47043d823ee24}{warp()}} is typically not fast enough for realtime distortion correction. For better performance, use a shader program exectued on a G\+PU.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xy} & A \hyperlink{struct_leap_1_1_vector}{Vector} containing the ray direction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{struct_leap_1_1_vector}{Vector} containing the pixel coordinates \mbox{[}x, y, 0\mbox{]} (with z always zero). 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_image_adfca7fee0ab396da733d084946e1de0f}\label{class_leap_1_1_image_adfca7fee0ab396da733d084946e1de0f}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!width@{width}}
+\index{width@{width}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Image\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The image width.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_image_acb3061d938151f14c3f2b35c2089f730}\label{class_leap_1_1_image_acb3061d938151f14c3f2b35c2089f730}} 
+\index{Leap\+::\+Image@{Leap\+::\+Image}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Leap\+::\+Image@{Leap\+::\+Image}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \hyperlink{class_leap_1_1_image}{Image} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Writes a brief, human readable description of the \hyperlink{class_leap_1_1_image}{Image} object.
+
+\begin{DoxySince}{Since}
+2.\+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

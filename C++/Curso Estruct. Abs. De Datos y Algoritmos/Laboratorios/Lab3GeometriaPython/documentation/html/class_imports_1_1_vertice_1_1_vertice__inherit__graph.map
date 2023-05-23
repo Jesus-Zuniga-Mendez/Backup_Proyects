@@ -1,0 +1,9 @@
+<map id="Imports.Vertice.Vertice" name="Imports.Vertice.Vertice">
+<area shape="rect" id="node2" href="$class_imports_1_1_figura_1_1_figura.html" title="Imports.Figura.Figura" alt="" coords="209,56,356,83"/>
+<area shape="rect" id="node3" href="$class_imports_1_1_circulo_1_1_circulo.html" title="Imports.Circulo.Circulo" alt="" coords="429,5,585,32"/>
+<area shape="rect" id="node4" href="$class_imports_1_1_rectangulo_1_1_rectangulo.html" title="Imports.Rectangulo.Rectangulo" alt="" coords="404,56,611,83"/>
+<area shape="rect" id="node5" href="$class_imports_1_1_triangulo_1_1_triangulo.html" title="Imports.Triangulo.Triangulo" alt="" coords="417,107,597,133"/>
+<area shape="rect" id="node6" href="$class_imports_1_1_triangulo_1_1_equilatero.html" title="Imports.Triangulo.Equilatero" alt="" coords="659,56,844,83"/>
+<area shape="rect" id="node7" href="$class_imports_1_1_triangulo_1_1_escaleno.html" title="Imports.Triangulo.Escaleno" alt="" coords="661,107,842,133"/>
+<area shape="rect" id="node8" href="$class_imports_1_1_triangulo_1_1_isosceles.html" title="Imports.Triangulo.Isosceles" alt="" coords="660,157,843,184"/>
+</map>

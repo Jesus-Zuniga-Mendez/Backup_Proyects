@@ -1,0 +1,55 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+
+
+Corto laboratorio sobre memoria dinamica para la creacion de matrices.  
+
+
+{\ttfamily \#include \char`\"{}./incl/matriz.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Funcion pricipal donde se llmaran las funciones creadas en matriz.\+c. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Corto laboratorio sobre memoria dinamica para la creacion de matrices. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27 de mayo de 2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyleft (l) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Funcion pricipal donde se llmaran las funciones creadas en matriz.\+c. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & cantidad de argumentos enviados por teclado \\
+\hline
+{\em argv} & puntero a los argumentos enviados por teclado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

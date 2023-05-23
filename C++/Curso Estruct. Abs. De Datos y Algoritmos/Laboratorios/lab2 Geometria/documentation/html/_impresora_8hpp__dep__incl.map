@@ -1,0 +1,14 @@
+<map id="include/Impresora.hpp" name="include/Impresora.hpp">
+<area shape="rect" id="node2" href="$_includes_8hpp.html" title="include/Includes.hpp" alt="" coords="651,80,792,107"/>
+<area shape="rect" id="node3" href="$_circulo_8hpp.html" title="include/Circulo.hpp" alt="" coords="5,155,139,181"/>
+<area shape="rect" id="node4" href="$_vertice_8hpp.html" title="include/Vertice.hpp" alt="" coords="163,155,296,181"/>
+<area shape="rect" id="node5" href="$_figura_8hpp.html" title="include/Figura.hpp" alt="" coords="320,155,448,181"/>
+<area shape="rect" id="node6" href="$_triangulo_8hpp.html" title="include/Triangulo.hpp" alt="" coords="473,155,618,181"/>
+<area shape="rect" id="node7" href="$_rectangulo_8hpp.html" title="include/Rectangulo.hpp" alt="" coords="642,155,801,181"/>
+<area shape="rect" id="node8" href="$_tools_8hpp.html" title="include/Tools.hpp" alt="" coords="825,155,949,181"/>
+<area shape="rect" id="node9" href="$_circulo_8cpp.html" title="sourcecode/Circulo.cpp" alt="" coords="973,155,1131,181"/>
+<area shape="rect" id="node10" href="$_figura_8cpp.html" title="sourcecode/Figura.cpp" alt="" coords="1156,155,1311,181"/>
+<area shape="rect" id="node11" href="$_rectangulo_8cpp.html" title="sourcecode/Rectangulo.cpp" alt="" coords="1335,155,1519,181"/>
+<area shape="rect" id="node12" href="$_triangulo_8cpp.html" title="sourcecode/Triangulo.cpp" alt="" coords="1543,155,1713,181"/>
+<area shape="rect" id="node13" href="$_vertice_8cpp.html" title="sourcecode/Vertice.cpp" alt="" coords="1738,155,1897,181"/>
+</map>

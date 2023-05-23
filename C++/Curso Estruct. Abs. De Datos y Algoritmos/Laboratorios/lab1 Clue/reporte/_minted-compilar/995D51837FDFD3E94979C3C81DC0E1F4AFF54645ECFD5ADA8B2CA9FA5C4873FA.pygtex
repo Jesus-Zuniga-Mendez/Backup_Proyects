@@ -1,0 +1,1052 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/******************************************************************************\PYGZbs{}}
+\PYG{c+cm}{* Copyright (C) 2012\PYGZhy{}2013 Leap Motion, Inc. All rights reserved.               *}
+\PYG{c+cm}{* Leap Motion proprietary and confidential. Not for distribution.              *}
+\PYG{c+cm}{* Use subject to the terms of the Leap Motion SDK Agreement available at       *}
+\PYG{c+cm}{* https://developer.leapmotion.com/sdk\PYGZus{}agreement, or another agreement         *}
+\PYG{c+cm}{* between Leap Motion and you, your company or other organization.             *}
+\PYG{c+cm}{\PYGZbs{}******************************************************************************/}
+
+\PYG{c+cp}{\PYGZsh{}if !defined(\PYGZus{}\PYGZus{}LeapMath\PYGZus{}h\PYGZus{}\PYGZus{})}
+\PYG{c+cp}{\PYGZsh{}define \PYGZus{}\PYGZus{}LeapMath\PYGZus{}h\PYGZus{}\PYGZus{}}
+
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}cmath\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}iostream\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}sstream\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}float.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}algorithm\PYGZgt{}}
+
+\PYG{k}{namespace} \PYG{n}{Leap} \PYG{p}{\PYGZob{}}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * The constant pi as a single precision floating point number.}
+\PYG{c+cm}{ * @since 1.0}
+\PYG{c+cm}{ */}
+\PYG{k}{static} \PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{PI}          \PYG{o}{=} \PYG{l+m+mf}{3.1415926536f}\PYG{p}{;}
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * The constant ratio to convert an angle measure from degrees to radians.}
+\PYG{c+cm}{ * Multiply a value in degrees by this constant to convert to radians.}
+\PYG{c+cm}{ * @since 1.0}
+\PYG{c+cm}{ */}
+\PYG{k}{static} \PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{DEG\PYGZus{}TO\PYGZus{}RAD}  \PYG{o}{=} \PYG{l+m+mf}{0.0174532925f}\PYG{p}{;}
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * The constant ratio to convert an angle measure from radians to degrees.}
+\PYG{c+cm}{ * Multiply a value in radians by this constant to convert to degrees.}
+\PYG{c+cm}{ * @since 1.0}
+\PYG{c+cm}{ */}
+\PYG{k}{static} \PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{RAD\PYGZus{}TO\PYGZus{}DEG}  \PYG{o}{=} \PYG{l+m+mf}{57.295779513f}\PYG{p}{;}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{* The difference between 1 and the least value greater than 1 that is}
+\PYG{c+cm}{* representable as a float.}
+\PYG{c+cm}{* @since 2.0}
+\PYG{c+cm}{*/}
+\PYG{k}{static} \PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{EPSILON} \PYG{o}{=} \PYG{l+m+mf}{1.192092896e\PYGZhy{}07}\PYG{n}{f}\PYG{p}{;}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * The Vector struct represents a three\PYGZhy{}component mathematical vector or point}
+\PYG{c+cm}{ * such as a direction or position in three\PYGZhy{}dimensional space.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * The Leap Motion software employs a right\PYGZhy{}handed Cartesian coordinate system.}
+\PYG{c+cm}{ * Values given are in units of real\PYGZhy{}world millimeters. The origin is centered}
+\PYG{c+cm}{ * at the center of the Leap Motion Controller. The x\PYGZhy{} and z\PYGZhy{}axes lie in the horizontal}
+\PYG{c+cm}{ * plane, with the x\PYGZhy{}axis running parallel to the long edge of the device.}
+\PYG{c+cm}{ * The y\PYGZhy{}axis is vertical, with positive values increasing upwards (in contrast}
+\PYG{c+cm}{ * to the downward orientation of most computer graphics coordinate systems).}
+\PYG{c+cm}{ * The z\PYGZhy{}axis has positive values increasing away from the computer screen.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * \PYGZbs{}image html images/Leap\PYGZus{}Axes.png}
+\PYG{c+cm}{ * @since 1.0}
+\PYG{c+cm}{ */}
+\PYG{k}{struct} \PYG{n}{Vector} \PYG{p}{\PYGZob{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Creates a new Vector with all components set to zero.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector}\PYG{p}{()} \PYG{o}{:}
+    \PYG{n}{x}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{),} \PYG{n}{y}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{),} \PYG{n}{z}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Creates a new Vector with the specified component values.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Constructor\PYGZus{}1.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{\PYGZus{}x}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{\PYGZus{}y}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{\PYGZus{}z}\PYG{p}{)} \PYG{o}{:}
+    \PYG{n}{x}\PYG{p}{(}\PYG{n}{\PYGZus{}x}\PYG{p}{),} \PYG{n}{y}\PYG{p}{(}\PYG{n}{\PYGZus{}y}\PYG{p}{),} \PYG{n}{z}\PYG{p}{(}\PYG{n}{\PYGZus{}z}\PYG{p}{)} \PYG{p}{\PYGZob{}\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Copies the specified Vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Constructor\PYGZus{}2.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{vector}\PYG{p}{)} \PYG{o}{:}
+    \PYG{n}{x}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{.}\PYG{n}{x}\PYG{p}{),} \PYG{n}{y}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{.}\PYG{n}{y}\PYG{p}{),} \PYG{n}{z}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{.}\PYG{n}{z}\PYG{p}{)} \PYG{p}{\PYGZob{}\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The zero vector: (0, 0, 0)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Zero.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{zero}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{n}{Vector} \PYG{n}{s\PYGZus{}zero}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{s\PYGZus{}zero}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The x\PYGZhy{}axis unit vector: (1, 0, 0)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}XAxis.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{xAxis}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{n}{Vector} \PYG{n}{s\PYGZus{}xAxis}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{s\PYGZus{}xAxis}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The y\PYGZhy{}axis unit vector: (0, 1, 0)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}YAxis.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{yAxis}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{n}{Vector} \PYG{n}{s\PYGZus{}yAxis}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{s\PYGZus{}yAxis}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The z\PYGZhy{}axis unit vector: (0, 0, 1)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}ZAxis.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{zAxis}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{n}{Vector} \PYG{n}{s\PYGZus{}zAxis}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{s\PYGZus{}zAxis}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The unit vector pointing left along the negative x\PYGZhy{}axis: (\PYGZhy{}1, 0, 0)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Left.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{left}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{n}{Vector} \PYG{n}{s\PYGZus{}left}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{s\PYGZus{}left}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The unit vector pointing right along the positive x\PYGZhy{}axis: (1, 0, 0)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Right.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{right}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{xAxis}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The unit vector pointing down along the negative y\PYGZhy{}axis: (0, \PYGZhy{}1, 0)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Down.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{down}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{n}{Vector} \PYG{n}{s\PYGZus{}down}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{s\PYGZus{}down}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The unit vector pointing up along the positive y\PYGZhy{}axis: (0, 1, 0)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Up.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{up}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{yAxis}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The unit vector pointing forward along the negative z\PYGZhy{}axis: (0, 0, \PYGZhy{}1)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Forward.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{forward}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{n}{Vector} \PYG{n}{s\PYGZus{}forward}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{s\PYGZus{}forward}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The unit vector pointing backward along the positive z\PYGZhy{}axis: (0, 0, 1)}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Backward.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{backward}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{zAxis}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The magnitude, or length, of this vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * The magnitude is the L2 norm, or Euclidean distance between the origin and}
+\PYG{c+cm}{   * the point represented by the (x, y, z) components of this Vector object.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Magnitude.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns The length of this vector.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{magnitude}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{x}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{n}{y}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{z}\PYG{o}{*}\PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The square of the magnitude, or length, of this vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Magnitude\PYGZus{}Squared.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns The square of the length of this vector.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{magnitudeSquared}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{x}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{n}{y}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{z}\PYG{o}{*}\PYG{n}{z}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The distance between the point represented by this Vector}
+\PYG{c+cm}{   * object and a point represented by the specified Vector object.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}DistanceTo.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param other A Vector object.}
+\PYG{c+cm}{   * @returns The distance from this point to the specified point.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{distanceTo}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{sqrt}\PYG{p}{((}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+}
+                     \PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)} \PYG{o}{+}
+                     \PYG{p}{(}\PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{));}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The angle between this vector and the specified vector in radians.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * The angle is measured in the plane formed by the two vectors. The}
+\PYG{c+cm}{   * angle returned is always the smaller of the two conjugate angles.}
+\PYG{c+cm}{   * Thus \PYGZlt{}tt\PYGZgt{}A.angleTo(B) == B.angleTo(A)\PYGZlt{}/tt\PYGZgt{} and is always a positive}
+\PYG{c+cm}{   * value less than or equal to pi radians (180 degrees).}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * If either vector has zero length, then this function returns zero.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}image html images/Math\PYGZus{}AngleTo.png}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}AngleTo.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param other A Vector object.}
+\PYG{c+cm}{   * @returns The angle between this vector and the specified vector in radians.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{angleTo}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k+kt}{float} \PYG{n}{denom} \PYG{o}{=} \PYG{k}{this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{magnitudeSquared}\PYG{p}{()} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{magnitudeSquared}\PYG{p}{();}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{denom} \PYG{o}{\PYGZlt{}=} \PYG{n}{EPSILON}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{return} \PYG{l+m+mf}{0.0f}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k+kt}{float} \PYG{n}{val} \PYG{o}{=} \PYG{k}{this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{other}\PYG{p}{)} \PYG{o}{/} \PYG{n}{std}\PYG{o}{::}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{denom}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{val} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mf}{1.0f}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{return} \PYG{l+m+mf}{0.0f}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{val} \PYG{o}{\PYGZlt{}=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.0f}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{return} \PYG{n}{PI}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{acos}\PYG{p}{(}\PYG{n}{val}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The pitch angle in radians.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Pitch is the angle between the negative z\PYGZhy{}axis and the projection of}
+\PYG{c+cm}{   * the vector onto the y\PYGZhy{}z plane. In other words, pitch represents rotation}
+\PYG{c+cm}{   * around the x\PYGZhy{}axis.}
+\PYG{c+cm}{   * If the vector points upward, the returned angle is between 0 and pi radians}
+\PYG{c+cm}{   * (180 degrees); if it points downward, the angle is between 0 and \PYGZhy{}pi radians.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}image html images/Math\PYGZus{}Pitch\PYGZus{}Angle.png}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Pitch.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns The angle of this vector above or below the horizon (x\PYGZhy{}z plane).}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{pitch}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{atan2}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The yaw angle in radians.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Yaw is the angle between the negative z\PYGZhy{}axis and the projection of}
+\PYG{c+cm}{   * the vector onto the x\PYGZhy{}z plane. In other words, yaw represents rotation}
+\PYG{c+cm}{   * around the y\PYGZhy{}axis. If the vector points to the right of the negative z\PYGZhy{}axis,}
+\PYG{c+cm}{   * then the returned angle is between 0 and pi radians (180 degrees);}
+\PYG{c+cm}{   * if it points to the left, the angle is between 0 and \PYGZhy{}pi radians.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}image html images/Math\PYGZus{}Yaw\PYGZus{}Angle.png}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Yaw.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns The angle of this vector to the right or left of the negative z\PYGZhy{}axis.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{yaw}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{atan2}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The roll angle in radians.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Roll is the angle between the y\PYGZhy{}axis and the projection of}
+\PYG{c+cm}{   * the vector onto the x\PYGZhy{}y plane. In other words, roll represents rotation}
+\PYG{c+cm}{   * around the z\PYGZhy{}axis. If the vector points to the left of the y\PYGZhy{}axis,}
+\PYG{c+cm}{   * then the returned angle is between 0 and pi radians (180 degrees);}
+\PYG{c+cm}{   * if it points to the right, the angle is between 0 and \PYGZhy{}pi radians.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}image html images/Math\PYGZus{}Roll\PYGZus{}Angle.png}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Use this function to get roll angle of the plane to which this vector is a}
+\PYG{c+cm}{   * normal. For example, if this vector represents the normal to the palm,}
+\PYG{c+cm}{   * then this function returns the tilt or roll of the palm plane compared}
+\PYG{c+cm}{   * to the horizontal (x\PYGZhy{}z) plane.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Roll.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns The angle of this vector to the right or left of the y\PYGZhy{}axis.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{roll}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{std}\PYG{o}{::}\PYG{n}{atan2}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The dot product of this vector with another vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * The dot product is the magnitude of the projection of this vector}
+\PYG{c+cm}{   * onto the specified vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}image html images/Math\PYGZus{}Dot.png}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Dot.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param other A Vector object.}
+\PYG{c+cm}{   * @returns The dot product of this vector and the specified vector.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{dot}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{p}{(}\PYG{n}{y} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)} \PYG{o}{+} \PYG{p}{(}\PYG{n}{z} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The cross product of this vector and the specified vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * The cross product is a vector orthogonal to both original vectors.}
+\PYG{c+cm}{   * It has a magnitude equal to the area of a parallelogram having the}
+\PYG{c+cm}{   * two vectors as sides. The direction of the returned vector is}
+\PYG{c+cm}{   * determined by the right\PYGZhy{}hand rule. Thus \PYGZlt{}tt\PYGZgt{}A.cross(B) == \PYGZhy{}B.cross(A).\PYGZlt{}/tt\PYGZgt{}}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}image html images/Math\PYGZus{}Cross.png}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Cross.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param other A Vector object.}
+\PYG{c+cm}{   * @returns The cross product of this vector and the specified vector.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{n}{cross}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector}\PYG{p}{((}\PYG{n}{y} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{z} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{),}
+                  \PYG{p}{(}\PYG{n}{z} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{),}
+                  \PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{y} \PYG{o}{*} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{));}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * A normalized copy of this vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * A normalized vector has the same direction as the original vector,}
+\PYG{c+cm}{   * but with a length of one.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Normalized.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns A Vector object with a length of one, pointing in the same}
+\PYG{c+cm}{   * direction as this Vector object.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{n}{normalized}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k+kt}{float} \PYG{n}{denom} \PYG{o}{=} \PYG{k}{this}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{magnitudeSquared}\PYG{p}{();}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{denom} \PYG{o}{\PYGZlt{}=} \PYG{n}{EPSILON}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{return} \PYG{n}{Vector}\PYG{o}{::}\PYG{n}{zero}\PYG{p}{();}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{denom} \PYG{o}{=} \PYG{l+m+mf}{1.0f} \PYG{o}{/} \PYG{n}{std}\PYG{o}{::}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{denom}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n+nf}{Vector}\PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{denom}\PYG{p}{,} \PYG{n}{y} \PYG{o}{*} \PYG{n}{denom}\PYG{p}{,} \PYG{n}{z} \PYG{o}{*} \PYG{n}{denom}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * A copy of this vector pointing in the opposite direction.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Negate.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns A Vector object with all components negated.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{k}{operator}\PYG{o}{\PYGZhy{}}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Add vectors component\PYGZhy{}wise.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Plus.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{k}{operator}\PYG{o}{+}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{x} \PYG{o}{+} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y} \PYG{o}{+} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{z} \PYG{o}{+} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Subtract vectors component\PYGZhy{}wise.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Minus.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{k}{operator}\PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{z} \PYG{o}{\PYGZhy{}} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Multiply vector by a scalar.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Times.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{k}{operator}\PYG{o}{*}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{scalar}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{scalar}\PYG{p}{,} \PYG{n}{y} \PYG{o}{*} \PYG{n}{scalar}\PYG{p}{,} \PYG{n}{z} \PYG{o}{*} \PYG{n}{scalar}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Divide vector by a scalar.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Divide.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{k}{operator}\PYG{o}{/}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{scalar}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{x} \PYG{o}{/} \PYG{n}{scalar}\PYG{p}{,} \PYG{n}{y} \PYG{o}{/} \PYG{n}{scalar}\PYG{p}{,} \PYG{n}{z} \PYG{o}{/} \PYG{n}{scalar}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+\PYG{c+cp}{\PYGZsh{}if !defined(SWIG)}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Multiply vector by a scalar on the left\PYGZhy{}hand side (C++ only).}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Left\PYGZus{}Times.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{friend} \PYG{n}{Vector} \PYG{k}{operator}\PYG{o}{*}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{scalar}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{vector}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{.}\PYG{n}{x} \PYG{o}{*} \PYG{n}{scalar}\PYG{p}{,} \PYG{n}{vector}\PYG{p}{.}\PYG{n}{y} \PYG{o}{*} \PYG{n}{scalar}\PYG{p}{,} \PYG{n}{vector}\PYG{p}{.}\PYG{n}{z} \PYG{o}{*} \PYG{n}{scalar}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+\PYG{c+cp}{\PYGZsh{}endif}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Add vectors component\PYGZhy{}wise and assign the sum.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{k}{operator}\PYG{o}{+=}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{x} \PYG{o}{+=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;}
+    \PYG{n}{y} \PYG{o}{+=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+    \PYG{n}{z} \PYG{o}{+=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+    \PYG{k}{return} \PYG{o}{*}\PYG{k}{this}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Subtract vectors component\PYGZhy{}wise and assign the difference.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{k}{operator}\PYG{o}{\PYGZhy{}=}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{x} \PYG{o}{\PYGZhy{}=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;}
+    \PYG{n}{y} \PYG{o}{\PYGZhy{}=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+    \PYG{n}{z} \PYG{o}{\PYGZhy{}=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+    \PYG{k}{return} \PYG{o}{*}\PYG{k}{this}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Multiply vector by a scalar and assign the product.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{k}{operator}\PYG{o}{*=}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{scalar}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{x} \PYG{o}{*=} \PYG{n}{scalar}\PYG{p}{;}
+    \PYG{n}{y} \PYG{o}{*=} \PYG{n}{scalar}\PYG{p}{;}
+    \PYG{n}{z} \PYG{o}{*=} \PYG{n}{scalar}\PYG{p}{;}
+    \PYG{k}{return} \PYG{o}{*}\PYG{k}{this}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Divide vector by a scalar and assign the quotient.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{k}{operator}\PYG{o}{/=}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{scalar}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{x} \PYG{o}{/=} \PYG{n}{scalar}\PYG{p}{;}
+    \PYG{n}{y} \PYG{o}{/=} \PYG{n}{scalar}\PYG{p}{;}
+    \PYG{n}{z} \PYG{o}{/=} \PYG{n}{scalar}\PYG{p}{;}
+    \PYG{k}{return} \PYG{o}{*}\PYG{k}{this}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Returns a string containing this vector in a human readable format: (x, y, z).}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{toString}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{stringstream} \PYG{n}{result}\PYG{p}{;}
+    \PYG{n}{result} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}(\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{x} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}, \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{y} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}, \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{z} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{})\PYGZdq{}}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{result}\PYG{p}{.}\PYG{n}{str}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Writes the vector to the output stream using a human readable format: (x, y, z).}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{friend} \PYG{n}{std}\PYG{o}{::}\PYG{n}{ostream}\PYG{o}{\PYGZam{}} \PYG{k}{operator}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ostream}\PYG{o}{\PYGZam{}} \PYG{n}{out}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{vector}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{out} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{vector}\PYG{p}{.}\PYG{n}{toString}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Compare Vector equality component\PYGZhy{}wise.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Equals.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{bool} \PYG{k}{operator}\PYG{o}{==}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{x} \PYG{o}{==} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{y} \PYG{o}{==} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{z} \PYG{o}{==} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Compare Vector inequality component\PYGZhy{}wise.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}NotEqual.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{bool} \PYG{k}{operator}\PYG{o}{!=}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{x} \PYG{o}{!=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{x} \PYG{o}{||} \PYG{n}{y} \PYG{o}{!=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{y} \PYG{o}{||} \PYG{n}{z} \PYG{o}{!=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Returns true if all of the vector\PYGZsq{}s components are finite.  If any}
+\PYG{c+cm}{   * component is NaN or infinite, then this returns false.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}IsValid.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{bool} \PYG{n}{isValid}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZlt{}=} \PYG{n}{FLT\PYGZus{}MAX} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{x} \PYG{o}{\PYGZgt{}=} \PYG{o}{\PYGZhy{}}\PYG{n}{FLT\PYGZus{}MAX}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+           \PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZlt{}=} \PYG{n}{FLT\PYGZus{}MAX} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{y} \PYG{o}{\PYGZgt{}=} \PYG{o}{\PYGZhy{}}\PYG{n}{FLT\PYGZus{}MAX}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}}
+           \PYG{p}{(}\PYG{n}{z} \PYG{o}{\PYGZlt{}=} \PYG{n}{FLT\PYGZus{}MAX} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{z} \PYG{o}{\PYGZgt{}=} \PYG{o}{\PYGZhy{}}\PYG{n}{FLT\PYGZus{}MAX}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Index vector components numerically.}
+\PYG{c+cm}{   * Index 0 is x, index 1 is y, and index 2 is z.}
+\PYG{c+cm}{   * @returns The x, y, or z component of this Vector, if the specified index}
+\PYG{c+cm}{   * value is at least 0 and at most 2; otherwise, returns zero.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}Index.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{k}{operator}\PYG{p}{[](}\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{index} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{3} \PYG{o}{?} \PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{x}\PYG{p}{)[}\PYG{n}{index}\PYG{p}{]} \PYG{o}{:} \PYG{l+m+mf}{0.0f}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Cast the vector to a float array.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Vector\PYGZus{}ToFloatPointer.txt}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{const} \PYG{k+kt}{float}\PYG{o}{*} \PYG{n}{toFloatPointer}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{o}{\PYGZam{}}\PYG{n}{x}\PYG{p}{;} \PYG{c+cm}{/* Note: Assumes x, y, z are aligned in memory. */}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Convert a Leap::Vector to another 3\PYGZhy{}component Vector type.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * The specified type must define a constructor that takes the x, y, and z}
+\PYG{c+cm}{   * components as separate parameters.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{template}\PYG{o}{\PYGZlt{}}\PYG{k}{typename} \PYG{n}{Vector3Type}\PYG{o}{\PYGZgt{}}
+  \PYG{k}{const} \PYG{n}{Vector3Type} \PYG{n}{toVector3}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector3Type}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Convert a Leap::Vector to another 4\PYGZhy{}component Vector type.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * The specified type must define a constructor that takes the x, y, z, and w}
+\PYG{c+cm}{   * components as separate parameters. (The homogeneous coordinate, w, is set}
+\PYG{c+cm}{   * to zero by default, but you should typically set it to one for vectors}
+\PYG{c+cm}{   * representing a position.)}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{template}\PYG{o}{\PYGZlt{}}\PYG{k}{typename} \PYG{n}{Vector4Type}\PYG{o}{\PYGZgt{}}
+  \PYG{k}{const} \PYG{n}{Vector4Type} \PYG{n}{toVector4}\PYG{p}{(}\PYG{k+kt}{float} \PYG{n}{w}\PYG{o}{=}\PYG{l+m+mf}{0.0f}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Vector4Type}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{z}\PYG{p}{,} \PYG{n}{w}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The horizontal component.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{x}\PYG{p}{;}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The vertical component.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{y}\PYG{p}{;}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The depth component.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{z}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * The FloatArray struct is used to allow the returning of native float arrays}
+\PYG{c+cm}{ * without requiring dynamic memory allocation.  It represents a matrix}
+\PYG{c+cm}{ * with a size up to 4x4.}
+\PYG{c+cm}{ * @since 1.0}
+\PYG{c+cm}{ */}
+\PYG{k}{struct} \PYG{n}{FloatArray} \PYG{p}{\PYGZob{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Access the elements of the float array exactly like a native array.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float}\PYG{o}{\PYGZam{}} \PYG{k}{operator}\PYG{p}{[]} \PYG{p}{(}\PYG{k+kt}{unsigned} \PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{m\PYGZus{}array}\PYG{p}{[}\PYG{n}{index}\PYG{p}{];}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Use the Float Array anywhere a float pointer can be used.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{operator} \PYG{k+kt}{float}\PYG{o}{*} \PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{m\PYGZus{}array}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Use the Float Array anywhere a const float pointer can be used.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{operator} \PYG{k}{const} \PYG{k+kt}{float}\PYG{o}{*} \PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{m\PYGZus{}array}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * An array containing up to 16 entries of the matrix.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{float} \PYG{n}{m\PYGZus{}array}\PYG{p}{[}\PYG{l+m+mi}{16}\PYG{p}{];}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * The Matrix struct represents a transformation matrix.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * To use this struct to transform a Vector, construct a matrix containing the}
+\PYG{c+cm}{ * desired transformation and then use the Matrix::transformPoint() or}
+\PYG{c+cm}{ * Matrix::transformDirection() functions to apply the transform.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * Transforms can be combined by multiplying two or more transform matrices using}
+\PYG{c+cm}{ * the * operator.}
+\PYG{c+cm}{ * @since 1.0}
+\PYG{c+cm}{ */}
+\PYG{k}{struct} \PYG{n}{Matrix}
+\PYG{p}{\PYGZob{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Constructs an identity transformation matrix.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}Matrix.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix}\PYG{p}{()} \PYG{o}{:}
+    \PYG{n}{xBasis}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{),}
+    \PYG{n}{yBasis}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{),}
+    \PYG{n}{zBasis}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{),}
+    \PYG{n}{origin}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Constructs a copy of the specified Matrix object.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}Matrix\PYGZus{}copy.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Matrix}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{o}{:}
+    \PYG{n}{xBasis}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{xBasis}\PYG{p}{),}
+    \PYG{n}{yBasis}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{yBasis}\PYG{p}{),}
+    \PYG{n}{zBasis}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{zBasis}\PYG{p}{),}
+    \PYG{n}{origin}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{origin}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Constructs a transformation matrix from the specified basis vectors.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}Matrix\PYGZus{}basis.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param \PYGZus{}xBasis A Vector specifying rotation and scale factors for the x\PYGZhy{}axis.}
+\PYG{c+cm}{   * @param \PYGZus{}yBasis A Vector specifying rotation and scale factors for the y\PYGZhy{}axis.}
+\PYG{c+cm}{   * @param \PYGZus{}zBasis A Vector specifying rotation and scale factors for the z\PYGZhy{}axis.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}xBasis}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}yBasis}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}zBasis}\PYG{p}{)} \PYG{o}{:}
+    \PYG{n}{xBasis}\PYG{p}{(}\PYG{n}{\PYGZus{}xBasis}\PYG{p}{),}
+    \PYG{n}{yBasis}\PYG{p}{(}\PYG{n}{\PYGZus{}yBasis}\PYG{p}{),}
+    \PYG{n}{zBasis}\PYG{p}{(}\PYG{n}{\PYGZus{}zBasis}\PYG{p}{),}
+    \PYG{n}{origin}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Constructs a transformation matrix from the specified basis and translation vectors.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}Matrix\PYGZus{}basis\PYGZus{}origin.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param \PYGZus{}xBasis A Vector specifying rotation and scale factors for the x\PYGZhy{}axis.}
+\PYG{c+cm}{   * @param \PYGZus{}yBasis A Vector specifying rotation and scale factors for the y\PYGZhy{}axis.}
+\PYG{c+cm}{   * @param \PYGZus{}zBasis A Vector specifying rotation and scale factors for the z\PYGZhy{}axis.}
+\PYG{c+cm}{   * @param \PYGZus{}origin A Vector specifying translation factors on all three axes.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}xBasis}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}yBasis}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}zBasis}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}origin}\PYG{p}{)} \PYG{o}{:}
+    \PYG{n}{xBasis}\PYG{p}{(}\PYG{n}{\PYGZus{}xBasis}\PYG{p}{),}
+    \PYG{n}{yBasis}\PYG{p}{(}\PYG{n}{\PYGZus{}yBasis}\PYG{p}{),}
+    \PYG{n}{zBasis}\PYG{p}{(}\PYG{n}{\PYGZus{}zBasis}\PYG{p}{),}
+    \PYG{n}{origin}\PYG{p}{(}\PYG{n}{\PYGZus{}origin}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Constructs a transformation matrix specifying a rotation around the specified vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}Matrix\PYGZus{}rotation.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param axis A Vector specifying the axis of rotation.}
+\PYG{c+cm}{   * @param angleRadians The amount of rotation in radians.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{axis}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{angleRadians}\PYG{p}{)} \PYG{o}{:}
+    \PYG{n}{origin}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{setRotation}\PYG{p}{(}\PYG{n}{axis}\PYG{p}{,} \PYG{n}{angleRadians}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Constructs a transformation matrix specifying a rotation around the specified vector}
+\PYG{c+cm}{   * and a translation by the specified vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}Matrix\PYGZus{}rotation\PYGZus{}translation.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param axis A Vector specifying the axis of rotation.}
+\PYG{c+cm}{   * @param angleRadians The angle of rotation in radians.}
+\PYG{c+cm}{   * @param translation A Vector representing the translation part of the transform.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{axis}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{angleRadians}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{translation}\PYG{p}{)}
+    \PYG{o}{:} \PYG{n}{origin}\PYG{p}{(}\PYG{n}{translation}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{setRotation}\PYG{p}{(}\PYG{n}{axis}\PYG{p}{,} \PYG{n}{angleRadians}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Returns the identity matrix specifying no translation, rotation, and scale.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}identity.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns The identity matrix.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{static} \PYG{k}{const} \PYG{n}{Matrix}\PYG{o}{\PYGZam{}} \PYG{n}{identity}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+    \PYG{k}{static} \PYG{n}{Matrix} \PYG{n}{s\PYGZus{}identity}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{s\PYGZus{}identity}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Sets this transformation matrix to represent a rotation around the specified vector.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}setRotation.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * This function erases any previous rotation and scale transforms applied}
+\PYG{c+cm}{   * to this matrix, but does not affect translation.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param axis A Vector specifying the axis of rotation.}
+\PYG{c+cm}{   * @param angleRadians The amount of rotation in radians.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{void} \PYG{n}{setRotation}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{axis}\PYG{p}{,} \PYG{k+kt}{float} \PYG{n}{angleRadians}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{const} \PYG{n}{Vector} \PYG{n}{n} \PYG{o}{=} \PYG{n}{axis}\PYG{p}{.}\PYG{n}{normalized}\PYG{p}{();}
+    \PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{s} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{angleRadians}\PYG{p}{);}
+    \PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{c} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{angleRadians}\PYG{p}{);}
+    \PYG{k}{const} \PYG{k+kt}{float} \PYG{n}{C} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{c}\PYG{p}{);}
+
+    \PYG{n}{xBasis} \PYG{o}{=} \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{+} \PYG{n}{c}\PYG{p}{,}      \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{\PYGZhy{}} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{*}\PYG{n}{s}\PYG{p}{,} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{+} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{s}\PYG{p}{);}
+    \PYG{n}{yBasis} \PYG{o}{=} \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{+} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{*}\PYG{n}{s}\PYG{p}{,} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{+} \PYG{n}{c}\PYG{p}{,}      \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{\PYGZhy{}} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{s}\PYG{p}{);}
+    \PYG{n}{zBasis} \PYG{o}{=} \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{\PYGZhy{}} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{s}\PYG{p}{,} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{+} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{n}{s}\PYG{p}{,} \PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{*}\PYG{n}{n}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{*}\PYG{n}{C} \PYG{o}{+} \PYG{n}{c}     \PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Transforms a vector with this matrix by transforming its rotation,}
+\PYG{c+cm}{   * scale, and translation.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}transformPoint.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Translation is applied after rotation and scale.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param in The Vector to transform.}
+\PYG{c+cm}{   * @returns A new Vector representing the transformed original.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{n}{transformPoint}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{in}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{xBasis}\PYG{o}{*}\PYG{n}{in}\PYG{p}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{yBasis}\PYG{o}{*}\PYG{n}{in}\PYG{p}{.}\PYG{n}{y} \PYG{o}{+} \PYG{n}{zBasis}\PYG{o}{*}\PYG{n}{in}\PYG{p}{.}\PYG{n}{z} \PYG{o}{+} \PYG{n}{origin}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Transforms a vector with this matrix by transforming its rotation and}
+\PYG{c+cm}{   * scale only.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}transformDirection.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param in The Vector to transform.}
+\PYG{c+cm}{   * @returns A new Vector representing the transformed original.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{n}{transformDirection}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Vector}\PYG{o}{\PYGZam{}} \PYG{n}{in}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{xBasis}\PYG{o}{*}\PYG{n}{in}\PYG{p}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{yBasis}\PYG{o}{*}\PYG{n}{in}\PYG{p}{.}\PYG{n}{y} \PYG{o}{+} \PYG{n}{zBasis}\PYG{o}{*}\PYG{n}{in}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Performs a matrix inverse if the matrix consists entirely of rigid}
+\PYG{c+cm}{   * transformations (translations and rotations).  If the matrix is not rigid,}
+\PYG{c+cm}{   * this operation will not represent an inverse.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}rigidInverse.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Note that all matrices that are directly returned by the API are rigid.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @returns The rigid inverse of the matrix.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix} \PYG{n}{rigidInverse}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{n}{Matrix} \PYG{n}{rotInverse} \PYG{o}{=} \PYG{n}{Matrix}\PYG{p}{(}\PYG{n}{Vector}\PYG{p}{(}\PYG{n}{xBasis}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{yBasis}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{zBasis}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]),}
+                               \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{xBasis}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{yBasis}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{zBasis}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]),}
+                               \PYG{n}{Vector}\PYG{p}{(}\PYG{n}{xBasis}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{],} \PYG{n}{yBasis}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{],} \PYG{n}{zBasis}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]));}
+    \PYG{n}{rotInverse}\PYG{p}{.}\PYG{n}{origin} \PYG{o}{=} \PYG{n}{rotInverse}\PYG{p}{.}\PYG{n}{transformDirection}\PYG{p}{(} \PYG{o}{\PYGZhy{}}\PYG{n}{origin} \PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{rotInverse}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Multiply transform matrices.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Combines two transformations into a single equivalent transformation.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}operator\PYGZus{}times.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @param other A Matrix to multiply on the right hand side.}
+\PYG{c+cm}{   * @returns A new Matrix representing the transformation equivalent to}
+\PYG{c+cm}{   * applying the other transformation followed by this transformation.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix} \PYG{k}{operator}\PYG{o}{*}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Matrix}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Matrix}\PYG{p}{(}\PYG{n}{transformDirection}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{xBasis}\PYG{p}{),}
+                  \PYG{n}{transformDirection}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{yBasis}\PYG{p}{),}
+                  \PYG{n}{transformDirection}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{zBasis}\PYG{p}{),}
+                  \PYG{n}{transformPoint}\PYG{p}{(}\PYG{n}{other}\PYG{p}{.}\PYG{n}{origin}\PYG{p}{));}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Multiply transform matrices and assign the product.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}operator\PYGZus{}times\PYGZus{}equal.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Matrix}\PYG{o}{\PYGZam{}} \PYG{k}{operator}\PYG{o}{*=}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Matrix}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{p}{(}\PYG{o}{*}\PYG{k}{this}\PYG{p}{)} \PYG{o}{=} \PYG{p}{(}\PYG{o}{*}\PYG{k}{this}\PYG{p}{)} \PYG{o}{*} \PYG{n}{other}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Compare Matrix equality component\PYGZhy{}wise.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}operator\PYGZus{}equals.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{bool} \PYG{k}{operator}\PYG{o}{==}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Matrix}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{xBasis} \PYG{o}{==} \PYG{n}{other}\PYG{p}{.}\PYG{n}{xBasis} \PYG{o}{\PYGZam{}\PYGZam{}}
+           \PYG{n}{yBasis} \PYG{o}{==} \PYG{n}{other}\PYG{p}{.}\PYG{n}{yBasis} \PYG{o}{\PYGZam{}\PYGZam{}}
+           \PYG{n}{zBasis} \PYG{o}{==} \PYG{n}{other}\PYG{p}{.}\PYG{n}{zBasis} \PYG{o}{\PYGZam{}\PYGZam{}}
+           \PYG{n}{origin} \PYG{o}{==} \PYG{n}{other}\PYG{p}{.}\PYG{n}{origin}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Compare Matrix inequality component\PYGZhy{}wise.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}operator\PYGZus{}not\PYGZus{}equals.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k+kt}{bool} \PYG{k}{operator}\PYG{o}{!=}\PYG{p}{(}\PYG{k}{const} \PYG{n}{Matrix}\PYG{o}{\PYGZam{}} \PYG{n}{other}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{xBasis} \PYG{o}{!=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{xBasis} \PYG{o}{||}
+           \PYG{n}{yBasis} \PYG{o}{!=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{yBasis} \PYG{o}{||}
+           \PYG{n}{zBasis} \PYG{o}{!=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{zBasis} \PYG{o}{||}
+           \PYG{n}{origin} \PYG{o}{!=} \PYG{n}{other}\PYG{p}{.}\PYG{n}{origin}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Convert a Leap::Matrix object to another 3x3 matrix type.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * The new type must define a constructor function that takes each matrix}
+\PYG{c+cm}{   * element as a parameter in row\PYGZhy{}major order.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Translation factors are discarded.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{template}\PYG{o}{\PYGZlt{}}\PYG{k}{typename} \PYG{n}{Matrix3x3Type}\PYG{o}{\PYGZgt{}}
+  \PYG{k}{const} \PYG{n}{Matrix3x3Type} \PYG{n}{toMatrix3x3}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Matrix3x3Type}\PYG{p}{(}\PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{,}
+                         \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{,}
+                         \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Convert a Leap::Matrix object to another 4x4 matrix type.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * The new type must define a constructor function that takes each matrix}
+\PYG{c+cm}{   * element as a parameter in row\PYGZhy{}major order.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{template}\PYG{o}{\PYGZlt{}}\PYG{k}{typename} \PYG{n}{Matrix4x4Type}\PYG{o}{\PYGZgt{}}
+  \PYG{k}{const} \PYG{n}{Matrix4x4Type} \PYG{n}{toMatrix4x4}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{Matrix4x4Type}\PYG{p}{(}\PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{,} \PYG{l+m+mf}{0.0f}\PYG{p}{,}
+                         \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{,} \PYG{l+m+mf}{0.0f}\PYG{p}{,}
+                         \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{,} \PYG{l+m+mf}{0.0f}\PYG{p}{,}
+                         \PYG{n}{origin}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n}{origin}\PYG{p}{.}\PYG{n}{y}\PYG{p}{,} \PYG{n}{origin}\PYG{p}{.}\PYG{n}{z}\PYG{p}{,} \PYG{l+m+mf}{1.0f}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Writes the 3x3 Matrix object to a 9 element row\PYGZhy{}major float or}
+\PYG{c+cm}{   * double array.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Translation factors are discarded.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Returns a pointer to the same data.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{template}\PYG{o}{\PYGZlt{}}\PYG{k}{typename} \PYG{n}{T}\PYG{o}{\PYGZgt{}}
+  \PYG{n}{T}\PYG{o}{*} \PYG{n}{toArray3x3}\PYG{p}{(}\PYG{n}{T}\PYG{o}{*} \PYG{n}{output}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+    \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]} \PYG{o}{=} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]} \PYG{o}{=} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]} \PYG{o}{=} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+    \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Convert a 3x3 Matrix object to a 9 element row\PYGZhy{}major float array.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Translation factors are discarded.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}toArray3x3.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Returns a FloatArray struct to avoid dynamic memory allocation.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{FloatArray} \PYG{n}{toArray3x3}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{n}{FloatArray} \PYG{n}{output}\PYG{p}{;}
+    \PYG{n}{toArray3x3}\PYG{p}{((}\PYG{k+kt}{float}\PYG{o}{*}\PYG{p}{)}\PYG{n}{output}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Writes the 4x4 Matrix object to a 16 element row\PYGZhy{}major float}
+\PYG{c+cm}{   * or double array.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Returns a pointer to the same data.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{template}\PYG{o}{\PYGZlt{}}\PYG{k}{typename} \PYG{n}{T}\PYG{o}{\PYGZgt{}}
+  \PYG{n}{T}\PYG{o}{*} \PYG{n}{toArray4x4}\PYG{p}{(}\PYG{n}{T}\PYG{o}{*} \PYG{n}{output}\PYG{p}{)} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}  \PYG{o}{=} \PYG{l+m+mf}{0.0f}\PYG{p}{;}
+    \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}  \PYG{o}{=} \PYG{l+m+mf}{0.0f}\PYG{p}{;}
+    \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{9}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{]} \PYG{o}{=} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{11}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0f}\PYG{p}{;}
+    \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{12}\PYG{p}{]} \PYG{o}{=} \PYG{n}{origin}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{13}\PYG{p}{]} \PYG{o}{=} \PYG{n}{origin}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{14}\PYG{p}{]} \PYG{o}{=} \PYG{n}{origin}\PYG{p}{.}\PYG{n}{z}\PYG{p}{;} \PYG{n}{output}\PYG{p}{[}\PYG{l+m+mi}{15}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{1.0f}\PYG{p}{;}
+    \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Convert a 4x4 Matrix object to a 16 element row\PYGZhy{}major float array.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}toArray4x4.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * Returns a FloatArray struct to avoid dynamic memory allocation.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{FloatArray} \PYG{n}{toArray4x4}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{n}{FloatArray} \PYG{n}{output}\PYG{p}{;}
+    \PYG{n}{toArray4x4}\PYG{p}{((}\PYG{k+kt}{float}\PYG{o}{*}\PYG{p}{)}\PYG{n}{output}\PYG{p}{);}
+    \PYG{k}{return} \PYG{n}{output}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Write the matrix to a string in a human readable format.}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{toString}\PYG{p}{()} \PYG{k}{const} \PYG{p}{\PYGZob{}}
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{stringstream} \PYG{n}{result}\PYG{p}{;}
+    \PYG{n}{result} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}xBasis:\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{xBasis}\PYG{p}{.}\PYG{n}{toString}\PYG{p}{()} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} yBasis:\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{yBasis}\PYG{p}{.}\PYG{n}{toString}\PYG{p}{()}
+           \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} zBasis:\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{zBasis}\PYG{p}{.}\PYG{n}{toString}\PYG{p}{()} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} origin:\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{origin}\PYG{p}{.}\PYG{n}{toString}\PYG{p}{();}
+    \PYG{k}{return} \PYG{n}{result}\PYG{p}{.}\PYG{n}{str}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * Write the matrix to an output stream in a human readable format.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}operator\PYGZus{}stream.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{k}{friend} \PYG{n}{std}\PYG{o}{::}\PYG{n}{ostream}\PYG{o}{\PYGZam{}} \PYG{k}{operator}\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{ostream}\PYG{o}{\PYGZam{}} \PYG{n}{out}\PYG{p}{,} \PYG{k}{const} \PYG{n}{Matrix}\PYG{o}{\PYGZam{}} \PYG{n}{matrix}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{out} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{matrix}\PYG{p}{.}\PYG{n}{toString}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The basis vector for the x\PYGZhy{}axis.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}xBasis.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{n}{xBasis}\PYG{p}{;}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The basis vector for the y\PYGZhy{}axis.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}yBasis.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{n}{yBasis}\PYG{p}{;}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The basis vector for the z\PYGZhy{}axis.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}zBasis.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{n}{zBasis}\PYG{p}{;}
+  \PYG{c+cm}{/**}
+\PYG{c+cm}{   * The translation factors for all three axes.}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * \PYGZbs{}include Matrix\PYGZus{}origin.txt}
+\PYG{c+cm}{   *}
+\PYG{c+cm}{   * @since 1.0}
+\PYG{c+cm}{   */}
+  \PYG{n}{Vector} \PYG{n}{origin}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{p}{\PYGZcb{};} \PYG{c+c1}{// namespace Leap}
+
+\PYG{c+cp}{\PYGZsh{}endif }\PYG{c+c1}{// \PYGZus{}\PYGZus{}LeapMath\PYGZus{}h\PYGZus{}\PYGZus{}}
+\end{Verbatim}

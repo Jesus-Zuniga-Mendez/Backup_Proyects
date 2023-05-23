@@ -1,0 +1,79 @@
+\hypertarget{class_leap_1_1_screen}{}\section{Leap\+:\+:Screen Class Reference}
+\label{class_leap_1_1_screen}\index{Leap\+::\+Screen@{Leap\+::\+Screen}}
+
+
+Inheritance diagram for Leap\+:\+:Screen\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Screen\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_ae4bacceec22fd48fa983f863854a1442}\label{class_leap_1_1_screen_ae4bacceec22fd48fa983f863854a1442}} 
+{\bfseries Screen} (Screen\+Implementation $\ast$)
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_ac2b2e92ac8d200c557441c0410f7b247}\label{class_leap_1_1_screen_ac2b2e92ac8d200c557441c0410f7b247}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int32\+\_\+t {\bfseries id} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_abc29794cec5d108c7e7dde0d6e5da52b}\label{class_leap_1_1_screen_abc29794cec5d108c7e7dde0d6e5da52b}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} {\bfseries intersect} (const \hyperlink{class_leap_1_1_pointable}{Pointable} \&pointable, bool normalize, float clamp\+Ratio=1.\+0f) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a0f80cb7d427470464d4a67689af8ed63}\label{class_leap_1_1_screen_a0f80cb7d427470464d4a67689af8ed63}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} {\bfseries intersect} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&position, const \hyperlink{struct_leap_1_1_vector}{Vector} \&direction, bool normalize, float clamp\+Ratio=1.\+0f) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a0464f2601b1e265cc2af22880c7e53f8}\label{class_leap_1_1_screen_a0464f2601b1e265cc2af22880c7e53f8}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} {\bfseries project} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&position, bool normalize, float clamp\+Ratio=1.\+0f) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_ae5fc05986f7126c2b7f7bbb86b6079f5}\label{class_leap_1_1_screen_ae5fc05986f7126c2b7f7bbb86b6079f5}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} {\bfseries horizontal\+Axis} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_aa83910ada42bd75c20f6814ee6a7a308}\label{class_leap_1_1_screen_aa83910ada42bd75c20f6814ee6a7a308}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} {\bfseries vertical\+Axis} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a6ee7f327bb42acdf7b12fcc347485ccd}\label{class_leap_1_1_screen_a6ee7f327bb42acdf7b12fcc347485ccd}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} {\bfseries bottom\+Left\+Corner} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a757749f24eccf155f1aaf2975e32c0ea}\label{class_leap_1_1_screen_a757749f24eccf155f1aaf2975e32c0ea}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} {\bfseries normal} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a39872f618517d0ed6281f5ad53d48120}\label{class_leap_1_1_screen_a39872f618517d0ed6281f5ad53d48120}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int {\bfseries width\+Pixels} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a9c701328f24a60b0fb3029f8e70d5b79}\label{class_leap_1_1_screen_a9c701328f24a60b0fb3029f8e70d5b79}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int {\bfseries height\+Pixels} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_aa2bf539ea4b44afdc06162611a71a2d1}\label{class_leap_1_1_screen_aa2bf539ea4b44afdc06162611a71a2d1}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float {\bfseries distance\+To\+Point} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&point) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_aa0ba073c105a81b4888390acb528914f}\label{class_leap_1_1_screen_aa0ba073c105a81b4888390acb528914f}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool {\bfseries is\+Valid} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a75c4150f2ff1adbc4ce466a3ca9c7b52}\label{class_leap_1_1_screen_a75c4150f2ff1adbc4ce466a3ca9c7b52}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool {\bfseries operator==} (const \hyperlink{class_leap_1_1_screen}{Screen} \&) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_aaa159c7b37dd7c1e9df0c73261ac6dbe}\label{class_leap_1_1_screen_aaa159c7b37dd7c1e9df0c73261ac6dbe}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool {\bfseries operator!=} (const \hyperlink{class_leap_1_1_screen}{Screen} \&) const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a961f7d6aa8ff5e67f6bc4c1c6e13d53f}\label{class_leap_1_1_screen_a961f7d6aa8ff5e67f6bc4c1c6e13d53f}} 
+std\+::string {\bfseries to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a380e39a87c63fd4915f1f5e5c5db0c3c}\label{class_leap_1_1_screen_a380e39a87c63fd4915f1f5e5c5db0c3c}} 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_screen}{Screen} \& {\bfseries invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_screen_a9d392849d557b2c5107a836a227d63a6}\label{class_leap_1_1_screen_a9d392849d557b2c5107a836a227d63a6}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&, const \hyperlink{class_leap_1_1_screen}{Screen} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

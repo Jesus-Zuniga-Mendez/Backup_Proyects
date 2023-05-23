@@ -1,0 +1,193 @@
+\hypertarget{class_leap_1_1_gesture_list}{}\section{Leap\+:\+:Gesture\+List Class Reference}
+\label{class_leap_1_1_gesture_list}\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Gesture\+List\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Gesture\+List\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$ \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List}, \hyperlink{class_leap_1_1_gesture}{Gesture} $>$ \hyperlink{class_leap_1_1_gesture_list_aaf2fd030e686892a0da42d81fc0cad88}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_ac514c84e0d23171471f803354b933044}\label{class_leap_1_1_gesture_list_ac514c84e0d23171471f803354b933044}} 
+{\bfseries Gesture\+List} (const \hyperlink{class_leap_1_1_list_base_implementation}{List\+Base\+Implementation}$<$ \hyperlink{class_leap_1_1_gesture}{Gesture} $>$ \&)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture_list_aad564fe5be92fb93119da56f08963142}{Gesture\+List} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int \hyperlink{class_leap_1_1_gesture_list_af8d4ba7be0100e36809c0817d72aa380}{count} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_gesture_list_ab6a03b6ee99ab5aba3b3fc1cdd01ec3a}{is\+Empty} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture}{Gesture} \hyperlink{class_leap_1_1_gesture_list_a7d3fe5d35b5e49f9f2e5949c0bb504f1}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List} \& \hyperlink{class_leap_1_1_gesture_list_a377880f99549807dc965087ca14e34f1}{append} (const \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List} \&other)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture_list_aaf2fd030e686892a0da42d81fc0cad88}{const\+\_\+iterator} \hyperlink{class_leap_1_1_gesture_list_a32a392c5f85fc781181307d89d42ac03}{begin} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture_list_aaf2fd030e686892a0da42d81fc0cad88}{const\+\_\+iterator} \hyperlink{class_leap_1_1_gesture_list_adbf76512046899a413dfea4b3a63b836}{end} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List} class represents a list of \hyperlink{class_leap_1_1_gesture}{Gesture} objects.
+
+Get a \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List} object from a \hyperlink{class_leap_1_1_frame}{Frame} object. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_aaf2fd030e686892a0da42d81fc0cad88}\label{class_leap_1_1_gesture_list_aaf2fd030e686892a0da42d81fc0cad88}} 
+\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily typedef \hyperlink{class_leap_1_1_const_list_iterator}{Const\+List\+Iterator}$<$\hyperlink{class_leap_1_1_gesture_list}{Gesture\+List}, \hyperlink{class_leap_1_1_gesture}{Gesture}$>$ \hyperlink{class_leap_1_1_gesture_list_aaf2fd030e686892a0da42d81fc0cad88}{Leap\+::\+Gesture\+List\+::const\+\_\+iterator}}
+
+A C++ iterator type for \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List} objects.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_aad564fe5be92fb93119da56f08963142}\label{class_leap_1_1_gesture_list_aad564fe5be92fb93119da56f08963142}} 
+\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}!Gesture\+List@{Gesture\+List}}
+\index{Gesture\+List@{Gesture\+List}!Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+\subsubsection{\texorpdfstring{Gesture\+List()}{GestureList()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Gesture\+List\+::\+Gesture\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty gesture list. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_a377880f99549807dc965087ca14e34f1}\label{class_leap_1_1_gesture_list_a377880f99549807dc965087ca14e34f1}} 
+\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}!append@{append}}
+\index{append@{append}!Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List}\& Leap\+::\+Gesture\+List\+::append (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List} \&}]{other }\end{DoxyParamCaption})}
+
+Appends the members of the specified \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List} to this \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List}. 
+\begin{DoxyParams}{Parameters}
+{\em other} & A \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List} object containing \hyperlink{class_leap_1_1_gesture}{Gesture} objects to append to the end of this \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_a32a392c5f85fc781181307d89d42ac03}\label{class_leap_1_1_gesture_list_a32a392c5f85fc781181307d89d42ac03}} 
+\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}!begin@{begin}}
+\index{begin@{begin}!Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture_list_aaf2fd030e686892a0da42d81fc0cad88}{const\+\_\+iterator} Leap\+::\+Gesture\+List\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the beginning of this \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_af8d4ba7be0100e36809c0817d72aa380}\label{class_leap_1_1_gesture_list_af8d4ba7be0100e36809c0817d72aa380}} 
+\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}!count@{count}}
+\index{count@{count}!Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT int Leap\+::\+Gesture\+List\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The length of this list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The number of gestures in this list. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_adbf76512046899a413dfea4b3a63b836}\label{class_leap_1_1_gesture_list_adbf76512046899a413dfea4b3a63b836}} 
+\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}!end@{end}}
+\index{end@{end}!Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture_list_aaf2fd030e686892a0da42d81fc0cad88}{const\+\_\+iterator} Leap\+::\+Gesture\+List\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The C++ iterator set to the end of this \hyperlink{class_leap_1_1_gesture_list}{Gesture\+List}.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_ab6a03b6ee99ab5aba3b3fc1cdd01ec3a}\label{class_leap_1_1_gesture_list_ab6a03b6ee99ab5aba3b3fc1cdd01ec3a}} 
+\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Gesture\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether the list is empty.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if the list has no members. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_gesture_list_a7d3fe5d35b5e49f9f2e5949c0bb504f1}\label{class_leap_1_1_gesture_list_a7d3fe5d35b5e49f9f2e5949c0bb504f1}} 
+\index{Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Leap\+::\+Gesture\+List@{Leap\+::\+Gesture\+List}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_gesture}{Gesture} Leap\+::\+Gesture\+List\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Access a list member by its position in the list.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The zero-\/based list position index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_leap_1_1_gesture}{Gesture} object at the specified index. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

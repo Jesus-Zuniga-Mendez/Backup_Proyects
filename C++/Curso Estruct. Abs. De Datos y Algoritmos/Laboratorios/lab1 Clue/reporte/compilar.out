@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Introduccion.}{}% 1
+\BOOKMARK [1][-]{section.2}{Funcionamiento del programa.}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Repartici\363n y n\372meros pseudoaleatorios}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Tablero de juego}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Conclusiones.}{}% 5
+\BOOKMARK [1][-]{section.4}{Bibliograf\355a}{}% 6
+\BOOKMARK [1][-]{section.5}{Anexos}{}% 7
+\BOOKMARK [2][-]{subsubsection.5.0.1}{formato.h}{section.5}% 8
+\BOOKMARK [3][-]{subsubsection.5.0.2}{Includes.h}{subsubsection.5.0.1}% 9
+\BOOKMARK [3][-]{subsubsection.5.0.3}{jugador.h}{subsubsection.5.0.1}% 10
+\BOOKMARK [3][-]{subsubsection.5.0.4}{tablero.h}{subsubsection.5.0.1}% 11
+\BOOKMARK [3][-]{subsubsection.5.0.5}{cartas.h}{subsubsection.5.0.1}% 12
+\BOOKMARK [3][-]{subsubsection.5.0.6}{main.h}{subsubsection.5.0.1}% 13

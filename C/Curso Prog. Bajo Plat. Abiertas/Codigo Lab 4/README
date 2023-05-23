@@ -1,0 +1,21 @@
+Compilar usando make en la linea de comandos
+
+Si tiene algun error con la impresion de caracteres asegurese que la terminal se encuentre en la codificacion UTF-8 asi como su archivo de preguntas
+
+Codigos de error:
+
+100: el archivo no cuenta con el numero minimo de preguntas
+200: hay dos saltos de linea consecutivos en el archivo
+300: hay un salto de linea en medio de preguntas o saltos de linea de mas al final del archivo
+400: las preguntas no estan completas, hay alguna que no tiene 4 respuestas o no se ha indicado la respuesta correcta.
+500: Error al final del archivo, asegurese de borrar todos los saltos de linea despues de la ultima linea
+
+Formato de archivo de preguntas:
+
+TEXTO DE LA PREGUNTA
+OPCION DE RESPUESTA 1
+OPCION DE RESPUESTA 2
+OPCION DE RESPUESTA 3
+OPCION DE RESPUESTA 4
+OPCION CORRECTA
+saltode linea

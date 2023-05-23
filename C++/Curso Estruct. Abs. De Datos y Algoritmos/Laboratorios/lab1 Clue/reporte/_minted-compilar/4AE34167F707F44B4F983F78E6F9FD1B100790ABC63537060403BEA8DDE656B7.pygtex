@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}ifndef INCLUDES\PYGZus{}H}
+\PYG{c+cp}{\PYGZsh{}define INCLUDES\PYGZus{}H}
+    \PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}iostream\PYGZgt{}}
+    \PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}cstring\PYGZgt{}}
+    \PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}fstream\PYGZgt{}}
+
+    \PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{CompararProteina}\PYG{p}{(}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+\end{Verbatim}

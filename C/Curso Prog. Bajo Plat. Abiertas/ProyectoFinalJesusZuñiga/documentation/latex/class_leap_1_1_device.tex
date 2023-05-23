@@ -1,0 +1,432 @@
+\hypertarget{class_leap_1_1_device}{}\section{Leap\+:\+:Device Class Reference}
+\label{class_leap_1_1_device}\index{Leap\+::\+Device@{Leap\+::\+Device}}
+
+
+{\ttfamily \#include $<$Leap.\+h$>$}
+
+
+
+Inheritance diagram for Leap\+:\+:Device\+:
+% FIG 0
+
+
+Collaboration diagram for Leap\+:\+:Device\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2}{Type} \{ \hyperlink{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2ab6881a7011d2914e86b452fd3e0f903f}{T\+Y\+P\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL} = 1, 
+\hyperlink{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2a6e685da1e914524572163c510c5acc58}{T\+Y\+P\+E\+\_\+\+L\+A\+P\+T\+OP}, 
+\hyperlink{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2ac0aaf88576a6b2408c130c7344c8adad}{T\+Y\+P\+E\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_leap_1_1_device_a7ec1c5a141f6b5de72846944fad60066}\label{class_leap_1_1_device_a7ec1c5a141f6b5de72846944fad60066}} 
+{\bfseries Device} (Device\+Implementation $\ast$)
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_ab14c21cd02a6773fa699980cb58032e2}{Device} ()
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_device_aea496995019d62785d7ec404751e531b}{horizontal\+View\+Angle} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_device_ac7b494b9dba80bdd97c33eff0b718691}{vertical\+View\+Angle} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_device_a700dd78b7ef8e74695886e510ff43f13}{range} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_device_a53a212f30052d9e0c4d7ae028a85a620}{baseline} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float \hyperlink{class_leap_1_1_device_aefca616eabf05ac048539a65feb2749d}{distance\+To\+Boundary} (const \hyperlink{struct_leap_1_1_vector}{Vector} \&position) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_device_a5d5ae9a0fe53f99acd634e5dc377f2fe}{is\+Embedded} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_device_a0a3998a6914e09f1bcfb7e8d623bea37}{is\+Streaming} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_device_ab384868ebc0ceb7325645691da90e470}{is\+Flipped} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2}{Type} \hyperlink{class_leap_1_1_device_a3668b9d01ca7e2fbbf1a2a313abe799a}{type} () const
+\item 
+std\+::string \hyperlink{class_leap_1_1_device_a8a9cf315850c0d54fdc31748fdad6444}{serial\+Number} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_device_a51b98795f562e30f91a3e2d8f40de1de}\label{class_leap_1_1_device_a51b98795f562e30f91a3e2d8f40de1de}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_vector}{Vector} {\bfseries position} () const
+\item 
+\mbox{\Hypertarget{class_leap_1_1_device_a6dcf36d277abbb92eabf44f8dcc55829}\label{class_leap_1_1_device_a6dcf36d277abbb92eabf44f8dcc55829}} 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{struct_leap_1_1_matrix}{Matrix} {\bfseries orientation} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_device_a3de3767cbfc2a4f24cefa99d363d15ea}{is\+Valid} () const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_device_a38a95c6aa2b58719e4202eb8e6e2051d}{operator==} (const \hyperlink{class_leap_1_1_device}{Device} \&) const
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{class_leap_1_1_device_aac05d238cd18a9d790d65adcf328cd96}{operator!=} (const \hyperlink{class_leap_1_1_device}{Device} \&) const
+\item 
+std\+::string \hyperlink{class_leap_1_1_device_adf422b605542a30dba4400d4ec8e4890}{to\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_device}{Device} \& \hyperlink{class_leap_1_1_device_a4a87905142db30a40b47b428db495db6}{invalid} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream \& \hyperlink{class_leap_1_1_device_a5296f0c6d7b410e2ffc23c6e74a507ec}{operator$<$$<$} (std\+::ostream \&, const \hyperlink{class_leap_1_1_device}{Device} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_leap_1_1_device}{Device} class represents a physically connected device.
+
+The \hyperlink{class_leap_1_1_device}{Device} class contains information related to a particular connected device such as device id, field of view relative to the device, and the position and orientation of the device in relative coordinates.
+
+The position and orientation describe the alignment of the device relative to the user. The alignment relative to the user is only descriptive. Aligning devices to users provides consistency in the parameters that describe user interactions.
+
+Note that \hyperlink{class_leap_1_1_device}{Device} objects can be invalid, which means that they do not contain valid device information and do not correspond to a physical device. Test for validity with the \hyperlink{class_leap_1_1_device_a3de3767cbfc2a4f24cefa99d363d15ea}{Device\+::is\+Valid()} function. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2}\label{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!Type@{Type}}
+\index{Type@{Type}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \hyperlink{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2}{Leap\+::\+Device\+::\+Type}}
+
+The available types of Leap Motion controllers. \begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL@{T\+Y\+P\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL}!Leap\+::\+Device@{Leap\+::\+Device}}\index{Leap\+::\+Device@{Leap\+::\+Device}!T\+Y\+P\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL@{T\+Y\+P\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL}}}\mbox{\Hypertarget{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2ab6881a7011d2914e86b452fd3e0f903f}\label{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2ab6881a7011d2914e86b452fd3e0f903f}} 
+T\+Y\+P\+E\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+AL&A standalone U\+SB peripheral. The original Leap Motion controller device. \begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+L\+A\+P\+T\+OP@{T\+Y\+P\+E\+\_\+\+L\+A\+P\+T\+OP}!Leap\+::\+Device@{Leap\+::\+Device}}\index{Leap\+::\+Device@{Leap\+::\+Device}!T\+Y\+P\+E\+\_\+\+L\+A\+P\+T\+OP@{T\+Y\+P\+E\+\_\+\+L\+A\+P\+T\+OP}}}\mbox{\Hypertarget{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2a6e685da1e914524572163c510c5acc58}\label{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2a6e685da1e914524572163c510c5acc58}} 
+T\+Y\+P\+E\+\_\+\+L\+A\+P\+T\+OP&A controller embedded in a keyboard. \begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+Y\+P\+E\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{T\+Y\+P\+E\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}!Leap\+::\+Device@{Leap\+::\+Device}}\index{Leap\+::\+Device@{Leap\+::\+Device}!T\+Y\+P\+E\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{T\+Y\+P\+E\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}}}\mbox{\Hypertarget{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2ac0aaf88576a6b2408c130c7344c8adad}\label{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2ac0aaf88576a6b2408c130c7344c8adad}} 
+T\+Y\+P\+E\+\_\+\+K\+E\+Y\+B\+O\+A\+RD&A controller embedded in a laptop computer. \begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_leap_1_1_device_ab14c21cd02a6773fa699980cb58032e2}\label{class_leap_1_1_device_ab14c21cd02a6773fa699980cb58032e2}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!Device@{Device}}
+\index{Device@{Device}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{Device()}{Device()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT Leap\+::\+Device\+::\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a \hyperlink{class_leap_1_1_device}{Device} object.
+
+An uninitialized device is considered invalid. Get valid \hyperlink{class_leap_1_1_device}{Device} objects from a \hyperlink{class_leap_1_1_device_list}{Device\+List} object obtained using the \hyperlink{class_leap_1_1_controller_ad3b6ea558fb39cb32c20c3fd44dc5da1}{Controller\+::devices()} method.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_device_a53a212f30052d9e0c4d7ae028a85a620}\label{class_leap_1_1_device_a53a212f30052d9e0c4d7ae028a85a620}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!baseline@{baseline}}
+\index{baseline@{baseline}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{baseline()}{baseline()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Device\+::baseline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The distance between the center points of the stereo sensors.
+
+The baseline value, together with the maximum resolution, influence the maximum range.
+
+\begin{DoxyReturn}{Returns}
+The separation distance between the center of each sensor, in mm. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+2.\+2.\+5 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_aefca616eabf05ac048539a65feb2749d}\label{class_leap_1_1_device_aefca616eabf05ac048539a65feb2749d}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!distance\+To\+Boundary@{distance\+To\+Boundary}}
+\index{distance\+To\+Boundary@{distance\+To\+Boundary}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{distance\+To\+Boundary()}{distanceToBoundary()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Device\+::distance\+To\+Boundary (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_leap_1_1_vector}{Vector} \&}]{position }\end{DoxyParamCaption}) const}
+
+The distance to the nearest edge of the Leap Motion controller\textquotesingle{}s view volume.
+
+The view volume is an axis-\/aligned, inverted pyramid centered on the device origin and extending upward to the range limit. The walls of the pyramid are described by the horizontal\+View\+Angle and vertical\+View\+Angle and the roof by the range. This function estimates the distance between the specified input position and the nearest wall or roof of the view volume.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The point to use for the distance calculation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance in millimeters from the input position to the nearest boundary. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_aea496995019d62785d7ec404751e531b}\label{class_leap_1_1_device_aea496995019d62785d7ec404751e531b}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!horizontal\+View\+Angle@{horizontal\+View\+Angle}}
+\index{horizontal\+View\+Angle@{horizontal\+View\+Angle}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{horizontal\+View\+Angle()}{horizontalViewAngle()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Device\+::horizontal\+View\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The angle of view along the x axis of this device.
+
+
+
+The Leap Motion controller scans a region in the shape of an inverted pyramid centered at the device\textquotesingle{}s center and extending upwards. The horizontal\+View\+Angle reports the view angle along the long dimension of the device.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The horizontal angle of view in radians. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_a4a87905142db30a40b47b428db495db6}\label{class_leap_1_1_device_a4a87905142db30a40b47b428db495db6}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!invalid@{invalid}}
+\index{invalid@{invalid}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{invalid()}{invalid()}}
+{\footnotesize\ttfamily static L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT const \hyperlink{class_leap_1_1_device}{Device}\& Leap\+::\+Device\+::invalid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an invalid \hyperlink{class_leap_1_1_device}{Device} object.
+
+You can use the instance returned by this function in comparisons testing whether a given \hyperlink{class_leap_1_1_device}{Device} instance is valid or invalid. (You can also use the \hyperlink{class_leap_1_1_device_a3de3767cbfc2a4f24cefa99d363d15ea}{Device\+::is\+Valid()} function.)
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The invalid \hyperlink{class_leap_1_1_device}{Device} instance. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_a5d5ae9a0fe53f99acd634e5dc377f2fe}\label{class_leap_1_1_device_a5d5ae9a0fe53f99acd634e5dc377f2fe}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!is\+Embedded@{is\+Embedded}}
+\index{is\+Embedded@{is\+Embedded}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{is\+Embedded()}{isEmbedded()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Device\+::is\+Embedded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this device is embedded in another computer or computer peripheral.
+
+\begin{DoxyReturn}{Returns}
+True, if this device is embedded in a laptop, keyboard, or other computer component; false, if this device is a standalone controller. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_ab384868ebc0ceb7325645691da90e470}\label{class_leap_1_1_device_ab384868ebc0ceb7325645691da90e470}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!is\+Flipped@{is\+Flipped}}
+\index{is\+Flipped@{is\+Flipped}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{is\+Flipped()}{isFlipped()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Device\+::is\+Flipped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Deprecated. Always reports false.
+
+\begin{DoxySince}{Since}
+2.\+1 
+\end{DoxySince}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000003}{Deprecated}]2.\+1.\+1 \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_leap_1_1_device_a0a3998a6914e09f1bcfb7e8d623bea37}\label{class_leap_1_1_device_a0a3998a6914e09f1bcfb7e8d623bea37}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!is\+Streaming@{is\+Streaming}}
+\index{is\+Streaming@{is\+Streaming}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{is\+Streaming()}{isStreaming()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Device\+::is\+Streaming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this device is streaming data to your application.
+
+Currently only one controller can provide data at a time. \begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_a3de3767cbfc2a4f24cefa99d363d15ea}\label{class_leap_1_1_device_a3de3767cbfc2a4f24cefa99d363d15ea}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Device\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Reports whether this is a valid \hyperlink{class_leap_1_1_device}{Device} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+True, if this \hyperlink{class_leap_1_1_device}{Device} object contains valid data. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_aac05d238cd18a9d790d65adcf328cd96}\label{class_leap_1_1_device_aac05d238cd18a9d790d65adcf328cd96}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Device\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_device}{Device} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_device}{Device} object inequality.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Two \hyperlink{class_leap_1_1_device}{Device} objects are equal if and only if both \hyperlink{class_leap_1_1_device}{Device} objects represent the exact same \hyperlink{class_leap_1_1_device}{Device} and both Devices are valid. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_a38a95c6aa2b58719e4202eb8e6e2051d}\label{class_leap_1_1_device_a38a95c6aa2b58719e4202eb8e6e2051d}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!operator==@{operator==}}
+\index{operator==@{operator==}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT bool Leap\+::\+Device\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_leap_1_1_device}{Device} \&}]{ }\end{DoxyParamCaption}) const}
+
+Compare \hyperlink{class_leap_1_1_device}{Device} object equality.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+Two \hyperlink{class_leap_1_1_device}{Device} objects are equal if and only if both \hyperlink{class_leap_1_1_device}{Device} objects represent the exact same \hyperlink{class_leap_1_1_device}{Device} and both Devices are valid. \begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_a700dd78b7ef8e74695886e510ff43f13}\label{class_leap_1_1_device_a700dd78b7ef8e74695886e510ff43f13}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!range@{range}}
+\index{range@{range}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{range()}{range()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Device\+::range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The maximum reliable tracking range from the center of this device.
+
+The range reports the maximum recommended distance from the device center for which tracking is expected to be reliable. This distance is not a hard limit. Tracking may be still be functional above this distance or begin to degrade slightly before this distance depending on calibration and extreme environmental conditions.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The recommended maximum range of the device in mm. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_a8a9cf315850c0d54fdc31748fdad6444}\label{class_leap_1_1_device_a8a9cf315850c0d54fdc31748fdad6444}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!serial\+Number@{serial\+Number}}
+\index{serial\+Number@{serial\+Number}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{serial\+Number()}{serialNumber()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Device\+::serial\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+An alphanumeric serial number unique to each device.
+
+Consumer device serial numbers consist of 2 letters followed by 11 digits.
+
+When using multiple devices, the serial number provides an unambiguous identifier for each device. \begin{DoxySince}{Since}
+2.\+2.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_adf422b605542a30dba4400d4ec8e4890}\label{class_leap_1_1_device_adf422b605542a30dba4400d4ec8e4890}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Leap\+::\+Device\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A string containing a brief, human readable description of the \hyperlink{class_leap_1_1_device}{Device} object.
+
+\begin{DoxyReturn}{Returns}
+A description of the \hyperlink{class_leap_1_1_device}{Device} as a string. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_a3668b9d01ca7e2fbbf1a2a313abe799a}\label{class_leap_1_1_device_a3668b9d01ca7e2fbbf1a2a313abe799a}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!type@{type}}
+\index{type@{type}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT \hyperlink{class_leap_1_1_device_a1b7477f6d382b15a77a00712a70628b2}{Type} Leap\+::\+Device\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The device type.
+
+Use the device type value in the (rare) circumstances that you have an application feature which relies on a particular type of device. Current types of device include the original Leap Motion peripheral, keyboard-\/embedded controllers, and laptop-\/embedded controllers.
+
+\begin{DoxyReturn}{Returns}
+The physical device type as a member of the Device\+Type enumeration. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+2 
+\end{DoxySince}
+\mbox{\Hypertarget{class_leap_1_1_device_ac7b494b9dba80bdd97c33eff0b718691}\label{class_leap_1_1_device_ac7b494b9dba80bdd97c33eff0b718691}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!vertical\+View\+Angle@{vertical\+View\+Angle}}
+\index{vertical\+View\+Angle@{vertical\+View\+Angle}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{vertical\+View\+Angle()}{verticalViewAngle()}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT float Leap\+::\+Device\+::vertical\+View\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The angle of view along the z axis of this device.
+
+
+
+The Leap Motion controller scans a region in the shape of an inverted pyramid centered at the device\textquotesingle{}s center and extending upwards. The vertical\+View\+Angle reports the view angle along the short dimension of the device.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxyReturn}{Returns}
+The vertical angle of view in radians. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_leap_1_1_device_a5296f0c6d7b410e2ffc23c6e74a507ec}\label{class_leap_1_1_device_a5296f0c6d7b410e2ffc23c6e74a507ec}} 
+\index{Leap\+::\+Device@{Leap\+::\+Device}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Leap\+::\+Device@{Leap\+::\+Device}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily L\+E\+A\+P\+\_\+\+E\+X\+P\+O\+RT friend std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{,  }\item[{const \hyperlink{class_leap_1_1_device}{Device} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Writes a brief, human readable description of the \hyperlink{class_leap_1_1_device}{Device} object.
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sample/include/Leap.\+h\end{DoxyCompactItemize}

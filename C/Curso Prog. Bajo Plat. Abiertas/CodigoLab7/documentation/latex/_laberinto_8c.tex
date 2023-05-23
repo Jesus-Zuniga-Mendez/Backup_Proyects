@@ -1,0 +1,197 @@
+\hypertarget{_laberinto_8c}{}\section{sourcecode/\+Laberinto.c File Reference}
+\label{_laberinto_8c}\index{sourcecode/\+Laberinto.\+c@{sourcecode/\+Laberinto.\+c}}
+
+
+Archivo que contiene las funciones para Crear un laberinto.  
+
+
+{\ttfamily \#include \char`\"{}../include/includes.\+h\char`\"{}}\newline
+Include dependency graph for Laberinto.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_a34995b955465f6bbb37c359173d50477}\label{_laberinto_8c_a34995b955465f6bbb37c359173d50477}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+R\+ED}~\char`\"{}\textbackslash{}x1b\mbox{[}31m\char`\"{}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_a966c72d8d733c7734c6c784753d894c7}\label{_laberinto_8c_a966c72d8d733c7734c6c784753d894c7}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+G\+R\+E\+EN}~\char`\"{}\textbackslash{}x1b\mbox{[}32m\char`\"{}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_a5a123b382640b3aa65dd5db386002fbc}\label{_laberinto_8c_a5a123b382640b3aa65dd5db386002fbc}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+Y\+E\+L\+L\+OW}~\char`\"{}\textbackslash{}x1b\mbox{[}33m\char`\"{}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_aca16e6a49eb51333c5fd3eee19487315}\label{_laberinto_8c_aca16e6a49eb51333c5fd3eee19487315}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+L\+UE}~\char`\"{}\textbackslash{}x1b\mbox{[}34m\char`\"{}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_acb30614ba1535da5b9d0c490b3c10515}\label{_laberinto_8c_acb30614ba1535da5b9d0c490b3c10515}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+M\+A\+G\+E\+N\+TA}~\char`\"{}\textbackslash{}x1b\mbox{[}35m\char`\"{}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_a8d0b0043e152438bb39b918a1f98c65f}\label{_laberinto_8c_a8d0b0043e152438bb39b918a1f98c65f}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+C\+Y\+AN}~\char`\"{}\textbackslash{}x1b\mbox{[}36m\char`\"{}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_a92a364c2b863dde1a024a77eac2a5b3b}\label{_laberinto_8c_a92a364c2b863dde1a024a77eac2a5b3b}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+R\+E\+S\+ET}~\char`\"{}\textbackslash{}x1b\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_afc678c0192b6f24b33fde8a85ff8f0fa}\label{_laberinto_8c_afc678c0192b6f24b33fde8a85ff8f0fa}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+O\+L\+D\+\_\+\+Y\+E\+L\+L\+OW}~\char`\"{}\textbackslash{}x1b\mbox{[}01;33m\char`\"{}
+\item 
+\mbox{\Hypertarget{_laberinto_8c_a4b8b0eb58c3f7eeb333031a48f70b402}\label{_laberinto_8c_a4b8b0eb58c3f7eeb333031a48f70b402}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+C\+O\+L\+O\+R\+\_\+\+B\+O\+L\+D\+\_\+\+G\+R\+E\+EN}~\char`\"{}\textbackslash{}x1b\mbox{[}01;32m\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \hyperlink{_laberinto_8c_afdbcf4906d65c7b94e8515a3af48a920}{Crear\+Tablero} (int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Funcion que crea una matriz del tamaño deseado por el usuario. \end{DoxyCompactList}\item 
+void \hyperlink{_laberinto_8c_af00a92c42e21709fade171ff18b82398}{Esperar} (float segundos)
+\begin{DoxyCompactList}\small\item\em Funcion que detiene la ejecucion cierta cantidad de segundos. \end{DoxyCompactList}\item 
+void \hyperlink{_laberinto_8c_a6615292480095ec816a0ec8aba04f8ce}{Llenar\+Gatos} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto)
+\begin{DoxyCompactList}\small\item\em Funcion que llena una metriz de simbolos de \# exeptuando las filas y columnas externas las cuales llena con espacio vacio. \end{DoxyCompactList}\item 
+void \hyperlink{_laberinto_8c_ac70e506a68979b8af97e7ab2b13108df}{Imprimir\+Matriz} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto)
+\begin{DoxyCompactList}\small\item\em Funcion que permite imprimir una matriz. \end{DoxyCompactList}\item 
+void \hyperlink{_laberinto_8c_aefa1eaf671a66f601071514ac0f01270}{Escribir\+Caracter} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto, char caracter)
+\begin{DoxyCompactList}\small\item\em Funcion que escribe un caracter en una coordenada indicada. \end{DoxyCompactList}\item 
+void \hyperlink{_laberinto_8c_a5ffa6b45d339ad87eed5fd2d550cd052}{Guardar\+Laberinto} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto)
+\begin{DoxyCompactList}\small\item\em Funcion que guarda una matriz en un archivo. \end{DoxyCompactList}\item 
+void \hyperlink{_laberinto_8c_a045e932df491ff53a98d489b86ab382a}{Hacer\+Camino} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto)
+\begin{DoxyCompactList}\small\item\em Funcion que crea el camino principal es decir el camino ganador aleatoriamente. \end{DoxyCompactList}\item 
+int \hyperlink{_laberinto_8c_aa152d7b837ae1522f83cb952d308c908}{Me\+Puedo\+Mover} (\hyperlink{struct__matriz}{matriz} $\ast$laberinto, int lado)
+\begin{DoxyCompactList}\small\item\em Funcion que verifica que se cumplan los requisitos para moverse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo que contiene las funciones para Crear un laberinto. 
+
+\begin{DoxyAuthor}{Author}
+Jesus Zuñiga Mendez 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_laberinto_8c_afdbcf4906d65c7b94e8515a3af48a920}\label{_laberinto_8c_afdbcf4906d65c7b94e8515a3af48a920}} 
+\index{Laberinto.\+c@{Laberinto.\+c}!Crear\+Tablero@{Crear\+Tablero}}
+\index{Crear\+Tablero@{Crear\+Tablero}!Laberinto.\+c@{Laberinto.\+c}}
+\subsubsection{\texorpdfstring{Crear\+Tablero()}{CrearTablero()}}
+{\footnotesize\ttfamily char$\ast$$\ast$ Crear\+Tablero (\begin{DoxyParamCaption}\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Funcion que crea una matriz del tamaño deseado por el usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filas} & es el tamaño de filas de la matriz \\
+\hline
+{\em columnas} & es el tamaño de columnas de la matriz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devuelve un puntero con la matriz creada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_laberinto_8c_aefa1eaf671a66f601071514ac0f01270}\label{_laberinto_8c_aefa1eaf671a66f601071514ac0f01270}} 
+\index{Laberinto.\+c@{Laberinto.\+c}!Escribir\+Caracter@{Escribir\+Caracter}}
+\index{Escribir\+Caracter@{Escribir\+Caracter}!Laberinto.\+c@{Laberinto.\+c}}
+\subsubsection{\texorpdfstring{Escribir\+Caracter()}{EscribirCaracter()}}
+{\footnotesize\ttfamily void Escribir\+Caracter (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto,  }\item[{char}]{caracter }\end{DoxyParamCaption})}
+
+
+
+Funcion que escribe un caracter en una coordenada indicada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura tipo matriz que contiene la matriz de caracteres \\
+\hline
+{\em caracter} & es el caracter que se quiere escribir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_laberinto_8c_af00a92c42e21709fade171ff18b82398}\label{_laberinto_8c_af00a92c42e21709fade171ff18b82398}} 
+\index{Laberinto.\+c@{Laberinto.\+c}!Esperar@{Esperar}}
+\index{Esperar@{Esperar}!Laberinto.\+c@{Laberinto.\+c}}
+\subsubsection{\texorpdfstring{Esperar()}{Esperar()}}
+{\footnotesize\ttfamily void Esperar (\begin{DoxyParamCaption}\item[{float}]{segundos }\end{DoxyParamCaption})}
+
+
+
+Funcion que detiene la ejecucion cierta cantidad de segundos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tiempo} & el el tiempo en espera en segundos codigo recuperado de \href{https://stackoverflow.com/questions/7684359/how-to-use-nanosleep-in-c-what-are-tim-tv-sec-and-tim-tv-nsec}{\tt https\+://stackoverflow.\+com/questions/7684359/how-\/to-\/use-\/nanosleep-\/in-\/c-\/what-\/are-\/tim-\/tv-\/sec-\/and-\/tim-\/tv-\/nsec} presentado con modificaciones \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_laberinto_8c_a5ffa6b45d339ad87eed5fd2d550cd052}\label{_laberinto_8c_a5ffa6b45d339ad87eed5fd2d550cd052}} 
+\index{Laberinto.\+c@{Laberinto.\+c}!Guardar\+Laberinto@{Guardar\+Laberinto}}
+\index{Guardar\+Laberinto@{Guardar\+Laberinto}!Laberinto.\+c@{Laberinto.\+c}}
+\subsubsection{\texorpdfstring{Guardar\+Laberinto()}{GuardarLaberinto()}}
+{\footnotesize\ttfamily void Guardar\+Laberinto (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto }\end{DoxyParamCaption})}
+
+
+
+Funcion que guarda una matriz en un archivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura tipo matriz que contiene la matriz de caracteres \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_laberinto_8c_a045e932df491ff53a98d489b86ab382a}\label{_laberinto_8c_a045e932df491ff53a98d489b86ab382a}} 
+\index{Laberinto.\+c@{Laberinto.\+c}!Hacer\+Camino@{Hacer\+Camino}}
+\index{Hacer\+Camino@{Hacer\+Camino}!Laberinto.\+c@{Laberinto.\+c}}
+\subsubsection{\texorpdfstring{Hacer\+Camino()}{HacerCamino()}}
+{\footnotesize\ttfamily void Hacer\+Camino (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto }\end{DoxyParamCaption})}
+
+
+
+Funcion que crea el camino principal es decir el camino ganador aleatoriamente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura tipo matriz que contiene la matriz de caracteres \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_laberinto_8c_ac70e506a68979b8af97e7ab2b13108df}\label{_laberinto_8c_ac70e506a68979b8af97e7ab2b13108df}} 
+\index{Laberinto.\+c@{Laberinto.\+c}!Imprimir\+Matriz@{Imprimir\+Matriz}}
+\index{Imprimir\+Matriz@{Imprimir\+Matriz}!Laberinto.\+c@{Laberinto.\+c}}
+\subsubsection{\texorpdfstring{Imprimir\+Matriz()}{ImprimirMatriz()}}
+{\footnotesize\ttfamily void Imprimir\+Matriz (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto }\end{DoxyParamCaption})}
+
+
+
+Funcion que permite imprimir una matriz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a la matriz \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_laberinto_8c_a6615292480095ec816a0ec8aba04f8ce}\label{_laberinto_8c_a6615292480095ec816a0ec8aba04f8ce}} 
+\index{Laberinto.\+c@{Laberinto.\+c}!Llenar\+Gatos@{Llenar\+Gatos}}
+\index{Llenar\+Gatos@{Llenar\+Gatos}!Laberinto.\+c@{Laberinto.\+c}}
+\subsubsection{\texorpdfstring{Llenar\+Gatos()}{LlenarGatos()}}
+{\footnotesize\ttfamily void Llenar\+Gatos (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto }\end{DoxyParamCaption})}
+
+
+
+Funcion que llena una metriz de simbolos de \# exeptuando las filas y columnas externas las cuales llena con espacio vacio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recibe} & un puntero a la estructura matriz \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_laberinto_8c_aa152d7b837ae1522f83cb952d308c908}\label{_laberinto_8c_aa152d7b837ae1522f83cb952d308c908}} 
+\index{Laberinto.\+c@{Laberinto.\+c}!Me\+Puedo\+Mover@{Me\+Puedo\+Mover}}
+\index{Me\+Puedo\+Mover@{Me\+Puedo\+Mover}!Laberinto.\+c@{Laberinto.\+c}}
+\subsubsection{\texorpdfstring{Me\+Puedo\+Mover()}{MePuedoMover()}}
+{\footnotesize\ttfamily int Me\+Puedo\+Mover (\begin{DoxyParamCaption}\item[{\hyperlink{struct__matriz}{matriz} $\ast$}]{laberinto,  }\item[{int}]{lado }\end{DoxyParamCaption})}
+
+
+
+Funcion que verifica que se cumplan los requisitos para moverse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em laberinto} & es la estructura tipo matriz que contiene la matriz de caracteres Qparam lado es la direccion, 0 = izquirda, 1= derecha, 2= arriba, 3= abajo \\
+\hline
+\end{DoxyParams}

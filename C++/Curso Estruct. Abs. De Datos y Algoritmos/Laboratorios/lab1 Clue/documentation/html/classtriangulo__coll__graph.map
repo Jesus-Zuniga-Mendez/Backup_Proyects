@@ -1,0 +1,4 @@
+<map id="triangulo" name="triangulo">
+<area shape="rect" id="node2" href="$class_figura.html" title="clase que se encarga de crear una figura en 2D " alt="" coords="11,95,70,121"/>
+<area shape="rect" id="node3" href="$class_vertice.html" title="clase que modela un punto en el espacio " alt="" coords="9,5,72,32"/>
+</map>

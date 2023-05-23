@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{2}{section.1}
+\contentsline {section}{\numberline {2}includes.h}{3}{section.2}
+\contentsline {section}{\numberline {3}posicion.h}{4}{section.3}
+\contentsline {section}{\numberline {4}lista.h}{5}{section.4}
+\contentsline {section}{\numberline {5}posicion.c}{6}{section.5}
+\contentsline {section}{\numberline {6}lista.c}{7}{section.6}
+\contentsline {section}{\numberline {7}main.c}{10}{section.7}
+\contentsline {section}{\numberline {8}Conclusi\IeC {\'o}n}{14}{section.8}

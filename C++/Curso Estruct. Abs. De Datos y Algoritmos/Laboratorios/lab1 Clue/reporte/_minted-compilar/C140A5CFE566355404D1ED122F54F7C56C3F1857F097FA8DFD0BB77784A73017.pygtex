@@ -1,0 +1,99 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}ifndef FORMATO\PYGZus{}H}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}H}
+
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}iostream\PYGZgt{}}
+
+\PYG{k}{using} \PYG{k}{namespace} \PYG{n}{std}\PYG{p}{;}
+\PYG{c+c1}{// Combinación	Color}
+\PYG{c+c1}{// ========================}
+\PYG{c+c1}{// 0;00			 Reinicio}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}RESET \PYGZdq{}\PYGZbs{}x1b[0m\PYGZdq{}}
+\PYG{c+c1}{// 0;30			 Negro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}BLACK \PYGZdq{}\PYGZbs{}x1b[30m\PYGZdq{}}
+\PYG{c+c1}{// 0;31			 Rojo}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}RED \PYGZdq{}\PYGZbs{}x1b[31m\PYGZdq{}}
+\PYG{c+c1}{// 0;32			 Verde}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}GREEN \PYGZdq{}\PYGZbs{}x1b[32m\PYGZdq{}}
+\PYG{c+c1}{// 0;33			 Marrón}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}BROWN \PYGZdq{}\PYGZbs{}x1b[33m\PYGZdq{}}
+\PYG{c+c1}{// 0;34			 Azul}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}BLUE \PYGZdq{}\PYGZbs{}x1b[34m\PYGZdq{}}
+\PYG{c+c1}{// 0;35			 Púrpura}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}PURPLE \PYGZdq{}\PYGZbs{}x1b[35m\PYGZdq{}}
+\PYG{c+c1}{// 0;36			 Cian}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}CYAN \PYGZdq{}\PYGZbs{}x1b[36m\PYGZdq{}}
+\PYG{c+c1}{// 0;37			 Gris claro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}GRAY \PYGZdq{}\PYGZbs{}x1b[37m\PYGZdq{}}
+\PYG{c+c1}{// 1;30			 Gris oscuro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}DARK\PYGZus{}GRAY \PYGZdq{}\PYGZbs{}x1b[01;30m\PYGZdq{}}
+\PYG{c+c1}{// 1;31			 Rojo claro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}LIGHT\PYGZus{}RED \PYGZdq{}\PYGZbs{}x1b[01;31m\PYGZdq{}}
+\PYG{c+c1}{// 1;32			 Verde claro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}LIGHT\PYGZus{}GREEN \PYGZdq{}\PYGZbs{}x1b[01;32m\PYGZdq{}}
+\PYG{c+c1}{// 1;33			 Amarillo}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}YELLOW \PYGZdq{}\PYGZbs{}x1b[01;33m\PYGZdq{}}
+\PYG{c+c1}{// 1;34			 Azul claro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}LIGHT\PYGZus{}BLUE \PYGZdq{}\PYGZbs{}x1b[01;34m\PYGZdq{}}
+\PYG{c+c1}{// 1;35			 Púrpura claro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}LIGHT\PYGZus{}PURPLE \PYGZdq{}\PYGZbs{}x1b[01;35m\PYGZdq{}}
+\PYG{c+c1}{// 1;36			 Cian claro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}LIGHT\PYGZus{}CYAN \PYGZdq{}\PYGZbs{}x1b[01;36m\PYGZdq{}}
+\PYG{c+c1}{// 1;37			 Blanco}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}ANSI\PYGZus{}COLOR\PYGZus{}WHITE \PYGZdq{}\PYGZbs{}x1b[01;37m\PYGZdq{}}
+
+\PYG{c+c1}{// Colores de fondo (background)}
+\PYG{c+c1}{// \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{// Combinación	Color}
+\PYG{c+c1}{// ========================}
+\PYG{c+c1}{// 40			   Negro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}BLACK \PYGZdq{}\PYGZbs{}x1b[40m\PYGZdq{}}
+\PYG{c+c1}{// 41			   Rojo}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}RED \PYGZdq{}\PYGZbs{}x1b[41m\PYGZdq{}}
+\PYG{c+c1}{// 42			   Verde}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}GREEN \PYGZdq{}\PYGZbs{}x1b[42m\PYGZdq{}}
+\PYG{c+c1}{// 43			   Marrón}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}BROWN \PYGZdq{}\PYGZbs{}x1b[43m\PYGZdq{}}
+\PYG{c+c1}{// 44			   Azul}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}BLUE \PYGZdq{}\PYGZbs{}x1b[44m\PYGZdq{}}
+\PYG{c+c1}{// 45			   Púrpura}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}PURPLE \PYGZdq{}\PYGZbs{}x1b[45m\PYGZdq{}}
+\PYG{c+c1}{// 46			   Turquesa}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}TURQUOISE \PYGZdq{}\PYGZbs{}x1b[46m\PYGZdq{}}
+\PYG{c+c1}{// 47			   Gris}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}GRAY \PYGZdq{}\PYGZbs{}x1b[40m\PYGZdq{}}
+\PYG{c+c1}{// 100			   Gris oscuro}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}DARK\PYGZus{}GRAY \PYGZdq{}\PYGZbs{}x1b[100m\PYGZdq{}}
+\PYG{c+c1}{// 101			   Rojo}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}RED \PYGZdq{}\PYGZbs{}x1b[101m\PYGZdq{}}
+\PYG{c+c1}{// 102			   Verde}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}GREEN \PYGZdq{}\PYGZbs{}x1b[102m\PYGZdq{}}
+\PYG{c+c1}{// 103			   Marrón}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}YELLOW \PYGZdq{}\PYGZbs{}x1b[103m\PYGZdq{}}
+\PYG{c+c1}{// 104			   Azul}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}BLUE \PYGZdq{}\PYGZbs{}x1b[104m\PYGZdq{}}
+\PYG{c+c1}{// 105			   Púrpura}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}PURPLE \PYGZdq{}\PYGZbs{}x1b[105m\PYGZdq{}}
+\PYG{c+c1}{// 106			   Turquesa}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}LIGTH\PYGZus{}TURQUOISE \PYGZdq{}\PYGZbs{}x1b[106m\PYGZdq{}}
+\PYG{c+c1}{// 107			   Gris}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BACKGROUND\PYGZus{}COLOR\PYGZus{}WHITE \PYGZdq{}\PYGZbs{}x1b[107m\PYGZdq{}}
+
+\PYG{c+c1}{// Efectos de carácter}
+\PYG{c+c1}{// \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{c+c1}{// Combinación	Estilo}
+\PYG{c+c1}{// ========================}
+\PYG{c+c1}{// 0;4			  Subrayado}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}UNDERLINE\PYGZus{}EFFECT \PYGZdq{}\PYGZbs{}x1b[00;4m\PYGZdq{}}
+\PYG{c+c1}{// 0;5			  Titilante (blink)(puede que no funcione)}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BLINK\PYGZus{}EFFECT \PYGZdq{}\PYGZbs{}x1b[00;5m\PYGZdq{}}
+\PYG{c+c1}{// 0;1			  Negrita}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}BOLD\PYGZus{}EFFECT \PYGZdq{}\PYGZbs{}x1b[00;1m\PYGZdq{}}
+\PYG{c+c1}{// 0;8			  Transparente (?)}
+\PYG{c+cp}{\PYGZsh{}define FORMATO\PYGZus{}TRANSPARENT\PYGZus{}EFFECT \PYGZdq{}\PYGZbs{}x1b[00;8m\PYGZdq{}}
+
+
+\PYG{c+cp}{\PYGZsh{}endif}
+\end{Verbatim}

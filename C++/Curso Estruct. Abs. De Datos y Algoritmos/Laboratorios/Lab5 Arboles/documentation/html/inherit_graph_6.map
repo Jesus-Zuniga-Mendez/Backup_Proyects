@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_vertice.html" title="clase que modela un punto en el espacio " alt="" coords="5,56,68,83"/>
+<area shape="rect" id="node2" href="$class_figura.html" title="clase que se encarga de crear una figura en 2D " alt="" coords="116,56,175,83"/>
+<area shape="rect" id="node3" href="$class_circulo.html" title="clase que se encarga e modelar un circulo " alt="" coords="233,5,295,32"/>
+<area shape="rect" id="node4" href="$classrectangulo.html" title="Clase rectangulo. " alt="" coords="223,56,305,83"/>
+<area shape="rect" id="node5" href="$classtriangulo.html" title="calse tringulo " alt="" coords="229,107,299,133"/>
+<area shape="rect" id="node6" href="$class_equilatero.html" title="calse equilatero " alt="" coords="353,56,433,83"/>
+<area shape="rect" id="node7" href="$class_escaleno.html" title="calse Escaleno " alt="" coords="355,107,431,133"/>
+<area shape="rect" id="node8" href="$class_isosceles.html" title="calse Isosceles " alt="" coords="354,157,433,184"/>
+</map>

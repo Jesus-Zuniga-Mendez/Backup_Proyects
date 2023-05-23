@@ -1,0 +1,9 @@
+<map id="Vertice" name="Vertice">
+<area shape="rect" id="node2" href="$class_figura.html" title="clase que se encarga de crear una figura en 2D " alt="" coords="105,80,163,107"/>
+<area shape="rect" id="node3" href="$class_circulo.html" title="clase que se encarga e modelar un circulo " alt="" coords="5,155,68,181"/>
+<area shape="rect" id="node4" href="$classrectangulo.html" title="Clase rectangulo. " alt="" coords="93,155,175,181"/>
+<area shape="rect" id="node5" href="$classtriangulo.html" title="calse tringulo " alt="" coords="200,155,271,181"/>
+<area shape="rect" id="node6" href="$class_equilatero.html" title="calse equilatero " alt="" coords="93,229,173,256"/>
+<area shape="rect" id="node7" href="$class_escaleno.html" title="calse Escaleno " alt="" coords="197,229,273,256"/>
+<area shape="rect" id="node8" href="$class_isosceles.html" title="calse Isosceles " alt="" coords="297,229,376,256"/>
+</map>

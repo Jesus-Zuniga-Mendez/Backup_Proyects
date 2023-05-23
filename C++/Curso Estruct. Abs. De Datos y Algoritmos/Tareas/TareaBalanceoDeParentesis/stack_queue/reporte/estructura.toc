@@ -1,0 +1,14 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n.}{2}{section.1}
+\contentsline {section}{\numberline {2}Soluci\IeC {\'o}n.}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Balanceo de par\IeC {\'e}ntesis.}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Colas de Prioridad.}{2}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}\IeC {\'A}rbol de b\IeC {\'u}squeda binaria}{2}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Creaci\IeC {\'o}n del \IeC {\'a}rbol}{2}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Inserci\IeC {\'o}n}{2}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Borrado}{7}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Balanceo}{8}{subsubsection.2.3.4}
+\contentsline {section}{\numberline {3}Conclusiones}{12}{section.3}
+\contentsline {section}{\numberline {4}Bibliograf\IeC {\'\i }a}{12}{section.4}
+\contentsline {section}{\numberline {5}Anexos}{13}{section.5}
+\contentsline {subsubsection}{\numberline {5.0.1}main.cpp}{13}{subsubsection.5.0.1}

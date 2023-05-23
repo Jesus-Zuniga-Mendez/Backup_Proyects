@@ -1,0 +1,89 @@
+\hypertarget{class_single_linked_list}{}\section{Single\+Linked\+List$<$ Element, Single\+Position $>$ Class Template Reference}
+\label{class_single_linked_list}\index{Single\+Linked\+List$<$ Element, Single\+Position $>$@{Single\+Linked\+List$<$ Element, Single\+Position $>$}}
+
+
+Inheritance diagram for Single\+Linked\+List$<$ Element, Single\+Position $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{class_single_linked_list__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Single\+Linked\+List$<$ Element, Single\+Position $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_single_linked_list__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_single_linked_list_aa364b7946b893304e20eef2edfcebc92}\label{class_single_linked_list_aa364b7946b893304e20eef2edfcebc92}} 
+{\bfseries Single\+Linked\+List} (const \hyperlink{class_single_linked_list}{Single\+Linked\+List} \&orig)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a4571b835dd822965aa73c8b72a0978fa}\label{class_single_linked_list_a4571b835dd822965aa73c8b72a0978fa}} 
+void {\bfseries empty\+List} ()
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a82148c94788ea055b4015d9740148216}\label{class_single_linked_list_a82148c94788ea055b4015d9740148216}} 
+void {\bfseries insert} (Single\+Position $\ast$nueva\+Posicion, Single\+Position $\ast$vieja\+Posicion)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a832b8c56d170fe24fa65470c6450c8c0}\label{class_single_linked_list_a832b8c56d170fe24fa65470c6450c8c0}} 
+void {\bfseries insert} (Element dato, Single\+Position $\ast$posicion)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_aa94809f2f418d8ae0800c07ad2d3ed94}\label{class_single_linked_list_aa94809f2f418d8ae0800c07ad2d3ed94}} 
+Single\+Position \& {\bfseries insert} (const Element \&dato)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a7eef7eef98a4f6685206ea18e2898c46}\label{class_single_linked_list_a7eef7eef98a4f6685206ea18e2898c46}} 
+void {\bfseries remove} (Element dato)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a15c09862753af9929640337bfd8d3883}\label{class_single_linked_list_a15c09862753af9929640337bfd8d3883}} 
+void {\bfseries remove} (Single\+Position $\ast$posicion)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a7fb584382382318fed5360cb508bca78}\label{class_single_linked_list_a7fb584382382318fed5360cb508bca78}} 
+Element {\bfseries get\+Element} (Single\+Position $\ast$posicion)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a6380aea4313c50d930fa0117c878fb48}\label{class_single_linked_list_a6380aea4313c50d930fa0117c878fb48}} 
+Single\+Position $\ast$ {\bfseries find} (Element elemento)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_ab331e696e15ff692e981013551982729}\label{class_single_linked_list_ab331e696e15ff692e981013551982729}} 
+Single\+Position $\ast$ {\bfseries next} (Single\+Position $\ast$posicion)
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a7d218797f7c7cb3a341c2093db50ee17}\label{class_single_linked_list_a7d218797f7c7cb3a341c2093db50ee17}} 
+Single\+Position $\ast$ \hyperlink{class_single_linked_list_a7d218797f7c7cb3a341c2093db50ee17}{prev} (Single\+Position $\ast$posicion)
+\begin{DoxyCompactList}\small\item\em Funcion que imprime la posicion previa de una posicion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_single_linked_list_a64d9f3e1bad3eec787d2bcc7255c1311}\label{class_single_linked_list_a64d9f3e1bad3eec787d2bcc7255c1311}} 
+void \hyperlink{class_single_linked_list_a64d9f3e1bad3eec787d2bcc7255c1311}{print} ()
+\begin{DoxyCompactList}\small\item\em Funcion que imprime los datos de la lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_single_linked_list_a25ee349bf911508a148f6f19485852ee}\label{class_single_linked_list_a25ee349bf911508a148f6f19485852ee}} 
+Single\+Position $\ast$ {\bfseries ultimo} ()
+\item 
+\mbox{\Hypertarget{class_single_linked_list_acd86bee36a54701cbf4bdf146d857cf0}\label{class_single_linked_list_acd86bee36a54701cbf4bdf146d857cf0}} 
+void {\bfseries actualizar\+Items} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a1bba63179853755794f7f578265b3e60}\label{class_single_linked_list_a1bba63179853755794f7f578265b3e60}} 
+\hyperlink{class_simple_position}{Simple\+Position}$<$ Element $>$ $\ast$ {\bfseries first}
+\item 
+\mbox{\Hypertarget{class_single_linked_list_a8449fa747af940f9d1c9c6e8758539b8}\label{class_single_linked_list_a8449fa747af940f9d1c9c6e8758539b8}} 
+int {\bfseries items} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Element, typename Single\+Position$>$\newline
+class Single\+Linked\+List$<$ Element, Single\+Position $>$}
+
+
+
+Definition at line 9 of file Single\+Linked\+List.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/jzunigame/\+Documentos/\+A\+\_\+\+Algoritmos/\+A\+\_\+\+Git/\+Laboratorios/\+Lab4 Listas/include/Single\+Linked\+List.\+h\end{DoxyCompactItemize}
